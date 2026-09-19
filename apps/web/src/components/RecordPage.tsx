@@ -34,7 +34,7 @@ export function RecordPage({
   return (
     <article>
       {hero}
-      <div className={`site-container ${hero ? "py-10 lg:py-12" : "py-10 lg:py-14"}`}>
+      <div className={`site-container ${hero ? "pb-10 pt-8 lg:pb-12 lg:pt-9" : "py-10 lg:py-14"}`}>
         {!hideHeader ? (
           <header className="anim-rise max-w-3xl">
             <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-ink-faint">

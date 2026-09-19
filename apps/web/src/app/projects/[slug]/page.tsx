@@ -104,18 +104,20 @@ export default async function ProjectDetailPage({
       hero={
         <ProjectCover
           title={project.name}
-          subtitle={project.description}
           coverUrl={project.coverUrl}
           coverCredit={project.coverCredit}
-          status={project.verificationStatus}
-          meta={
-            <span>
-              {location?.name} · {project.status.replace(/_/g, " ")}
-            </span>
-          }
+          locationName={location?.name}
+          workStatus={project.status}
+          verificationLabel={project.verificationStatus.replace(/_/g, " ")}
         />
       }
     >
+      {project.description ? (
+        <p className="anim-fade max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
+          {project.description}
+        </p>
+      ) : null}
+
       <ProjectGlance
         workPercent={progressPercent}
         fundingPercent={funding.fundingPercent}
