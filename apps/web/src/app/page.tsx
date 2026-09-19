@@ -16,12 +16,9 @@ export default function HomePage() {
   return (
     <div>
       <section className="hero-field relative overflow-hidden">
-        {/* Large map art — fills the hero width without growing hero padding */}
-        <div
-          className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[58%] items-center justify-end lg:flex xl:w-[62%]"
-          aria-hidden={false}
-        >
-          <div className="pointer-events-auto w-[118%] translate-x-[8%] pr-2 xl:w-[125%] xl:translate-x-[6%]">
+        {/* Map art — secondary to brand, still interactive */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[42%] items-center justify-end lg:flex xl:w-[46%]">
+          <div className="pointer-events-auto w-[92%] max-w-md pr-4 xl:max-w-lg">
             <p className="mb-1 text-right text-[10px] font-medium uppercase tracking-[0.22em] text-civic-green">
               Click a state to explore
             </p>
@@ -30,7 +27,7 @@ export default function HomePage() {
         </div>
 
         <div className="site-container relative z-10 py-16 sm:py-20 lg:py-24">
-          <div className="max-w-xl text-center lg:max-w-[28rem] lg:text-left xl:max-w-[30rem]">
+          <div className="max-w-xl text-center lg:max-w-xl lg:text-left">
             <div className="anim-rise">
               <h1 className="font-display text-5xl leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-7xl">
                 NigeriaForNigerians
@@ -82,7 +79,7 @@ export default function HomePage() {
             <p className="mb-2 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-civic-green">
               Click a state to explore
             </p>
-            <NigeriaStateMap className="mx-auto aspect-[1000/812] w-full max-w-lg" />
+            <NigeriaStateMap className="mx-auto aspect-[1000/812] w-full max-w-sm" />
           </div>
         </div>
       </section>
