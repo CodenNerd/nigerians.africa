@@ -1,12 +1,14 @@
 import Link from "next/link";
+import { BrandMark, FlagStripe } from "@/components/BrandMark";
 
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-paper-border">
+      <FlagStripe />
       <div className="site-container py-12">
         <div className="grid gap-px bg-paper-border md:grid-cols-3">
           <div className="bg-civic-greenSoft p-6 sm:p-8">
-            <div className="font-display text-xl tracking-tight text-ink">NigeriaForNigerians</div>
+            <BrandMark size="footer" />
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-ink-muted">
               A public digital civic institution. Demonstration records are illustrative — not
               official government publications.

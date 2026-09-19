@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <div className="site-container py-12 lg:py-14">
       <PageIntro
-        eyebrow="NigeriaForNigerians"
+        eyebrow="Nigeria4Nigerians"
         title="About"
         subtitle="A public digital civic institution for Nigeria — making government, people, problems, money, projects, evidence and history visible and connected."
       />

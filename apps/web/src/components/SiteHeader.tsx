@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { NAV_MEGA } from "@/lib/nav-mega";
+import { BrandMark, FlagStripe } from "@/components/BrandMark";
 import { MegaMenuPanel } from "@/components/nav/MegaMenu";
 
 const OPEN_DELAY = 100;
@@ -81,13 +82,12 @@ export function SiteHeader() {
       className="relative sticky top-0 z-50 border-b border-paper-border bg-paper backdrop-blur-md"
       onMouseLeave={scheduleClose}
     >
+      <FlagStripe />
       <div className="relative z-50 bg-paper">
         <div className="site-container">
           <div className="flex items-center justify-between gap-4 py-3.5">
             <Link href="/" className="group no-underline" onClick={closeNow}>
-              <span className="block font-display text-xl tracking-tight text-ink transition group-hover:text-civic-green sm:text-2xl">
-                NigeriaForNigerians
-              </span>
+              <BrandMark size="md" />
               <span className="mt-0.5 block text-[11px] uppercase tracking-[0.18em] text-ink-faint">
                 Public record
               </span>
