@@ -204,6 +204,8 @@ export interface Project {
   verificationStatus: VerificationStatus;
   /** When true, eligible for home featured project tiles. */
   featured?: boolean;
+  /** Explicit progress 0–100 when known; otherwise derived from status. */
+  progressPercent?: number;
 }
 
 export interface Budget {

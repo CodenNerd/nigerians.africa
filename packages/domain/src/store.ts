@@ -35,6 +35,64 @@ export type ProjectHandler = {
   href: string;
 };
 
+export type ProjectIndexEntry = {
+  id: string;
+  slug: string;
+  name: string;
+  description: string;
+  status: Project["status"];
+  verificationStatus: Project["verificationStatus"];
+  startDate?: string;
+  expectedEndDate?: string;
+  actualEndDate?: string;
+  approvedAmount: number;
+  releasedAmount: number;
+  reportedSpend: number;
+  progressPercent: number;
+  completed: boolean;
+  stateId?: string;
+  stateSlug?: string;
+  stateName?: string;
+  locationName?: string;
+  handlers: ProjectHandler[];
+  handlerKinds: ProjectHandlerKind[];
+  officeId?: string;
+  allocationId?: string;
+  allocationSlug?: string;
+  allocationLabel?: string;
+  budgetId?: string;
+  budgetLabel?: string;
+};
+
+export type ProjectFacets = {
+  states: { id: string; slug: string; name: string; count: number }[];
+  statuses: { id: Project["status"]; count: number }[];
+  handlerKinds: { id: ProjectHandlerKind; count: number }[];
+  budgets: { id: string; label: string; count: number }[];
+  allocations: { id: string; slug: string; label: string; count: number }[];
+};
+
+const PROGRESS_BY_STATUS: Record<Project["status"], number> = {
+  planned: 5,
+  funded: 15,
+  started: 30,
+  in_progress: 55,
+  delayed: 50,
+  completed: 100,
+  abandoned: 0,
+  cancelled: 0,
+};
+
+export const KANBAN_STATUSES: Project["status"][] = [
+  "planned",
+  "funded",
+  "started",
+  "in_progress",
+  "delayed",
+  "completed",
+  "abandoned",
+];
+
 function hrefFor(type: EntityType, id: string, db: SeedDatabase): string {
   switch (type) {
     case "person": {
@@ -230,6 +288,124 @@ export class PublicRecordStore {
     }
 
     return out;
+  }
+
+  /** Walk location parents until a state (or FCT-as-state) is found. */
+  stateForLocation(locationId: string): Location | undefined {
+    let current = this.db.locations.find((l) => l.id === locationId);
+    const seen = new Set<string>();
+    while (current && !seen.has(current.id)) {
+      seen.add(current.id);
+      if (current.type === "state") return current;
+      if (!current.parentId) break;
+      current = this.db.locations.find((l) => l.id === current!.parentId);
+    }
+    return undefined;
+  }
+
+  progressForProject(project: Project): number {
+    if (typeof project.progressPercent === "number") {
+      return Math.max(0, Math.min(100, project.progressPercent));
+    }
+    return PROGRESS_BY_STATUS[project.status] ?? 0;
+  }
+
+  /** Denormalised index for the Projects explorer filters + kanban. */
+  projectIndex(): ProjectIndexEntry[] {
+    return this.allProjects().map((p) => {
+      const loc = this.db.locations.find((l) => l.id === p.locationId);
+      const state = this.stateForLocation(p.locationId);
+      const handlers = this.projectHandlers(p.id);
+      const allocation = this.db.allocations.find((a) => a.projectId === p.id);
+      const budget = allocation
+        ? this.db.budgets.find((b) => b.id === allocation.budgetId)
+        : undefined;
+      const progressPercent = this.progressForProject(p);
+      const completed = p.status === "completed" || Boolean(p.actualEndDate);
+
+      return {
+        id: p.id,
+        slug: p.slug,
+        name: p.name,
+        description: p.description,
+        status: p.status,
+        verificationStatus: p.verificationStatus,
+        startDate: p.startDate,
+        expectedEndDate: p.expectedEndDate,
+        actualEndDate: p.actualEndDate,
+        approvedAmount: p.approvedAmount,
+        releasedAmount: p.releasedAmount,
+        reportedSpend: p.reportedSpend,
+        progressPercent,
+        completed,
+        stateId: state?.id,
+        stateSlug: state?.slug,
+        stateName: state?.name,
+        locationName: loc?.name,
+        handlers,
+        handlerKinds: [...new Set(handlers.map((h) => h.kind))],
+        officeId: p.responsibleOfficeId,
+        allocationId: allocation?.id,
+        allocationSlug: allocation?.slug,
+        allocationLabel: allocation?.program,
+        budgetId: budget?.id,
+        budgetLabel: budget ? `${budget.title} (${budget.fiscalYear})` : undefined,
+      };
+    });
+  }
+
+  projectFacets(entries?: ProjectIndexEntry[]): ProjectFacets {
+    const list = entries ?? this.projectIndex();
+    const countMap = <T extends string>(keys: T[]) => {
+      const m = new Map<T, number>();
+      for (const k of keys) m.set(k, (m.get(k) ?? 0) + 1);
+      return m;
+    };
+
+    const stateCounts = new Map<string, { id: string; slug: string; name: string; count: number }>();
+    for (const e of list) {
+      if (!e.stateId || !e.stateSlug || !e.stateName) continue;
+      const prev = stateCounts.get(e.stateId);
+      if (prev) prev.count += 1;
+      else stateCounts.set(e.stateId, { id: e.stateId, slug: e.stateSlug, name: e.stateName, count: 1 });
+    }
+
+    const statusCounts = countMap(list.map((e) => e.status));
+    const handlerCounts = countMap(list.flatMap((e) => e.handlerKinds));
+
+    const budgetCounts = new Map<string, { id: string; label: string; count: number }>();
+    for (const e of list) {
+      if (!e.budgetId || !e.budgetLabel) continue;
+      const prev = budgetCounts.get(e.budgetId);
+      if (prev) prev.count += 1;
+      else budgetCounts.set(e.budgetId, { id: e.budgetId, label: e.budgetLabel, count: 1 });
+    }
+
+    const allocCounts = new Map<string, { id: string; slug: string; label: string; count: number }>();
+    for (const e of list) {
+      if (!e.allocationId || !e.allocationSlug || !e.allocationLabel) continue;
+      const prev = allocCounts.get(e.allocationId);
+      if (prev) prev.count += 1;
+      else
+        allocCounts.set(e.allocationId, {
+          id: e.allocationId,
+          slug: e.allocationSlug,
+          label: e.allocationLabel,
+          count: 1,
+        });
+    }
+
+    return {
+      states: [...stateCounts.values()].sort((a, b) => a.name.localeCompare(b.name)),
+      statuses: [...statusCounts.entries()]
+        .map(([id, count]) => ({ id, count }))
+        .sort((a, b) => a.id.localeCompare(b.id)),
+      handlerKinds: [...handlerCounts.entries()]
+        .map(([id, count]) => ({ id, count }))
+        .sort((a, b) => a.id.localeCompare(b.id)),
+      budgets: [...budgetCounts.values()].sort((a, b) => a.label.localeCompare(b.label)),
+      allocations: [...allocCounts.values()].sort((a, b) => a.label.localeCompare(b.label)),
+    };
   }
 
   allPeople(): Person[] {

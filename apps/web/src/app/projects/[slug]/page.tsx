@@ -41,6 +41,11 @@ export default async function ProjectDetailPage({
   const org = project.contractorId
     ? store.allOrganizations().find((o) => o.id === project.contractorId)
     : undefined;
+  const handlers = store.projectHandlers(project.id);
+  const budget = allocation
+    ? store.allBudgets().find((b) => b.id === allocation.budgetId)
+    : undefined;
+  const progressPercent = store.progressForProject(project);
   const sources = evidence
     .map((e) => store.sourceById(e.sourceId))
     .filter(Boolean)
@@ -70,6 +75,54 @@ export default async function ProjectDetailPage({
       ]}
     >
       <RecordSection title="Project status">
+        <div className="mb-4 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
+              Progress
+            </p>
+            <p className="mt-1 font-mono text-3xl text-civic-green">{progressPercent}%</p>
+          </div>
+          <div className="h-2 w-40 max-w-full bg-ink/10" aria-hidden>
+            <div
+              className="h-full bg-civic-green"
+              style={{ width: `${Math.min(100, Math.max(4, progressPercent))}%` }}
+            />
+          </div>
+        </div>
+        {handlers.length ? (
+          <div className="mb-4 flex flex-wrap gap-1.5">
+            {handlers.map((h) => {
+              const tone =
+                h.kind === "government"
+                  ? "bg-civic-blueSoft text-civic-blue"
+                  : h.kind === "business"
+                    ? "bg-civic-amberSoft text-civic-amber"
+                    : h.kind === "community"
+                      ? "bg-paper text-civic-slate"
+                      : "bg-civic-greenSoft text-civic-green";
+              const kindLabel =
+                h.kind === "government"
+                  ? "Government"
+                  : h.kind === "business"
+                    ? "Business"
+                    : h.kind === "community"
+                      ? "Community"
+                      : "NGO";
+              return (
+                <Link
+                  key={h.kind + h.href}
+                  href={h.href}
+                  className={`inline-flex items-center gap-1.5 border border-transparent px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider no-underline ${tone}`}
+                >
+                  {kindLabel}
+                  <span className="font-normal normal-case tracking-normal opacity-80">
+                    · {h.label.length > 36 ? h.label.slice(0, 36) + "…" : h.label}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        ) : null}
         <div className="flex flex-wrap gap-2 text-sm">
           {["planned", "funded", "started", "in_progress", "completed"].map((s) => {
             const reached = project.statusHistory.some((h) => h.status === s) || project.status === s;
@@ -104,6 +157,23 @@ export default async function ProjectDetailPage({
           <MoneyFigure label="Released" value={store.formatNaira(project.releasedAmount)} />
           <MoneyFigure label="Reported spend" value={store.formatNaira(project.reportedSpend)} />
         </div>
+        {(budget || allocation) && (
+          <div className="mt-4 flex flex-wrap gap-3 text-sm text-ink-muted">
+            {budget ? (
+              <span className="border border-paper-border bg-paper px-3 py-1.5">
+                Budget · {budget.title} ({budget.fiscalYear})
+              </span>
+            ) : null}
+            {allocation ? (
+              <Link
+                href={`/money/${allocation.slug}`}
+                className="border border-paper-border bg-paper px-3 py-1.5 no-underline hover:border-civic-green"
+              >
+                Allocation · {allocation.program}
+              </Link>
+            ) : null}
+          </div>
+        )}
         {allocation?.gapNote ? (
           <p className="mt-4 border border-civic-amber bg-civic-amberSoft px-4 py-3 text-sm text-civic-amber">
             {allocation.gapNote}
