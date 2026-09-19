@@ -17,7 +17,7 @@ export default function HomePage() {
     <div>
       <section className="hero-field relative overflow-hidden">
         {/* Map art — secondary to brand, still interactive */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[45%] items-center justify-end lg:flex xl:w-[49%]">
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[46%] items-center justify-end lg:flex xl:w-[50%]">
           <div className="pointer-events-auto w-[92%] max-w-md pr-4 xl:max-w-lg">
             <p className="mb-1 text-right text-[10px] font-medium uppercase tracking-[0.22em] text-civic-green">
               Click a state to explore
