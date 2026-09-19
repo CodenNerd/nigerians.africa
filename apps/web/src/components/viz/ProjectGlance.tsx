@@ -57,6 +57,7 @@ export function ProjectGlance({
   handlers,
   gapLabel,
   summaryLine,
+  campaignPlatform,
 }: {
   workPercent: number;
   fundingPercent: number;
@@ -66,6 +67,8 @@ export function ProjectGlance({
   handlers: ProjectHandler[];
   gapLabel?: string;
   summaryLine: string;
+  /** When set, shows a CTA link to #funding-request */
+  campaignPlatform?: string;
 }) {
   return (
     <div className="anim-rise border border-paper-border bg-civic-greenSoft/50">
@@ -86,6 +89,14 @@ export function ProjectGlance({
             {FUNDING_STATUS_LABEL[fundingStatus]}
           </span>
         </div>
+        {campaignPlatform ? (
+          <a
+            href="#funding-request"
+            className="border border-civic-blue bg-civic-blueSoft px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-civic-blue no-underline hover:underline"
+          >
+            Funding request · {campaignPlatform}
+          </a>
+        ) : null}
       </div>
 
       <div className="grid gap-8 px-4 py-6 sm:grid-cols-2 sm:px-5 sm:py-8">

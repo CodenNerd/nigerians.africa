@@ -11,7 +11,9 @@ import {
 import { FollowTheThread } from "@/components/FollowTheThread";
 import { StatusLabel } from "@/components/StatusLabel";
 import {
+  EvidenceMediaGallery,
   FlowStrip,
+  FundingRequest,
   MoneyComposition,
   ProjectGlance,
   WorkJourney,
@@ -39,6 +41,15 @@ export default async function ProjectDetailPage({
     ...store.evidenceFor("project", project.id),
     ...(allocation ? store.evidenceFor("money", allocation.id) : []),
   ];
+  const problemEvidence =
+    project.problemId && project.locationId
+      ? store
+          .evidenceFor("problem", project.problemId)
+          .filter((e) => !e.locationId || e.locationId === project.locationId)
+      : [];
+  const mediaEvidence = [...evidence, ...problemEvidence].filter(
+    (e, i, arr) => arr.findIndex((x) => x.id === e.id) === i,
+  );
   const reports = store.reports().filter((r) => r.projectId === project.id);
   const responses = reports.flatMap((r) => store.responsesFor("report", r.id));
   const memory = store.memoryFor("project", project.id);
@@ -97,7 +108,16 @@ export default async function ProjectDetailPage({
         handlers={handlers}
         gapLabel={gapLabel}
         summaryLine={summaryLine}
+        campaignPlatform={funding.campaigns[0]?.platform}
       />
+
+      <RecordSection
+        title="Field media"
+        subtitle="Citizen and official photos and video attached to this project."
+        meta={`${mediaEvidence.filter((e) => e.mediaKind === "image" || e.mediaKind === "video").length} items`}
+      >
+        <EvidenceMediaGallery items={mediaEvidence} />
+      </RecordSection>
 
       <RecordSection
         title="Work progress"
@@ -118,6 +138,17 @@ export default async function ProjectDetailPage({
         </div>
       </RecordSection>
 
+      {funding.campaigns.length > 0 ? (
+        <section id="funding-request" className="scroll-mt-28">
+          <RecordSection
+            title="Funding request"
+            subtitle="Public donation or community ask linked to this project."
+          >
+            <FundingRequest campaigns={funding.campaigns} />
+          </RecordSection>
+        </section>
+      ) : null}
+
       <RecordSection
         title="Budget & funding"
         subtitle="How much was meant to arrive, what landed, and what was spent."
@@ -129,7 +160,6 @@ export default async function ProjectDetailPage({
           fundingStatus={funding.fundingStatus}
           fundingPercent={funding.fundingPercent}
           sources={funding.sources}
-          campaigns={funding.campaigns}
           summary={project.fundingSummary ?? project.fundingSource}
         />
 

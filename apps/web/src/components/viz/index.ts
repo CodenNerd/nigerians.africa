@@ -5,6 +5,8 @@ export { WorkJourney } from "./WorkJourney";
 export { MoneyComposition } from "./MoneyComposition";
 export { FlowStrip } from "./FlowStrip";
 export type { FlowStripItem } from "./FlowStrip";
+export { EvidenceMediaGallery } from "./EvidenceMediaGallery";
+export { FundingRequest } from "./FundingRequest";
 export { VizFrame } from "./VizFrame";
 export { NIGERIA_STATES } from "./nigeria-states-meta";
 export { NIGERIA_STATE_PATHS } from "./nigeria-state-paths";

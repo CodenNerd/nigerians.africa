@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { store } from "@nigeria-for-nigerians/domain";
@@ -14,6 +15,14 @@ export default async function EvidencePage({ params }: { params: Promise<{ id: s
   if (!evidence) notFound();
 
   const source = store.sourceById(evidence.sourceId);
+  const isImage = evidence.mediaKind === "image" && evidence.mediaUrl;
+  const isVideo = evidence.mediaKind === "video" && evidence.mediaUrl;
+  const poster = evidence.posterUrl || (isImage ? evidence.mediaUrl : undefined);
+
+  const relatedProject =
+    evidence.relatedEntityType === "project"
+      ? store.raw.projects.find((p) => p.id === evidence.relatedEntityId)
+      : undefined;
 
   return (
     <RecordPage
@@ -23,6 +32,50 @@ export default async function EvidencePage({ params }: { params: Promise<{ id: s
       status={evidence.verificationStatus}
       askContext={evidence.title}
     >
+      {(isImage || isVideo) && (
+        <RecordSection title="Media">
+          {isImage ? (
+            <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink/10">
+              <Image
+                src={evidence.mediaUrl!}
+                alt={evidence.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 720px"
+              />
+            </div>
+          ) : null}
+          {isVideo ? (
+            <div>
+              {poster ? (
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink/10">
+                  <Image
+                    src={poster}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 720px"
+                  />
+                  <span className="absolute inset-0 flex items-center justify-center bg-ink/30">
+                    <span className="border border-paper bg-paper/95 px-3 py-1.5 text-[11px] uppercase tracking-wider text-ink">
+                      Video
+                    </span>
+                  </span>
+                </div>
+              ) : null}
+              <a
+                href={evidence.mediaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-block text-sm text-civic-green"
+              >
+                Play video (external) →
+              </a>
+            </div>
+          ) : null}
+        </RecordSection>
+      )}
+
       <RecordSection title="Provenance">
         <dl className="grid gap-3 text-sm sm:grid-cols-2">
           <div>
@@ -66,8 +119,15 @@ export default async function EvidencePage({ params }: { params: Promise<{ id: s
       </RecordSection>
 
       <p className="text-sm">
-        <Link href="/projects/allen-avenue-spur-rehabilitation" className="text-civic-green">
-          ← Back to signature project
+        <Link
+          href={
+            relatedProject
+              ? `/projects/${relatedProject.slug}`
+              : "/projects/allen-avenue-spur-rehabilitation"
+          }
+          className="text-civic-green"
+        >
+          ← Back to {relatedProject ? "project" : "signature project"}
         </Link>
       </p>
     </RecordPage>

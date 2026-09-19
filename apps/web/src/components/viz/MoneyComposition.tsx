@@ -1,4 +1,4 @@
-import type { DonationCampaign, FundingSource, FundingStatus } from "@nigeria-for-nigerians/domain";
+import type { FundingSource, FundingStatus } from "@nigeria-for-nigerians/domain";
 import { FUNDING_STATUS_LABEL, store } from "@nigeria-for-nigerians/domain";
 
 const SOURCE_TONES = [
@@ -16,7 +16,6 @@ export function MoneyComposition({
   fundingStatus,
   fundingPercent,
   sources,
-  campaigns,
   summary,
 }: {
   budgetTarget: number;
@@ -25,7 +24,6 @@ export function MoneyComposition({
   fundingStatus: FundingStatus;
   fundingPercent: number;
   sources: FundingSource[];
-  campaigns: DonationCampaign[];
   summary?: string;
 }) {
   const scale = Math.max(budgetTarget, receivedTotal, spendTotal, 1);
@@ -107,41 +105,6 @@ export function MoneyComposition({
           </ul>
         </div>
       ) : null}
-
-      {campaigns.map((camp) => {
-        const raisedPct =
-          camp.goalAmount > 0
-            ? Math.min(100, Math.round((camp.raisedAmount / camp.goalAmount) * 100))
-            : 0;
-        return (
-          <div key={camp.id} className="border border-civic-blue bg-civic-blueSoft/40 px-4 py-4">
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-civic-blue">
-              Public donation · {camp.platform}
-            </p>
-            <p className="mt-1 font-display text-xl text-ink">{camp.title}</p>
-            <div className="mt-3 flex flex-wrap items-baseline justify-between gap-2">
-              <span className="font-mono text-sm text-ink-muted">
-                {store.formatNaira(camp.raisedAmount)} / {store.formatNaira(camp.goalAmount)}
-              </span>
-              <span className="font-mono text-sm text-civic-blue">{raisedPct}%</span>
-            </div>
-            <div className="mt-2 h-3 w-full bg-ink/10" aria-hidden>
-              <div
-                className="meter-fill h-full bg-civic-blue"
-                style={{ width: `${raisedPct === 0 ? 0 : Math.max(4, raisedPct)}%` }}
-              />
-            </div>
-            <a
-              href={camp.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-block text-sm text-civic-green"
-            >
-              Open on {camp.platform} (external) →
-            </a>
-          </div>
-        );
-      })}
     </div>
   );
 }

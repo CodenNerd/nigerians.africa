@@ -1234,6 +1234,19 @@ export const handcrafted: SeedDatabase = {
 
   donationCampaigns: [
     {
+      id: "camp-allen-complete",
+      projectId: "proj-allen-spur",
+      platform: "GoFundMe",
+      title: "Complete Allen Avenue spur — community materials fund",
+      url: "https://www.gofundme.com/f/allen-spur-complete-demo",
+      goalAmount: 85_000_000,
+      raisedAmount: 22_600_000,
+      status: "open",
+      organizationId: "org-tracka",
+      appeal:
+        "Government release stalled. This community ask covers asphalt patching materials while the contractor dispute is resolved — demo campaign.",
+    },
+    {
       id: "camp-omole-gofundme",
       projectId: "proj-omole-drain",
       platform: "GoFundMe",
@@ -1243,6 +1256,8 @@ export const handcrafted: SeedDatabase = {
       raisedAmount: 18_400_000,
       status: "open",
       organizationId: "org-omole-cda",
+      appeal:
+        "State release covers only ~22%. Residents are raising the gap for culvert sections and channel lining.",
     },
   ],
 
@@ -1276,6 +1291,16 @@ export const handcrafted: SeedDatabase = {
       receivedAt: "2024-08-01",
       payerLabel: "Civic Track Nigeria programme fund",
       channel: "bank_transfer",
+      verificationStatus: "reported",
+    },
+    {
+      id: "in-allen-crowd-1",
+      projectId: "proj-allen-spur",
+      campaignId: "camp-allen-complete",
+      amount: 22_600_000,
+      receivedAt: "2025-06-15",
+      payerLabel: "Community donors (GoFundMe batch)",
+      channel: "gofundme",
       verificationStatus: "reported",
     },
     {
@@ -1669,6 +1694,9 @@ export const handcrafted: SeedDatabase = {
       relatedEntityType: "project",
       relatedEntityId: "proj-allen-spur",
       fileLabel: "allen-spur-01.jpg",
+      mediaKind: "image",
+      mediaUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/8/8a/Bad_road_in_lagos_Nigeria_2020_07_02.jpg",
     },
     {
       id: "ev-allen-photo-2",
@@ -1683,6 +1711,79 @@ export const handcrafted: SeedDatabase = {
       relatedEntityType: "problem",
       relatedEntityId: "prob-flooding",
       fileLabel: "allen-drain-02.jpg",
+      mediaKind: "image",
+      mediaUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/b/b5/Marina_road_leading_to_uba_house%2C_lagos%2C_Nigeria.jpg",
+    },
+    {
+      id: "ev-allen-video-1",
+      slug: "ev-allen-site-walkthrough",
+      type: "Video",
+      title: "Citizen site walk-through — Allen spur (demo)",
+      description:
+        "Short walk-along of the abandoned stretch. External video used as demo media for the public record.",
+      sourceId: "src-citizen-photos",
+      capturedAt: "2025-08-10",
+      locationId: "loc-allen-ward",
+      verificationStatus: "reported",
+      relatedEntityType: "project",
+      relatedEntityId: "proj-allen-spur",
+      fileLabel: "allen-walkthrough.mp4",
+      mediaKind: "video",
+      mediaUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+      posterUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/8/8a/Bad_road_in_lagos_Nigeria_2020_07_02.jpg",
+    },
+    {
+      id: "ev-omole-photo-1",
+      slug: "ev-omole-channel-excavation",
+      type: "Photo",
+      title: "Omole drainage excavation paused",
+      description: "Open trench with incomplete lining after works stopped pending further release.",
+      sourceId: "src-citizen-photos",
+      capturedAt: "2025-02-12",
+      locationId: "loc-omole",
+      verificationStatus: "reported",
+      relatedEntityType: "project",
+      relatedEntityId: "proj-omole-drain",
+      fileLabel: "omole-drain-01.jpg",
+      mediaKind: "image",
+      mediaUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/e/ea/Lagos_Nigeria.jpg",
+    },
+    {
+      id: "ev-omole-photo-2",
+      slug: "ev-omole-flood-street",
+      type: "Photo",
+      title: "Street flooding after rains — Omole",
+      description: "Residential street inundated where secondary channels remain unfinished.",
+      sourceId: "src-citizen-photos",
+      capturedAt: "2025-03-01",
+      locationId: "loc-omole",
+      verificationStatus: "reported",
+      relatedEntityType: "project",
+      relatedEntityId: "proj-omole-drain",
+      fileLabel: "omole-flood-02.jpg",
+      mediaKind: "image",
+      mediaUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/7/77/Third_Mainland_Bridge.jpg",
+    },
+    {
+      id: "ev-power-photo-1",
+      slug: "ev-kano-poles",
+      type: "Photo",
+      title: "New poles along peri-urban corridor — Kano",
+      description: "Pole erection on Phase II electrification corridor.",
+      sourceId: "src-citizen-photos",
+      capturedAt: "2024-11-20",
+      locationId: "loc-kano",
+      verificationStatus: "reported",
+      relatedEntityType: "project",
+      relatedEntityId: "proj-rural-power",
+      fileLabel: "kano-poles-01.jpg",
+      mediaKind: "image",
+      mediaUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/e/ee/Aerial_view_of_Marina%2C_Lagos_Island_East%2C_Lagos-Nigeria.jpg",
     },
     {
       id: "ev-foi-payments",
@@ -1696,6 +1797,7 @@ export const handcrafted: SeedDatabase = {
       relatedEntityType: "office",
       relatedEntityId: "office-lagos-works-comm",
       fileLabel: "foi-payments.pdf",
+      mediaKind: "document",
     },
     {
       id: "ev-press",

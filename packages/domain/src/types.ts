@@ -248,6 +248,8 @@ export interface DonationCampaign {
   raisedAmount: number;
   status: "open" | "closed" | "paused";
   organizationId?: string;
+  /** One-line citizen ask shown on the funding request plane. */
+  appeal?: string;
 }
 
 export interface FundingInflow {
@@ -354,6 +356,11 @@ export interface Evidence {
   relatedEntityType: EntityType;
   relatedEntityId: string;
   fileLabel?: string;
+  /** Public URL for image or video page. */
+  mediaUrl?: string;
+  mediaKind?: "image" | "video" | "document";
+  /** Poster / fallback for video evidence. */
+  posterUrl?: string;
   lastReviewedAt?: string;
   lastReviewedBy?: string;
 }
