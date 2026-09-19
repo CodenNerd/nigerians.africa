@@ -67,7 +67,7 @@ export default function HomePage() {
               <p className="mb-2 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-ink-faint lg:text-right">
                 The country · hover a state
               </p>
-              <NigeriaStateMap dimmed className="mx-auto aspect-[520/560] w-full max-h-[22rem] lg:max-h-[26rem]" />
+              <NigeriaStateMap dimmed className="mx-auto aspect-[1000/812] w-full max-h-[22rem] lg:max-h-[28rem]" />
             </div>
           </div>
         </div>

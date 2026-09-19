@@ -1,58 +1,38 @@
 export type NigeriaStateMeta = { slug: string; name: string; seeded: boolean };
 export const NIGERIA_STATES: NigeriaStateMeta[] = [
   {
-    "slug": "sokoto",
-    "name": "Sokoto",
-    "seeded": false
-  },
-  {
     "slug": "kebbi",
     "name": "Kebbi",
     "seeded": false
   },
   {
-    "slug": "zamfara",
-    "name": "Zamfara",
+    "slug": "niger",
+    "name": "Niger",
     "seeded": false
   },
   {
-    "slug": "katsina",
-    "name": "Katsina",
+    "slug": "kwara",
+    "name": "Kwara",
     "seeded": false
   },
   {
-    "slug": "kano",
-    "name": "Kano",
+    "slug": "ogun",
+    "name": "Ogun",
+    "seeded": false
+  },
+  {
+    "slug": "oyo",
+    "name": "Oyo",
+    "seeded": false
+  },
+  {
+    "slug": "lagos",
+    "name": "Lagos",
     "seeded": true
-  },
-  {
-    "slug": "jigawa",
-    "name": "Jigawa",
-    "seeded": false
-  },
-  {
-    "slug": "yobe",
-    "name": "Yobe",
-    "seeded": false
   },
   {
     "slug": "borno",
     "name": "Borno",
-    "seeded": false
-  },
-  {
-    "slug": "kaduna",
-    "name": "Kaduna",
-    "seeded": false
-  },
-  {
-    "slug": "bauchi",
-    "name": "Bauchi",
-    "seeded": false
-  },
-  {
-    "slug": "gombe",
-    "name": "Gombe",
     "seeded": false
   },
   {
@@ -66,73 +46,43 @@ export const NIGERIA_STATES: NigeriaStateMeta[] = [
     "seeded": false
   },
   {
-    "slug": "plateau",
-    "name": "Plateau",
-    "seeded": false
-  },
-  {
-    "slug": "nasarawa",
-    "name": "Nasarawa",
-    "seeded": false
-  },
-  {
-    "slug": "niger",
-    "name": "Niger",
-    "seeded": false
-  },
-  {
-    "slug": "fct",
-    "name": "FCT",
-    "seeded": true
-  },
-  {
-    "slug": "kwara",
-    "name": "Kwara",
-    "seeded": false
-  },
-  {
-    "slug": "kogi",
-    "name": "Kogi",
-    "seeded": false
-  },
-  {
     "slug": "benue",
     "name": "Benue",
     "seeded": false
   },
   {
-    "slug": "oyo",
-    "name": "Oyo",
+    "slug": "cross-river",
+    "name": "Cross River",
     "seeded": false
   },
   {
-    "slug": "osun",
-    "name": "Osun",
+    "slug": "sokoto",
+    "name": "Sokoto",
     "seeded": false
   },
   {
-    "slug": "ekiti",
-    "name": "Ekiti",
+    "slug": "zamfara",
+    "name": "Zamfara",
+    "seeded": false
+  },
+  {
+    "slug": "yobe",
+    "name": "Yobe",
+    "seeded": false
+  },
+  {
+    "slug": "katsina",
+    "name": "Katsina",
+    "seeded": false
+  },
+  {
+    "slug": "jigawa",
+    "name": "Jigawa",
     "seeded": false
   },
   {
     "slug": "ondo",
     "name": "Ondo",
-    "seeded": false
-  },
-  {
-    "slug": "ogun",
-    "name": "Ogun",
-    "seeded": false
-  },
-  {
-    "slug": "lagos",
-    "name": "Lagos",
-    "seeded": true
-  },
-  {
-    "slug": "edo",
-    "name": "Edo",
     "seeded": false
   },
   {
@@ -156,8 +106,8 @@ export const NIGERIA_STATES: NigeriaStateMeta[] = [
     "seeded": false
   },
   {
-    "slug": "cross-river",
-    "name": "Cross River",
+    "slug": "abia",
+    "name": "Abia",
     "seeded": false
   },
   {
@@ -166,13 +116,48 @@ export const NIGERIA_STATES: NigeriaStateMeta[] = [
     "seeded": false
   },
   {
+    "slug": "anambra",
+    "name": "Anambra",
+    "seeded": false
+  },
+  {
+    "slug": "edo",
+    "name": "Edo",
+    "seeded": false
+  },
+  {
+    "slug": "bauchi",
+    "name": "Bauchi",
+    "seeded": false
+  },
+  {
+    "slug": "plateau",
+    "name": "Plateau",
+    "seeded": false
+  },
+  {
+    "slug": "nasarawa",
+    "name": "Nassarawa",
+    "seeded": false
+  },
+  {
+    "slug": "gombe",
+    "name": "Gombe",
+    "seeded": false
+  },
+  {
     "slug": "enugu",
     "name": "Enugu",
     "seeded": false
   },
   {
-    "slug": "anambra",
-    "name": "Anambra",
+    "slug": "kogi",
+    "name": "Kogi",
+    "seeded": false
+  },
+  {
+    "slug": "osun",
+    "name": "Osun",
     "seeded": false
   },
   {
@@ -181,8 +166,23 @@ export const NIGERIA_STATES: NigeriaStateMeta[] = [
     "seeded": false
   },
   {
-    "slug": "abia",
-    "name": "Abia",
+    "slug": "ekiti",
+    "name": "Ekiti",
     "seeded": false
+  },
+  {
+    "slug": "kaduna",
+    "name": "Kaduna",
+    "seeded": false
+  },
+  {
+    "slug": "kano",
+    "name": "Kano",
+    "seeded": true
+  },
+  {
+    "slug": "fct",
+    "name": "Federal Capital Territory",
+    "seeded": true
   }
-] as const;
+];
