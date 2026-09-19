@@ -42,10 +42,20 @@ export default async function ProjectDetailPage({
     ? store.allOrganizations().find((o) => o.id === project.contractorId)
     : undefined;
   const handlers = store.projectHandlers(project.id);
-  const budget = allocation
-    ? store.allBudgets().find((b) => b.id === allocation.budgetId)
-    : undefined;
+  const funding = store.fundingForProject(project.id);
   const progressPercent = store.progressForProject(project);
+  const fundingBadge =
+    funding.fundingStatus === "fully_funded"
+      ? "Fully funded"
+      : funding.fundingStatus === "partially_funded"
+        ? "Partially funded"
+        : "Unfunded";
+  const fundingTone =
+    funding.fundingStatus === "fully_funded"
+      ? "border-civic-green bg-civic-greenSoft text-civic-green"
+      : funding.fundingStatus === "partially_funded"
+        ? "border-civic-amber bg-civic-amberSoft text-civic-amber"
+        : "border-paper-border bg-paper text-ink-faint";
   const sources = evidence
     .map((e) => store.sourceById(e.sourceId))
     .filter(Boolean)
@@ -124,7 +134,7 @@ export default async function ProjectDetailPage({
           </div>
         ) : null}
         <div className="flex flex-wrap gap-2 text-sm">
-          {["planned", "funded", "started", "in_progress", "completed"].map((s) => {
+          {["planned", "started", "in_progress", "completed"].map((s) => {
             const reached = project.statusHistory.some((h) => h.status === s) || project.status === s;
             const current = project.status === s || (s === "in_progress" && ["delayed", "abandoned"].includes(project.status));
             return (
@@ -136,7 +146,7 @@ export default async function ProjectDetailPage({
               </span>
             );
           })}
-          {["delayed", "abandoned"].includes(project.status) ? (
+          {["delayed", "abandoned", "cancelled"].includes(project.status) ? (
             <span className="border border-civic-red bg-civic-redSoft px-2 py-1 text-civic-red">
               {project.status}
             </span>
@@ -151,29 +161,103 @@ export default async function ProjectDetailPage({
         />
       </RecordSection>
 
-      <RecordSection title="Money">
-        <div className="grid gap-3 sm:grid-cols-3">
-          <MoneyFigure label="Approved" value={store.formatNaira(project.approvedAmount)} />
-          <MoneyFigure label="Released" value={store.formatNaira(project.releasedAmount)} />
-          <MoneyFigure label="Reported spend" value={store.formatNaira(project.reportedSpend)} />
+      <RecordSection title="Budget & funding">
+        <div className="mb-4 flex flex-wrap items-center gap-3">
+          <span className={`border px-2.5 py-1 text-xs font-medium uppercase tracking-wider ${fundingTone}`}>
+            {fundingBadge}
+          </span>
+          <span className="font-mono text-sm text-ink-muted">
+            {funding.fundingPercent}% of budget received
+          </span>
         </div>
-        {(budget || allocation) && (
-          <div className="mt-4 flex flex-wrap gap-3 text-sm text-ink-muted">
-            {budget ? (
-              <span className="border border-paper-border bg-paper px-3 py-1.5">
-                Budget · {budget.title} ({budget.fiscalYear})
-              </span>
-            ) : null}
-            {allocation ? (
-              <Link
-                href={`/money/${allocation.slug}`}
-                className="border border-paper-border bg-paper px-3 py-1.5 no-underline hover:border-civic-green"
-              >
-                Allocation · {allocation.program}
-              </Link>
-            ) : null}
-          </div>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <MoneyFigure label="Budget target" value={store.formatNaira(funding.budgetTarget)} />
+          <MoneyFigure label="Received" value={store.formatNaira(funding.receivedTotal)} />
+          <MoneyFigure label="Spent" value={store.formatNaira(funding.spendTotal)} />
+        </div>
+        <div className="mt-4 h-2 w-full max-w-md bg-ink/10" aria-hidden>
+          <div
+            className="h-full bg-civic-amber"
+            style={{ width: `${Math.min(100, Math.max(funding.fundingPercent > 0 ? 4 : 0, funding.fundingPercent))}%` }}
+          />
+        </div>
+        {(project.fundingSummary || project.fundingSource) && (
+          <p className="mt-3 text-sm text-ink-muted">
+            {project.fundingSummary ?? project.fundingSource}
+          </p>
         )}
+
+        {funding.sources.length > 0 ? (
+          <div className="mt-6">
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
+              Funding sources
+            </p>
+            <ul className="mt-2 space-y-2">
+              {funding.sources.map((fs) => {
+                const alloc = fs.allocationId
+                  ? store.allAllocations().find((a) => a.id === fs.allocationId)
+                  : undefined;
+                const funderOrg = fs.organizationId
+                  ? store.allOrganizations().find((o) => o.id === fs.organizationId)
+                  : undefined;
+                return (
+                  <li
+                    key={fs.id}
+                    className="flex flex-wrap items-baseline justify-between gap-2 border border-paper-border bg-paper px-3 py-2.5 text-sm"
+                  >
+                    <div>
+                      <span className="text-[10px] uppercase tracking-wider text-ink-faint">
+                        {fs.kind.replace(/_/g, " ")}
+                      </span>
+                      <div className="font-medium text-ink">{fs.label}</div>
+                      <div className="mt-1 flex flex-wrap gap-2 text-xs text-ink-muted">
+                        {alloc ? (
+                          <Link href={`/money/${alloc.slug}`} className="text-civic-green">
+                            Allocation →
+                          </Link>
+                        ) : null}
+                        {funderOrg ? (
+                          <Link href={`/organizations/${funderOrg.slug}`} className="text-civic-green">
+                            {funderOrg.name}
+                          </Link>
+                        ) : null}
+                      </div>
+                      {fs.notes ? <p className="mt-1 text-xs text-ink-faint">{fs.notes}</p> : null}
+                    </div>
+                    <div className="font-mono text-xs text-ink-muted">
+                      {store.formatNaira(fs.receivedAmount)} / {store.formatNaira(fs.pledgedAmount)}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ) : null}
+
+        {funding.campaigns.map((camp) => (
+          <div
+            key={camp.id}
+            className="mt-6 border border-civic-blue bg-civic-blueSoft/40 px-4 py-4"
+          >
+            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-civic-blue">
+              Public donation campaign · {camp.platform}
+            </p>
+            <p className="mt-1 font-display text-xl text-ink">{camp.title}</p>
+            <p className="mt-2 font-mono text-sm text-ink-muted">
+              {store.formatNaira(camp.raisedAmount)} raised of {store.formatNaira(camp.goalAmount)} ·{" "}
+              {camp.status}
+            </p>
+            <a
+              href={camp.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-block text-sm text-civic-green"
+            >
+              Open on {camp.platform} (external) →
+            </a>
+          </div>
+        ))}
+
         {allocation?.gapNote ? (
           <p className="mt-4 border border-civic-amber bg-civic-amberSoft px-4 py-3 text-sm text-civic-amber">
             {allocation.gapNote}
@@ -190,6 +274,69 @@ export default async function ProjectDetailPage({
             Open full money trail →
           </Link>
         ) : null}
+      </RecordSection>
+
+      <RecordSection title="Income stream">
+        {funding.inflows.length === 0 ? (
+          <p className="text-sm text-ink-muted">No income events recorded yet.</p>
+        ) : (
+          <ul className="divide-y divide-paper-border border border-paper-border">
+            {funding.inflows.map((row) => (
+              <li key={row.id} className="flex flex-wrap items-start justify-between gap-3 px-3 py-3 sm:px-4">
+                <div>
+                  <p className="font-mono text-[11px] text-ink-faint">{row.receivedAt}</p>
+                  <p className="mt-0.5 text-sm font-medium text-ink">{row.payerLabel}</p>
+                  <p className="mt-1 text-xs text-ink-muted">
+                    {row.channel.replace(/_/g, " ")}
+                    {row.sourceId ? " · linked source" : ""}
+                  </p>
+                </div>
+                <div className="text-right">
+                  <p className="font-mono text-sm text-civic-green">{store.formatNaira(row.amount)}</p>
+                  <StatusLabel status={row.verificationStatus} className="mt-1" />
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </RecordSection>
+
+      <RecordSection title="Spend record">
+        {funding.spends.length === 0 ? (
+          <p className="text-sm text-ink-muted">No spend lines recorded yet.</p>
+        ) : (
+          <ul className="divide-y divide-paper-border border border-paper-border">
+            {funding.spends.map((row) => {
+              const payeeOrg = row.organizationId
+                ? store.allOrganizations().find((o) => o.id === row.organizationId)
+                : undefined;
+              return (
+                <li key={row.id} className="flex flex-wrap items-start justify-between gap-3 px-3 py-3 sm:px-4">
+                  <div>
+                    <p className="font-mono text-[11px] text-ink-faint">{row.spentAt}</p>
+                    <p className="mt-0.5 text-sm font-medium text-ink">{row.payeeLabel}</p>
+                    <p className="mt-1 text-xs text-ink-muted">
+                      {row.category}
+                      {payeeOrg ? (
+                        <>
+                          {" · "}
+                          <Link href={`/organizations/${payeeOrg.slug}`} className="text-civic-green">
+                            {payeeOrg.name}
+                          </Link>
+                        </>
+                      ) : null}
+                    </p>
+                    {row.notes ? <p className="mt-1 text-xs text-ink-faint">{row.notes}</p> : null}
+                  </div>
+                  <div className="text-right">
+                    <p className="font-mono text-sm text-ink">{store.formatNaira(row.amount)}</p>
+                    <StatusLabel status={row.verificationStatus} className="mt-1" />
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </RecordSection>
 
       <RecordSection title="Relationships">

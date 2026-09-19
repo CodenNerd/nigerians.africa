@@ -4,8 +4,10 @@ import { Suspense, useCallback, useMemo, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
+  FUNDING_STATUS_LABEL,
   KANBAN_STATUSES,
   store,
+  type FundingStatus,
   type ProjectHandlerKind,
   type ProjectIndexEntry,
   type ProjectStatus,
@@ -26,12 +28,19 @@ const HANDLER_TONE: Record<ProjectHandlerKind, string> = {
   community: "bg-paper text-civic-slate",
 };
 
+const FUNDING_BADGE_TONE: Record<FundingStatus, string> = {
+  fully_funded: "border-civic-green bg-civic-greenSoft text-civic-green",
+  partially_funded: "border-civic-amber bg-civic-amberSoft text-civic-amber",
+  unfunded: "border-paper-border bg-paper text-ink-faint",
+};
+
 type ViewMode = "list" | "kanban";
 type CompletionFilter = "any" | "complete" | "incomplete";
 
 type Filters = {
   state: string;
   status: string;
+  funding: string;
   handler: string;
   dateFrom: string;
   dateTo: string;
@@ -60,6 +69,7 @@ function readFilters(params: URLSearchParams): Filters {
   return {
     state: params.get("state") ?? "",
     status: params.get("status") ?? "",
+    funding: params.get("funding") ?? "",
     handler: params.get("handler") ?? "",
     dateFrom: params.get("dateFrom") ?? "",
     dateTo: params.get("dateTo") ?? "",
@@ -84,6 +94,7 @@ function filtersToParams(f: Filters): URLSearchParams {
   };
   set("state");
   set("status");
+  set("funding");
   set("handler");
   set("dateFrom");
   set("dateTo");
@@ -118,6 +129,7 @@ function applyFilters(entries: ProjectIndexEntry[], f: Filters): ProjectIndexEnt
   return entries.filter((e) => {
     if (f.state && e.stateSlug !== f.state) return false;
     if (f.status && e.status !== f.status) return false;
+    if (f.funding && e.fundingStatus !== f.funding) return false;
     if (f.handler && !e.handlerKinds.includes(f.handler as ProjectHandlerKind)) return false;
     if (!projectInDateRange(e, f.dateFrom, f.dateTo)) return false;
     if (fundingMin != null && e.approvedAmount < fundingMin) return false;
@@ -182,6 +194,7 @@ function ProjectsExplorerInner() {
     pushFilters({
       state: "",
       status: "",
+      funding: "",
       handler: "",
       dateFrom: "",
       dateTo: "",
@@ -200,6 +213,7 @@ function ProjectsExplorerInner() {
   const activeCount = [
     filters.state,
     filters.status,
+    filters.funding,
     filters.handler,
     filters.dateFrom,
     filters.dateTo,
@@ -284,13 +298,27 @@ function ProjectsExplorerInner() {
               value={filters.status}
               onChange={(e) => patch({ status: e.target.value })}
             >
-              <option value="">Any status</option>
+              <option value="">Any work status</option>
               {KANBAN_STATUSES.map((s) => (
                 <option key={s} value={s}>
                   {s.replace(/_/g, " ")}
                 </option>
               ))}
               <option value="cancelled">cancelled</option>
+            </select>
+          </Field>
+          <Field label="Funding">
+            <select
+              className={controlClass}
+              value={filters.funding}
+              onChange={(e) => patch({ funding: e.target.value })}
+            >
+              <option value="">Any funding</option>
+              {(Object.keys(FUNDING_STATUS_LABEL) as FundingStatus[]).map((id) => (
+                <option key={id} value={id}>
+                  {FUNDING_STATUS_LABEL[id]}
+                </option>
+              ))}
             </select>
           </Field>
           <Field label="Handler">
@@ -422,6 +450,16 @@ function ProjectsExplorerInner() {
   );
 }
 
+function FundingBadge({ status }: { status: FundingStatus }) {
+  return (
+    <span
+      className={`inline-flex border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider ${FUNDING_BADGE_TONE[status]}`}
+    >
+      {FUNDING_STATUS_LABEL[status]}
+    </span>
+  );
+}
+
 function HandlerChips({ entry }: { entry: ProjectIndexEntry }) {
   if (!entry.handlers.length) {
     return (
@@ -488,6 +526,7 @@ function ProjectListView({ entries }: { entries: ProjectIndexEntry[] }) {
                   {e.status.replace(/_/g, " ")}
                   {e.stateName ? ` · ${e.stateName}` : ""}
                 </span>
+                <FundingBadge status={e.fundingStatus} />
                 <StatusLabel status={e.verificationStatus} />
               </div>
               <h3 className="mt-1 font-display text-xl text-ink group-hover:underline sm:text-2xl">
@@ -552,8 +591,12 @@ function ProjectKanbanView({ entries }: { entries: ProjectIndexEntry[] }) {
                         className="plane-link block px-3 py-3 no-underline"
                       >
                         <p className="font-display text-base leading-snug text-ink">{e.name}</p>
+                        <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                          <FundingBadge status={e.fundingStatus} />
+                        </div>
                         <p className="mt-1 text-[11px] text-ink-faint">
-                          {e.stateName ?? e.locationName ?? "—"} · {e.progressPercent}%
+                          {e.stateName ?? e.locationName ?? "—"} · work {e.progressPercent}% · fund{" "}
+                          {e.fundingPercent}%
                         </p>
                         <div className="mt-2 flex flex-wrap gap-1">
                           <HandlerChips entry={e} />

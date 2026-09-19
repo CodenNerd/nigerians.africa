@@ -31,13 +31,25 @@ export type LocationType =
 
 export type ProjectStatus =
   | "planned"
-  | "funded"
   | "started"
   | "in_progress"
   | "delayed"
   | "abandoned"
   | "completed"
   | "cancelled";
+
+/** Separate from work progress — how fully money has arrived vs budget. */
+export type FundingStatus = "unfunded" | "partially_funded" | "fully_funded";
+
+export type FundingSourceKind =
+  | "government_budget"
+  | "constituency"
+  | "multilateral"
+  | "corporate"
+  | "ngo_grant"
+  | "community"
+  | "crowdfunding"
+  | "other";
 
 export type ReportStatus =
   | "submitted"
@@ -190,12 +202,18 @@ export interface Project {
   description: string;
   problemId?: string;
   locationId: string;
-  responsibleOfficeId: string;
+  /** Optional — NGO / community-led projects may have no government office. */
+  responsibleOfficeId?: string;
   contractorId?: string;
-  fundingSource: string;
+  /** One-line funding blurb; structured FundingSource rows are authoritative. */
+  fundingSummary?: string;
+  /** @deprecated Prefer fundingSummary; kept for generated seed fragments. */
+  fundingSource?: string;
   approvedAmount: number;
   releasedAmount: number;
   reportedSpend: number;
+  /** Explicit budget target; defaults to approvedAmount when unset. */
+  budgetTargetAmount?: number;
   startDate: string;
   expectedEndDate: string;
   actualEndDate?: string;
@@ -206,6 +224,57 @@ export interface Project {
   featured?: boolean;
   /** Explicit progress 0–100 when known; otherwise derived from status. */
   progressPercent?: number;
+}
+
+export interface FundingSource {
+  id: string;
+  projectId: string;
+  kind: FundingSourceKind;
+  label: string;
+  organizationId?: string;
+  allocationId?: string;
+  pledgedAmount: number;
+  receivedAmount: number;
+  notes?: string;
+}
+
+export interface DonationCampaign {
+  id: string;
+  projectId: string;
+  platform: string;
+  title: string;
+  url: string;
+  goalAmount: number;
+  raisedAmount: number;
+  status: "open" | "closed" | "paused";
+  organizationId?: string;
+}
+
+export interface FundingInflow {
+  id: string;
+  projectId: string;
+  fundingSourceId?: string;
+  campaignId?: string;
+  amount: number;
+  receivedAt: string;
+  payerLabel: string;
+  channel: string;
+  sourceId?: string;
+  verificationStatus: VerificationStatus;
+}
+
+export interface ProjectSpend {
+  id: string;
+  projectId: string;
+  amount: number;
+  spentAt: string;
+  category: string;
+  payeeLabel: string;
+  organizationId?: string;
+  contractId?: string;
+  notes?: string;
+  sourceId?: string;
+  verificationStatus: VerificationStatus;
 }
 
 export interface Budget {
@@ -444,6 +513,10 @@ export interface SeedDatabase {
   budgets: Budget[];
   allocations: Allocation[];
   contracts: Contract[];
+  fundingSources: FundingSource[];
+  donationCampaigns: DonationCampaign[];
+  fundingInflows: FundingInflow[];
+  projectSpends: ProjectSpend[];
   organizations: Organization[];
   evidence: Evidence[];
   claims: Claim[];

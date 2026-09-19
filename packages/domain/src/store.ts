@@ -4,8 +4,12 @@ import type {
   CitizenReport,
   CivicEvent,
   Claim,
+  DonationCampaign,
   EntityType,
   Evidence,
+  FundingInflow,
+  FundingSource,
+  FundingStatus,
   GuidanceTopic,
   Institution,
   Location,
@@ -14,6 +18,7 @@ import type {
   Person,
   Problem,
   Project,
+  ProjectSpend,
   PublicRecordItem,
   SeedDatabase,
   Source,
@@ -49,6 +54,9 @@ export type ProjectIndexEntry = {
   releasedAmount: number;
   reportedSpend: number;
   progressPercent: number;
+  fundingStatus: FundingStatus;
+  fundingPercent: number;
+  budgetTarget: number;
   completed: boolean;
   stateId?: string;
   stateSlug?: string;
@@ -62,19 +70,41 @@ export type ProjectIndexEntry = {
   allocationLabel?: string;
   budgetId?: string;
   budgetLabel?: string;
+  hasCampaign: boolean;
 };
 
 export type ProjectFacets = {
   states: { id: string; slug: string; name: string; count: number }[];
   statuses: { id: Project["status"]; count: number }[];
+  fundingStatuses: { id: FundingStatus; count: number }[];
   handlerKinds: { id: ProjectHandlerKind; count: number }[];
   budgets: { id: string; label: string; count: number }[];
   allocations: { id: string; slug: string; label: string; count: number }[];
 };
 
+export type ProjectFundingLedger = {
+  budgetTarget: number;
+  receivedTotal: number;
+  spendTotal: number;
+  fundingPercent: number;
+  fundingStatus: FundingStatus;
+  sources: FundingSource[];
+  campaigns: DonationCampaign[];
+  inflows: FundingInflow[];
+  spends: ProjectSpend[];
+};
+
+export type OrgProjectRole = "contractor" | "implementer" | "funder" | "campaign_host";
+
+export type OrgProjectLink = {
+  project: Project;
+  roles: OrgProjectRole[];
+  fundingStatus: FundingStatus;
+  fundingPercent: number;
+};
+
 const PROGRESS_BY_STATUS: Record<Project["status"], number> = {
   planned: 5,
-  funded: 15,
   started: 30,
   in_progress: 55,
   delayed: 50,
@@ -85,13 +115,18 @@ const PROGRESS_BY_STATUS: Record<Project["status"], number> = {
 
 export const KANBAN_STATUSES: Project["status"][] = [
   "planned",
-  "funded",
   "started",
   "in_progress",
   "delayed",
   "completed",
   "abandoned",
 ];
+
+export const FUNDING_STATUS_LABEL: Record<FundingStatus, string> = {
+  unfunded: "Unfunded",
+  partially_funded: "Partially funded",
+  fully_funded: "Fully funded",
+};
 
 function hrefFor(type: EntityType, id: string, db: SeedDatabase): string {
   switch (type) {
@@ -310,6 +345,103 @@ export class PublicRecordStore {
     return PROGRESS_BY_STATUS[project.status] ?? 0;
   }
 
+  budgetTargetFor(project: Project): number {
+    return project.budgetTargetAmount ?? project.approvedAmount ?? 0;
+  }
+
+  fundingForProject(projectId: string): ProjectFundingLedger {
+    const project = this.db.projects.find((p) => p.id === projectId);
+    const sources = (this.db.fundingSources ?? []).filter((s) => s.projectId === projectId);
+    const campaigns = (this.db.donationCampaigns ?? []).filter((c) => c.projectId === projectId);
+    const inflows = [...(this.db.fundingInflows ?? []).filter((i) => i.projectId === projectId)].sort(
+      (a, b) => byDateDesc(a.receivedAt, b.receivedAt),
+    );
+    const spends = [...(this.db.projectSpends ?? []).filter((s) => s.projectId === projectId)].sort(
+      (a, b) => byDateDesc(a.spentAt, b.spentAt),
+    );
+
+    const inflowTotal = inflows.reduce((sum, i) => sum + i.amount, 0);
+    const sourceReceived = sources.reduce((sum, s) => sum + s.receivedAmount, 0);
+    const receivedTotal =
+      inflowTotal > 0
+        ? inflowTotal
+        : sourceReceived > 0
+          ? sourceReceived
+          : (project?.releasedAmount ?? 0);
+    const spendTotal =
+      spends.length > 0
+        ? spends.reduce((sum, s) => sum + s.amount, 0)
+        : (project?.reportedSpend ?? 0);
+    const budgetTarget = project ? this.budgetTargetFor(project) : 0;
+    const fundingPercent =
+      budgetTarget > 0 ? Math.min(100, Math.round((receivedTotal / budgetTarget) * 100)) : 0;
+    let fundingStatus: FundingStatus = "unfunded";
+    if (receivedTotal <= 0) fundingStatus = "unfunded";
+    else if (budgetTarget > 0 && receivedTotal >= budgetTarget * 0.98) fundingStatus = "fully_funded";
+    else fundingStatus = "partially_funded";
+
+    return {
+      budgetTarget,
+      receivedTotal,
+      spendTotal,
+      fundingPercent,
+      fundingStatus,
+      sources,
+      campaigns,
+      inflows,
+      spends,
+    };
+  }
+
+  projectsForOrganization(orgId: string): OrgProjectLink[] {
+    const rolesByProject = new Map<string, Set<OrgProjectRole>>();
+
+    const add = (projectId: string, role: OrgProjectRole) => {
+      let set = rolesByProject.get(projectId);
+      if (!set) {
+        set = new Set();
+        rolesByProject.set(projectId, set);
+      }
+      set.add(role);
+    };
+
+    const org = this.db.organizations.find((o) => o.id === orgId);
+    if (org) {
+      for (const pid of org.projectIds) add(pid, "implementer");
+    }
+    for (const p of this.db.projects) {
+      if (p.contractorId === orgId) add(p.id, "contractor");
+    }
+    for (const s of this.db.fundingSources ?? []) {
+      if (s.organizationId === orgId) add(s.projectId, "funder");
+    }
+    for (const c of this.db.donationCampaigns ?? []) {
+      if (c.organizationId === orgId) add(c.projectId, "campaign_host");
+    }
+    for (const s of this.db.projectSpends ?? []) {
+      if (s.organizationId === orgId) add(s.projectId, "implementer");
+    }
+
+    const out: OrgProjectLink[] = [];
+    for (const [projectId, roles] of rolesByProject) {
+      const project = this.db.projects.find((p) => p.id === projectId);
+      if (!project) continue;
+      const funding = this.fundingForProject(projectId);
+      out.push({
+        project,
+        roles: [...roles],
+        fundingStatus: funding.fundingStatus,
+        fundingPercent: funding.fundingPercent,
+      });
+    }
+    return out.sort((a, b) =>
+      byDateDesc(
+        a.project.actualEndDate ?? a.project.startDate,
+        b.project.actualEndDate ?? b.project.startDate,
+      ),
+    );
+  }
+
   /** Denormalised index for the Projects explorer filters + kanban. */
   projectIndex(): ProjectIndexEntry[] {
     return this.allProjects().map((p) => {
@@ -321,6 +453,7 @@ export class PublicRecordStore {
         ? this.db.budgets.find((b) => b.id === allocation.budgetId)
         : undefined;
       const progressPercent = this.progressForProject(p);
+      const funding = this.fundingForProject(p.id);
       const completed = p.status === "completed" || Boolean(p.actualEndDate);
 
       return {
@@ -337,6 +470,9 @@ export class PublicRecordStore {
         releasedAmount: p.releasedAmount,
         reportedSpend: p.reportedSpend,
         progressPercent,
+        fundingStatus: funding.fundingStatus,
+        fundingPercent: funding.fundingPercent,
+        budgetTarget: funding.budgetTarget,
         completed,
         stateId: state?.id,
         stateSlug: state?.slug,
@@ -350,6 +486,7 @@ export class PublicRecordStore {
         allocationLabel: allocation?.program,
         budgetId: budget?.id,
         budgetLabel: budget ? `${budget.title} (${budget.fiscalYear})` : undefined,
+        hasCampaign: funding.campaigns.length > 0,
       };
     });
   }
@@ -371,6 +508,7 @@ export class PublicRecordStore {
     }
 
     const statusCounts = countMap(list.map((e) => e.status));
+    const fundingCounts = countMap(list.map((e) => e.fundingStatus));
     const handlerCounts = countMap(list.flatMap((e) => e.handlerKinds));
 
     const budgetCounts = new Map<string, { id: string; label: string; count: number }>();
@@ -398,6 +536,9 @@ export class PublicRecordStore {
     return {
       states: [...stateCounts.values()].sort((a, b) => a.name.localeCompare(b.name)),
       statuses: [...statusCounts.entries()]
+        .map(([id, count]) => ({ id, count }))
+        .sort((a, b) => a.id.localeCompare(b.id)),
+      fundingStatuses: [...fundingCounts.entries()]
         .map(([id, count]) => ({ id, count }))
         .sort((a, b) => a.id.localeCompare(b.id)),
       handlerKinds: [...handlerCounts.entries()]

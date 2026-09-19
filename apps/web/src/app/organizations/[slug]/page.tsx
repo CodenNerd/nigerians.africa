@@ -1,10 +1,29 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { store } from "@nigeria-for-nigerians/domain";
+import {
+  FUNDING_STATUS_LABEL,
+  store,
+  type FundingStatus,
+  type OrgProjectRole,
+} from "@nigeria-for-nigerians/domain";
 import { MoneyFigure, RecordPage, RecordSection, RelatedLinks } from "@/components/RecordPage";
 
 export function generateStaticParams() {
   return store.allOrganizations().map((o) => ({ slug: o.slug }));
 }
+
+const ROLE_LABEL: Record<OrgProjectRole, string> = {
+  contractor: "Contractor",
+  implementer: "Implementer",
+  funder: "Funder",
+  campaign_host: "Campaign host",
+};
+
+const FUNDING_TONE: Record<FundingStatus, string> = {
+  fully_funded: "border-civic-green bg-civic-greenSoft text-civic-green",
+  partially_funded: "border-civic-amber bg-civic-amberSoft text-civic-amber",
+  unfunded: "border-paper-border bg-paper text-ink-faint",
+};
 
 export default async function OrganizationPage({
   params,
@@ -16,7 +35,7 @@ export default async function OrganizationPage({
   if (!org) notFound();
 
   const problems = store.allProblems().filter((p) => org.problemIds.includes(p.id));
-  const projects = store.allProjects().filter((p) => org.projectIds.includes(p.id));
+  const projectLinks = store.projectsForOrganization(org.id);
   const location = store.locations().find((l) => l.id === org.locationId);
   const vetted = org.vettingStatus === "platform_vetted";
   const spendLines = org.spendLineItems ?? [];
@@ -44,6 +63,13 @@ export default async function OrganizationPage({
         {org.registrationNumber ? (
           <p className="mt-3 text-sm text-ink-faint">Registration: {org.registrationNumber}</p>
         ) : null}
+        {org.website ? (
+          <p className="mt-1 text-sm">
+            <a href={org.website} target="_blank" rel="noopener noreferrer" className="text-civic-green">
+              Website (external)
+            </a>
+          </p>
+        ) : null}
         {location ? <p className="mt-1 text-sm text-ink-faint">Based in {location.name}</p> : null}
         <p className="mt-3 text-sm">
           Status:{" "}
@@ -53,24 +79,66 @@ export default async function OrganizationPage({
         </p>
       </RecordSection>
 
-      <RecordSection title="Working on">
-        <RelatedLinks
-          items={[
-            ...problems.map((p) => ({
+      <RecordSection title="Projects">
+        {projectLinks.length === 0 ? (
+          <p className="text-sm text-ink-muted">No linked projects in the public record yet.</p>
+        ) : (
+          <ul className="divide-y divide-paper-border border border-paper-border">
+            {projectLinks.map(({ project, roles, fundingStatus, fundingPercent }) => (
+              <li key={project.id}>
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="plane-link block px-4 py-4 no-underline hover:bg-paper"
+                >
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
+                      {project.status.replace(/_/g, " ")}
+                    </span>
+                    <span
+                      className={`border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider ${FUNDING_TONE[fundingStatus]}`}
+                    >
+                      {FUNDING_STATUS_LABEL[fundingStatus]}
+                    </span>
+                  </div>
+                  <h3 className="mt-1 font-display text-xl text-ink sm:text-2xl">{project.name}</h3>
+                  <p className="mt-1 line-clamp-2 text-sm text-ink-muted">{project.description}</p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {roles.map((role) => (
+                      <span
+                        key={role}
+                        className="border border-paper-border px-2 py-0.5 text-[10px] uppercase tracking-wider text-ink-faint"
+                      >
+                        {ROLE_LABEL[role]}
+                      </span>
+                    ))}
+                    <span className="font-mono text-[11px] text-ink-faint">
+                      {fundingPercent}% funded
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </RecordSection>
+
+      {problems.length > 0 ? (
+        <RecordSection title="Problems">
+          <RelatedLinks
+            items={problems.map((p) => ({
               href: `/problems/${p.slug}`,
               label: p.title,
               hint: "Problem",
-            })),
-            ...projects.map((p) => ({
-              href: `/projects/${p.slug}`,
-              label: p.name,
-              hint: "Project",
-            })),
-          ]}
-        />
-      </RecordSection>
+            }))}
+          />
+        </RecordSection>
+      ) : null}
 
-      <RecordSection title="Funding">
+      <RecordSection title="Organisation funding">
+        <p className="mb-3 text-sm text-ink-muted">
+          Programme-level money received and spent by this organisation — distinct from per-project
+          ledgers on each project dossier.
+        </p>
         <div className="grid gap-3 sm:grid-cols-2">
           <MoneyFigure label="Received" value={store.formatNaira(org.fundingReceived)} />
           <MoneyFigure label="Spent" value={store.formatNaira(org.fundingSpent)} />
