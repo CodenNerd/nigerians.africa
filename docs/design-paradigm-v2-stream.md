@@ -33,8 +33,8 @@ Every stream row uses the same shape:
 
 ## Where it lives
 
-- **Home:** stream is the first major section after the brand hero (before map / hubs).
-- **`/record`:** full stream page for denser browsing.
+- **Home:** stream sits as a **sticky side rail** beside the main archive column (map, problems, money, actions). On small screens it stacks below or above within the same grid flow (main first, rail second on mobile — or rail after hero content).
+- **`/record`:** full-width stream page for denser browsing.
 - Hub indexes keep **EntityList** (larger archive rows). Stream is for chronology throughput.
 
 ---

@@ -40,7 +40,13 @@ function toneFor(item: PublicRecordItem): StreamTone {
   return "paper";
 }
 
-export function RecordStreamItem({ item }: { item: PublicRecordItem }) {
+export function RecordStreamItem({
+  item,
+  compact = false,
+}: {
+  item: PublicRecordItem;
+  compact?: boolean;
+}) {
   const plane = tonePlane[toneFor(item)];
 
   return (
@@ -48,35 +54,52 @@ export function RecordStreamItem({ item }: { item: PublicRecordItem }) {
       <Link
         href={item.href}
         className={clsx(
-          "plane-link group block px-4 py-3 no-underline transition",
+          "plane-link group block no-underline transition",
           plane,
+          compact ? "px-3 py-2.5" : "px-4 py-3",
         )}
       >
         {/* L1 chrome */}
-        <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-          <div className="flex min-w-0 flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-1">
+          <div className="flex min-w-0 flex-wrap items-center gap-1.5">
             <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
               {item.kind}
             </span>
-            <StatusLabel status={item.status as VerificationStatus} className="scale-90 origin-left" />
+            {!compact ? (
+              <StatusLabel status={item.status as VerificationStatus} className="scale-90 origin-left" />
+            ) : null}
           </div>
-          <time className="shrink-0 font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+          <time className="shrink-0 font-mono text-[10px] uppercase tracking-wider text-ink-faint">
             {item.date}
           </time>
         </div>
 
         {/* L1 primary */}
-        <p className="mt-1.5 text-[15px] font-medium leading-snug text-ink sm:text-base">
+        <p
+          className={clsx(
+            "mt-1 font-medium leading-snug text-ink",
+            compact ? "line-clamp-2 text-sm" : "text-[15px] sm:text-base",
+          )}
+        >
           {item.title}
         </p>
 
         {/* L2 skim */}
-        <p className="mt-1 line-clamp-1 text-sm text-ink-muted">{item.summary}</p>
+        {!compact ? (
+          <p className="mt-1 line-clamp-1 text-sm text-ink-muted">{item.summary}</p>
+        ) : (
+          <p className="mt-0.5 line-clamp-1 text-xs text-ink-muted">{item.summary}</p>
+        )}
 
         {/* L3 affordance */}
-        <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
+        <div className="mt-1.5 flex flex-wrap items-center justify-between gap-2">
           {item.relatedLabel ? (
-            <span className="border border-paper-border/80 bg-paper/50 px-2 py-0.5 text-[11px] text-ink-faint">
+            <span
+              className={clsx(
+                "border border-paper-border/80 bg-paper/50 text-ink-faint",
+                compact ? "px-1.5 py-0.5 text-[10px]" : "px-2 py-0.5 text-[11px]",
+              )}
+            >
               {item.relatedLabel}
             </span>
           ) : (
@@ -99,6 +122,7 @@ export function RecordStream({
   footerHref = "/record",
   footerLabel = "View full stream →",
   showHeader = true,
+  compact = false,
 }: {
   items: PublicRecordItem[];
   title?: string;
@@ -107,23 +131,39 @@ export function RecordStream({
   footerHref?: string;
   footerLabel?: string;
   showHeader?: boolean;
+  /** Tighter rows and header for a sidebar rail. */
+  compact?: boolean;
 }) {
   return (
     <div>
       {showHeader ? (
-        <SectionHead title={title} subtitle={subtitle} meta={meta ?? `${items.length} shown`} />
+        compact ? (
+          <div className="border-b border-paper-border pb-3">
+            <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-ink-faint">
+              {meta ?? `${items.length} records`}
+            </p>
+            <h2 className="mt-1.5 font-display text-xl leading-tight tracking-tight text-ink">
+              {title}
+            </h2>
+            {subtitle ? (
+              <p className="mt-1.5 text-xs leading-relaxed text-ink-muted">{subtitle}</p>
+            ) : null}
+          </div>
+        ) : (
+          <SectionHead title={title} subtitle={subtitle} meta={meta ?? `${items.length} shown`} />
+        )
       ) : null}
       {items.length === 0 ? (
         <p className="mt-6 text-ink-muted">Nothing in the stream yet.</p>
       ) : (
-        <ul className={clsx("grid gap-px bg-paper-border", showHeader ? "mt-6" : "mt-0")}>
+        <ul className={clsx("grid gap-px bg-paper-border", showHeader ? "mt-4" : "mt-0")}>
           {items.map((item) => (
-            <RecordStreamItem key={item.id} item={item} />
+            <RecordStreamItem key={item.id} item={item} compact={compact} />
           ))}
         </ul>
       )}
       {footerHref ? (
-        <p className="mt-4">
+        <p className="mt-3">
           <Link href={footerHref} className="text-sm text-civic-green no-underline hover:underline">
             {footerLabel}
           </Link>
@@ -132,3 +172,4 @@ export function RecordStream({
     </div>
   );
 }
+

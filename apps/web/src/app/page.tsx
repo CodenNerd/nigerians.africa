@@ -9,7 +9,7 @@ import { buildGodsEyePoints } from "@/lib/gods-eye-points";
 
 export default function HomePage() {
   const problems = store.allProblems().slice(0, 3);
-  const stream = store.recordStream(24);
+  const stream = store.recordStream(18);
   const allocation = store.allocationBySlug("alloc-allen-avenue-spur");
   const project = store.projectBySlug("allen-avenue-spur-rehabilitation");
   const thread = store.signatureThread();
@@ -58,132 +58,175 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="site-container py-14 lg:py-16">
-        <RecordStream
-          items={stream}
-          title="Public record"
-          subtitle="A dense stream of meaningful records — newest first. Skim kind, date and title; open any row for the archive dossier."
-          meta={`${stream.length} shown`}
-          footerHref="/record"
-          footerLabel="View full stream →"
-        />
-      </section>
-
-      <section className="site-container py-14 lg:py-16">
-        <SectionHead
-          title="The Country"
-          subtitle="Explore Nigeria by place, problem, project, report and office."
-          meta={`${states.length} states`}
-        />
-        <div className="mt-6">
-          <PlacesMap points={mapPoints} showLayers />
-        </div>
-        <ul className="mt-5 flex flex-wrap gap-px bg-paper-border">
-          {states.slice(0, 12).map((s) => (
-            <li key={s.id}>
-              <Link
-                href={`/places/states/${s.slug}`}
-                className="block bg-civic-greenSoft px-3 py-1.5 text-sm text-civic-green no-underline transition hover:brightness-[0.97]"
-              >
-                {s.name}
-              </Link>
-            </li>
-          ))}
-          <li>
-            <Link
-              href="/places"
-              className="block bg-paper-card px-3 py-1.5 text-sm text-ink-muted no-underline hover:text-civic-green"
-            >
-              All places →
-            </Link>
-          </li>
-        </ul>
-      </section>
-
-      <section className="site-container py-10 lg:py-12">
-        <SectionHead
-          title="What people are facing"
-          subtitle="A short cut into problems — the stream above carries fuller chronology."
-          meta="Latest"
-        />
-        <EntityList
-          items={problems.map((p) => ({
-            href: `/problems/${p.slug}`,
-            title: p.title,
-            description: p.description.slice(0, 100) + (p.description.length > 100 ? "…" : ""),
-            kind: p.category,
-            date: p.firstReportedAt,
-            tone: "red" as const,
-            meta: <StatusLabel status={p.verificationStatus} />,
-          }))}
-        />
-        <p className="mt-4">
-          <Link href="/problems" className="text-sm text-civic-green no-underline hover:underline">
-            All problems →
-          </Link>
-        </p>
-      </section>
-
-      <section className="site-container py-14 lg:py-16">
-        <SectionHead
-          title="Follow the money"
-          subtitle="A visible trail from allocation to project."
-        />
-        {allocation && project ? (
-          <div className="mt-6 grid gap-px bg-paper-border lg:grid-cols-[minmax(0,1fr)_auto]">
-            <div className="bg-civic-amberSoft p-6 sm:p-8">
-              <div className="space-y-2 font-mono text-sm text-civic-amber">
-                <div>{store.formatNaira(allocation.amount)} allocated</div>
-                <div className="text-ink-faint">↓</div>
-                <div className="text-ink">Lagos Ministry of Works & Infrastructure</div>
-                <div className="text-ink-faint">↓</div>
-                <div className="text-ink">Contract — Delta Roads Nigeria Ltd</div>
-                <div className="text-ink-faint">↓</div>
-                <Link href={`/projects/${project.slug}`} className="text-civic-green no-underline hover:underline">
-                  {project.name}
-                </Link>
-                <div className="text-ink-faint">↓</div>
-                <div className="text-ink">
-                  Released {store.formatNaira(allocation.releasedAmount)} · Gap visible in the record
-                </div>
+      <div className="site-container py-14 lg:py-16">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_24rem]">
+          {/* Main archive column */}
+          <div className="order-2 min-w-0 space-y-14 lg:order-1 lg:space-y-16">
+            <section>
+              <SectionHead
+                title="The Country"
+                subtitle="Explore Nigeria by place, problem, project, report and office."
+                meta={`${states.length} states`}
+              />
+              <div className="mt-6">
+                <PlacesMap points={mapPoints} showLayers />
               </div>
-            </div>
-            <Link
-              href={`/money/${allocation.slug}`}
-              className="flex items-center justify-center bg-civic-amber px-6 py-4 font-mono text-[11px] uppercase tracking-wider text-white no-underline transition hover:brightness-110"
-            >
-              Open trail →
-            </Link>
+              <ul className="mt-5 flex flex-wrap gap-px bg-paper-border">
+                {states.slice(0, 12).map((s) => (
+                  <li key={s.id}>
+                    <Link
+                      href={`/places/states/${s.slug}`}
+                      className="block bg-civic-greenSoft px-3 py-1.5 text-sm text-civic-green no-underline transition hover:brightness-[0.97]"
+                    >
+                      {s.name}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link
+                    href="/places"
+                    className="block bg-paper-card px-3 py-1.5 text-sm text-ink-muted no-underline hover:text-civic-green"
+                  >
+                    All places →
+                  </Link>
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <SectionHead
+                title="What people are facing"
+                subtitle="A short cut into problems — the side stream carries fuller chronology."
+                meta="Latest"
+              />
+              <EntityList
+                items={problems.map((p) => ({
+                  href: `/problems/${p.slug}`,
+                  title: p.title,
+                  description:
+                    p.description.slice(0, 100) + (p.description.length > 100 ? "…" : ""),
+                  kind: p.category,
+                  date: p.firstReportedAt,
+                  tone: "red" as const,
+                  meta: <StatusLabel status={p.verificationStatus} />,
+                }))}
+              />
+              <p className="mt-4">
+                <Link href="/problems" className="text-sm text-civic-green no-underline hover:underline">
+                  All problems →
+                </Link>
+              </p>
+            </section>
+
+            <section>
+              <SectionHead
+                title="Follow the money"
+                subtitle="A visible trail from allocation to project."
+              />
+              {allocation && project ? (
+                <div className="mt-6 grid gap-px bg-paper-border lg:grid-cols-[minmax(0,1fr)_auto]">
+                  <div className="bg-civic-amberSoft p-6 sm:p-8">
+                    <div className="space-y-2 font-mono text-sm text-civic-amber">
+                      <div>{store.formatNaira(allocation.amount)} allocated</div>
+                      <div className="text-ink-faint">↓</div>
+                      <div className="text-ink">Lagos Ministry of Works & Infrastructure</div>
+                      <div className="text-ink-faint">↓</div>
+                      <div className="text-ink">Contract — Delta Roads Nigeria Ltd</div>
+                      <div className="text-ink-faint">↓</div>
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="text-civic-green no-underline hover:underline"
+                      >
+                        {project.name}
+                      </Link>
+                      <div className="text-ink-faint">↓</div>
+                      <div className="text-ink">
+                        Released {store.formatNaira(allocation.releasedAmount)} · Gap visible in
+                        the record
+                      </div>
+                    </div>
+                  </div>
+                  <Link
+                    href={`/money/${allocation.slug}`}
+                    className="flex items-center justify-center bg-civic-amber px-6 py-4 font-mono text-[11px] uppercase tracking-wider text-white no-underline transition hover:brightness-110"
+                  >
+                    Open trail →
+                  </Link>
+                </div>
+              ) : null}
+            </section>
+
+            <section>
+              <FollowTheThread nodes={thread} title="Signature demo: abandoned road thread" />
+            </section>
+
+            <section>
+              <SectionHead
+                title="What can you do?"
+                subtitle="Participation paths on the public record."
+              />
+              <ul className="mt-6 grid gap-px bg-paper-border sm:grid-cols-2">
+                {[
+                  {
+                    href: "/report",
+                    label: "Report something",
+                    tone: "bg-civic-greenSoft text-civic-green",
+                  },
+                  {
+                    href: "/government",
+                    label: "Find who is responsible",
+                    tone: "bg-civic-blueSoft text-civic-blue",
+                  },
+                  {
+                    href: "/guidance",
+                    label: "Learn your rights",
+                    tone: "bg-civic-amberSoft text-civic-amber",
+                  },
+                  {
+                    href: "/record",
+                    label: "Browse the stream",
+                    tone: "bg-civic-greenSoft text-civic-green",
+                  },
+                  {
+                    href: "/organizations",
+                    label: "Support an organization",
+                    tone: "bg-civic-blueSoft text-civic-blue",
+                  },
+                  {
+                    href: "/ask",
+                    label: "Ask the public record",
+                    tone: "bg-civic-amberSoft text-civic-amber",
+                  },
+                ].map((a) => (
+                  <li key={a.label}>
+                    <Link
+                      href={a.href}
+                      className={`plane-link block px-5 py-5 text-center font-display text-xl no-underline ${a.tone}`}
+                    >
+                      {a.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
           </div>
-        ) : null}
-      </section>
 
-      <section className="site-container py-14 lg:py-16">
-        <FollowTheThread nodes={thread} title="Signature demo: abandoned road thread" />
-      </section>
-
-      <section className="site-container py-14 lg:py-16">
-        <SectionHead title="What can you do?" subtitle="Participation paths on the public record." />
-        <ul className="mt-6 grid gap-px bg-paper-border sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { href: "/report", label: "Report something", tone: "bg-civic-greenSoft text-civic-green" },
-            { href: "/government", label: "Find who is responsible", tone: "bg-civic-blueSoft text-civic-blue" },
-            { href: "/guidance", label: "Learn your rights", tone: "bg-civic-amberSoft text-civic-amber" },
-            { href: "/record", label: "Browse the stream", tone: "bg-civic-greenSoft text-civic-green" },
-            { href: "/organizations", label: "Support an organization", tone: "bg-civic-blueSoft text-civic-blue" },
-            { href: "/ask", label: "Ask the public record", tone: "bg-civic-amberSoft text-civic-amber" },
-          ].map((a) => (
-            <li key={a.label}>
-              <Link
-                href={a.href}
-                className={`plane-link block px-5 py-5 text-center font-display text-xl no-underline ${a.tone}`}
-              >
-                {a.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+          {/* Side stream rail — first on mobile so the feed is reachable; right rail on desktop */}
+          <aside className="order-1 min-w-0 lg:sticky lg:top-28 lg:order-2 lg:self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
+            <div className="border border-paper-border bg-paper-card/80 p-4 sm:p-5">
+              <RecordStream
+                items={stream}
+                compact
+                title="Public record"
+                subtitle="Newest first. Skim here; open a row for the dossier."
+                meta="Live stream"
+                footerHref="/record"
+                footerLabel="Full stream →"
+              />
+            </div>
+          </aside>
+        </div>
+      </div>
     </div>
   );
 }
