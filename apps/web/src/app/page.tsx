@@ -5,7 +5,6 @@ import { FollowTheThread } from "@/components/FollowTheThread";
 import { RecordStream } from "@/components/RecordStream";
 import { NigeriaStateMap, ProjectFeatureTiles } from "@/components/viz";
 import { SectionHead, EntityList } from "@/components/ui";
-import { BrandMark, FlagStripe } from "@/components/BrandMark";
 
 export default function HomePage() {
   const problems = store.allProblems().slice(0, 3);
@@ -28,11 +27,10 @@ export default function HomePage() {
         </div>
 
         <div className="site-container relative z-10 py-16 sm:py-20 lg:py-24">
-          <div className="max-w-xl text-center lg:max-w-2xl lg:text-left">
+          <div className="max-w-xl text-center lg:max-w-xl lg:text-left">
             <div className="anim-rise">
-              <FlagStripe className="mx-auto mb-6 h-1.5 max-w-[12rem] lg:mx-0" />
-              <h1 className="leading-[1.02]">
-                <BrandMark size="lg" />
+              <h1 className="font-display text-5xl leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-7xl">
+                NigeriaForNigerians
               </h1>
               <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-ink-muted sm:text-lg lg:mx-0">
                 Government, problems, money and evidence — connected as one public record.

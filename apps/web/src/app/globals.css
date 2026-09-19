@@ -89,15 +89,8 @@ a {
   .hero-field {
     @apply relative overflow-hidden border-b border-paper-border;
     background:
-      linear-gradient(
-        90deg,
-        rgba(27, 94, 59, 0.14) 0%,
-        rgba(27, 94, 59, 0.06) 28%,
-        rgba(255, 255, 255, 0.92) 38%,
-        rgba(255, 255, 255, 0.95) 62%,
-        rgba(27, 94, 59, 0.06) 72%,
-        rgba(27, 94, 59, 0.14) 100%
-      ),
-      radial-gradient(ellipse 90% 70% at 50% 0%, rgba(232, 242, 236, 0.65), transparent 55%);
+      linear-gradient(180deg, rgba(247, 245, 240, 0.2) 0%, rgba(232, 242, 236, 0.55) 100%),
+      radial-gradient(ellipse 90% 70% at 20% 10%, rgba(27, 94, 59, 0.08), transparent 50%),
+      radial-gradient(ellipse 70% 50% at 90% 30%, rgba(30, 58, 95, 0.06), transparent 45%);
   }
 }
