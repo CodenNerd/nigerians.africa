@@ -202,6 +202,8 @@ export interface Project {
   status: ProjectStatus;
   statusHistory: { status: ProjectStatus; effectiveAt: string; reason: string }[];
   verificationStatus: VerificationStatus;
+  /** When true, eligible for home featured project tiles. */
+  featured?: boolean;
 }
 
 export interface Budget {

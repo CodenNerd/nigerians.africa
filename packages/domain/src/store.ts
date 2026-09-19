@@ -27,6 +27,14 @@ export type ThreadNode = {
   relationship?: string;
 };
 
+export type ProjectHandlerKind = "government" | "business" | "ngo" | "community";
+
+export type ProjectHandler = {
+  kind: ProjectHandlerKind;
+  label: string;
+  href: string;
+};
+
 function hrefFor(type: EntityType, id: string, db: SeedDatabase): string {
   switch (type) {
     case "person": {
@@ -158,6 +166,70 @@ export class PublicRecordStore {
 
   projectBySlug(slug: string): Project | undefined {
     return this.db.projects.find((p) => p.slug === slug);
+  }
+
+  featuredProjects(): Project[] {
+    return this.allProjects().filter((p) => p.featured);
+  }
+
+  /**
+   * Who is handling a project — Government / Business / NGO / Community chips.
+   */
+  projectHandlers(projectId: string): ProjectHandler[] {
+    const project = this.db.projects.find((p) => p.id === projectId);
+    if (!project) return [];
+    const out: ProjectHandler[] = [];
+    const seen = new Set<string>();
+
+    const push = (h: ProjectHandler) => {
+      const key = `${h.kind}:${h.href}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      out.push(h);
+    };
+
+    const office = this.db.offices.find((o) => o.id === project.responsibleOfficeId);
+    if (office) {
+      push({
+        kind: "government",
+        label: office.name,
+        href: `/government/offices/${office.slug}`,
+      });
+    }
+
+    if (project.contractorId) {
+      const contractor = this.db.organizations.find((o) => o.id === project.contractorId);
+      if (contractor) {
+        push({
+          kind: "business",
+          label: contractor.name,
+          href: `/organizations/${contractor.slug}`,
+        });
+      }
+    }
+
+    for (const org of this.db.organizations.filter((o) => o.projectIds.includes(projectId))) {
+      if (org.id === project.contractorId) continue;
+      const t = org.type.toLowerCase();
+      if (t.includes("contractor") || t.includes("company") || t.includes("ltd")) {
+        push({ kind: "business", label: org.name, href: `/organizations/${org.slug}` });
+      } else if (
+        t.includes("community") ||
+        t.includes("cda") ||
+        t.includes("cds") ||
+        t.includes("association")
+      ) {
+        push({ kind: "community", label: org.name, href: `/organizations/${org.slug}` });
+      } else if (t.includes("ngo") || t.includes("civil") || t.includes("civic")) {
+        push({ kind: "ngo", label: org.name, href: `/organizations/${org.slug}` });
+      } else if (org.type === "NGO") {
+        push({ kind: "ngo", label: org.name, href: `/organizations/${org.slug}` });
+      } else {
+        push({ kind: "ngo", label: org.name, href: `/organizations/${org.slug}` });
+      }
+    }
+
+    return out;
   }
 
   allPeople(): Person[] {
