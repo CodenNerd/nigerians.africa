@@ -3,13 +3,13 @@ import { store } from "@nigeria-for-nigerians/domain";
 import { StatusLabel } from "@/components/StatusLabel";
 import { PlacesMap } from "@/components/PlacesMap";
 import { FollowTheThread } from "@/components/FollowTheThread";
+import { RecordStream } from "@/components/RecordStream";
 import { SectionHead, EntityList } from "@/components/ui";
 import { buildGodsEyePoints } from "@/lib/gods-eye-points";
 
 export default function HomePage() {
-  const problems = store.allProblems().slice(0, 4);
-  const memory = store.allMemory().slice(0, 5);
-  const publicRecord = store.publicRecord().slice(0, 8);
+  const problems = store.allProblems().slice(0, 3);
+  const stream = store.recordStream(24);
   const allocation = store.allocationBySlug("alloc-allen-avenue-spur");
   const project = store.projectBySlug("allen-avenue-spur-rehabilitation");
   const thread = store.signatureThread();
@@ -59,6 +59,17 @@ export default function HomePage() {
       </section>
 
       <section className="site-container py-14 lg:py-16">
+        <RecordStream
+          items={stream}
+          title="Public record"
+          subtitle="A dense stream of meaningful records — newest first. Skim kind, date and title; open any row for the archive dossier."
+          meta={`${stream.length} shown`}
+          footerHref="/record"
+          footerLabel="View full stream →"
+        />
+      </section>
+
+      <section className="site-container py-14 lg:py-16">
         <SectionHead
           title="The Country"
           subtitle="Explore Nigeria by place, problem, project, report and office."
@@ -89,17 +100,17 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="site-container py-14 lg:py-16">
+      <section className="site-container py-10 lg:py-12">
         <SectionHead
           title="What people are facing"
-          subtitle="Recent problems in the public record — newest first."
+          subtitle="A short cut into problems — the stream above carries fuller chronology."
           meta="Latest"
         />
         <EntityList
           items={problems.map((p) => ({
             href: `/problems/${p.slug}`,
             title: p.title,
-            description: p.description.slice(0, 140) + (p.description.length > 140 ? "…" : ""),
+            description: p.description.slice(0, 100) + (p.description.length > 100 ? "…" : ""),
             kind: p.category,
             date: p.firstReportedAt,
             tone: "red" as const,
@@ -111,30 +122,6 @@ export default function HomePage() {
             All problems →
           </Link>
         </p>
-      </section>
-
-      <section className="site-container py-14 lg:py-16">
-        <SectionHead
-          title="Political memory"
-          subtitle="Significant promises, decisions, projects and responses."
-          meta="Recent"
-        />
-        <ol className="mt-6 grid gap-px bg-paper-border">
-          {memory.map((m) => (
-            <li key={m.id} className="grid grid-cols-[6rem_minmax(0,1fr)] bg-paper-card sm:grid-cols-[7rem_minmax(0,1fr)]">
-              <div className="bg-civic-greenSoft px-3 py-4">
-                <time className="font-mono text-xs text-civic-green">{m.date}</time>
-              </div>
-              <div className="relative px-5 py-4">
-                <span className="absolute left-0 top-0 h-full w-1 bg-civic-green" />
-                <div className="pl-2 text-[10px] font-medium uppercase tracking-[0.2em] text-civic-green">
-                  {m.eventType}
-                </div>
-                <p className="mt-1.5 pl-2 text-ink">{m.description}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
       </section>
 
       <section className="site-container py-14 lg:py-16">
@@ -172,25 +159,6 @@ export default function HomePage() {
       </section>
 
       <section className="site-container py-14 lg:py-16">
-        <SectionHead
-          title="Public record"
-          subtitle="A stream of meaningful records — newest first."
-          meta={`${publicRecord.length} shown`}
-        />
-        <EntityList
-          items={publicRecord.map((item) => ({
-            href: item.href,
-            title: item.title,
-            description: item.summary,
-            kind: item.kind,
-            date: item.date,
-            tone: "blue" as const,
-            meta: <StatusLabel status={item.status} />,
-          }))}
-        />
-      </section>
-
-      <section className="site-container py-14 lg:py-16">
         <FollowTheThread nodes={thread} title="Signature demo: abandoned road thread" />
       </section>
 
@@ -201,7 +169,7 @@ export default function HomePage() {
             { href: "/report", label: "Report something", tone: "bg-civic-greenSoft text-civic-green" },
             { href: "/government", label: "Find who is responsible", tone: "bg-civic-blueSoft text-civic-blue" },
             { href: "/guidance", label: "Learn your rights", tone: "bg-civic-amberSoft text-civic-amber" },
-            { href: "/report", label: "Submit evidence", tone: "bg-civic-greenSoft text-civic-green" },
+            { href: "/record", label: "Browse the stream", tone: "bg-civic-greenSoft text-civic-green" },
             { href: "/organizations", label: "Support an organization", tone: "bg-civic-blueSoft text-civic-blue" },
             { href: "/ask", label: "Ask the public record", tone: "bg-civic-amberSoft text-civic-amber" },
           ].map((a) => (

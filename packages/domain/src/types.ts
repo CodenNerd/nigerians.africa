@@ -422,6 +422,10 @@ export interface PublicRecordItem {
   summary: string;
   href: string;
   status: VerificationStatus;
+  /** Optional entity family for stream tinting / chips. */
+  entityType?: EntityType;
+  /** Short L3 related label shown on stream rows. */
+  relatedLabel?: string;
 }
 
 export interface SeedDatabase {

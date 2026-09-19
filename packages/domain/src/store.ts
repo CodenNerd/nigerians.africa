@@ -14,6 +14,7 @@ import type {
   Person,
   Problem,
   Project,
+  PublicRecordItem,
   SeedDatabase,
   Source,
 } from "./types";
@@ -308,6 +309,72 @@ export class PublicRecordStore {
 
   publicRecord() {
     return [...this.db.publicRecord].sort((a, b) => byDateDesc(a.date, b.date));
+  }
+
+  /**
+   * Dense public-record stream: curated items plus synthesized memory / reports / claims.
+   * Newest first. Deduped by href+title. Capped for demo surfaces.
+   */
+  recordStream(limit = 40): PublicRecordItem[] {
+    const items: PublicRecordItem[] = [...this.db.publicRecord];
+
+    for (const m of this.db.memory.slice(0, 12)) {
+      items.push({
+        id: `stream-mem-${m.id}`,
+        date: m.date,
+        kind: "Memory",
+        title: m.description.slice(0, 100) + (m.description.length > 100 ? "…" : ""),
+        summary: `${m.eventType.replace(/_/g, " ")} · political memory`,
+        href: hrefFor(m.entityType, m.entityId, this.db),
+        status: "official_record",
+        entityType: m.entityType,
+        relatedLabel: labelFor(m.entityType, m.entityId, this.db).slice(0, 40),
+      });
+    }
+
+    for (const r of [...this.db.reports]
+      .sort((a, b) => byDateDesc(a.submittedAt, b.submittedAt))
+      .slice(0, 8)) {
+      items.push({
+        id: `stream-rep-${r.id}`,
+        date: r.submittedAt.slice(0, 10),
+        kind: "Citizen report",
+        title: r.title,
+        summary: r.description.slice(0, 120) + (r.description.length > 120 ? "…" : ""),
+        href: "/action#reports",
+        status: r.verificationStatus,
+        entityType: "report",
+        relatedLabel: r.locationId
+          ? labelFor("place", r.locationId, this.db).slice(0, 40)
+          : "Citizen report",
+      });
+    }
+
+    for (const c of [...this.db.claims].sort((a, b) => byDateDesc(a.date, b.date)).slice(0, 8)) {
+      const person = c.personId ? this.db.people.find((p) => p.id === c.personId) : undefined;
+      items.push({
+        id: `stream-claim-${c.id}`,
+        date: c.date,
+        kind: c.kind.replace(/_/g, " "),
+        title: c.statement.slice(0, 110) + (c.statement.length > 110 ? "…" : ""),
+        summary: c.context.slice(0, 120) + (c.context.length > 120 ? "…" : ""),
+        href: person ? `/people/${person.slug}#claims` : "/people",
+        status: c.status,
+        entityType: "claim",
+        relatedLabel: person?.fullName ?? "Claim",
+      });
+    }
+
+    const seen = new Set<string>();
+    const deduped: PublicRecordItem[] = [];
+    for (const item of items.sort((a, b) => byDateDesc(a.date, b.date))) {
+      const key = `${item.href}::${item.title}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      deduped.push(item);
+      if (deduped.length >= limit) break;
+    }
+    return deduped;
   }
 
   related(entityType: EntityType, entityId: string): ThreadNode[] {
