@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { store } from "@nigeria-for-nigerians/domain";
 import {
-  MoneyFigure,
   RecordPage,
   RecordSection,
   RelatedLinks,
@@ -11,6 +10,12 @@ import {
 } from "@/components/RecordPage";
 import { FollowTheThread } from "@/components/FollowTheThread";
 import { StatusLabel } from "@/components/StatusLabel";
+import {
+  FlowStrip,
+  MoneyComposition,
+  ProjectGlance,
+  WorkJourney,
+} from "@/components/viz";
 
 export function generateStaticParams() {
   return store.allProjects().map((p) => ({ slug: p.slug }));
@@ -44,18 +49,17 @@ export default async function ProjectDetailPage({
   const handlers = store.projectHandlers(project.id);
   const funding = store.fundingForProject(project.id);
   const progressPercent = store.progressForProject(project);
-  const fundingBadge =
-    funding.fundingStatus === "fully_funded"
-      ? "Fully funded"
-      : funding.fundingStatus === "partially_funded"
-        ? "Partially funded"
-        : "Unfunded";
-  const fundingTone =
-    funding.fundingStatus === "fully_funded"
-      ? "border-civic-green bg-civic-greenSoft text-civic-green"
-      : funding.fundingStatus === "partially_funded"
-        ? "border-civic-amber bg-civic-amberSoft text-civic-amber"
-        : "border-paper-border bg-paper text-ink-faint";
+
+  const unreleased = Math.max(0, funding.budgetTarget - funding.receivedTotal);
+  const unspent = Math.max(0, funding.receivedTotal - funding.spendTotal);
+  const gapLabel =
+    unreleased > funding.budgetTarget * 0.05
+      ? `${store.formatNaira(unreleased)} still unreleased vs budget`
+      : unspent > funding.receivedTotal * 0.05 && funding.receivedTotal > 0
+        ? `${store.formatNaira(unspent)} received but not yet recorded as spent`
+        : undefined;
+
+  const summaryLine = `${progressPercent}% work · ${funding.fundingPercent}% funded`;
   const sources = evidence
     .map((e) => store.sourceById(e.sourceId))
     .filter(Boolean)
@@ -84,111 +88,53 @@ export default async function ProjectDetailPage({
         { label: "Challenge information", href: "/action" },
       ]}
     >
-      <RecordSection title="Project status">
-        <div className="mb-4 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
-              Progress
-            </p>
-            <p className="mt-1 font-mono text-3xl text-civic-green">{progressPercent}%</p>
-          </div>
-          <div className="h-2 w-40 max-w-full bg-ink/10" aria-hidden>
-            <div
-              className="h-full bg-civic-green"
-              style={{ width: `${Math.min(100, Math.max(4, progressPercent))}%` }}
-            />
-          </div>
-        </div>
-        {handlers.length ? (
-          <div className="mb-4 flex flex-wrap gap-1.5">
-            {handlers.map((h) => {
-              const tone =
-                h.kind === "government"
-                  ? "bg-civic-blueSoft text-civic-blue"
-                  : h.kind === "business"
-                    ? "bg-civic-amberSoft text-civic-amber"
-                    : h.kind === "community"
-                      ? "bg-paper text-civic-slate"
-                      : "bg-civic-greenSoft text-civic-green";
-              const kindLabel =
-                h.kind === "government"
-                  ? "Government"
-                  : h.kind === "business"
-                    ? "Business"
-                    : h.kind === "community"
-                      ? "Community"
-                      : "NGO";
-              return (
-                <Link
-                  key={h.kind + h.href}
-                  href={h.href}
-                  className={`inline-flex items-center gap-1.5 border border-transparent px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider no-underline ${tone}`}
-                >
-                  {kindLabel}
-                  <span className="font-normal normal-case tracking-normal opacity-80">
-                    · {h.label.length > 36 ? h.label.slice(0, 36) + "…" : h.label}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        ) : null}
-        <div className="flex flex-wrap gap-2 text-sm">
-          {["planned", "started", "in_progress", "completed"].map((s) => {
-            const reached = project.statusHistory.some((h) => h.status === s) || project.status === s;
-            const current = project.status === s || (s === "in_progress" && ["delayed", "abandoned"].includes(project.status));
-            return (
-              <span
-                key={s}
-                className={`border px-2 py-1 ${current ? "border-civic-green bg-civic-greenSoft" : reached ? "border-paper-border" : "border-dashed border-paper-border text-ink-faint"}`}
-              >
-                {s.replace(/_/g, " ")}
-              </span>
-            );
-          })}
-          {["delayed", "abandoned", "cancelled"].includes(project.status) ? (
-            <span className="border border-civic-red bg-civic-redSoft px-2 py-1 text-civic-red">
-              {project.status}
-            </span>
-          ) : null}
-        </div>
-        <Timeline
-          items={project.statusHistory.map((h) => ({
-            date: h.effectiveAt,
-            title: h.status.replace(/_/g, " "),
-            description: h.reason,
-          }))}
-        />
-      </RecordSection>
+      <ProjectGlance
+        workPercent={progressPercent}
+        fundingPercent={funding.fundingPercent}
+        fundingStatus={funding.fundingStatus}
+        locationName={location?.name}
+        workStatus={project.status}
+        handlers={handlers}
+        gapLabel={gapLabel}
+        summaryLine={summaryLine}
+      />
 
-      <RecordSection title="Budget & funding">
-        <div className="mb-4 flex flex-wrap items-center gap-3">
-          <span className={`border px-2.5 py-1 text-xs font-medium uppercase tracking-wider ${fundingTone}`}>
-            {fundingBadge}
-          </span>
-          <span className="font-mono text-sm text-ink-muted">
-            {funding.fundingPercent}% of budget received
-          </span>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-3">
-          <MoneyFigure label="Budget target" value={store.formatNaira(funding.budgetTarget)} />
-          <MoneyFigure label="Received" value={store.formatNaira(funding.receivedTotal)} />
-          <MoneyFigure label="Spent" value={store.formatNaira(funding.spendTotal)} />
-        </div>
-        <div className="mt-4 h-2 w-full max-w-md bg-ink/10" aria-hidden>
-          <div
-            className="h-full bg-civic-amber"
-            style={{ width: `${Math.min(100, Math.max(funding.fundingPercent > 0 ? 4 : 0, funding.fundingPercent))}%` }}
+      <RecordSection
+        title="Work progress"
+        subtitle="Where the project sits on the delivery path — funding is tracked separately below."
+      >
+        <WorkJourney status={project.status} statusHistory={project.statusHistory} />
+        <div className="mt-8">
+          <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
+            Status timeline
+          </p>
+          <Timeline
+            items={project.statusHistory.map((h) => ({
+              date: h.effectiveAt,
+              title: h.status.replace(/_/g, " "),
+              description: h.reason,
+            }))}
           />
         </div>
-        {(project.fundingSummary || project.fundingSource) && (
-          <p className="mt-3 text-sm text-ink-muted">
-            {project.fundingSummary ?? project.fundingSource}
-          </p>
-        )}
+      </RecordSection>
+
+      <RecordSection
+        title="Budget & funding"
+        subtitle="How much was meant to arrive, what landed, and what was spent."
+      >
+        <MoneyComposition
+          budgetTarget={funding.budgetTarget}
+          receivedTotal={funding.receivedTotal}
+          spendTotal={funding.spendTotal}
+          fundingStatus={funding.fundingStatus}
+          fundingPercent={funding.fundingPercent}
+          sources={funding.sources}
+          campaigns={funding.campaigns}
+          summary={project.fundingSummary ?? project.fundingSource}
+        />
 
         {funding.sources.length > 0 ? (
-          <div className="mt-6">
+          <div className="mt-8">
             <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
               Funding sources
             </p>
@@ -234,30 +180,6 @@ export default async function ProjectDetailPage({
           </div>
         ) : null}
 
-        {funding.campaigns.map((camp) => (
-          <div
-            key={camp.id}
-            className="mt-6 border border-civic-blue bg-civic-blueSoft/40 px-4 py-4"
-          >
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-civic-blue">
-              Public donation campaign · {camp.platform}
-            </p>
-            <p className="mt-1 font-display text-xl text-ink">{camp.title}</p>
-            <p className="mt-2 font-mono text-sm text-ink-muted">
-              {store.formatNaira(camp.raisedAmount)} raised of {store.formatNaira(camp.goalAmount)} ·{" "}
-              {camp.status}
-            </p>
-            <a
-              href={camp.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-block text-sm text-civic-green"
-            >
-              Open on {camp.platform} (external) →
-            </a>
-          </div>
-        ))}
-
         {allocation?.gapNote ? (
           <p className="mt-4 border border-civic-amber bg-civic-amberSoft px-4 py-3 text-sm text-civic-amber">
             {allocation.gapNote}
@@ -276,67 +198,57 @@ export default async function ProjectDetailPage({
         ) : null}
       </RecordSection>
 
-      <RecordSection title="Income stream">
-        {funding.inflows.length === 0 ? (
-          <p className="text-sm text-ink-muted">No income events recorded yet.</p>
-        ) : (
-          <ul className="divide-y divide-paper-border border border-paper-border">
-            {funding.inflows.map((row) => (
-              <li key={row.id} className="flex flex-wrap items-start justify-between gap-3 px-3 py-3 sm:px-4">
-                <div>
-                  <p className="font-mono text-[11px] text-ink-faint">{row.receivedAt}</p>
-                  <p className="mt-0.5 text-sm font-medium text-ink">{row.payerLabel}</p>
-                  <p className="mt-1 text-xs text-ink-muted">
-                    {row.channel.replace(/_/g, " ")}
-                    {row.sourceId ? " · linked source" : ""}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="font-mono text-sm text-civic-green">{store.formatNaira(row.amount)}</p>
-                  <StatusLabel status={row.verificationStatus} className="mt-1" />
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
+      <RecordSection title="Income stream" subtitle="Money arriving — releases, grants, donations.">
+        <FlowStrip
+          barTone="amber"
+          emptyLabel="No income events recorded yet."
+          items={funding.inflows.map((row) => ({
+            id: row.id,
+            date: row.receivedAt,
+            title: row.payerLabel,
+            subtitle: (
+              <>
+                {row.channel.replace(/_/g, " ")}
+                {row.sourceId ? " · linked source" : ""}
+              </>
+            ),
+            amount: row.amount,
+            meta: <StatusLabel status={row.verificationStatus} />,
+          }))}
+        />
       </RecordSection>
 
-      <RecordSection title="Spend record">
-        {funding.spends.length === 0 ? (
-          <p className="text-sm text-ink-muted">No spend lines recorded yet.</p>
-        ) : (
-          <ul className="divide-y divide-paper-border border border-paper-border">
-            {funding.spends.map((row) => {
-              const payeeOrg = row.organizationId
-                ? store.allOrganizations().find((o) => o.id === row.organizationId)
-                : undefined;
-              return (
-                <li key={row.id} className="flex flex-wrap items-start justify-between gap-3 px-3 py-3 sm:px-4">
-                  <div>
-                    <p className="font-mono text-[11px] text-ink-faint">{row.spentAt}</p>
-                    <p className="mt-0.5 text-sm font-medium text-ink">{row.payeeLabel}</p>
-                    <p className="mt-1 text-xs text-ink-muted">
-                      {row.category}
-                      {payeeOrg ? (
-                        <>
-                          {" · "}
-                          <Link href={`/organizations/${payeeOrg.slug}`} className="text-civic-green">
-                            {payeeOrg.name}
-                          </Link>
-                        </>
-                      ) : null}
-                    </p>
-                    {row.notes ? <p className="mt-1 text-xs text-ink-faint">{row.notes}</p> : null}
-                  </div>
-                  <div className="text-right">
-                    <p className="font-mono text-sm text-ink">{store.formatNaira(row.amount)}</p>
-                    <StatusLabel status={row.verificationStatus} className="mt-1" />
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        )}
+      <RecordSection title="Spend record" subtitle="Where money went — materials, labour, contractors.">
+        <FlowStrip
+          barTone="green"
+          emptyLabel="No spend lines recorded yet."
+          items={funding.spends.map((row) => {
+            const payeeOrg = row.organizationId
+              ? store.allOrganizations().find((o) => o.id === row.organizationId)
+              : undefined;
+            return {
+              id: row.id,
+              date: row.spentAt,
+              title: row.payeeLabel,
+              subtitle: (
+                <>
+                  {row.category}
+                  {payeeOrg ? (
+                    <>
+                      {" · "}
+                      <Link href={`/organizations/${payeeOrg.slug}`} className="text-civic-green">
+                        {payeeOrg.name}
+                      </Link>
+                    </>
+                  ) : null}
+                </>
+              ),
+              notes: row.notes,
+              amount: row.amount,
+              meta: <StatusLabel status={row.verificationStatus} />,
+            };
+          })}
+        />
       </RecordSection>
 
       <RecordSection title="Relationships">

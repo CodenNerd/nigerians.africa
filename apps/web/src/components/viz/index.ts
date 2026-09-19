@@ -1,5 +1,10 @@
 export { NigeriaStateMap } from "./NigeriaStateMap";
 export { ProjectFeatureTiles } from "./ProjectFeatureTiles";
+export { ProjectGlance } from "./ProjectGlance";
+export { WorkJourney } from "./WorkJourney";
+export { MoneyComposition } from "./MoneyComposition";
+export { FlowStrip } from "./FlowStrip";
+export type { FlowStripItem } from "./FlowStrip";
 export { VizFrame } from "./VizFrame";
 export { NIGERIA_STATES } from "./nigeria-states-meta";
 export { NIGERIA_STATE_PATHS } from "./nigeria-state-paths";

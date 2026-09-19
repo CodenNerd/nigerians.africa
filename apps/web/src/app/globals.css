@@ -76,6 +76,16 @@ a {
     animation: fade-in 0.7s ease-out both;
   }
 
+  @keyframes meter-fill {
+    from {
+      width: 0 !important;
+    }
+  }
+
+  .meter-fill {
+    animation: meter-fill 0.85s ease-out both;
+  }
+
   .hero-field {
     @apply relative overflow-hidden border-b border-paper-border;
     background:
