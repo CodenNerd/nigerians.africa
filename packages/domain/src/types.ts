@@ -140,6 +140,34 @@ export interface Person {
   locationIds: string[];
 }
 
+/** Candidacy status for a PoliticalCandidate record (not a Person subtype). */
+export type CandidacyStatus =
+  | "declared"
+  | "nominated"
+  | "on_ballot"
+  | "won"
+  | "lost"
+  | "withdrawn"
+  | "disqualified";
+
+/**
+ * A candidacy linked to a Person. A person is a political candidate when they
+ * have ≥1 of these records (derived — not a flag on Person).
+ */
+export interface PoliticalCandidate {
+  id: string;
+  slug: string;
+  personId: string;
+  electionId: string;
+  officeId?: string;
+  party: string;
+  ballotName?: string;
+  status: CandidacyStatus;
+  manifestoSummary?: string;
+  locationId?: string;
+  verificationStatus: VerificationStatus;
+}
+
 export interface Institution {
   id: string;
   slug: string;
@@ -451,6 +479,8 @@ export interface ElectionResult {
   pollingUnitId: string;
   candidate: string;
   party: string;
+  /** Optional link to a PoliticalCandidate record. */
+  candidateId?: string;
   officialVotes?: number;
   observerVotes?: number;
   sourceOfficialId?: string;
@@ -535,6 +565,7 @@ export interface SeedDatabase {
   memory: MemoryEvent[];
   relationships: EntityRelationship[];
   events: CivicEvent[];
+  politicalCandidates: PoliticalCandidate[];
   electionResults: ElectionResult[];
   discrepancies: ResultDiscrepancy[];
   guidance: GuidanceTopic[];

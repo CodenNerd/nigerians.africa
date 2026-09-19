@@ -147,6 +147,63 @@ function MoneyViz({ allocations }: { allocations: Allocation[] }) {
   );
 }
 
+function CandidaciesViz({
+  candidacies,
+}: {
+  candidacies: ReturnType<typeof store.candidaciesForPerson>;
+}) {
+  if (candidacies.length === 0) return null;
+
+  return (
+    <section id="candidacies" className="scroll-mt-28">
+      <SectionHead
+        title="Political candidacies"
+        subtitle="Declared and contested races linked to this person on the public record."
+        meta={`${candidacies.length} candidac${candidacies.length === 1 ? "y" : "ies"}`}
+      />
+      <ul className="mt-6 grid gap-px bg-paper-border">
+        {candidacies.map((c) => {
+          const election = store.events().find((e) => e.id === c.electionId);
+          const office = c.officeId
+            ? store.allOffices().find((o) => o.id === c.officeId)
+            : undefined;
+          return (
+            <li key={c.id}>
+              <Link
+                href={`/candidates/${c.slug}`}
+                className="group block bg-civic-blueSoft p-6 no-underline transition hover:brightness-[0.97] sm:p-8"
+              >
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <span className="text-xs font-medium uppercase tracking-[0.2em] text-civic-blue">
+                    {c.party} · {c.status.replace(/_/g, " ")}
+                  </span>
+                  <span className="font-mono text-xs text-ink-faint opacity-0 transition group-hover:opacity-100">
+                    Open →
+                  </span>
+                </div>
+                <h3 className="mt-4 font-display text-2xl leading-tight text-ink sm:text-3xl">
+                  {c.ballotName ?? "Candidacy"}
+                </h3>
+                <p className="mt-3 text-sm text-ink-muted">
+                  {office ? office.title : "Office not yet recorded"}
+                  {election ? ` · ${election.title}` : null}
+                </p>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+      <p className="mt-4 text-sm text-ink-faint">
+        Browse all candidacies in the{" "}
+        <Link href="/candidates" className="text-civic-green hover:underline">
+          candidates archive
+        </Link>
+        .
+      </p>
+    </section>
+  );
+}
+
 export function PersonProfile({ person }: { person: Person }) {
   const tenures = store.tenuresForPerson(person.id);
   const tenureItems: { tenure: OfficeTenure; office: Office }[] = [];
@@ -159,6 +216,9 @@ export function PersonProfile({ person }: { person: Person }) {
   const currentOffice = currentTenure
     ? store.allOffices().find((o) => o.id === currentTenure.officeId)
     : undefined;
+
+  const candidacies = store.candidaciesForPerson(person.id);
+  const isCandidate = store.isPoliticalCandidate(person.id);
 
   const claims = store.claimsForPerson(person.id);
   const memory = store.memoryFor("person", person.id);
@@ -199,14 +259,19 @@ export function PersonProfile({ person }: { person: Person }) {
 
   return (
     <article>
-      <PersonHero person={person} currentOffice={currentOffice} />
-      <ProfileGuideNav />
+      <PersonHero
+        person={person}
+        currentOffice={currentOffice}
+        isPoliticalCandidate={isCandidate}
+      />
+      <ProfileGuideNav showCandidacies={isCandidate} />
 
       <div className="site-container py-10 lg:py-14">
         <div className="grid gap-16 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-14">
           <div className="space-y-20">
             <RecordGlance claims={claims} />
             <TenureTimeline items={tenureItems} />
+            <CandidaciesViz candidacies={candidacies} />
             <MemorySpine events={memory} />
             <ClaimStatusStrip claims={claims} />
             <ProjectsViz projects={projects} />
@@ -234,6 +299,9 @@ export function PersonProfile({ person }: { person: Person }) {
                 { label: "Report an issue", href: "/report" },
                 { label: "Follow", href: "/action" },
                 { label: "Find who is responsible", href: "/government" },
+                ...(isCandidate
+                  ? [{ label: "All candidacies", href: "/candidates" }]
+                  : []),
               ]}
             />
           </aside>

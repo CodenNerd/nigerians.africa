@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import clsx from "clsx";
 
-const sections = [
+const baseSections = [
   { id: "overview", label: "Overview" },
   { id: "offices", label: "Offices" },
   { id: "memory", label: "Memory" },
@@ -14,7 +14,14 @@ const sections = [
   { id: "sources", label: "Sources" },
 ];
 
-export function ProfileGuideNav() {
+export function ProfileGuideNav({ showCandidacies = false }: { showCandidacies?: boolean }) {
+  const sections = useMemo(() => {
+    if (!showCandidacies) return baseSections;
+    const out = [...baseSections];
+    out.splice(2, 0, { id: "candidacies", label: "Candidacies" });
+    return out;
+  }, [showCandidacies]);
+
   const [active, setActive] = useState("overview");
 
   useEffect(() => {
@@ -34,7 +41,7 @@ export function ProfileGuideNav() {
     );
     els.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   return (
     <nav

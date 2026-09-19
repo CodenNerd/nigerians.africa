@@ -5,9 +5,11 @@ import type { Office, Person } from "@nigeria-for-nigerians/domain";
 export function PersonHero({
   person,
   currentOffice,
+  isPoliticalCandidate = false,
 }: {
   person: Person;
   currentOffice?: Office;
+  isPoliticalCandidate?: boolean;
 }) {
   const credit = person.imageCredit;
 
@@ -31,9 +33,16 @@ export function PersonHero({
 
         <div className="absolute inset-x-0 bottom-0">
           <div className="site-container pb-9 pt-28 sm:pb-11 lg:pb-12">
-            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-white/60">
-              Public Personality Profile
-            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-white/60">
+                Public Personality Profile
+              </p>
+              {isPoliticalCandidate ? (
+                <span className="border border-white/35 bg-white/10 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/90">
+                  Political candidate
+                </span>
+              ) : null}
+            </div>
             <h1 className="mt-3 max-w-4xl font-display text-[2.55rem] leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
               {person.fullName}
             </h1>

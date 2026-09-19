@@ -19,6 +19,7 @@ export default async function ElectionPage({ params }: { params: Promise<{ slug:
   const isUpcoming = event.status === "upcoming";
   const results = store.electionResults(event.id);
   const discrepancies = store.discrepancies(event.id);
+  const candidacies = store.candidaciesForElection(event.id);
 
   const puIds = [...new Set(results.map((r) => r.pollingUnitId))];
   const pollingUnits = puIds
@@ -43,6 +44,9 @@ export default async function ElectionPage({ params }: { params: Promise<{ slug:
           ? [
               { label: "Follow this cycle", href: "/action" },
               { label: "Learn civic guidance", href: "/guidance" },
+              ...(candidacies.length
+                ? [{ label: "Browse candidacies", href: "/candidates" }]
+                : []),
             ]
           : [
               {
@@ -50,6 +54,9 @@ export default async function ElectionPage({ params }: { params: Promise<{ slug:
                 href: `/report?election=${event.slug}`,
               },
               { label: "View evidence", href: "/evidence/ev-pu-official" },
+              ...(candidacies.length
+                ? [{ label: "Browse candidacies", href: "/candidates" }]
+                : []),
             ]
       }
     >
@@ -69,6 +76,54 @@ export default async function ElectionPage({ params }: { params: Promise<{ slug:
           </p>
         ) : null}
       </RecordSection>
+
+      {candidacies.length > 0 ? (
+        <RecordSection title="Candidacies on record">
+          <p className="mb-4 text-sm text-ink-muted">
+            {candidacies.length} candidac{candidacies.length === 1 ? "y" : "ies"} linked to this
+            election. Full archive at{" "}
+            <Link href="/candidates" className="text-civic-green hover:underline">
+              /candidates
+            </Link>
+            .
+          </p>
+          <ul className="grid gap-px bg-paper-border">
+            {candidacies.map((c) => {
+              const person = store.allPeople().find((p) => p.id === c.personId);
+              const office = c.officeId
+                ? store.allOffices().find((o) => o.id === c.officeId)
+                : undefined;
+              return (
+                <li key={c.id}>
+                  <Link
+                    href={`/candidates/${c.slug}`}
+                    className="plane-link block bg-civic-blueSoft px-5 py-4 no-underline"
+                  >
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <span className="font-display text-lg text-ink">
+                        {c.ballotName ?? person?.fullName ?? "Candidacy"}
+                      </span>
+                      <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+                        {c.status.replace(/_/g, " ")}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-sm text-ink-muted">
+                      {c.party}
+                      {office ? ` · ${office.title}` : null}
+                      {person ? (
+                        <>
+                          {" · "}
+                          <span className="text-civic-green">{person.fullName}</span>
+                        </>
+                      ) : null}
+                    </p>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </RecordSection>
+      ) : null}
 
       <RecordSection title="Principle">
         <p className="prose-record">
@@ -137,6 +192,9 @@ export default async function ElectionPage({ params }: { params: Promise<{ slug:
                   {results.map((r) => {
                     const pu = store.locations().find((l) => l.id === r.pollingUnitId);
                     const delta = (r.officialVotes ?? 0) - (r.observerVotes ?? 0);
+                    const candidacy = r.candidateId
+                      ? store.allPoliticalCandidates().find((c) => c.id === r.candidateId)
+                      : undefined;
                     return (
                       <tr key={r.id} className="border-b border-paper-border">
                         <td className="py-3 pr-4">
@@ -151,7 +209,18 @@ export default async function ElectionPage({ params }: { params: Promise<{ slug:
                             r.pollingUnitId
                           )}
                         </td>
-                        <td className="py-3 pr-4 font-medium">{r.candidate}</td>
+                        <td className="py-3 pr-4 font-medium">
+                          {candidacy ? (
+                            <Link
+                              href={`/candidates/${candidacy.slug}`}
+                              className="text-civic-green hover:underline"
+                            >
+                              {r.candidate}
+                            </Link>
+                          ) : (
+                            r.candidate
+                          )}
+                        </td>
                         <td className="py-3 pr-4 text-ink-muted">{r.party}</td>
                         <td className="py-3 pr-4 font-mono">{r.officialVotes}</td>
                         <td className="py-3 pr-4 font-mono">{r.observerVotes}</td>

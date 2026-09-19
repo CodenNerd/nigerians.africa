@@ -816,6 +816,26 @@ export class PublicRecordStore {
     return this.db.events.find((e) => e.slug === slug);
   }
 
+  allPoliticalCandidates() {
+    return this.db.politicalCandidates;
+  }
+
+  candidacyBySlug(slug: string) {
+    return this.db.politicalCandidates.find((c) => c.slug === slug);
+  }
+
+  candidaciesForPerson(personId: string) {
+    return this.db.politicalCandidates.filter((c) => c.personId === personId);
+  }
+
+  candidaciesForElection(electionId: string) {
+    return this.db.politicalCandidates.filter((c) => c.electionId === electionId);
+  }
+
+  isPoliticalCandidate(personId: string): boolean {
+    return this.candidaciesForPerson(personId).length > 0;
+  }
+
   electionResults(electionId: string) {
     return this.db.electionResults.filter((r) => r.electionId === electionId);
   }
