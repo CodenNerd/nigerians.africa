@@ -1,0 +1,13 @@
+---
+description: Always commit after completing a change set in this project
+alwaysApply: true
+---
+
+# Commit after every change
+
+After finishing a coherent unit of work (feature, fix, copy change, refactor), create a git commit before stopping or moving on.
+
+- Do not wait to be asked again — the user requested commits after every change.
+- Follow the repo's normal commit protocol: status, diff, log style, stage relevant files, commit via HEREDOC, verify with status.
+- Never commit secrets (`.env`, credentials). Never update git config. Do not push unless asked.
+- Prefer focused commits that match the change just made (not giant catch-up dumps when avoidable).

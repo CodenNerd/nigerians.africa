@@ -1,0 +1,4079 @@
+{
+  "sources": [
+    {
+      "id": "src-wikidata-people",
+      "type": "Official Dataset",
+      "title": "Wikidata — Nigerian office holders (P39)",
+      "publisher": "Wikimedia Foundation / Wikidata",
+      "url": "https://www.wikidata.org/",
+      "publicationDate": "2026-09-19",
+      "description": "Public office tenures via Wikidata position held (CC0). Images from Commons when CC-licensed.",
+      "reliability": "high"
+    },
+    {
+      "id": "src-statehouse-inauguration-2023",
+      "type": "Government",
+      "title": "Presidential inauguration — 29 May 2023",
+      "publisher": "State House, Federal Republic of Nigeria",
+      "url": "https://statehouse.gov.ng",
+      "publicationDate": "2023-05-29",
+      "description": "Official presidential transition / inauguration record.",
+      "reliability": "high"
+    }
+  ],
+  "people": [
+    {
+      "id": "wd:Q3510872",
+      "slug": "bola-tinubu",
+      "fullName": "Bola Tinubu",
+      "aliases": [],
+      "bio": "Bola Tinubu — public office holder record sourced from Wikidata.",
+      "photoInitials": "BT",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Bola_Tinubu_portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "Nosa Asemota",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bola%20Tinubu%20portrait.jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q361567",
+      "slug": "muhammadu-buhari",
+      "fullName": "Muhammadu Buhari",
+      "aliases": [],
+      "bio": "Muhammadu Buhari — public office holder record sourced from Wikidata.",
+      "photoInitials": "MB",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/51/Muhammadu_Buhari%2C_President_of_the_Federal_Republic_of_Nigeria_%28cropped3%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "Bayo Omoboriowo",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muhammadu%20Buhari%2C%20President%20of%20the%20Federal%20Republic%20of%20Nigeria%20(cropped3).jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q57380",
+      "slug": "goodluck-jonathan",
+      "fullName": "Goodluck Jonathan",
+      "aliases": [],
+      "bio": "Goodluck Jonathan — public office holder record sourced from Wikidata.",
+      "photoInitials": "GJ",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Goodluck_Jonathan_World_Economic_Forum_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "World Economic Forum",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Goodluck%20Jonathan%20World%20Economic%20Forum%202013.jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q104705",
+      "slug": "umaru-musa-yar-adua",
+      "fullName": "Umaru Musa Yar'Adua",
+      "aliases": [],
+      "bio": "Umaru Musa Yar'Adua — public office holder record sourced from Wikidata.",
+      "photoInitials": "UY",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Umaruyaradua07052007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "Marcello Casal Jr./ABr",
+        "license": "CC BY 3.0 br",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Umaruyaradua07052007.jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q202006",
+      "slug": "olusegun-obasanjo",
+      "fullName": "Olusegun Obasanjo",
+      "aliases": [],
+      "bio": "Olusegun Obasanjo — public office holder record sourced from Wikidata.",
+      "photoInitials": "OO",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Olusegun_Obasanjo_DD-SC-07-14396-cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "Helene C. Stikkel",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olusegun%20Obasanjo%20DD-SC-07-14396-cropped.jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q262346",
+      "slug": "abdulsalami-abubakar",
+      "fullName": "Abdulsalami Abubakar",
+      "aliases": [],
+      "bio": "Abdulsalami Abubakar — public office holder record sourced from Wikidata.",
+      "photoInitials": "AA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Abdulsalami_Abubakar_detail_DF-SC-02-04323.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "SSGT Karen L. Sanders, USAF",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abdulsalami%20Abubakar%20detail%20DF-SC-02-04323.jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q207942",
+      "slug": "sani-abacha",
+      "fullName": "Sani Abacha",
+      "aliases": [],
+      "bio": "Sani Abacha — public office holder record sourced from Wikidata.",
+      "photoInitials": "SA",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "Wikimedia Commons",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://www.wikidata.org/",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q471351",
+      "slug": "ernest-shonekan",
+      "fullName": "Ernest Shonekan",
+      "aliases": [],
+      "bio": "Ernest Shonekan — public office holder record sourced from Wikidata.",
+      "photoInitials": "ES",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "Wikimedia Commons",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://www.wikidata.org/",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q333415",
+      "slug": "ibrahim-babangida",
+      "fullName": "Ibrahim Babangida",
+      "aliases": [],
+      "bio": "Ibrahim Babangida — public office holder record sourced from Wikidata.",
+      "photoInitials": "IB",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Ibrahim_Babangida_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "Seiperi",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibrahim%20Babangida%20(cropped).jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q380668",
+      "slug": "shehu-shagari",
+      "fullName": "Shehu Shagari",
+      "aliases": [],
+      "bio": "Shehu Shagari — public office holder record sourced from Wikidata.",
+      "photoInitials": "SS",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Shagaricropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "Clawson",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shagaricropped.jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q373628",
+      "slug": "murtala-muhammed",
+      "fullName": "Murtala Muhammed",
+      "aliases": [],
+      "bio": "Murtala Muhammed — public office holder record sourced from Wikidata.",
+      "photoInitials": "MM",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Gen._Murtala_Muhammed_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "Unknown authorUnknown author",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gen.%20Murtala%20Muhammed%20(cropped).jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q354695",
+      "slug": "yakubu-gowon",
+      "fullName": "Yakubu Gowon",
+      "aliases": [],
+      "bio": "Yakubu Gowon — public office holder record sourced from Wikidata.",
+      "photoInitials": "YG",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Gen._Yakubu_Gowon_GCFR_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "Unknown authorUnknown author",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gen.%20Yakubu%20Gowon%20GCFR%20(cropped).jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q379888",
+      "slug": "johnson-aguiyi-ironsi",
+      "fullName": "Johnson Aguiyi-Ironsi",
+      "aliases": [],
+      "bio": "Johnson Aguiyi-Ironsi — public office holder record sourced from Wikidata.",
+      "photoInitials": "JA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Major_Gen._J.T.U._Aguiyi_Ironsi_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "Unknown authorUnknown author",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Major%20Gen.%20J.T.U.%20Aguiyi%20Ironsi%20(cropped).jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q181782",
+      "slug": "nnamdi-azikiwe",
+      "fullName": "Nnamdi Azikiwe",
+      "aliases": [],
+      "bio": "Nnamdi Azikiwe — public office holder record sourced from Wikidata.",
+      "photoInitials": "NA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Dr._Nnamdi_Azikiwe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      "imageCredit": {
+        "photographer": "FaridhaSL",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dr.%20Nnamdi%20Azikiwe.jpg",
+        "coverPhotographer": "Victor Ibrahim Gankon",
+        "coverLicense": "CC BY-SA 4.0",
+        "coverSourceUrl": "https://commons.wikimedia.org/wiki/File:Nigerian_Presidential_Complex.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q6374297",
+      "slug": "kashim-shettima",
+      "fullName": "Kashim Shettima",
+      "aliases": [],
+      "bio": "Kashim Shettima — public office holder record sourced from Wikidata.",
+      "photoInitials": "KS",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Kashim_Shettima_office_portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Opeyemi Adelani",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kashim%20Shettima%20office%20portrait.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q19730927",
+      "slug": "yemi-osinbajo",
+      "fullName": "Yemi Osinbajo",
+      "aliases": [],
+      "bio": "Yemi Osinbajo — public office holder record sourced from Wikidata.",
+      "photoInitials": "YO",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/Yemi_Osinbajo_2017-05-27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Italian G7 Presidency 2017",
+        "license": "CC BY 3.0 it",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yemi%20Osinbajo%202017-05-27.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q2993602",
+      "slug": "namadi-sambo",
+      "fullName": "Namadi Sambo",
+      "aliases": [],
+      "bio": "Namadi Sambo — public office holder record sourced from Wikidata.",
+      "photoInitials": "NS",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Namadi_Sambo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Elza Fiúza / Agência Brasil",
+        "license": "CC BY 3.0 br",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Namadi%20Sambo.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q755878",
+      "slug": "atiku-abubakar",
+      "fullName": "Atiku Abubakar",
+      "aliases": [],
+      "bio": "Atiku Abubakar — public office holder record sourced from Wikidata.",
+      "photoInitials": "AA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Atiku_Abubakar-2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Atiku Abubakar",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Atiku%20Abubakar-2010.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3296213",
+      "slug": "mike-akhigbe",
+      "fullName": "Mike Akhigbe",
+      "aliases": [],
+      "bio": "Mike Akhigbe — public office holder record sourced from Wikidata.",
+      "photoInitials": "MA",
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3511673",
+      "slug": "oladipo-diya",
+      "fullName": "Oladipo Diya",
+      "aliases": [],
+      "bio": "Oladipo Diya — public office holder record sourced from Wikidata.",
+      "photoInitials": "OD",
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3294849",
+      "slug": "augustus-aikhomu",
+      "fullName": "Augustus Aikhomu",
+      "aliases": [],
+      "bio": "Augustus Aikhomu — public office holder record sourced from Wikidata.",
+      "photoInitials": "AA",
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3509409",
+      "slug": "ebitu-ukiwe",
+      "fullName": "Ebitu Ukiwe",
+      "aliases": [],
+      "bio": "Ebitu Ukiwe — public office holder record sourced from Wikidata.",
+      "photoInitials": "EU",
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3509487",
+      "slug": "tunde-idiagbon",
+      "fullName": "Tunde Idiagbon",
+      "aliases": [],
+      "bio": "Tunde Idiagbon — public office holder record sourced from Wikidata.",
+      "photoInitials": "TI",
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q1977060",
+      "slug": "alex-ifeanyichukwu-ekwueme",
+      "fullName": "Alex Ifeanyichukwu Ekwueme",
+      "aliases": [],
+      "bio": "Alex Ifeanyichukwu Ekwueme — public office holder record sourced from Wikidata.",
+      "photoInitials": "AE",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/Alex_Ekwueme_DF-SC-83-01329_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Montgomery",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alex%20Ekwueme%20DF-SC-83-01329%20(cropped).jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3509379",
+      "slug": "shehu-musa-yar-adua",
+      "fullName": "Shehu Musa Yar'Adua",
+      "aliases": [],
+      "bio": "Shehu Musa Yar'Adua — public office holder record sourced from Wikidata.",
+      "photoInitials": "SY",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Shehu_Musa_Yar%27adua_Center_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Kritzolina",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shehu%20Musa%20Yar'adua%20Center%2006.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3509444",
+      "slug": "joseph-edet-akinwale-wey",
+      "fullName": "Joseph Edet Akinwale Wey",
+      "aliases": [],
+      "bio": "Joseph Edet Akinwale Wey — public office holder record sourced from Wikidata.",
+      "photoInitials": "JW",
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3510426",
+      "slug": "babafemi-ogundipe",
+      "fullName": "Babafemi Ogundipe",
+      "aliases": [],
+      "bio": "Babafemi Ogundipe — public office holder record sourced from Wikidata.",
+      "photoInitials": "BO",
+      "isPublicPersonality": true,
+      "classification": "Vice President of Nigeria",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q19958158",
+      "slug": "victor-okezie-ikpeazu",
+      "fullName": "Victor Okezie Ikpeazu",
+      "aliases": [],
+      "bio": "Victor Okezie Ikpeazu — public office holder record sourced from Wikidata.",
+      "photoInitials": "VI",
+      "isPublicPersonality": true,
+      "classification": "Governor of Abia State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3510938",
+      "slug": "theodore-ahamefule-orji",
+      "fullName": "Theodore Ahamefule Orji",
+      "aliases": [],
+      "bio": "Theodore Ahamefule Orji — public office holder record sourced from Wikidata.",
+      "photoInitials": "TO",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Theodore_orji_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Theodore Orji A",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Theodore%20orji%20A.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Abia State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q18631942",
+      "slug": "alex-otti",
+      "fullName": "Alex Otti",
+      "aliases": [],
+      "bio": "Alex Otti — public office holder record sourced from Wikidata.",
+      "photoInitials": "AO",
+      "isPublicPersonality": true,
+      "classification": "Governor of Abia State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q61732418",
+      "slug": "umaru-fintiri",
+      "fullName": "Umaru Fintiri",
+      "aliases": [],
+      "bio": "Umaru Fintiri — public office holder record sourced from Wikidata.",
+      "photoInitials": "UF",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Ahmadu_Fintiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "User:Au93212",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ahmadu%20Fintiri.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Adamawa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q4914035",
+      "slug": "bindo-jibrilla",
+      "fullName": "Bindo Jibrilla",
+      "aliases": [],
+      "bio": "Bindo Jibrilla — public office holder record sourced from Wikidata.",
+      "photoInitials": "BJ",
+      "isPublicPersonality": true,
+      "classification": "Governor of Adamawa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q61733016",
+      "slug": "bala-james-ngilari",
+      "fullName": "Bala James Ngilari",
+      "aliases": [],
+      "bio": "Bala James Ngilari — public office holder record sourced from Wikidata.",
+      "photoInitials": "BN",
+      "isPublicPersonality": true,
+      "classification": "Governor of Adamawa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q4670502",
+      "slug": "abubakar-salihu",
+      "fullName": "Abubakar Salihu",
+      "aliases": [],
+      "bio": "Abubakar Salihu — public office holder record sourced from Wikidata.",
+      "photoInitials": "AS",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Abubakar_Salihu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Absolutelycognitive",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abubakar%20Salihu.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Adamawa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q13140755",
+      "slug": "mustapha-ismail",
+      "fullName": "Mustapha Ismail",
+      "aliases": [],
+      "bio": "Mustapha Ismail — public office holder record sourced from Wikidata.",
+      "photoInitials": "MI",
+      "isPublicPersonality": true,
+      "classification": "Governor of Adamawa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q17721981",
+      "slug": "wilson-sabiya",
+      "fullName": "Wilson Sabiya",
+      "aliases": [],
+      "bio": "Wilson Sabiya — public office holder record sourced from Wikidata.",
+      "photoInitials": "WS",
+      "isPublicPersonality": true,
+      "classification": "Governor of Adamawa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q117222421",
+      "slug": "umo-eno-bassey",
+      "fullName": "Umo Eno Bassey",
+      "aliases": [],
+      "bio": "Umo Eno Bassey — public office holder record sourced from Wikidata.",
+      "photoInitials": "UB",
+      "isPublicPersonality": true,
+      "classification": "Governor of Akwa Ibom State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q20982220",
+      "slug": "udom-gabriel-emmanuel",
+      "fullName": "Udom Gabriel Emmanuel",
+      "aliases": [],
+      "bio": "Udom Gabriel Emmanuel — public office holder record sourced from Wikidata.",
+      "photoInitials": "UE",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Udom_Gabriel_Emmanuel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "US Missions Nigeria",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Udom%20Gabriel%20Emmanuel.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Akwa Ibom State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q5576947",
+      "slug": "godswill-obot-akpabio",
+      "fullName": "Godswill Obot Akpabio",
+      "aliases": [],
+      "bio": "Godswill Obot Akpabio — public office holder record sourced from Wikidata.",
+      "photoInitials": "GA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Godswill_Obot_Akpabio_%282012%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Wikibride",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Godswill%20Obot%20Akpabio%20(2012).jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Akwa Ibom State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3511696",
+      "slug": "charles-chukwuma-soludo",
+      "fullName": "Charles Chukwuma Soludo",
+      "aliases": [],
+      "bio": "Charles Chukwuma Soludo — public office holder record sourced from Wikidata.",
+      "photoInitials": "CS",
+      "isPublicPersonality": true,
+      "classification": "Governor of Anambra State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q19671604",
+      "slug": "willie-obiano",
+      "fullName": "Willie Obiano",
+      "aliases": [],
+      "bio": "Willie Obiano — public office holder record sourced from Wikidata.",
+      "photoInitials": "WO",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Picture_of_Governor_Willie_Obiano_at_the_Funeral_of_Bishop_Okafor_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Willie is Working",
+        "license": "CC BY 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Picture%20of%20Governor%20Willie%20Obiano%20at%20the%20Funeral%20of%20Bishop%20Okafor%20(cropped).jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Anambra State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q4849691",
+      "slug": "bala-mohammed",
+      "fullName": "Bala Mohammed",
+      "aliases": [],
+      "bio": "Bala Mohammed — public office holder record sourced from Wikidata.",
+      "photoInitials": "BM",
+      "isPublicPersonality": true,
+      "classification": "Governor of Bauchi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q20810373",
+      "slug": "mohammed-abdullahi-abubakar",
+      "fullName": "Mohammed Abdullahi Abubakar",
+      "aliases": [],
+      "bio": "Mohammed Abdullahi Abubakar — public office holder record sourced from Wikidata.",
+      "photoInitials": "MA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Muhammed_Abubakar.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Chyddee",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Muhammed%20Abubakar.png"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Bauchi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q6075740",
+      "slug": "isa-yuguda",
+      "fullName": "Isa Yuguda",
+      "aliases": [],
+      "bio": "Isa Yuguda — public office holder record sourced from Wikidata.",
+      "photoInitials": "IY",
+      "isPublicPersonality": true,
+      "classification": "Governor of Bauchi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q35539386",
+      "slug": "douye-diri",
+      "fullName": "Douye Diri",
+      "aliases": [],
+      "bio": "Douye Diri — public office holder record sourced from Wikidata.",
+      "photoInitials": "DD",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Diri_walking_to_the_stage_at_SK_Fest_2024_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Kambai Akau",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diri%20walking%20to%20the%20stage%20at%20SK%20Fest%202024%2001.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Bayelsa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q5720323",
+      "slug": "seriake-dickson",
+      "fullName": "Seriake Dickson",
+      "aliases": [],
+      "bio": "Seriake Dickson — public office holder record sourced from Wikidata.",
+      "photoInitials": "SD",
+      "isPublicPersonality": true,
+      "classification": "Governor of Bayelsa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q117234043",
+      "slug": "hyacinth-alia",
+      "fullName": "Hyacinth Alia",
+      "aliases": [],
+      "bio": "Hyacinth Alia — public office holder record sourced from Wikidata.",
+      "photoInitials": "HA",
+      "isPublicPersonality": true,
+      "classification": "Governor of Benue State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q18354225",
+      "slug": "samuel-ioraer-ortom",
+      "fullName": "Samuel Ioraer Ortom",
+      "aliases": [],
+      "bio": "Samuel Ioraer Ortom — public office holder record sourced from Wikidata.",
+      "photoInitials": "SO",
+      "isPublicPersonality": true,
+      "classification": "Governor of Benue State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q5515869",
+      "slug": "gabriel-suswam",
+      "fullName": "Gabriel Suswam",
+      "aliases": [],
+      "bio": "Gabriel Suswam — public office holder record sourced from Wikidata.",
+      "photoInitials": "GS",
+      "isPublicPersonality": true,
+      "classification": "Governor of Benue State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q62059920",
+      "slug": "babagana-umara-zulum",
+      "fullName": "Babagana Umara Zulum",
+      "aliases": [],
+      "bio": "Babagana Umara Zulum — public office holder record sourced from Wikidata.",
+      "photoInitials": "BZ",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Babagana_Zulum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "BScar23625",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Babagana%20Zulum.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Borno State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q4868129",
+      "slug": "bassey-otu",
+      "fullName": "Bassey Otu",
+      "aliases": [],
+      "bio": "Bassey Otu — public office holder record sourced from Wikidata.",
+      "photoInitials": "BO",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Sen_otu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Emmalegend",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sen%20otu.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Cross River State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q4887251",
+      "slug": "benedict-ayade",
+      "fullName": "Benedict Ayade",
+      "aliases": [],
+      "bio": "Benedict Ayade — public office holder record sourced from Wikidata.",
+      "photoInitials": "BA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Ben-ayade-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Funkynate",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ben-ayade-1.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Cross River State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q6660017",
+      "slug": "liyel-imoke",
+      "fullName": "Liyel Imoke",
+      "aliases": [],
+      "bio": "Liyel Imoke — public office holder record sourced from Wikidata.",
+      "photoInitials": "LI",
+      "isPublicPersonality": true,
+      "classification": "Governor of Cross River State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q106764158",
+      "slug": "sherrif-oborevwori",
+      "fullName": "Sherrif Oborevwori",
+      "aliases": [],
+      "bio": "Sherrif Oborevwori — public office holder record sourced from Wikidata.",
+      "photoInitials": "SO",
+      "isPublicPersonality": true,
+      "classification": "Governor of Delta State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q4799876",
+      "slug": "ifeanyi-okowa",
+      "fullName": "Ifeanyi Okowa",
+      "aliases": [],
+      "bio": "Ifeanyi Okowa — public office holder record sourced from Wikidata.",
+      "photoInitials": "IO",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Ifenanyi_Okowa.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Plus TV Africa",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ifenanyi%20Okowa.png"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Delta State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q5373354",
+      "slug": "emmanuel-uduaghan",
+      "fullName": "Emmanuel Uduaghan",
+      "aliases": [],
+      "bio": "Emmanuel Uduaghan — public office holder record sourced from Wikidata.",
+      "photoInitials": "EU",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Emmanuel_Ewatan_Uduaghan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Akarabrown",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emmanuel%20Ewatan%20Uduaghan.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Delta State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q112156901",
+      "slug": "nwifuru-francis",
+      "fullName": "Nwifuru Francis",
+      "aliases": [],
+      "bio": "Nwifuru Francis — public office holder record sourced from Wikidata.",
+      "photoInitials": "NF",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Francis_Ogbonna_Nwifuru.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Leo Ekene Oketa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Francis%20Ogbonna%20Nwifuru.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Ebonyi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q20982222",
+      "slug": "david-nweze-umahi",
+      "fullName": "David Nweze Umahi",
+      "aliases": [],
+      "bio": "David Nweze Umahi — public office holder record sourced from Wikidata.",
+      "photoInitials": "DU",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Dave_Umahi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "PingerNg",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dave%20Umahi.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Ebonyi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3510875",
+      "slug": "martin-elechi",
+      "fullName": "Martin Elechi",
+      "aliases": [],
+      "bio": "Martin Elechi — public office holder record sourced from Wikidata.",
+      "photoInitials": "ME",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Martin_Nwancho_Elechi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "KingVik Planet",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martin%20Nwancho%20Elechi.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Ebonyi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q139691374",
+      "slug": "mary-maudline-uzoamaka",
+      "fullName": "Mary-Maudline Uzoamaka",
+      "aliases": [],
+      "bio": "Mary-Maudline Uzoamaka — public office holder record sourced from Wikidata.",
+      "photoInitials": "MU",
+      "isPublicPersonality": true,
+      "classification": "Governor of Ebonyi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q24049118",
+      "slug": "godwin-obaseki",
+      "fullName": "Godwin Obaseki",
+      "aliases": [],
+      "bio": "Godwin Obaseki — public office holder record sourced from Wikidata.",
+      "photoInitials": "GO",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/59/Obaseki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Business Day",
+        "license": "CC BY 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Obaseki.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Edo State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q11282486",
+      "slug": "adams-oshiomhole",
+      "fullName": "Adams Oshiomhole",
+      "aliases": [],
+      "bio": "Adams Oshiomhole — public office holder record sourced from Wikidata.",
+      "photoInitials": "AO",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/AdamsOshiomhole.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Wikimedia Commons contributor",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:AdamsOshiomhole.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Edo State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q112628913",
+      "slug": "biodun-oyebanji",
+      "fullName": "Biodun Oyebanji",
+      "aliases": [],
+      "bio": "Biodun Oyebanji — public office holder record sourced from Wikidata.",
+      "photoInitials": "BO",
+      "isPublicPersonality": true,
+      "classification": "Governor of Ekiti State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q6380660",
+      "slug": "kayode-fayemi",
+      "fullName": "Kayode Fayemi",
+      "aliases": [],
+      "bio": "Kayode Fayemi — public office holder record sourced from Wikidata.",
+      "photoInitials": "KF",
+      "isPublicPersonality": true,
+      "classification": "Governor of Ekiti State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3510701",
+      "slug": "ayo-fayose",
+      "fullName": "Ayo Fayose",
+      "aliases": [],
+      "bio": "Ayo Fayose — public office holder record sourced from Wikidata.",
+      "photoInitials": "AF",
+      "isPublicPersonality": true,
+      "classification": "Governor of Ekiti State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q111722355",
+      "slug": "peter-mbah",
+      "fullName": "Peter Mbah",
+      "aliases": [],
+      "bio": "Peter Mbah — public office holder record sourced from Wikidata.",
+      "photoInitials": "PM",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Ndubuisi_Mbah.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Mba Joshua Chidiebere",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ndubuisi%20Mbah.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Enugu State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q20982221",
+      "slug": "ifeanyi-ugwuanyi",
+      "fullName": "Ifeanyi Ugwuanyi",
+      "aliases": [],
+      "bio": "Ifeanyi Ugwuanyi — public office holder record sourced from Wikidata.",
+      "photoInitials": "IU",
+      "isPublicPersonality": true,
+      "classification": "Governor of Enugu State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3510905",
+      "slug": "sullivan-chime",
+      "fullName": "Sullivan Chime",
+      "aliases": [],
+      "bio": "Sullivan Chime — public office holder record sourced from Wikidata.",
+      "photoInitials": "SC",
+      "isPublicPersonality": true,
+      "classification": "Governor of Enugu State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q62326774",
+      "slug": "muhammad-inuwa-yahaya",
+      "fullName": "Muhammad Inuwa Yahaya",
+      "aliases": [],
+      "bio": "Muhammad Inuwa Yahaya — public office holder record sourced from Wikidata.",
+      "photoInitials": "MY",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Governor_Muhammadu_Inuwa_Yahya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "AB-Babayo",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Governor%20Muhammadu%20Inuwa%20Yahya.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Gombe State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3511510",
+      "slug": "ibrahim-hassan-dankwambo",
+      "fullName": "Ibrahim Hassan Dankwambo",
+      "aliases": [],
+      "bio": "Ibrahim Hassan Dankwambo — public office holder record sourced from Wikidata.",
+      "photoInitials": "ID",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Ibrahim_Hassan_Dankwambo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "AB-Babayo",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibrahim%20Hassan%20Dankwambo.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Gombe State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q5899569",
+      "slug": "hope-o-uzodimma",
+      "fullName": "Hope O. Uzodimma",
+      "aliases": [],
+      "bio": "Hope O. Uzodimma — public office holder record sourced from Wikidata.",
+      "photoInitials": "HU",
+      "isPublicPersonality": true,
+      "classification": "Governor of Imo State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q5116057",
+      "slug": "emeka-ihedioha",
+      "fullName": "Emeka Ihedioha",
+      "aliases": [],
+      "bio": "Emeka Ihedioha — public office holder record sourced from Wikidata.",
+      "photoInitials": "EI",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Rt._Hon._Emeka_Ihedioha_%28cropped%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Sophisy",
+        "license": "CC BY-SA 3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rt.%20Hon.%20Emeka%20Ihedioha%20(cropped).png"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Imo State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q13140832",
+      "slug": "rochas-okorocha",
+      "fullName": "Rochas Okorocha",
+      "aliases": [],
+      "bio": "Rochas Okorocha — public office holder record sourced from Wikidata.",
+      "photoInitials": "RO",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/06/Governor_Rochas_Okorocha_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Flowrymz",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Governor%20Rochas%20Okorocha%20(cropped).jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Imo State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q106774462",
+      "slug": "umar-namadi",
+      "fullName": "Umar Namadi",
+      "aliases": [],
+      "bio": "Umar Namadi — public office holder record sourced from Wikidata.",
+      "photoInitials": "UN",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Umar_Namadi.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Mgujungu",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Umar%20Namadi.png"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Jigawa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q20090052",
+      "slug": "badaru-abubakar",
+      "fullName": "Badaru Abubakar",
+      "aliases": [],
+      "bio": "Badaru Abubakar — public office holder record sourced from Wikidata.",
+      "photoInitials": "BA",
+      "isPublicPersonality": true,
+      "classification": "Governor of Jigawa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3041557",
+      "slug": "sule-lamido",
+      "fullName": "Sule Lamido",
+      "aliases": [],
+      "bio": "Sule Lamido — public office holder record sourced from Wikidata.",
+      "photoInitials": "SL",
+      "isPublicPersonality": true,
+      "classification": "Governor of Jigawa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q6082944",
+      "slug": "nasir-ahmad-el-rufai",
+      "fullName": "Nasir Ahmad el-Rufai",
+      "aliases": [],
+      "bio": "Nasir Ahmad el-Rufai — public office holder record sourced from Wikidata.",
+      "photoInitials": "NE",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/58/Nasir_Ahmed_el-Rufai_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "VOA",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nasir%20Ahmed%20el-Rufai%202023.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Kaduna State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q6933504",
+      "slug": "mukhtar-ramalan-yero",
+      "fullName": "Mukhtar Ramalan Yero",
+      "aliases": [],
+      "bio": "Mukhtar Ramalan Yero — public office holder record sourced from Wikidata.",
+      "photoInitials": "MY",
+      "isPublicPersonality": true,
+      "classification": "Governor of Kaduna State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q18719262",
+      "slug": "abdullahi-umar-ganduje",
+      "fullName": "Abdullahi Umar Ganduje",
+      "aliases": [],
+      "bio": "Abdullahi Umar Ganduje — public office holder record sourced from Wikidata.",
+      "photoInitials": "AG",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/Abdullahi_Umar_Ganduje_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "US Missions Nigeria",
+        "license": "Public domain",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abdullahi%20Umar%20Ganduje%202023.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Kano State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q3509922",
+      "slug": "rabiu-kwankwaso",
+      "fullName": "Rabiu Kwankwaso",
+      "aliases": [],
+      "bio": "Rabiu Kwankwaso — public office holder record sourced from Wikidata.",
+      "photoInitials": "RK",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Kwankwaso_and_Rochas_at_PGLS_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Wikiregina",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kwankwaso%20and%20Rochas%20at%20PGLS%201.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Kano State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q91908076",
+      "slug": "abba-kabir-yusuf",
+      "fullName": "Abba Kabir Yusuf",
+      "aliases": [],
+      "bio": "Abba Kabir Yusuf — public office holder record sourced from Wikidata.",
+      "photoInitials": "AY",
+      "isPublicPersonality": true,
+      "classification": "Governor of Kano State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q117219229",
+      "slug": "dikko-umar-radda",
+      "fullName": "Dikko Umar Radda",
+      "aliases": [],
+      "bio": "Dikko Umar Radda — public office holder record sourced from Wikidata.",
+      "photoInitials": "DR",
+      "isPublicPersonality": true,
+      "classification": "Governor of Katsina State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q18098561",
+      "slug": "aminu-bello-masari",
+      "fullName": "Aminu Bello Masari",
+      "aliases": [],
+      "bio": "Aminu Bello Masari — public office holder record sourced from Wikidata.",
+      "photoInitials": "AM",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Aminu_B_Masari.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Zeanex",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aminu%20B%20Masari.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Katsina State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q5984734",
+      "slug": "ibrahim-shehu-shema",
+      "fullName": "Ibrahim Shehu Shema",
+      "aliases": [],
+      "bio": "Ibrahim Shehu Shema — public office holder record sourced from Wikidata.",
+      "photoInitials": "IS",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/67/Ogd.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Seanodumusi",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ogd.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Katsina State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q117828644",
+      "slug": "nasir-idris",
+      "fullName": "Nasir Idris",
+      "aliases": [],
+      "bio": "Nasir Idris — public office holder record sourced from Wikidata.",
+      "photoInitials": "NI",
+      "isPublicPersonality": true,
+      "classification": "Governor of Kebbi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q10998235",
+      "slug": "abubakar-atiku-bagudu",
+      "fullName": "Abubakar Atiku Bagudu",
+      "aliases": [],
+      "bio": "Abubakar Atiku Bagudu — public office holder record sourced from Wikidata.",
+      "photoInitials": "AB",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Abubakar_Bagudu_-_2023_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Hamza Abdulsalam Ozavogu / European Union, 2023 / EC - Audiovisual Service",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abubakar%20Bagudu%20-%202023%20(cropped).jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Kebbi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q7902060",
+      "slug": "usman-saidu-nasamu-dakingari",
+      "fullName": "Usman Saidu Nasamu Dakingari",
+      "aliases": [],
+      "bio": "Usman Saidu Nasamu Dakingari — public office holder record sourced from Wikidata.",
+      "photoInitials": "UD",
+      "isPublicPersonality": true,
+      "classification": "Governor of Kebbi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q22295109",
+      "slug": "yahaya-adoza-bello",
+      "fullName": "Yahaya Adoza Bello",
+      "aliases": [],
+      "bio": "Yahaya Adoza Bello — public office holder record sourced from Wikidata.",
+      "photoInitials": "YB",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/IMG-20230701-WA0024_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "BladesBaba",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:IMG-20230701-WA0024%20(cropped).jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Kogi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q22331789",
+      "slug": "idris-wada",
+      "fullName": "Idris Wada",
+      "aliases": [],
+      "bio": "Idris Wada — public office holder record sourced from Wikidata.",
+      "photoInitials": "IW",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Idriswada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Samsonopaluwa",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Idriswada.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Kogi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q124394414",
+      "slug": "ahmed-usman-ododo",
+      "fullName": "Ahmed Usman Ododo",
+      "aliases": [],
+      "bio": "Ahmed Usman Ododo — public office holder record sourced from Wikidata.",
+      "photoInitials": "AO",
+      "isPublicPersonality": true,
+      "classification": "Governor of Kogi State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q62059854",
+      "slug": "abdulrahman-abdulrazaq",
+      "fullName": "AbdulRahman AbdulRazaq",
+      "aliases": [],
+      "bio": "AbdulRahman AbdulRazaq — public office holder record sourced from Wikidata.",
+      "photoInitials": "AA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/AbdulRahman_AbdulRasaq_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Cuttondigital",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:AbdulRahman%20AbdulRasaq%20(cropped).jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Kwara State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q4665831",
+      "slug": "abdulfatah-ahmed",
+      "fullName": "Abdulfatah Ahmed",
+      "aliases": [],
+      "bio": "Abdulfatah Ahmed — public office holder record sourced from Wikidata.",
+      "photoInitials": "AA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Abdulfatah_Ahmed_at_PGLS_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Wikiregina",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abdulfatah%20Ahmed%20at%20PGLS%202.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Kwara State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q130614802",
+      "slug": "abdul-fatah-ahmed",
+      "fullName": "abdul fatah ahmed",
+      "aliases": [],
+      "bio": "abdul fatah ahmed — public office holder record sourced from Wikidata.",
+      "photoInitials": "AA",
+      "isPublicPersonality": true,
+      "classification": "Governor of Kwara State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q56678515",
+      "slug": "babajide-sanwo-olu",
+      "fullName": "Babajide Sanwo-Olu",
+      "aliases": [],
+      "bio": "Babajide Sanwo-Olu — public office holder record sourced from Wikidata.",
+      "photoInitials": "BS",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Babajide_Sanwaolu_2019_00_26_20_984000.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Kaizenify",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Babajide%20Sanwaolu%202019%2000%2026%2020%20984000.jpeg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Lagos State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q16149064",
+      "slug": "akinwunmi-dapo-ambode",
+      "fullName": "Akinwunmi Dapo Ambode",
+      "aliases": [],
+      "bio": "Akinwunmi Dapo Ambode — public office holder record sourced from Wikidata.",
+      "photoInitials": "AA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/AKINWUNMI_AMBODE_-_OIL_PAINTING_BY_RAJASEKHARAN.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Rajasekharan Parameswaran",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:AKINWUNMI%20AMBODE%20-%20OIL%20PAINTING%20BY%20RAJASEKHARAN.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Lagos State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q62356",
+      "slug": "babatunde-fashola",
+      "fullName": "Babatunde Fashola",
+      "aliases": [],
+      "bio": "Babatunde Fashola — public office holder record sourced from Wikidata.",
+      "photoInitials": "BF",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Babatunde_Fashola.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Bruno de Lima",
+        "license": "CC BY-SA 2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Babatunde%20Fashola.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Lagos State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q62036561",
+      "slug": "abdullahi-sule",
+      "fullName": "Abdullahi Sule",
+      "aliases": [],
+      "bio": "Abdullahi Sule — public office holder record sourced from Wikidata.",
+      "photoInitials": "AS",
+      "isPublicPersonality": true,
+      "classification": "Governor of Nasarawa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q7881179",
+      "slug": "umaru-tanko-al-makura",
+      "fullName": "Umaru Tanko Al-Makura",
+      "aliases": [],
+      "bio": "Umaru Tanko Al-Makura — public office holder record sourced from Wikidata.",
+      "photoInitials": "UA",
+      "isPublicPersonality": true,
+      "classification": "Governor of Nasarawa State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q65929260",
+      "slug": "mohammed-umar-bago",
+      "fullName": "Mohammed Umar Bago",
+      "aliases": [],
+      "bio": "Mohammed Umar Bago — public office holder record sourced from Wikidata.",
+      "photoInitials": "MB",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Mohammed_Umar_Bago.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Yusuf Muhammed Thanni",
+        "license": "CC BY 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mohammed%20Umar%20Bago.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Niger State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q19668818",
+      "slug": "abubakar-sani-bello",
+      "fullName": "Abubakar Sani Bello",
+      "aliases": [],
+      "bio": "Abubakar Sani Bello — public office holder record sourced from Wikidata.",
+      "photoInitials": "AB",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Lolo_Hot_Springs%2C_Lolo%2C_MT%2C_2011_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "djembayz",
+        "license": "CC0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lolo%20Hot%20Springs%2C%20Lolo%2C%20MT%2C%202011%201.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Niger State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q5024129",
+      "slug": "mu-azu-babangida-aliyu",
+      "fullName": "Mu'azu Babangida Aliyu",
+      "aliases": [],
+      "bio": "Mu'azu Babangida Aliyu — public office holder record sourced from Wikidata.",
+      "photoInitials": "MA",
+      "isPublicPersonality": true,
+      "classification": "Governor of Niger State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q61594908",
+      "slug": "dapo-abiodun",
+      "fullName": "Dapo Abiodun",
+      "aliases": [],
+      "bio": "Dapo Abiodun — public office holder record sourced from Wikidata.",
+      "photoInitials": "DA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Dapo_Abiodun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "Kaizenify",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dapo%20Abiodun.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Ogun State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    },
+    {
+      "id": "wd:Q5984059",
+      "slug": "ibikunle-oyelaja-amosun",
+      "fullName": "Ibikunle Oyelaja Amosun",
+      "aliases": [],
+      "bio": "Ibikunle Oyelaja Amosun — public office holder record sourced from Wikidata.",
+      "photoInitials": "IA",
+      "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Amosun-1-270x350_c.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "imageCredit": {
+        "photographer": "BENITA NNACHORTAM",
+        "license": "CC BY-SA 4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amosun-1-270x350%20c.jpg"
+      },
+      "isPublicPersonality": true,
+      "classification": "Governor of Ogun State",
+      "locationIds": [
+        "wd:Q1033"
+      ]
+    }
+  ],
+  "offices": [
+    {
+      "id": "wd:Q500282",
+      "slug": "president-of-nigeria",
+      "institutionId": "wd:Q1033-presidency",
+      "name": "President of Nigeria",
+      "title": "President of Nigeria",
+      "mandate": "Public office: President of Nigeria.",
+      "responsibilities": [
+        "President of Nigeria"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q2625960",
+      "slug": "vice-president-of-nigeria",
+      "institutionId": "wd:Q1033-presidency",
+      "name": "Vice President of Nigeria",
+      "title": "Vice President of Nigeria",
+      "mandate": "Public office: Vice President of Nigeria.",
+      "responsibilities": [
+        "Vice President of Nigeria"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q19671478",
+      "slug": "governor-of-abia-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Abia State",
+      "title": "Governor of Abia State",
+      "mandate": "Public office: Governor of Abia State.",
+      "responsibilities": [
+        "Governor of Abia State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q19671527",
+      "slug": "governor-of-adamawa-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Adamawa State",
+      "title": "Governor of Adamawa State",
+      "mandate": "Public office: Governor of Adamawa State.",
+      "responsibilities": [
+        "Governor of Adamawa State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q19671558",
+      "slug": "governor-of-akwa-ibom-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Akwa Ibom State",
+      "title": "Governor of Akwa Ibom State",
+      "mandate": "Public office: Governor of Akwa Ibom State.",
+      "responsibilities": [
+        "Governor of Akwa Ibom State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q19671587",
+      "slug": "governor-of-anambra-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Anambra State",
+      "title": "Governor of Anambra State",
+      "mandate": "Public office: Governor of Anambra State.",
+      "responsibilities": [
+        "Governor of Anambra State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q19681521",
+      "slug": "governor-of-bauchi-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Bauchi State",
+      "title": "Governor of Bauchi State",
+      "mandate": "Public office: Governor of Bauchi State.",
+      "responsibilities": [
+        "Governor of Bauchi State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q19681529",
+      "slug": "governor-of-bayelsa-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Bayelsa State",
+      "title": "Governor of Bayelsa State",
+      "mandate": "Public office: Governor of Bayelsa State.",
+      "responsibilities": [
+        "Governor of Bayelsa State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q19670906",
+      "slug": "governor-of-benue-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Benue State",
+      "title": "Governor of Benue State",
+      "mandate": "Public office: Governor of Benue State.",
+      "responsibilities": [
+        "Governor of Benue State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q19681536",
+      "slug": "governor-of-borno-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Borno State",
+      "title": "Governor of Borno State",
+      "mandate": "Public office: Governor of Borno State.",
+      "responsibilities": [
+        "Governor of Borno State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53845430",
+      "slug": "governor-of-cross-river-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Cross River State",
+      "title": "Governor of Cross River State",
+      "mandate": "Public office: Governor of Cross River State.",
+      "responsibilities": [
+        "Governor of Cross River State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q19682774",
+      "slug": "governor-of-delta-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Delta State",
+      "title": "Governor of Delta State",
+      "mandate": "Public office: Governor of Delta State.",
+      "responsibilities": [
+        "Governor of Delta State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q19682827",
+      "slug": "governor-of-ebonyi-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Ebonyi State",
+      "title": "Governor of Ebonyi State",
+      "mandate": "Public office: Governor of Ebonyi State.",
+      "responsibilities": [
+        "Governor of Ebonyi State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q19682857",
+      "slug": "governor-of-edo-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Edo State",
+      "title": "Governor of Edo State",
+      "mandate": "Public office: Governor of Edo State.",
+      "responsibilities": [
+        "Governor of Edo State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53857743",
+      "slug": "governor-of-ekiti-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Ekiti State",
+      "title": "Governor of Ekiti State",
+      "mandate": "Public office: Governor of Ekiti State.",
+      "responsibilities": [
+        "Governor of Ekiti State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53857940",
+      "slug": "governor-of-enugu-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Enugu State",
+      "title": "Governor of Enugu State",
+      "mandate": "Public office: Governor of Enugu State.",
+      "responsibilities": [
+        "Governor of Enugu State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53857981",
+      "slug": "governor-of-gombe-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Gombe State",
+      "title": "Governor of Gombe State",
+      "mandate": "Public office: Governor of Gombe State.",
+      "responsibilities": [
+        "Governor of Gombe State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53857987",
+      "slug": "governor-of-imo-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Imo State",
+      "title": "Governor of Imo State",
+      "mandate": "Public office: Governor of Imo State.",
+      "responsibilities": [
+        "Governor of Imo State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53857995",
+      "slug": "governor-of-jigawa-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Jigawa State",
+      "title": "Governor of Jigawa State",
+      "mandate": "Public office: Governor of Jigawa State.",
+      "responsibilities": [
+        "Governor of Jigawa State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q14915296",
+      "slug": "governor-of-kaduna-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Kaduna State",
+      "title": "Governor of Kaduna State",
+      "mandate": "Public office: Governor of Kaduna State.",
+      "responsibilities": [
+        "Governor of Kaduna State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53864915",
+      "slug": "governor-of-kano-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Kano State",
+      "title": "Governor of Kano State",
+      "mandate": "Public office: Governor of Kano State.",
+      "responsibilities": [
+        "Governor of Kano State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53864950",
+      "slug": "governor-of-katsina-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Katsina State",
+      "title": "Governor of Katsina State",
+      "mandate": "Public office: Governor of Katsina State.",
+      "responsibilities": [
+        "Governor of Katsina State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q6572142",
+      "slug": "governor-of-kebbi-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Kebbi State",
+      "title": "Governor of Kebbi State",
+      "mandate": "Public office: Governor of Kebbi State.",
+      "responsibilities": [
+        "Governor of Kebbi State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53865201",
+      "slug": "governor-of-kogi-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Kogi State",
+      "title": "Governor of Kogi State",
+      "mandate": "Public office: Governor of Kogi State.",
+      "responsibilities": [
+        "Governor of Kogi State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53865552",
+      "slug": "governor-of-kwara-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Kwara State",
+      "title": "Governor of Kwara State",
+      "mandate": "Public office: Governor of Kwara State.",
+      "responsibilities": [
+        "Governor of Kwara State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q19901457",
+      "slug": "governor-of-lagos-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Lagos State",
+      "title": "Governor of Lagos State",
+      "mandate": "Public office: Governor of Lagos State.",
+      "responsibilities": [
+        "Governor of Lagos State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53866357",
+      "slug": "governor-of-nasarawa-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Nasarawa State",
+      "title": "Governor of Nasarawa State",
+      "mandate": "Public office: Governor of Nasarawa State.",
+      "responsibilities": [
+        "Governor of Nasarawa State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53866438",
+      "slug": "governor-of-niger-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Niger State",
+      "title": "Governor of Niger State",
+      "mandate": "Public office: Governor of Niger State.",
+      "responsibilities": [
+        "Governor of Niger State"
+      ],
+      "level": "state"
+    },
+    {
+      "id": "wd:Q53869139",
+      "slug": "governor-of-ogun-state",
+      "institutionId": "wd:Q1033-state-exec",
+      "name": "Governor of Ogun State",
+      "title": "Governor of Ogun State",
+      "mandate": "Public office: Governor of Ogun State.",
+      "responsibilities": [
+        "Governor of Ogun State"
+      ],
+      "level": "state"
+    }
+  ],
+  "tenures": [
+    {
+      "id": "tenure-wd-q3510872-wd-q500282-2023-05-29",
+      "personId": "wd:Q3510872",
+      "officeId": "wd:Q500282",
+      "startDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q361567-wd-q500282-2015-05-29",
+      "personId": "wd:Q361567",
+      "officeId": "wd:Q500282",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q57380-wd-q500282-2010-05-05",
+      "personId": "wd:Q57380",
+      "officeId": "wd:Q500282",
+      "startDate": "2010-05-05",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q104705-wd-q500282-2007-05-29",
+      "personId": "wd:Q104705",
+      "officeId": "wd:Q500282",
+      "startDate": "2007-05-29",
+      "endDate": "2010-05-05",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q202006-wd-q500282-1999-05-29",
+      "personId": "wd:Q202006",
+      "officeId": "wd:Q500282",
+      "startDate": "1999-05-29",
+      "endDate": "2007-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q262346-wd-q500282-1998-06-08",
+      "personId": "wd:Q262346",
+      "officeId": "wd:Q500282",
+      "startDate": "1998-06-08",
+      "endDate": "1999-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q207942-wd-q500282-1993-11-17",
+      "personId": "wd:Q207942",
+      "officeId": "wd:Q500282",
+      "startDate": "1993-11-17",
+      "endDate": "1998-06-08",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q471351-wd-q500282-1993-08-26",
+      "personId": "wd:Q471351",
+      "officeId": "wd:Q500282",
+      "startDate": "1993-08-26",
+      "endDate": "1993-11-17",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q333415-wd-q500282-1985-08-27",
+      "personId": "wd:Q333415",
+      "officeId": "wd:Q500282",
+      "startDate": "1985-08-27",
+      "endDate": "1993-08-26",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q361567-wd-q500282-1983-12-31",
+      "personId": "wd:Q361567",
+      "officeId": "wd:Q500282",
+      "startDate": "1983-12-31",
+      "endDate": "1985-08-27",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q380668-wd-q500282-1979-10-01",
+      "personId": "wd:Q380668",
+      "officeId": "wd:Q500282",
+      "startDate": "1979-10-01",
+      "endDate": "1983-12-31",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q202006-wd-q500282-1976-02-13",
+      "personId": "wd:Q202006",
+      "officeId": "wd:Q500282",
+      "startDate": "1976-02-13",
+      "endDate": "1979-09-30",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q373628-wd-q500282-1975-07-30",
+      "personId": "wd:Q373628",
+      "officeId": "wd:Q500282",
+      "startDate": "1975-07-30",
+      "endDate": "1976-02-13",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q354695-wd-q500282-1966-08-01",
+      "personId": "wd:Q354695",
+      "officeId": "wd:Q500282",
+      "startDate": "1966-08-01",
+      "endDate": "1975-07-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q379888-wd-q500282-1966-01-16",
+      "personId": "wd:Q379888",
+      "officeId": "wd:Q500282",
+      "startDate": "1966-01-16",
+      "endDate": "1966-07-12",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q181782-wd-q500282-1963-10-01",
+      "personId": "wd:Q181782",
+      "officeId": "wd:Q500282",
+      "startDate": "1963-10-01",
+      "endDate": "1966-01-16",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q6374297-wd-q2625960-2023-05-29",
+      "personId": "wd:Q6374297",
+      "officeId": "wd:Q2625960",
+      "startDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q19730927-wd-q2625960-2015-05-29",
+      "personId": "wd:Q19730927",
+      "officeId": "wd:Q2625960",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q2993602-wd-q2625960-2010-05-19",
+      "personId": "wd:Q2993602",
+      "officeId": "wd:Q2625960",
+      "startDate": "2010-05-19",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q57380-wd-q2625960-2007-05-29",
+      "personId": "wd:Q57380",
+      "officeId": "wd:Q2625960",
+      "startDate": "2007-05-29",
+      "endDate": "2010-05-05",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q755878-wd-q2625960-1999-05-29",
+      "personId": "wd:Q755878",
+      "officeId": "wd:Q2625960",
+      "startDate": "1999-05-29",
+      "endDate": "2007-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3296213-wd-q2625960-1998-06-09",
+      "personId": "wd:Q3296213",
+      "officeId": "wd:Q2625960",
+      "startDate": "1998-06-09",
+      "endDate": "1999-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3511673-wd-q2625960-1993-11-17",
+      "personId": "wd:Q3511673",
+      "officeId": "wd:Q2625960",
+      "startDate": "1993-11-17",
+      "endDate": "1997-12-21",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3294849-wd-q2625960-1986-10-01",
+      "personId": "wd:Q3294849",
+      "officeId": "wd:Q2625960",
+      "startDate": "1986-10-01",
+      "endDate": "1993-08-27",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3509409-wd-q2625960-1985-08-27",
+      "personId": "wd:Q3509409",
+      "officeId": "wd:Q2625960",
+      "startDate": "1985-08-27",
+      "endDate": "1986-10-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3509487-wd-q2625960-1983-12-31",
+      "personId": "wd:Q3509487",
+      "officeId": "wd:Q2625960",
+      "startDate": "1983-12-31",
+      "endDate": "1985-08-27",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q1977060-wd-q2625960-1979-10-01",
+      "personId": "wd:Q1977060",
+      "officeId": "wd:Q2625960",
+      "startDate": "1979-10-01",
+      "endDate": "1983-12-31",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3509379-wd-q2625960-1976-02-13",
+      "personId": "wd:Q3509379",
+      "officeId": "wd:Q2625960",
+      "startDate": "1976-02-13",
+      "endDate": "1979-09-30",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q202006-wd-q2625960-1975-07-29",
+      "personId": "wd:Q202006",
+      "officeId": "wd:Q2625960",
+      "startDate": "1975-07-29",
+      "endDate": "1976-02-13",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3509444-wd-q2625960-1966-07-29",
+      "personId": "wd:Q3509444",
+      "officeId": "wd:Q2625960",
+      "startDate": "1966-07-29",
+      "endDate": "1975-07-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3510426-wd-q2625960-1966-01-16",
+      "personId": "wd:Q3510426",
+      "officeId": "wd:Q2625960",
+      "startDate": "1966-01-16",
+      "endDate": "1966-07-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q19958158-wd-q19671478-2015-05-29",
+      "personId": "wd:Q19958158",
+      "officeId": "wd:Q19671478",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3510938-wd-q19671478-2007-05-29",
+      "personId": "wd:Q3510938",
+      "officeId": "wd:Q19671478",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q18631942-wd-q19671478-1900-01-01",
+      "personId": "wd:Q18631942",
+      "officeId": "wd:Q19671478",
+      "startDate": "1900-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q61732418-wd-q19671527-2019-05-29",
+      "personId": "wd:Q61732418",
+      "officeId": "wd:Q19671527",
+      "startDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q4914035-wd-q19671527-2015-05-29",
+      "personId": "wd:Q4914035",
+      "officeId": "wd:Q19671527",
+      "startDate": "2015-05-29",
+      "endDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q61733016-wd-q19671527-2014-10-01",
+      "personId": "wd:Q61733016",
+      "officeId": "wd:Q19671527",
+      "startDate": "2014-10-01",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q4670502-wd-q19671527-1900-01-01",
+      "personId": "wd:Q4670502",
+      "officeId": "wd:Q19671527",
+      "startDate": "1900-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q13140755-wd-q19671527-1900-01-01",
+      "personId": "wd:Q13140755",
+      "officeId": "wd:Q19671527",
+      "startDate": "1900-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q17721981-wd-q19671527-1900-01-01",
+      "personId": "wd:Q17721981",
+      "officeId": "wd:Q19671527",
+      "startDate": "1900-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q117222421-wd-q19671558-2023-01-01",
+      "personId": "wd:Q117222421",
+      "officeId": "wd:Q19671558",
+      "startDate": "2023-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q20982220-wd-q19671558-2015-05-29",
+      "personId": "wd:Q20982220",
+      "officeId": "wd:Q19671558",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q5576947-wd-q19671558-2007-05-29",
+      "personId": "wd:Q5576947",
+      "officeId": "wd:Q19671558",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3511696-wd-q19671587-2022-03-17",
+      "personId": "wd:Q3511696",
+      "officeId": "wd:Q19671587",
+      "startDate": "2022-03-17",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q19671604-wd-q19671587-2014-03-17",
+      "personId": "wd:Q19671604",
+      "officeId": "wd:Q19671587",
+      "startDate": "2014-03-17",
+      "endDate": "2022-03-17",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q4849691-wd-q19681521-2019-05-29",
+      "personId": "wd:Q4849691",
+      "officeId": "wd:Q19681521",
+      "startDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q20810373-wd-q19681521-2015-05-29",
+      "personId": "wd:Q20810373",
+      "officeId": "wd:Q19681521",
+      "startDate": "2015-05-29",
+      "endDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q6075740-wd-q19681521-2007-05-29",
+      "personId": "wd:Q6075740",
+      "officeId": "wd:Q19681521",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q35539386-wd-q19681529-2020-02-14",
+      "personId": "wd:Q35539386",
+      "officeId": "wd:Q19681529",
+      "startDate": "2020-02-14",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q5720323-wd-q19681529-2012-02-14",
+      "personId": "wd:Q5720323",
+      "officeId": "wd:Q19681529",
+      "startDate": "2012-02-14",
+      "endDate": "2020-02-14",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q117234043-wd-q19670906-2023-01-01",
+      "personId": "wd:Q117234043",
+      "officeId": "wd:Q19670906",
+      "startDate": "2023-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q18354225-wd-q19670906-2015-05-29",
+      "personId": "wd:Q18354225",
+      "officeId": "wd:Q19670906",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q5515869-wd-q19670906-2007-05-29",
+      "personId": "wd:Q5515869",
+      "officeId": "wd:Q19670906",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q62059920-wd-q19681536-2019-05-29",
+      "personId": "wd:Q62059920",
+      "officeId": "wd:Q19681536",
+      "startDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q6374297-wd-q19681536-2011-05-29",
+      "personId": "wd:Q6374297",
+      "officeId": "wd:Q19681536",
+      "startDate": "2011-05-29",
+      "endDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q4868129-wd-q53845430-2023-01-01",
+      "personId": "wd:Q4868129",
+      "officeId": "wd:Q53845430",
+      "startDate": "2023-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q4887251-wd-q53845430-2015-05-29",
+      "personId": "wd:Q4887251",
+      "officeId": "wd:Q53845430",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q6660017-wd-q53845430-2007-05-29",
+      "personId": "wd:Q6660017",
+      "officeId": "wd:Q53845430",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q106764158-wd-q19682774-2023-01-01",
+      "personId": "wd:Q106764158",
+      "officeId": "wd:Q19682774",
+      "startDate": "2023-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q4799876-wd-q19682774-2015-05-29",
+      "personId": "wd:Q4799876",
+      "officeId": "wd:Q19682774",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q5373354-wd-q19682774-2007-05-29",
+      "personId": "wd:Q5373354",
+      "officeId": "wd:Q19682774",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q112156901-wd-q19682827-2023-01-01",
+      "personId": "wd:Q112156901",
+      "officeId": "wd:Q19682827",
+      "startDate": "2023-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q20982222-wd-q19682827-2015-05-29",
+      "personId": "wd:Q20982222",
+      "officeId": "wd:Q19682827",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3510875-wd-q19682827-2007-05-29",
+      "personId": "wd:Q3510875",
+      "officeId": "wd:Q19682827",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q139691374-wd-q19682827-1900-01-01",
+      "personId": "wd:Q139691374",
+      "officeId": "wd:Q19682827",
+      "startDate": "1900-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q24049118-wd-q19682857-2016-11-12",
+      "personId": "wd:Q24049118",
+      "officeId": "wd:Q19682857",
+      "startDate": "2016-11-12",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q11282486-wd-q19682857-2008-11-12",
+      "personId": "wd:Q11282486",
+      "officeId": "wd:Q19682857",
+      "startDate": "2008-11-12",
+      "endDate": "2016-11-12",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q112628913-wd-q53857743-2022-10-16",
+      "personId": "wd:Q112628913",
+      "officeId": "wd:Q53857743",
+      "startDate": "2022-10-16",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q6380660-wd-q53857743-2018-10-16",
+      "personId": "wd:Q6380660",
+      "officeId": "wd:Q53857743",
+      "startDate": "2018-10-16",
+      "endDate": "2022-10-16",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3510701-wd-q53857743-2014-10-16",
+      "personId": "wd:Q3510701",
+      "officeId": "wd:Q53857743",
+      "startDate": "2014-10-16",
+      "endDate": "2018-10-16",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q111722355-wd-q53857940-2023-01-01",
+      "personId": "wd:Q111722355",
+      "officeId": "wd:Q53857940",
+      "startDate": "2023-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q20982221-wd-q53857940-2015-05-29",
+      "personId": "wd:Q20982221",
+      "officeId": "wd:Q53857940",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3510905-wd-q53857940-2007-05-29",
+      "personId": "wd:Q3510905",
+      "officeId": "wd:Q53857940",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q62326774-wd-q53857981-2019-05-29",
+      "personId": "wd:Q62326774",
+      "officeId": "wd:Q53857981",
+      "startDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3511510-wd-q53857981-2011-05-01",
+      "personId": "wd:Q3511510",
+      "officeId": "wd:Q53857981",
+      "startDate": "2011-05-01",
+      "endDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q5899569-wd-q53857987-2020-01-15",
+      "personId": "wd:Q5899569",
+      "officeId": "wd:Q53857987",
+      "startDate": "2020-01-15",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q5116057-wd-q53857987-2019-05-29",
+      "personId": "wd:Q5116057",
+      "officeId": "wd:Q53857987",
+      "startDate": "2019-05-29",
+      "endDate": "2020-01-15",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q13140832-wd-q53857987-2011-05-29",
+      "personId": "wd:Q13140832",
+      "officeId": "wd:Q53857987",
+      "startDate": "2011-05-29",
+      "endDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q106774462-wd-q53857995-2023-01-01",
+      "personId": "wd:Q106774462",
+      "officeId": "wd:Q53857995",
+      "startDate": "2023-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q20090052-wd-q53857995-2015-05-29",
+      "personId": "wd:Q20090052",
+      "officeId": "wd:Q53857995",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3041557-wd-q53857995-2007-05-29",
+      "personId": "wd:Q3041557",
+      "officeId": "wd:Q53857995",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q6082944-wd-q14915296-2015-05-29",
+      "personId": "wd:Q6082944",
+      "officeId": "wd:Q14915296",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q6933504-wd-q14915296-2012-12-15",
+      "personId": "wd:Q6933504",
+      "officeId": "wd:Q14915296",
+      "startDate": "2012-12-15",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q18719262-wd-q53864915-2015-05-01",
+      "personId": "wd:Q18719262",
+      "officeId": "wd:Q53864915",
+      "startDate": "2015-05-01",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q3509922-wd-q53864915-2011-05-01",
+      "personId": "wd:Q3509922",
+      "officeId": "wd:Q53864915",
+      "startDate": "2011-05-01",
+      "endDate": "2015-05-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q91908076-wd-q53864915-1900-01-01",
+      "personId": "wd:Q91908076",
+      "officeId": "wd:Q53864915",
+      "startDate": "1900-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q117219229-wd-q53864950-2023-01-01",
+      "personId": "wd:Q117219229",
+      "officeId": "wd:Q53864950",
+      "startDate": "2023-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q18098561-wd-q53864950-2015-05-29",
+      "personId": "wd:Q18098561",
+      "officeId": "wd:Q53864950",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q5984734-wd-q53864950-2007-05-29",
+      "personId": "wd:Q5984734",
+      "officeId": "wd:Q53864950",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q117828644-wd-q6572142-2023-01-01",
+      "personId": "wd:Q117828644",
+      "officeId": "wd:Q6572142",
+      "startDate": "2023-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q10998235-wd-q6572142-2015-05-29",
+      "personId": "wd:Q10998235",
+      "officeId": "wd:Q6572142",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q7902060-wd-q6572142-2007-05-29",
+      "personId": "wd:Q7902060",
+      "officeId": "wd:Q6572142",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q22295109-wd-q53865201-2016-01-27",
+      "personId": "wd:Q22295109",
+      "officeId": "wd:Q53865201",
+      "startDate": "2016-01-27",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q22331789-wd-q53865201-2012-01-01",
+      "personId": "wd:Q22331789",
+      "officeId": "wd:Q53865201",
+      "startDate": "2012-01-01",
+      "endDate": "2016-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q124394414-wd-q53865201-1900-01-01",
+      "personId": "wd:Q124394414",
+      "officeId": "wd:Q53865201",
+      "startDate": "1900-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q62059854-wd-q53865552-2019-05-29",
+      "personId": "wd:Q62059854",
+      "officeId": "wd:Q53865552",
+      "startDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q4665831-wd-q53865552-2011-05-29",
+      "personId": "wd:Q4665831",
+      "officeId": "wd:Q53865552",
+      "startDate": "2011-05-29",
+      "endDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q130614802-wd-q53865552-1900-01-01",
+      "personId": "wd:Q130614802",
+      "officeId": "wd:Q53865552",
+      "startDate": "1900-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q56678515-wd-q19901457-2019-05-29",
+      "personId": "wd:Q56678515",
+      "officeId": "wd:Q19901457",
+      "startDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q16149064-wd-q19901457-2015-05-01",
+      "personId": "wd:Q16149064",
+      "officeId": "wd:Q19901457",
+      "startDate": "2015-05-01",
+      "endDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q62356-wd-q19901457-2007-05-29",
+      "personId": "wd:Q62356",
+      "officeId": "wd:Q19901457",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q62036561-wd-q53866357-2019-05-29",
+      "personId": "wd:Q62036561",
+      "officeId": "wd:Q53866357",
+      "startDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q7881179-wd-q53866357-2011-05-01",
+      "personId": "wd:Q7881179",
+      "officeId": "wd:Q53866357",
+      "startDate": "2011-05-01",
+      "endDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q65929260-wd-q53866438-2023-01-01",
+      "personId": "wd:Q65929260",
+      "officeId": "wd:Q53866438",
+      "startDate": "2023-01-01",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q19668818-wd-q53866438-2015-05-29",
+      "personId": "wd:Q19668818",
+      "officeId": "wd:Q53866438",
+      "startDate": "2015-05-29",
+      "endDate": "2023-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q5024129-wd-q53866438-2007-05-29",
+      "personId": "wd:Q5024129",
+      "officeId": "wd:Q53866438",
+      "startDate": "2007-05-29",
+      "endDate": "2015-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q61594908-wd-q53869139-2019-05-29",
+      "personId": "wd:Q61594908",
+      "officeId": "wd:Q53869139",
+      "startDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "tenure-wd-q5984059-wd-q53869139-2011-05-29",
+      "personId": "wd:Q5984059",
+      "officeId": "wd:Q53869139",
+      "startDate": "2011-05-29",
+      "endDate": "2019-05-29",
+      "appointmentType": "elected_or_appointed",
+      "sourceId": "src-wikidata-people"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-wd-tinubu-inauguration",
+      "slug": "statehouse-inauguration-2023",
+      "type": "Official Statement",
+      "title": "Presidential inauguration record",
+      "description": "Anchored to State House official presence for inauguration date.",
+      "sourceId": "src-statehouse-inauguration-2023",
+      "capturedAt": "2023-05-29",
+      "verificationStatus": "under_review",
+      "relatedEntityType": "person",
+      "relatedEntityId": "wd:Q3510872"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-wd-tinubu-inauguration",
+      "slug": "tinubu-inaugurated-president-2023",
+      "statement": "Bola Ahmed Tinubu was inaugurated as President of Nigeria on 29 May 2023.",
+      "kind": "official_record",
+      "personId": "wd:Q3510872",
+      "date": "2023-05-29",
+      "context": "Official inauguration record — status under_review until promote.",
+      "status": "under_review",
+      "evidenceIds": [
+        "ev-wd-tinubu-inauguration"
+      ],
+      "responseIds": []
+    }
+  ],
+  "memory": [
+    {
+      "id": "mem-tenure-wd-q3510872-wd-q500282-2023-05-29",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q3510872",
+      "date": "2023-05-29",
+      "description": "Appointed / assumed President of Nigeria.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q361567-wd-q500282-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q361567",
+      "date": "2015-05-29",
+      "description": "Held President of Nigeria until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q57380-wd-q500282-2010-05-05",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q57380",
+      "date": "2010-05-05",
+      "description": "Held President of Nigeria until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q104705-wd-q500282-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q104705",
+      "date": "2007-05-29",
+      "description": "Held President of Nigeria until 2010-05-05.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q202006-wd-q500282-1999-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q202006",
+      "date": "1999-05-29",
+      "description": "Held President of Nigeria until 2007-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q262346-wd-q500282-1998-06-08",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q262346",
+      "date": "1998-06-08",
+      "description": "Held President of Nigeria until 1999-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q207942-wd-q500282-1993-11-17",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q207942",
+      "date": "1993-11-17",
+      "description": "Held President of Nigeria until 1998-06-08.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q471351-wd-q500282-1993-08-26",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q471351",
+      "date": "1993-08-26",
+      "description": "Held President of Nigeria until 1993-11-17.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q333415-wd-q500282-1985-08-27",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q333415",
+      "date": "1985-08-27",
+      "description": "Held President of Nigeria until 1993-08-26.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q361567-wd-q500282-1983-12-31",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q361567",
+      "date": "1983-12-31",
+      "description": "Held President of Nigeria until 1985-08-27.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q380668-wd-q500282-1979-10-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q380668",
+      "date": "1979-10-01",
+      "description": "Held President of Nigeria until 1983-12-31.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q202006-wd-q500282-1976-02-13",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q202006",
+      "date": "1976-02-13",
+      "description": "Held President of Nigeria until 1979-09-30.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q373628-wd-q500282-1975-07-30",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q373628",
+      "date": "1975-07-30",
+      "description": "Held President of Nigeria until 1976-02-13.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q354695-wd-q500282-1966-08-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q354695",
+      "date": "1966-08-01",
+      "description": "Held President of Nigeria until 1975-07-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q379888-wd-q500282-1966-01-16",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q379888",
+      "date": "1966-01-16",
+      "description": "Held President of Nigeria until 1966-07-12.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q181782-wd-q500282-1963-10-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q181782",
+      "date": "1963-10-01",
+      "description": "Held President of Nigeria until 1966-01-16.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q6374297-wd-q2625960-2023-05-29",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q6374297",
+      "date": "2023-05-29",
+      "description": "Appointed / assumed Vice President of Nigeria.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q19730927-wd-q2625960-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q19730927",
+      "date": "2015-05-29",
+      "description": "Held Vice President of Nigeria until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q2993602-wd-q2625960-2010-05-19",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q2993602",
+      "date": "2010-05-19",
+      "description": "Held Vice President of Nigeria until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q57380-wd-q2625960-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q57380",
+      "date": "2007-05-29",
+      "description": "Held Vice President of Nigeria until 2010-05-05.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q755878-wd-q2625960-1999-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q755878",
+      "date": "1999-05-29",
+      "description": "Held Vice President of Nigeria until 2007-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3296213-wd-q2625960-1998-06-09",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3296213",
+      "date": "1998-06-09",
+      "description": "Held Vice President of Nigeria until 1999-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3511673-wd-q2625960-1993-11-17",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3511673",
+      "date": "1993-11-17",
+      "description": "Held Vice President of Nigeria until 1997-12-21.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3294849-wd-q2625960-1986-10-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3294849",
+      "date": "1986-10-01",
+      "description": "Held Vice President of Nigeria until 1993-08-27.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3509409-wd-q2625960-1985-08-27",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3509409",
+      "date": "1985-08-27",
+      "description": "Held Vice President of Nigeria until 1986-10-01.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3509487-wd-q2625960-1983-12-31",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3509487",
+      "date": "1983-12-31",
+      "description": "Held Vice President of Nigeria until 1985-08-27.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q1977060-wd-q2625960-1979-10-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q1977060",
+      "date": "1979-10-01",
+      "description": "Held Vice President of Nigeria until 1983-12-31.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3509379-wd-q2625960-1976-02-13",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3509379",
+      "date": "1976-02-13",
+      "description": "Held Vice President of Nigeria until 1979-09-30.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q202006-wd-q2625960-1975-07-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q202006",
+      "date": "1975-07-29",
+      "description": "Held Vice President of Nigeria until 1976-02-13.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3509444-wd-q2625960-1966-07-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3509444",
+      "date": "1966-07-29",
+      "description": "Held Vice President of Nigeria until 1975-07-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3510426-wd-q2625960-1966-01-16",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3510426",
+      "date": "1966-01-16",
+      "description": "Held Vice President of Nigeria until 1966-07-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q19958158-wd-q19671478-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q19958158",
+      "date": "2015-05-29",
+      "description": "Held Governor of Abia State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3510938-wd-q19671478-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3510938",
+      "date": "2007-05-29",
+      "description": "Held Governor of Abia State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q18631942-wd-q19671478-1900-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q18631942",
+      "date": "1900-01-01",
+      "description": "Appointed / assumed Governor of Abia State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q61732418-wd-q19671527-2019-05-29",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q61732418",
+      "date": "2019-05-29",
+      "description": "Appointed / assumed Governor of Adamawa State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q4914035-wd-q19671527-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q4914035",
+      "date": "2015-05-29",
+      "description": "Held Governor of Adamawa State until 2019-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q61733016-wd-q19671527-2014-10-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q61733016",
+      "date": "2014-10-01",
+      "description": "Held Governor of Adamawa State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q4670502-wd-q19671527-1900-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q4670502",
+      "date": "1900-01-01",
+      "description": "Appointed / assumed Governor of Adamawa State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q13140755-wd-q19671527-1900-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q13140755",
+      "date": "1900-01-01",
+      "description": "Appointed / assumed Governor of Adamawa State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q17721981-wd-q19671527-1900-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q17721981",
+      "date": "1900-01-01",
+      "description": "Appointed / assumed Governor of Adamawa State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q117222421-wd-q19671558-2023-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q117222421",
+      "date": "2023-01-01",
+      "description": "Appointed / assumed Governor of Akwa Ibom State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q20982220-wd-q19671558-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q20982220",
+      "date": "2015-05-29",
+      "description": "Held Governor of Akwa Ibom State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q5576947-wd-q19671558-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q5576947",
+      "date": "2007-05-29",
+      "description": "Held Governor of Akwa Ibom State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3511696-wd-q19671587-2022-03-17",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q3511696",
+      "date": "2022-03-17",
+      "description": "Appointed / assumed Governor of Anambra State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q19671604-wd-q19671587-2014-03-17",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q19671604",
+      "date": "2014-03-17",
+      "description": "Held Governor of Anambra State until 2022-03-17.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q4849691-wd-q19681521-2019-05-29",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q4849691",
+      "date": "2019-05-29",
+      "description": "Appointed / assumed Governor of Bauchi State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q20810373-wd-q19681521-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q20810373",
+      "date": "2015-05-29",
+      "description": "Held Governor of Bauchi State until 2019-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q6075740-wd-q19681521-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q6075740",
+      "date": "2007-05-29",
+      "description": "Held Governor of Bauchi State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q35539386-wd-q19681529-2020-02-14",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q35539386",
+      "date": "2020-02-14",
+      "description": "Appointed / assumed Governor of Bayelsa State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q5720323-wd-q19681529-2012-02-14",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q5720323",
+      "date": "2012-02-14",
+      "description": "Held Governor of Bayelsa State until 2020-02-14.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q117234043-wd-q19670906-2023-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q117234043",
+      "date": "2023-01-01",
+      "description": "Appointed / assumed Governor of Benue State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q18354225-wd-q19670906-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q18354225",
+      "date": "2015-05-29",
+      "description": "Held Governor of Benue State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q5515869-wd-q19670906-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q5515869",
+      "date": "2007-05-29",
+      "description": "Held Governor of Benue State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q62059920-wd-q19681536-2019-05-29",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q62059920",
+      "date": "2019-05-29",
+      "description": "Appointed / assumed Governor of Borno State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q6374297-wd-q19681536-2011-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q6374297",
+      "date": "2011-05-29",
+      "description": "Held Governor of Borno State until 2019-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q4868129-wd-q53845430-2023-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q4868129",
+      "date": "2023-01-01",
+      "description": "Appointed / assumed Governor of Cross River State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q4887251-wd-q53845430-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q4887251",
+      "date": "2015-05-29",
+      "description": "Held Governor of Cross River State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q6660017-wd-q53845430-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q6660017",
+      "date": "2007-05-29",
+      "description": "Held Governor of Cross River State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q106764158-wd-q19682774-2023-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q106764158",
+      "date": "2023-01-01",
+      "description": "Appointed / assumed Governor of Delta State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q4799876-wd-q19682774-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q4799876",
+      "date": "2015-05-29",
+      "description": "Held Governor of Delta State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q5373354-wd-q19682774-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q5373354",
+      "date": "2007-05-29",
+      "description": "Held Governor of Delta State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q112156901-wd-q19682827-2023-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q112156901",
+      "date": "2023-01-01",
+      "description": "Appointed / assumed Governor of Ebonyi State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q20982222-wd-q19682827-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q20982222",
+      "date": "2015-05-29",
+      "description": "Held Governor of Ebonyi State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3510875-wd-q19682827-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3510875",
+      "date": "2007-05-29",
+      "description": "Held Governor of Ebonyi State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q139691374-wd-q19682827-1900-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q139691374",
+      "date": "1900-01-01",
+      "description": "Appointed / assumed Governor of Ebonyi State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q24049118-wd-q19682857-2016-11-12",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q24049118",
+      "date": "2016-11-12",
+      "description": "Appointed / assumed Governor of Edo State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q11282486-wd-q19682857-2008-11-12",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q11282486",
+      "date": "2008-11-12",
+      "description": "Held Governor of Edo State until 2016-11-12.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q112628913-wd-q53857743-2022-10-16",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q112628913",
+      "date": "2022-10-16",
+      "description": "Appointed / assumed Governor of Ekiti State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q6380660-wd-q53857743-2018-10-16",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q6380660",
+      "date": "2018-10-16",
+      "description": "Held Governor of Ekiti State until 2022-10-16.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3510701-wd-q53857743-2014-10-16",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3510701",
+      "date": "2014-10-16",
+      "description": "Held Governor of Ekiti State until 2018-10-16.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q111722355-wd-q53857940-2023-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q111722355",
+      "date": "2023-01-01",
+      "description": "Appointed / assumed Governor of Enugu State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q20982221-wd-q53857940-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q20982221",
+      "date": "2015-05-29",
+      "description": "Held Governor of Enugu State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3510905-wd-q53857940-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3510905",
+      "date": "2007-05-29",
+      "description": "Held Governor of Enugu State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q62326774-wd-q53857981-2019-05-29",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q62326774",
+      "date": "2019-05-29",
+      "description": "Appointed / assumed Governor of Gombe State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3511510-wd-q53857981-2011-05-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3511510",
+      "date": "2011-05-01",
+      "description": "Held Governor of Gombe State until 2019-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q5899569-wd-q53857987-2020-01-15",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q5899569",
+      "date": "2020-01-15",
+      "description": "Appointed / assumed Governor of Imo State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q5116057-wd-q53857987-2019-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q5116057",
+      "date": "2019-05-29",
+      "description": "Held Governor of Imo State until 2020-01-15.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q13140832-wd-q53857987-2011-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q13140832",
+      "date": "2011-05-29",
+      "description": "Held Governor of Imo State until 2019-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q106774462-wd-q53857995-2023-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q106774462",
+      "date": "2023-01-01",
+      "description": "Appointed / assumed Governor of Jigawa State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q20090052-wd-q53857995-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q20090052",
+      "date": "2015-05-29",
+      "description": "Held Governor of Jigawa State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3041557-wd-q53857995-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3041557",
+      "date": "2007-05-29",
+      "description": "Held Governor of Jigawa State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q6082944-wd-q14915296-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q6082944",
+      "date": "2015-05-29",
+      "description": "Held Governor of Kaduna State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q6933504-wd-q14915296-2012-12-15",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q6933504",
+      "date": "2012-12-15",
+      "description": "Held Governor of Kaduna State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q18719262-wd-q53864915-2015-05-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q18719262",
+      "date": "2015-05-01",
+      "description": "Held Governor of Kano State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q3509922-wd-q53864915-2011-05-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q3509922",
+      "date": "2011-05-01",
+      "description": "Held Governor of Kano State until 2015-05-01.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q91908076-wd-q53864915-1900-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q91908076",
+      "date": "1900-01-01",
+      "description": "Appointed / assumed Governor of Kano State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q117219229-wd-q53864950-2023-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q117219229",
+      "date": "2023-01-01",
+      "description": "Appointed / assumed Governor of Katsina State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q18098561-wd-q53864950-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q18098561",
+      "date": "2015-05-29",
+      "description": "Held Governor of Katsina State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q5984734-wd-q53864950-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q5984734",
+      "date": "2007-05-29",
+      "description": "Held Governor of Katsina State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q117828644-wd-q6572142-2023-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q117828644",
+      "date": "2023-01-01",
+      "description": "Appointed / assumed Governor of Kebbi State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q10998235-wd-q6572142-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q10998235",
+      "date": "2015-05-29",
+      "description": "Held Governor of Kebbi State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q7902060-wd-q6572142-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q7902060",
+      "date": "2007-05-29",
+      "description": "Held Governor of Kebbi State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q22295109-wd-q53865201-2016-01-27",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q22295109",
+      "date": "2016-01-27",
+      "description": "Appointed / assumed Governor of Kogi State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q22331789-wd-q53865201-2012-01-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q22331789",
+      "date": "2012-01-01",
+      "description": "Held Governor of Kogi State until 2016-01-01.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q124394414-wd-q53865201-1900-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q124394414",
+      "date": "1900-01-01",
+      "description": "Appointed / assumed Governor of Kogi State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q62059854-wd-q53865552-2019-05-29",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q62059854",
+      "date": "2019-05-29",
+      "description": "Appointed / assumed Governor of Kwara State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q4665831-wd-q53865552-2011-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q4665831",
+      "date": "2011-05-29",
+      "description": "Held Governor of Kwara State until 2019-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q130614802-wd-q53865552-1900-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q130614802",
+      "date": "1900-01-01",
+      "description": "Appointed / assumed Governor of Kwara State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q56678515-wd-q19901457-2019-05-29",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q56678515",
+      "date": "2019-05-29",
+      "description": "Appointed / assumed Governor of Lagos State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q16149064-wd-q19901457-2015-05-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q16149064",
+      "date": "2015-05-01",
+      "description": "Held Governor of Lagos State until 2019-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q62356-wd-q19901457-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q62356",
+      "date": "2007-05-29",
+      "description": "Held Governor of Lagos State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q62036561-wd-q53866357-2019-05-29",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q62036561",
+      "date": "2019-05-29",
+      "description": "Appointed / assumed Governor of Nasarawa State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q7881179-wd-q53866357-2011-05-01",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q7881179",
+      "date": "2011-05-01",
+      "description": "Held Governor of Nasarawa State until 2019-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q65929260-wd-q53866438-2023-01-01",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q65929260",
+      "date": "2023-01-01",
+      "description": "Appointed / assumed Governor of Niger State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q19668818-wd-q53866438-2015-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q19668818",
+      "date": "2015-05-29",
+      "description": "Held Governor of Niger State until 2023-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q5024129-wd-q53866438-2007-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q5024129",
+      "date": "2007-05-29",
+      "description": "Held Governor of Niger State until 2015-05-29.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q61594908-wd-q53869139-2019-05-29",
+      "eventType": "Appointment",
+      "entityType": "person",
+      "entityId": "wd:Q61594908",
+      "date": "2019-05-29",
+      "description": "Appointed / assumed Governor of Ogun State.",
+      "sourceId": "src-wikidata-people"
+    },
+    {
+      "id": "mem-tenure-wd-q5984059-wd-q53869139-2011-05-29",
+      "eventType": "Outcome",
+      "entityType": "person",
+      "entityId": "wd:Q5984059",
+      "date": "2011-05-29",
+      "description": "Held Governor of Ogun State until 2019-05-29.",
+      "sourceId": "src-wikidata-people"
+    }
+  ]
+}

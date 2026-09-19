@@ -1,0 +1,5196 @@
+{
+  "sources": [
+    {
+      "id": "src-wikidata-places",
+      "type": "Official Dataset",
+      "title": "Wikidata — Nigerian states and LGAs",
+      "publisher": "Wikimedia Foundation / Wikidata",
+      "url": "https://www.wikidata.org/",
+      "publicationDate": "2026-09-19",
+      "description": "Structured places ingested via SPARQL (CC0).",
+      "reliability": "high"
+    }
+  ],
+  "locations": [
+    {
+      "id": "wd:Q1033",
+      "slug": "nigeria",
+      "name": "Nigeria",
+      "type": "country",
+      "lat": 9.082,
+      "lng": 8.6753,
+      "summary": "Federal Republic of Nigeria (Wikidata Q1033)."
+    },
+    {
+      "id": "wd:Q320852",
+      "slug": "abia-state",
+      "name": "Abia State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 5.416666666,
+      "lng": 7.5,
+      "summary": "Abia State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q337514",
+      "slug": "adamawa-state",
+      "name": "Adamawa State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 9.33333333,
+      "lng": 12.5,
+      "summary": "Adamawa State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q424388",
+      "slug": "akwa-ibom-state",
+      "name": "Akwa Ibom State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 5,
+      "lng": 7.833333333,
+      "summary": "Akwa Ibom State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q117714",
+      "slug": "anambra-state",
+      "name": "Anambra State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 6.333333333,
+      "lng": 7,
+      "summary": "Anambra State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q503936",
+      "slug": "bauchi-state",
+      "name": "Bauchi State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 10.306666666,
+      "lng": 9.8125,
+      "summary": "Bauchi State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q532153",
+      "slug": "bayelsa-state",
+      "name": "Bayelsa State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 4.75,
+      "lng": 6.083333333,
+      "summary": "Bayelsa State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q27536437",
+      "slug": "bendel-state",
+      "name": "Bendel State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 9,
+      "lng": 8,
+      "summary": "Bendel State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q429908",
+      "slug": "benue-state",
+      "name": "Benue State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 7.333333333,
+      "lng": 8.75,
+      "summary": "Benue State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q840930",
+      "slug": "benue-plateau-state",
+      "name": "Benue-Plateau State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 11.206861,
+      "lng": 9.183237,
+      "summary": "Benue-Plateau State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q130626",
+      "slug": "borno-state",
+      "name": "Borno State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 11.5,
+      "lng": 13,
+      "summary": "Borno State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q739676",
+      "slug": "cross-river-state",
+      "name": "Cross River State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 5.75,
+      "lng": 8.5,
+      "summary": "Cross River State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q503910",
+      "slug": "delta-state",
+      "name": "Delta State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 5.5,
+      "lng": 6,
+      "summary": "Delta State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q3511658",
+      "slug": "east-central-state",
+      "name": "East Central State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 6.440278,
+      "lng": 7.494167,
+      "summary": "East Central State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q506808",
+      "slug": "ebonyi-state",
+      "name": "Ebonyi State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 6.25,
+      "lng": 8.083333333,
+      "summary": "Ebonyi State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q682704",
+      "slug": "edo-state",
+      "name": "Edo State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 6.5,
+      "lng": 6,
+      "summary": "Edo State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q534917",
+      "slug": "ekiti-state",
+      "name": "Ekiti State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 7.666666666,
+      "lng": 5.25,
+      "summary": "Ekiti State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q3817714",
+      "slug": "enugu-state",
+      "name": "Enugu State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 6.5,
+      "lng": 7.5,
+      "summary": "Enugu State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q509300",
+      "slug": "federal-capital-territory-state",
+      "name": "Federal Capital Territory",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 8.83333333,
+      "lng": 7.16666667,
+      "summary": "Federal Capital Territory — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q376241",
+      "slug": "gombe-state",
+      "name": "Gombe State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 10.281388888,
+      "lng": 11.163333333,
+      "summary": "Gombe State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q3508968",
+      "slug": "gongola-state",
+      "name": "Gongola State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 8.5,
+      "lng": 11.75,
+      "summary": "Gongola State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q842939",
+      "slug": "imo-state",
+      "name": "Imo State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 5.483333333,
+      "lng": 7.033333333,
+      "summary": "Imo State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q682691",
+      "slug": "jigawa-state",
+      "name": "Jigawa State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 12,
+      "lng": 9.75,
+      "summary": "Jigawa State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q878284",
+      "slug": "kaduna-state",
+      "name": "Kaduna State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 10.333333333,
+      "lng": 7.75,
+      "summary": "Kaduna State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q682571",
+      "slug": "kano-state",
+      "name": "Kano State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 11.5,
+      "lng": 8.5,
+      "summary": "Kano State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q657821",
+      "slug": "katsina-state",
+      "name": "Katsina State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 12.25,
+      "lng": 7.5,
+      "summary": "Katsina State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q748523",
+      "slug": "kebbi-state",
+      "name": "Kebbi State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 11.5,
+      "lng": 4,
+      "summary": "Kebbi State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q387745",
+      "slug": "kogi-state",
+      "name": "Kogi State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 7.5,
+      "lng": 6.7,
+      "summary": "Kogi State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q464953",
+      "slug": "kwara-state",
+      "name": "Kwara State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 9,
+      "lng": 4.5,
+      "summary": "Kwara State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q815913",
+      "slug": "lagos-state",
+      "name": "Lagos State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 6.583333333,
+      "lng": 3.75,
+      "summary": "Lagos State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q27536429",
+      "slug": "mid-western-state",
+      "name": "Mid-Western State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 9,
+      "lng": 8,
+      "summary": "Mid-Western State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q836645",
+      "slug": "nasarawa-state",
+      "name": "Nasarawa State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 8.533333333,
+      "lng": 8.3,
+      "summary": "Nasarawa State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q503932",
+      "slug": "niger-state",
+      "name": "Niger State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 10,
+      "lng": 6,
+      "summary": "Niger State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q27536865",
+      "slug": "north-central-state",
+      "name": "North-Central state",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 9,
+      "lng": 8,
+      "summary": "North-Central state — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q9294802",
+      "slug": "north-eastern-state",
+      "name": "North-Eastern State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 11.833333,
+      "lng": 13.15,
+      "summary": "North-Eastern State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q10337430",
+      "slug": "north-western-state",
+      "name": "North-Western State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 13.066667,
+      "lng": 5.233333,
+      "summary": "North-Western State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q836657",
+      "slug": "ogun-state",
+      "name": "Ogun State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 7.12,
+      "lng": 3.3725,
+      "summary": "Ogun State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q836654",
+      "slug": "ondo-state",
+      "name": "Ondo State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 7.166666666,
+      "lng": 5.083333333,
+      "summary": "Ondo State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q682721",
+      "slug": "osun-state",
+      "name": "Osun State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 7.5,
+      "lng": 4.5,
+      "summary": "Osun State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q503905",
+      "slug": "oyo-state",
+      "name": "Oyo State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 8,
+      "lng": 4,
+      "summary": "Oyo State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q503928",
+      "slug": "plateau-state",
+      "name": "Plateau State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 9.166666666,
+      "lng": 9.75,
+      "summary": "Plateau State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q503923",
+      "slug": "rivers-state",
+      "name": "Rivers State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 4.75,
+      "lng": 6.833333333,
+      "summary": "Rivers State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q503941",
+      "slug": "sokoto-state",
+      "name": "Sokoto State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 13.083333333,
+      "lng": 5.25,
+      "summary": "Sokoto State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q27536370",
+      "slug": "south-eastern-state",
+      "name": "South Eastern State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 9,
+      "lng": 8,
+      "summary": "South Eastern State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q463959",
+      "slug": "taraba-state",
+      "name": "Taraba State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 8,
+      "lng": 10.5,
+      "summary": "Taraba State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q7988329",
+      "slug": "western-state",
+      "name": "Western State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 7.396388,
+      "lng": 3.916667,
+      "summary": "Western State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q682777",
+      "slug": "yobe-state",
+      "name": "Yobe State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 12,
+      "lng": 11.5,
+      "summary": "Yobe State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q145793",
+      "slug": "zamfara-state",
+      "name": "Zamfara State",
+      "type": "state",
+      "parentId": "wd:Q1033",
+      "lat": 12.166666666,
+      "lng": 6.25,
+      "summary": "Zamfara State — federating unit of Nigeria (Wikidata)."
+    },
+    {
+      "id": "wd:Q137455721",
+      "slug": "basse-lga",
+      "name": "Basse",
+      "type": "lga",
+      "lat": 10.164109261,
+      "lng": 8.782665022,
+      "summary": "Basse local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q25044060",
+      "slug": "ijede-lga",
+      "name": "Ijede",
+      "type": "lga",
+      "lat": 6.5708,
+      "lng": 3.5965,
+      "summary": "Ijede local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q137542510",
+      "slug": "ikorodu-lga",
+      "name": "Ikorodu",
+      "type": "lga",
+      "lat": 6.619454318,
+      "lng": 3.511018469,
+      "summary": "Ikorodu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q137455736",
+      "slug": "lautang-north-lga",
+      "name": "Lautang north",
+      "type": "lga",
+      "lat": 9.148752984,
+      "lng": 9.799949235,
+      "summary": "Lautang north local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q137542707",
+      "slug": "mushin-lga",
+      "name": "Mushin",
+      "type": "lga",
+      "lat": 6.534505203,
+      "lng": 3.346187856,
+      "summary": "Mushin local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q137477112",
+      "slug": "muya-lga",
+      "name": "Muya",
+      "type": "lga",
+      "lat": 10.748687282,
+      "lng": 7.12100748,
+      "summary": "Muya local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q137426736",
+      "slug": "okehi-lga",
+      "name": "Okehi",
+      "type": "lga",
+      "lat": 7.745272529,
+      "lng": 6.342672818,
+      "summary": "Okehi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7106875",
+      "slug": "osisioma-lga",
+      "name": "Osisioma",
+      "type": "lga",
+      "lat": 5.204919706,
+      "lng": 7.330054539,
+      "summary": "Osisioma local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q137426852",
+      "slug": "umuekene-lga",
+      "name": "Umuekene",
+      "type": "lga",
+      "lat": 5.246568869,
+      "lng": 7.294645594,
+      "summary": "Umuekene local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4663114",
+      "slug": "aba-north-lga",
+      "name": "Aba North",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.125,
+      "lng": 7.374,
+      "summary": "Aba North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4663117",
+      "slug": "aba-south-lga",
+      "name": "Aba South",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.1,
+      "lng": 7.35,
+      "summary": "Aba South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q134334843",
+      "slug": "afikpo-lga",
+      "name": "Afikpo",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.891039325,
+      "lng": 7.930279415,
+      "summary": "Afikpo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q134335326",
+      "slug": "afikpo-south-lga",
+      "name": "Afikpo South",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.84844877,
+      "lng": 7.804524226,
+      "summary": "Afikpo South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q965036",
+      "slug": "arochukwu-lga",
+      "name": "Arochukwu",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.3845,
+      "lng": 7.8867,
+      "summary": "Arochukwu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q139791813",
+      "slug": "bende-lga",
+      "name": "Bende",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.558,
+      "lng": 7.636,
+      "summary": "Bende local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5996447",
+      "slug": "ikwuano-lga",
+      "name": "Ikwuano",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.43333,
+      "lng": 7.56667,
+      "summary": "Ikwuano local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140544",
+      "slug": "isiala-ngwa-north-lga",
+      "name": "Isiala-Ngwa North",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.388966,
+      "lng": 7.446948,
+      "summary": "Isiala-Ngwa North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6080818",
+      "slug": "isiala-ngwa-south-lga",
+      "name": "Isiala-Ngwa South",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.36241,
+      "lng": 7.39998,
+      "summary": "Isiala-Ngwa South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6089443",
+      "slug": "isuikwuato-lga",
+      "name": "Isuikwuato",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.73489,
+      "lng": 7.50263,
+      "summary": "Isuikwuato local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7074920",
+      "slug": "obi-ngwa-lga",
+      "name": "Obi Ngwa",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.155402,
+      "lng": 7.457067,
+      "summary": "Obi Ngwa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q134347001",
+      "slug": "obioma-ngwa-lga",
+      "name": "Obioma-Ngwa",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.325595,
+      "lng": 7.401299,
+      "summary": "Obioma-Ngwa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7080605",
+      "slug": "ohafia-lga",
+      "name": "Ohafia",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.616666666,
+      "lng": 7.833333333,
+      "summary": "Ohafia local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q136374302",
+      "slug": "oke-ikpe-lga",
+      "name": "Oke Ikpe",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 4.91301,
+      "lng": 7.31936,
+      "summary": "Oke Ikpe local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7106876",
+      "slug": "osisioma-ngwa-lga",
+      "name": "Osisioma Ngwa",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.14972,
+      "lng": 7.33028,
+      "summary": "Osisioma Ngwa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q108695939",
+      "slug": "ugwueke-lga",
+      "name": "Ugwueke",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.733333333,
+      "lng": 7.6,
+      "summary": "Ugwueke local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7877949",
+      "slug": "ugwunagbo-lga",
+      "name": "Ugwunagbo",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 4.984474,
+      "lng": 7.325783,
+      "summary": "Ugwunagbo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7878633",
+      "slug": "ukwa-east-lga",
+      "name": "Ukwa East",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 4.887222,
+      "lng": 7.357222,
+      "summary": "Ukwa East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q11058273",
+      "slug": "ukwa-west-lga",
+      "name": "Ukwa West",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 4.95401,
+      "lng": 7.23927,
+      "summary": "Ukwa West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7881829",
+      "slug": "umuahia-north-lga",
+      "name": "Umuahia North",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.533333,
+      "lng": 7.483333,
+      "summary": "Umuahia North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7881831",
+      "slug": "umuahia-south-lga",
+      "name": "Umuahia South",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.46234,
+      "lng": 7.43997,
+      "summary": "Umuahia South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7881822",
+      "slug": "umunneochi-lga",
+      "name": "Umunneochi",
+      "type": "lga",
+      "parentId": "wd:Q320852",
+      "lat": 5.985662,
+      "lng": 7.402338,
+      "summary": "Umunneochi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5507236",
+      "slug": "fufore-lga",
+      "name": "Fufore",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 9.21667,
+      "lng": 12.65,
+      "summary": "Fufore local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5521544",
+      "slug": "ganye-lga",
+      "name": "Ganye",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 8.3675,
+      "lng": 11.945555555,
+      "summary": "Ganye local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5564220",
+      "slug": "girei-lga",
+      "name": "Girei",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 9.36667,
+      "lng": 12.55,
+      "summary": "Girei local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5608733",
+      "slug": "gombi-lga",
+      "name": "Gombi",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 10.189444444,
+      "lng": 12.527777777,
+      "summary": "Gombi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5622887",
+      "slug": "guyuk-lga",
+      "name": "Guyuk",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 9.90556,
+      "lng": 11.9283,
+      "summary": "Guyuk local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5894008",
+      "slug": "hong-lga",
+      "name": "Hong",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 10.2317,
+      "lng": 12.9303,
+      "summary": "Hong local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6121167",
+      "slug": "jada-lga",
+      "name": "Jada",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 8.688611111,
+      "lng": 12.3175,
+      "summary": "Jada local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140505",
+      "slug": "lamurde-lga",
+      "name": "Lamurde",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 9.6,
+      "lng": 11.7833,
+      "summary": "Lamurde local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6726121",
+      "slug": "madagali-lga",
+      "name": "Madagali",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 10.746136111,
+      "lng": 13.415922222,
+      "summary": "Madagali local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6735584",
+      "slug": "maiha-lga",
+      "name": "Maiha",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 9.86975,
+      "lng": 13.2048,
+      "summary": "Maiha local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6797493",
+      "slug": "mayo-belwa-lga",
+      "name": "Mayo Belwa",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 9.054166666,
+      "lng": 12.058055555,
+      "summary": "Mayo Belwa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6837873",
+      "slug": "michika-lga",
+      "name": "Michika",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 10.580833333,
+      "lng": 13.397777777,
+      "summary": "Michika local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q10969312",
+      "slug": "mubi-north-lga",
+      "name": "Mubi North",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 10.2667,
+      "lng": 13.2667,
+      "summary": "Mubi North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6930892",
+      "slug": "mubi-south-lga",
+      "name": "Mubi South",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 10.1874,
+      "lng": 13.39576,
+      "summary": "Mubi South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3510590",
+      "slug": "numan-lga",
+      "name": "Numan",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 9.46694,
+      "lng": 12.0328,
+      "summary": "Numan local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4713068",
+      "slug": "shelleng-lga",
+      "name": "Shelleng",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 9.88472,
+      "lng": 12.0089,
+      "summary": "Shelleng local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7560957",
+      "slug": "song-lga",
+      "name": "Song",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 9.824444444,
+      "lng": 12.625,
+      "summary": "Song local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7828915",
+      "slug": "toungo-lga",
+      "name": "Toungo",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 8.117222222,
+      "lng": 12.046111111,
+      "summary": "Toungo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q8054712",
+      "slug": "yola-north-lga",
+      "name": "Yola North",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 9.26628,
+      "lng": 12.25113,
+      "summary": "Yola North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q8054714",
+      "slug": "yola-south-lga",
+      "name": "Yola South",
+      "type": "lga",
+      "parentId": "wd:Q337514",
+      "lat": 9.2,
+      "lng": 12.483333,
+      "summary": "Yola South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q65084738",
+      "slug": "oka-akoko-lga",
+      "name": "Oka Akoko",
+      "type": "lga",
+      "parentId": "wd:Q4701509",
+      "lat": 7.456940961,
+      "lng": 5.801325652,
+      "summary": "Oka Akoko local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q2820150",
+      "slug": "abak-lga",
+      "name": "Abak",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.983333333,
+      "lng": 7.783333333,
+      "summary": "Abak local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5330341",
+      "slug": "eastern-obolo-lga",
+      "name": "Eastern Obolo",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.533333333,
+      "lng": 7.7,
+      "summary": "Eastern Obolo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3321199",
+      "slug": "eket-lga",
+      "name": "Eket",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.642222222,
+      "lng": 7.924444444,
+      "summary": "Eket local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5397964",
+      "slug": "esit-eket-lga",
+      "name": "Esit Eket",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.660555555,
+      "lng": 8.066666666,
+      "summary": "Esit Eket local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5399896",
+      "slug": "essien-udim-lga",
+      "name": "Essien Udim",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 5.133333333,
+      "lng": 7.683333333,
+      "summary": "Essien Udim local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5404590",
+      "slug": "etim-ekpo-lga",
+      "name": "Etim Ekpo",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.978055555,
+      "lng": 7.5925,
+      "summary": "Etim Ekpo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5404600",
+      "slug": "etinan-lga",
+      "name": "Etinan",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.85,
+      "lng": 7.833333333,
+      "summary": "Etinan local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5983812",
+      "slug": "ibeno-lga",
+      "name": "Ibeno",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.5778,
+      "lng": 8.1557,
+      "summary": "Ibeno local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5983991",
+      "slug": "ibesikpo-asutan-lga",
+      "name": "Ibesikpo Asutan",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.766666666,
+      "lng": 7.95,
+      "summary": "Ibesikpo Asutan local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5984067",
+      "slug": "ibiono-ibom-lga",
+      "name": "Ibiono-Ibom",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 5.233333333,
+      "lng": 7.883333333,
+      "summary": "Ibiono-Ibom local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5995269",
+      "slug": "ika-lga",
+      "name": "Ika",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 5.005555555,
+      "lng": 7.534166666,
+      "summary": "Ika local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5996152",
+      "slug": "ikono-lga",
+      "name": "Ikono",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 5.210277777,
+      "lng": 7.793888888,
+      "summary": "Ikono local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5996219",
+      "slug": "ikot-abasi-lga",
+      "name": "Ikot Abasi",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.633333333,
+      "lng": 7.65,
+      "summary": "Ikot Abasi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q680926",
+      "slug": "ikot-ekpene-lga",
+      "name": "Ikot Ekpene",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 5.181944444,
+      "lng": 7.714722222,
+      "summary": "Ikot Ekpene local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140466",
+      "slug": "ini-lga",
+      "name": "Ini",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 5.404166666,
+      "lng": 7.748888888,
+      "summary": "Ini local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6095095",
+      "slug": "itu-lga",
+      "name": "Itu",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 5.143055555,
+      "lng": 7.977777777,
+      "summary": "Itu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6799703",
+      "slug": "mbo-lga",
+      "name": "Mbo",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.643333333,
+      "lng": 8.255277777,
+      "summary": "Mbo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6885516",
+      "slug": "mkpat-enin-lga",
+      "name": "Mkpat-Enin",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.73361,
+      "lng": 7.74861,
+      "summary": "Mkpat-Enin local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q134322226",
+      "slug": "nsit-ekpo-lga",
+      "name": "Nsit Ekpo",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.788840482,
+      "lng": 7.935015613,
+      "summary": "Nsit Ekpo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7067566",
+      "slug": "nsit-atai-lga",
+      "name": "Nsit-Atai",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.85,
+      "lng": 8.01667,
+      "summary": "Nsit-Atai local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7067567",
+      "slug": "nsit-ibom-lga",
+      "name": "Nsit-Ibom",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.88333,
+      "lng": 7.9,
+      "summary": "Nsit-Ibom local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q10494314",
+      "slug": "nsit-ubium-lga",
+      "name": "Nsit-Ubium",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.7442,
+      "lng": 7.9375,
+      "summary": "Nsit-Ubium local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7075311",
+      "slug": "obot-akara-lga",
+      "name": "Obot Akara",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 5.246666666,
+      "lng": 7.604444444,
+      "summary": "Obot Akara local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7082466",
+      "slug": "okobo-lga",
+      "name": "Okobo",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.827222222,
+      "lng": 8.131944444,
+      "summary": "Okobo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7094369",
+      "slug": "onna-lga",
+      "name": "Onna",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.65,
+      "lng": 7.86667,
+      "summary": "Onna local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q1277335",
+      "slug": "oron-lga",
+      "name": "Oron",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.8074,
+      "lng": 8.2377,
+      "summary": "Oron local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7105162",
+      "slug": "oruk-anam-lga",
+      "name": "Oruk Anam",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.816666666,
+      "lng": 7.65,
+      "summary": "Oruk Anam local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7877346",
+      "slug": "udung-uko-lga",
+      "name": "Udung-Uko",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.752222222,
+      "lng": 8.265277777,
+      "summary": "Udung-Uko local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7878266",
+      "slug": "ukanafun-lga",
+      "name": "Ukanafun",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.9,
+      "lng": 7.6,
+      "summary": "Ukanafun local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q134321863",
+      "slug": "uquo-ibeno-lga",
+      "name": "Uquo-Ibeno",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.651193075,
+      "lng": 8.051998028,
+      "summary": "Uquo-Ibeno local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q11058133",
+      "slug": "uruan-lga",
+      "name": "Uruan",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 5.03333,
+      "lng": 8.05,
+      "summary": "Uruan local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q134323356",
+      "slug": "urue-ofong-oruko-lga",
+      "name": "Urue Ofong/Oruko",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.717757655,
+      "lng": 8.162386564,
+      "summary": "Urue Ofong/Oruko local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7901410",
+      "slug": "urue-offong-oruko-lga",
+      "name": "Urue-Offong/Oruko",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 4.71667,
+      "lng": 8.15,
+      "summary": "Urue-Offong/Oruko local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q49109832",
+      "slug": "uyo-lga",
+      "name": "Uyo",
+      "type": "lga",
+      "parentId": "wd:Q424388",
+      "lat": 5.018611111,
+      "lng": 7.903055555,
+      "summary": "Uyo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4694513",
+      "slug": "aguata-lga",
+      "name": "Aguata",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.008604984,
+      "lng": 7.101083608,
+      "summary": "Aguata local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3509614",
+      "slug": "anambra-east-lga",
+      "name": "Anambra East",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.335679896,
+      "lng": 6.862839449,
+      "summary": "Anambra East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3510446",
+      "slug": "anambra-west-lga",
+      "name": "Anambra West",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.35931,
+      "lng": 6.74968,
+      "summary": "Anambra West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4751505",
+      "slug": "anaocha-lga",
+      "name": "Anaocha",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.06824,
+      "lng": 6.9963,
+      "summary": "Anaocha local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q134328588",
+      "slug": "aniocha-lga",
+      "name": "Aniocha",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.089360437,
+      "lng": 7.014105914,
+      "summary": "Aniocha local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4830080",
+      "slug": "awka-north-lga",
+      "name": "Awka North",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.266083271,
+      "lng": 7.121741689,
+      "summary": "Awka North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4830081",
+      "slug": "awka-south-lga",
+      "name": "Awka South",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.221540572,
+      "lng": 7.081632416,
+      "summary": "Awka South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4830907",
+      "slug": "ayamelum-lga",
+      "name": "Ayamelum",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.553611111,
+      "lng": 6.986944444,
+      "summary": "Ayamelum local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5315776",
+      "slug": "dunukofia-lga",
+      "name": "Dunukofia",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.2738,
+      "lng": 6.978,
+      "summary": "Dunukofia local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5350637",
+      "slug": "ekwusigo-lga",
+      "name": "Ekwusigo",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 5.980555555,
+      "lng": 6.84,
+      "summary": "Ekwusigo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q11058846",
+      "slug": "idemili-north-lga",
+      "name": "Idemili North",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.1285,
+      "lng": 6.93342,
+      "summary": "Idemili North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5988156",
+      "slug": "idemili-south-lga",
+      "name": "Idemili South",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.100683,
+      "lng": 6.898364,
+      "summary": "Idemili South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q135085251",
+      "slug": "idemmili-south-lga",
+      "name": "Idemmili South",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.067445,
+      "lng": 6.957256,
+      "summary": "Idemmili South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3056230",
+      "slug": "ihiala-lga",
+      "name": "Ihiala",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 5.8516,
+      "lng": 6.8512,
+      "summary": "Ihiala local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13653675",
+      "slug": "njikoka-lga",
+      "name": "Njikoka",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.1842,
+      "lng": 6.97655,
+      "summary": "Njikoka local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q11058181",
+      "slug": "nnewi-north-lga",
+      "name": "Nnewi North",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.0137,
+      "lng": 6.9102,
+      "summary": "Nnewi North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7042725",
+      "slug": "nnewi-south-lga",
+      "name": "Nnewi South",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 5.93321,
+      "lng": 6.92306,
+      "summary": "Nnewi South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7079872",
+      "slug": "ogbaru-lga",
+      "name": "Ogbaru",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 5.960656,
+      "lng": 6.731678,
+      "summary": "Ogbaru local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3509391",
+      "slug": "onitsha-north-lga",
+      "name": "Onitsha North",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.16081,
+      "lng": 6.79968,
+      "summary": "Onitsha North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3510413",
+      "slug": "onitsha-south-lga",
+      "name": "Onitsha South",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.135818,
+      "lng": 6.788542,
+      "summary": "Onitsha South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7105167",
+      "slug": "orumba-north-lga",
+      "name": "Orumba North",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.06667,
+      "lng": 7.08333,
+      "summary": "Orumba North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7116267",
+      "slug": "oyi-lga",
+      "name": "Oyi",
+      "type": "lga",
+      "parentId": "wd:Q117714",
+      "lat": 6.176666666,
+      "lng": 6.861944444,
+      "summary": "Oyi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q130493596",
+      "slug": "ilu-ibasa-ijegun-egba-lga",
+      "name": "Ìlú Ìbàsà Ìjegun Ẹgbà",
+      "type": "lga",
+      "parentId": "wd:Q4830127",
+      "lat": 6.516884916,
+      "lng": 3.259941546,
+      "summary": "Ìlú Ìbàsà Ìjegun Ẹgbà local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4727632",
+      "slug": "alkaleri-lga",
+      "name": "Alkaleri",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 9.88333,
+      "lng": 10.5,
+      "summary": "Alkaleri local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q811144",
+      "slug": "bauchi-lga",
+      "name": "Bauchi",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 10.315833333,
+      "lng": 9.844166666,
+      "summary": "Bauchi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4937728",
+      "slug": "bogoro-lga",
+      "name": "Bogoro",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 9.65,
+      "lng": 9.61667,
+      "summary": "Bogoro local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5212083",
+      "slug": "damban-lga",
+      "name": "Damban",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 11.62592,
+      "lng": 10.78622,
+      "summary": "Damban local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5222130",
+      "slug": "darazo-lga",
+      "name": "Darazo",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 10.998027,
+      "lng": 10.410341,
+      "summary": "Darazo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5226825",
+      "slug": "dass-lga",
+      "name": "Dass",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 10.018611111,
+      "lng": 9.478055555,
+      "summary": "Dass local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5519589",
+      "slug": "gamawa-lga",
+      "name": "Gamawa",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 12.1333,
+      "lng": 10.5333,
+      "summary": "Gamawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5521392",
+      "slug": "ganjuwa-lga",
+      "name": "Ganjuwa",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 10.749166666,
+      "lng": 10,
+      "summary": "Ganjuwa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5557957",
+      "slug": "giade-lga",
+      "name": "Giade",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 11.390251,
+      "lng": 10.199128,
+      "summary": "Giade local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140468",
+      "slug": "itas-gadau-lga",
+      "name": "Itas/Gadau",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 11.8667,
+      "lng": 9.96667,
+      "summary": "Itas/Gadau local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6127132",
+      "slug": "jama-are-lga",
+      "name": "Jama'are",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 11.669111,
+      "lng": 9.928958,
+      "summary": "Jama'are local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6375000",
+      "slug": "katagum-lga",
+      "name": "Katagum",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 11.704166666,
+      "lng": 10.326944444,
+      "summary": "Katagum local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6415063",
+      "slug": "kirfi-lga",
+      "name": "Kirfi",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 10.4,
+      "lng": 10.4,
+      "summary": "Kirfi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q2078475",
+      "slug": "misau-lga",
+      "name": "Misau",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 11.313599,
+      "lng": 10.463126,
+      "summary": "Misau local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7038694",
+      "slug": "ningi-lga",
+      "name": "Ningi",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 11.062222222,
+      "lng": 9.205,
+      "summary": "Ningi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7498205",
+      "slug": "shira-lga",
+      "name": "Shira",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 10.552337,
+      "lng": 10.039511,
+      "summary": "Shira local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7674928",
+      "slug": "tafawa-balewa-lga",
+      "name": "Tafawa Balewa",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 9.759094,
+      "lng": 9.553127,
+      "summary": "Tafawa Balewa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q11058424",
+      "slug": "toro-lga",
+      "name": "Toro",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 10.059364,
+      "lng": 9.071724,
+      "summary": "Toro local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7969461",
+      "slug": "warji-lga",
+      "name": "Warji",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 11.1805,
+      "lng": 9.7539,
+      "summary": "Warji local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q8065082",
+      "slug": "zaki-lga",
+      "name": "Zaki",
+      "type": "lga",
+      "parentId": "wd:Q503936",
+      "lat": 12.299166666,
+      "lng": 10.308888888,
+      "summary": "Zaki local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q2923946",
+      "slug": "brass-lga",
+      "name": "Brass",
+      "type": "lga",
+      "parentId": "wd:Q532153",
+      "lat": 4.315,
+      "lng": 6.241666666,
+      "summary": "Brass local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5350399",
+      "slug": "ekeremor-lga",
+      "name": "Ekeremor",
+      "type": "lga",
+      "parentId": "wd:Q532153",
+      "lat": 4.922222222,
+      "lng": 5.716388888,
+      "summary": "Ekeremor local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6427473",
+      "slug": "kolokuma-opokuma-lga",
+      "name": "Kolokuma/Opokuma",
+      "type": "lga",
+      "parentId": "wd:Q532153",
+      "lat": 5.13333,
+      "lng": 6.3,
+      "summary": "Kolokuma/Opokuma local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3510576",
+      "slug": "nembe-lga",
+      "name": "Nembe",
+      "type": "lga",
+      "parentId": "wd:Q532153",
+      "lat": 4.533330555,
+      "lng": 6.4,
+      "summary": "Nembe local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7079876",
+      "slug": "ogbia-lga",
+      "name": "Ogbia",
+      "type": "lga",
+      "parentId": "wd:Q532153",
+      "lat": 4.774166666,
+      "lng": 6.326944444,
+      "summary": "Ogbia local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7399088",
+      "slug": "sagbama-lga",
+      "name": "Sagbama",
+      "type": "lga",
+      "parentId": "wd:Q532153",
+      "lat": 5.166666666,
+      "lng": 6.2,
+      "summary": "Sagbama local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q11058325",
+      "slug": "southern-ijaw-lga",
+      "name": "Southern Ijaw",
+      "type": "lga",
+      "parentId": "wd:Q532153",
+      "lat": 4.7,
+      "lng": 5.96667,
+      "summary": "Southern Ijaw local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q648749",
+      "slug": "yenegoa-lga",
+      "name": "Yenegoa",
+      "type": "lga",
+      "parentId": "wd:Q532153",
+      "lat": 4.925,
+      "lng": 6.263888888,
+      "summary": "Yenegoa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4683957",
+      "slug": "ado-lga",
+      "name": "Ado",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 6.799444444,
+      "lng": 8.005277777,
+      "summary": "Ado local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3399397",
+      "slug": "agatu-lga",
+      "name": "Agatu",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.887294,
+      "lng": 7.91286,
+      "summary": "Agatu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4778862",
+      "slug": "apa-lga",
+      "name": "Apa",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.629722222,
+      "lng": 7.871111111,
+      "summary": "Apa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5000980",
+      "slug": "buruku-lga",
+      "name": "Buruku",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.416792,
+      "lng": 9.224674,
+      "summary": "Buruku local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q127774683",
+      "slug": "gbatse-lga",
+      "name": "Gbatse",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 6.990277777,
+      "lng": 9.258611111,
+      "summary": "Gbatse local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q2425179",
+      "slug": "gboko-lga",
+      "name": "Gboko",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.31616,
+      "lng": 8.90167,
+      "summary": "Gboko local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140438",
+      "slug": "guma-lga",
+      "name": "Guma",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.9541,
+      "lng": 8.7481,
+      "summary": "Guma local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5623550",
+      "slug": "gwer-east-lga",
+      "name": "Gwer East",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.298066,
+      "lng": 8.482303,
+      "summary": "Gwer East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5623546",
+      "slug": "gwer-west-lga",
+      "name": "Gwer West",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.584645,
+      "lng": 8.205478,
+      "summary": "Gwer West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6378033",
+      "slug": "katsina-ala-lga",
+      "name": "Katsina-Ala",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.16667,
+      "lng": 9.28333,
+      "summary": "Katsina-Ala local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6429829",
+      "slug": "konshisha-lga",
+      "name": "Konshisha",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.02993,
+      "lng": 8.66037,
+      "summary": "Konshisha local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6450151",
+      "slug": "kwande-lga",
+      "name": "Kwande",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 6.890043,
+      "lng": 9.233408,
+      "summary": "Kwande local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6667711",
+      "slug": "logo-lga",
+      "name": "Logo",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.507748,
+      "lng": 9.350653,
+      "summary": "Logo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q49106155",
+      "slug": "makurdi-lga",
+      "name": "Makurdi",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.73753,
+      "lng": 8.52296,
+      "summary": "Makurdi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4207508",
+      "slug": "obi-lga",
+      "name": "Obi",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7,
+      "lng": 8.25,
+      "summary": "Obi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7079868",
+      "slug": "ogbadibo-lga",
+      "name": "Ogbadibo",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.08921,
+      "lng": 7.64989,
+      "summary": "Ogbadibo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7080670",
+      "slug": "ohimini-lga",
+      "name": "Ohimini",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.20744,
+      "lng": 7.94989,
+      "summary": "Ohimini local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7081668",
+      "slug": "oju-lga",
+      "name": "Oju",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 6.858888888,
+      "lng": 8.381944444,
+      "summary": "Oju local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7082560",
+      "slug": "okpokwu-lga",
+      "name": "Okpokwu",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.01094,
+      "lng": 7.85102,
+      "summary": "Okpokwu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3511323",
+      "slug": "otukpo-lga",
+      "name": "Otukpo",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.19306,
+      "lng": 8.14639,
+      "summary": "Otukpo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7686233",
+      "slug": "tarka-lga",
+      "name": "Tarka",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.620833333,
+      "lng": 8.881944444,
+      "summary": "Tarka local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7878615",
+      "slug": "ukum-lga",
+      "name": "Ukum",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.530801,
+      "lng": 9.649268,
+      "summary": "Ukum local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7901973",
+      "slug": "ushongo-lga",
+      "name": "Ushongo",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 7.04411,
+      "lng": 9.08871,
+      "summary": "Ushongo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7914377",
+      "slug": "vandeikya-lga",
+      "name": "Vandeikya",
+      "type": "lga",
+      "parentId": "wd:Q429908",
+      "lat": 6.782346,
+      "lng": 9.069257,
+      "summary": "Vandeikya local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3509646",
+      "slug": "abadam-lga",
+      "name": "Abadam",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 13.610953,
+      "lng": 13.277664,
+      "summary": "Abadam local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3509469",
+      "slug": "askira-uba-lga",
+      "name": "Askira/Uba",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 10.654724,
+      "lng": 12.907777,
+      "summary": "Askira/Uba local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3331583",
+      "slug": "bama-lga",
+      "name": "Bama",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 11.5189,
+      "lng": 13.6842,
+      "summary": "Bama local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4874676",
+      "slug": "bayo-lga",
+      "name": "Bayo",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 10.2729,
+      "lng": 11.6613,
+      "summary": "Bayo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q2904965",
+      "slug": "biu-lga",
+      "name": "Biu",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 10.6111,
+      "lng": 12.195,
+      "summary": "Biu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5095348",
+      "slug": "chibok-lga",
+      "name": "Chibok",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 10.869722222,
+      "lng": 12.846666666,
+      "summary": "Chibok local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5212096",
+      "slug": "damboa-lga",
+      "name": "Damboa",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 11.098333333,
+      "lng": 12.764166666,
+      "summary": "Damboa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5276586",
+      "slug": "dikwa-lga",
+      "name": "Dikwa",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 12.0239,
+      "lng": 13.9158,
+      "summary": "Dikwa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5610675",
+      "slug": "gubio-lga",
+      "name": "Gubio",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 12.4955,
+      "lng": 12.7796,
+      "summary": "Gubio local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5622902",
+      "slug": "guzamala-lga",
+      "name": "Guzamala",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 12.94656,
+      "lng": 13.176822,
+      "summary": "Guzamala local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5623719",
+      "slug": "gwoza-lga",
+      "name": "Gwoza",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 11.176388888,
+      "lng": 13.579166666,
+      "summary": "Gwoza local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5685688",
+      "slug": "hawul-lga",
+      "name": "Hawul",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 10.451308,
+      "lng": 12.116581,
+      "summary": "Hawul local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140477",
+      "slug": "jere-lga",
+      "name": "Jere",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 11.89912,
+      "lng": 13.29155,
+      "summary": "Jere local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6346306",
+      "slug": "kaga-lga",
+      "name": "Kaga",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 11.645277777,
+      "lng": 12.451666666,
+      "summary": "Kaga local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6349919",
+      "slug": "kala-balge-lga",
+      "name": "Kala/Balge",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 12.268627,
+      "lng": 14.464896,
+      "summary": "Kala/Balge local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6429051",
+      "slug": "konduga-lga",
+      "name": "Konduga",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 11.6517,
+      "lng": 13.4194,
+      "summary": "Konduga local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q134380393",
+      "slug": "kondunga-lga",
+      "name": "Kondunga",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 11.654889245,
+      "lng": 13.419231734,
+      "summary": "Kondunga local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q128665",
+      "slug": "kukawa-lga",
+      "name": "Kukawa",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 12.924722222,
+      "lng": 13.566111111,
+      "summary": "Kukawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6450273",
+      "slug": "kwaya-kusar-lga",
+      "name": "Kwaya Kusar",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 10.44317,
+      "lng": 11.99089,
+      "summary": "Kwaya Kusar local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6729409",
+      "slug": "mafa-lga",
+      "name": "Mafa",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 11.9258,
+      "lng": 13.6056,
+      "summary": "Mafa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6732527",
+      "slug": "magumeri-lga",
+      "name": "Magumeri",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 12.115657,
+      "lng": 12.83101,
+      "summary": "Magumeri local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q49106133",
+      "slug": "maiduguri-lga",
+      "name": "Maiduguri",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 11.83537,
+      "lng": 13.15166,
+      "summary": "Maiduguri local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6774212",
+      "slug": "marte-lga",
+      "name": "Marte",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 12.364596,
+      "lng": 13.826741,
+      "summary": "Marte local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6886647",
+      "slug": "mobbar-lga",
+      "name": "Mobbar",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 13.103993,
+      "lng": 12.511041,
+      "summary": "Mobbar local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q15043599",
+      "slug": "monguno-lga",
+      "name": "Monguno",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 12.578611111,
+      "lng": 13.617222222,
+      "summary": "Monguno local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7021892",
+      "slug": "ngala-lga",
+      "name": "Ngala",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 12.215277777,
+      "lng": 14.183055555,
+      "summary": "Ngala local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7022015",
+      "slug": "nganzai-lga",
+      "name": "Nganzai",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 12.508888888,
+      "lng": 13.104166666,
+      "summary": "Nganzai local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7488621",
+      "slug": "shani-lga",
+      "name": "Shani",
+      "type": "lga",
+      "parentId": "wd:Q130626",
+      "lat": 10.183888888,
+      "lng": 11.963888888,
+      "summary": "Shani local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3510527",
+      "slug": "abi-lga",
+      "name": "Abi",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 6.833333333,
+      "lng": 7.233333333,
+      "summary": "Abi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4700237",
+      "slug": "akamkpa-lga",
+      "name": "Akamkpa",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 5.326828,
+      "lng": 8.346262,
+      "summary": "Akamkpa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4701571",
+      "slug": "akpabuyo-lga",
+      "name": "Akpabuyo",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 4.950439,
+      "lng": 8.393276,
+      "summary": "Akpabuyo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q49101103",
+      "slug": "bakassi-lga",
+      "name": "Bakassi",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 4.81714,
+      "lng": 8.60212,
+      "summary": "Bakassi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4881684",
+      "slug": "bekwarra-lga",
+      "name": "Bekwarra",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 6.69389,
+      "lng": 8.9675,
+      "summary": "Bekwarra local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4902588",
+      "slug": "biase-lga",
+      "name": "Biase",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 5.559444444,
+      "lng": 8.078055555,
+      "summary": "Biase local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4938771",
+      "slug": "boki-lga",
+      "name": "Boki",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 6.2467,
+      "lng": 8.9245,
+      "summary": "Boki local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q844091",
+      "slug": "calabar-lga",
+      "name": "Calabar",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 4.95,
+      "lng": 8.325,
+      "summary": "Calabar local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5018280",
+      "slug": "calabar-municipal-lga",
+      "name": "Calabar Municipal",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 4.99088,
+      "lng": 8.30343,
+      "summary": "Calabar Municipal local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5018279",
+      "slug": "calabar-south-lga",
+      "name": "Calabar South",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 4.918822,
+      "lng": 8.320945,
+      "summary": "Calabar South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5405088",
+      "slug": "etung-lga",
+      "name": "Etung",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 5.858888888,
+      "lng": 8.791666666,
+      "summary": "Etung local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5996091",
+      "slug": "ikom-lga",
+      "name": "Ikom",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 6.08333,
+      "lng": 8.61667,
+      "summary": "Ikom local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7074630",
+      "slug": "obanliku-lga",
+      "name": "Obanliku",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 6.537222222,
+      "lng": 9.306944444,
+      "summary": "Obanliku local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7075578",
+      "slug": "obubra-lga",
+      "name": "Obubra",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 6.08333,
+      "lng": 8.33333,
+      "summary": "Obubra local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7075580",
+      "slug": "obudu-lga",
+      "name": "Obudu",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 6.666666666,
+      "lng": 9.166666666,
+      "summary": "Obudu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7078367",
+      "slug": "odukpani-lga",
+      "name": "Odukpani",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 5.079809,
+      "lng": 8.350403,
+      "summary": "Odukpani local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3509254",
+      "slug": "ogoja-lga",
+      "name": "Ogoja",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 6.5,
+      "lng": 8.66667,
+      "summary": "Ogoja local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q134393881",
+      "slug": "ugep-north-lga",
+      "name": "Ugep North",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 5.806401499,
+      "lng": 8.076367055,
+      "summary": "Ugep North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q8047268",
+      "slug": "yakurr-lga",
+      "name": "Yakurr",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 5.806111111,
+      "lng": 8.175,
+      "summary": "Yakurr local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q8047286",
+      "slug": "yala-lga",
+      "name": "Yala",
+      "type": "lga",
+      "parentId": "wd:Q739676",
+      "lat": 6.653888888,
+      "lng": 8.549444444,
+      "summary": "Yala local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4765241",
+      "slug": "aniocha-north-lga",
+      "name": "Aniocha North",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 6.319994,
+      "lng": 6.476847,
+      "summary": "Aniocha North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4765242",
+      "slug": "aniocha-south-lga",
+      "name": "Aniocha South",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 6.183072,
+      "lng": 6.524367,
+      "summary": "Aniocha South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4940347",
+      "slug": "bomadi-lga",
+      "name": "Bomadi",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.169166666,
+      "lng": 5.904166666,
+      "summary": "Bomadi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3510499",
+      "slug": "burutu-lga",
+      "name": "Burutu",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.35,
+      "lng": 5.516666666,
+      "summary": "Burutu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5403503",
+      "slug": "ethiope-east-lga",
+      "name": "Ethiope East",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.63314,
+      "lng": 6.028192,
+      "summary": "Ethiope East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5403511",
+      "slug": "ethiope-west-lga",
+      "name": "Ethiope West",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.63314,
+      "lng": 6.028192,
+      "summary": "Ethiope West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5995280",
+      "slug": "ika-north-east-lga",
+      "name": "Ika North East",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 6.186379,
+      "lng": 6.200409,
+      "summary": "Ika North East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q17139912",
+      "slug": "ika-south-lga",
+      "name": "Ika South",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 6.17084,
+      "lng": 6.12881,
+      "summary": "Ika South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6085814",
+      "slug": "isoko-north-lga",
+      "name": "Isoko North",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.52493,
+      "lng": 6.23414,
+      "summary": "Isoko North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6085820",
+      "slug": "isoko-south-lga",
+      "name": "Isoko South",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.38209,
+      "lng": 6.21417,
+      "summary": "Isoko South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6983780",
+      "slug": "ndokwa-east-lga",
+      "name": "Ndokwa East",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.67029,
+      "lng": 6.50771,
+      "summary": "Ndokwa East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q17109187",
+      "slug": "ndokwa-west-lga",
+      "name": "Ndokwa West",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.815022,
+      "lng": 6.350772,
+      "summary": "Ndokwa West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7082548",
+      "slug": "okpe-lga",
+      "name": "Okpe",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.686388888,
+      "lng": 5.783333333,
+      "summary": "Okpe local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7106622",
+      "slug": "oshimili-north-lga",
+      "name": "Oshimili North",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 6.32273,
+      "lng": 6.64445,
+      "summary": "Oshimili North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7106620",
+      "slug": "oshimili-south-lga",
+      "name": "Oshimili South",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 6.09213,
+      "lng": 6.68172,
+      "summary": "Oshimili South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q130093893",
+      "slug": "ozoro-lga",
+      "name": "Ozoro",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.542149,
+      "lng": 6.2267479,
+      "summary": "Ozoro local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7144238",
+      "slug": "patani-lga",
+      "name": "Patani",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.179166666,
+      "lng": 6.097777777,
+      "summary": "Patani local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3495356",
+      "slug": "sapele-lga",
+      "name": "Sapele",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.826111111,
+      "lng": 5.653611111,
+      "summary": "Sapele local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7877316",
+      "slug": "udu-lga",
+      "name": "Udu",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.47222,
+      "lng": 5.82203,
+      "summary": "Udu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q15043628",
+      "slug": "ughelli-north-lga",
+      "name": "Ughelli North",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.511111111,
+      "lng": 6.048055555,
+      "summary": "Ughelli North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7877752",
+      "slug": "ughelli-south-lga",
+      "name": "Ughelli South",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.3435,
+      "lng": 5.95108,
+      "summary": "Ughelli South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q26085141",
+      "slug": "ukwuani-lga",
+      "name": "Ukwuani",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.84481,
+      "lng": 6.23741,
+      "summary": "Ukwuani local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7903753",
+      "slug": "uvwie-lga",
+      "name": "Uvwie",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.570929,
+      "lng": 5.788065,
+      "summary": "Uvwie local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q574593",
+      "slug": "warri-lga",
+      "name": "Warri",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.516666666,
+      "lng": 5.75,
+      "summary": "Warri local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7970686",
+      "slug": "warri-north-lga",
+      "name": "Warri North",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.88243,
+      "lng": 5.27687,
+      "summary": "Warri North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7970687",
+      "slug": "warri-south-lga",
+      "name": "Warri South",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.61326,
+      "lng": 5.61063,
+      "summary": "Warri South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7970689",
+      "slug": "warri-south-west-lga",
+      "name": "Warri South West",
+      "type": "lga",
+      "parentId": "wd:Q503910",
+      "lat": 5.599713,
+      "lng": 5.454881,
+      "summary": "Warri South West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q304976",
+      "slug": "abakaliki-lga",
+      "name": "Abakaliki",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 6.333333333,
+      "lng": 8.1,
+      "summary": "Abakaliki local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q115865082",
+      "slug": "abakaliki-lga",
+      "name": "Abakaliki",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 6.3231,
+      "lng": 8.112,
+      "summary": "Abakaliki local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4689249",
+      "slug": "afikpo-north-lga",
+      "name": "Afikpo North",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 5.887936,
+      "lng": 7.953071,
+      "summary": "Afikpo North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4689251",
+      "slug": "afikpo-south-lga",
+      "name": "Afikpo South",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 5.8493,
+      "lng": 7.7987,
+      "summary": "Afikpo South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3331566",
+      "slug": "ebonyi-lga",
+      "name": "Ebonyi",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 6.233275,
+      "lng": 7.985884,
+      "summary": "Ebonyi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5423453",
+      "slug": "ezza-north-lga",
+      "name": "Ezza North",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 6.081572,
+      "lng": 7.995858,
+      "summary": "Ezza North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5423452",
+      "slug": "ezza-south-lga",
+      "name": "Ezza South",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 6.116666666,
+      "lng": 8.001111111,
+      "summary": "Ezza South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5996451",
+      "slug": "ikwo-lga",
+      "name": "Ikwo",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 6.05316,
+      "lng": 8.16284,
+      "summary": "Ikwo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6080174",
+      "slug": "ishielu-lga",
+      "name": "Ishielu",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 6.428567,
+      "lng": 7.818371,
+      "summary": "Ishielu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q11058348",
+      "slug": "ivo-lga",
+      "name": "Ivo",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 5.884166666,
+      "lng": 7.623333333,
+      "summary": "Ivo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q24263985",
+      "slug": "izzi-lga",
+      "name": "Izzi",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 6.385765,
+      "lng": 8.02549,
+      "summary": "Izzi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7080620",
+      "slug": "ohaozara-lga",
+      "name": "Ohaozara",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 6.030218,
+      "lng": 7.71407,
+      "summary": "Ohaozara local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7080634",
+      "slug": "ohaukwu-lga",
+      "name": "Ohaukwu",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 6.030218,
+      "lng": 7.71407,
+      "summary": "Ohaukwu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7093889",
+      "slug": "onicha-lga",
+      "name": "Onicha",
+      "type": "lga",
+      "parentId": "wd:Q506808",
+      "lat": 6.098888888,
+      "lng": 7.841388888,
+      "summary": "Onicha local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4701504",
+      "slug": "akoko-edo-lga",
+      "name": "Akoko Edo",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 7.275622,
+      "lng": 6.107379,
+      "summary": "Akoko Edo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q320704",
+      "slug": "benin-city-lga",
+      "name": "Benin City",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.3176,
+      "lng": 5.6145,
+      "summary": "Benin City local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5348227",
+      "slug": "egor-lga",
+      "name": "Egor",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.3575,
+      "lng": 5.575555555,
+      "summary": "Egor local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5396712",
+      "slug": "esan-central-lga",
+      "name": "Esan Central",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.70969,
+      "lng": 6.19313,
+      "summary": "Esan Central local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5396720",
+      "slug": "esan-north-east-lga",
+      "name": "Esan North-East",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.7,
+      "lng": 6.333333,
+      "summary": "Esan North-East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5396716",
+      "slug": "esan-south-east-lga",
+      "name": "Esan South-East",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.659722,
+      "lng": 6.382222,
+      "summary": "Esan South-East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5396721",
+      "slug": "esan-west-lga",
+      "name": "Esan West",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.7535,
+      "lng": 6.0738,
+      "summary": "Esan West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5404912",
+      "slug": "etsako-central-lga",
+      "name": "Etsako Central",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.97193,
+      "lng": 6.51235,
+      "summary": "Etsako Central local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5404915",
+      "slug": "etsako-east-lga",
+      "name": "Etsako East",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 7.106769,
+      "lng": 6.687541,
+      "summary": "Etsako East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5404913",
+      "slug": "etsako-west-lga",
+      "name": "Etsako West",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.913601,
+      "lng": 6.29955,
+      "summary": "Etsako West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q15043602",
+      "slug": "igueben-lga",
+      "name": "Igueben",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.50359,
+      "lng": 6.22289,
+      "summary": "Igueben local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5996228",
+      "slug": "ikpoba-okha-lga",
+      "name": "Ikpoba Okha",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.16445,
+      "lng": 5.62284,
+      "summary": "Ikpoba Okha local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7101001",
+      "slug": "oredo-lga",
+      "name": "Oredo",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.235833333,
+      "lng": 5.551111111,
+      "summary": "Oredo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7102189",
+      "slug": "orhionmwon-lga",
+      "name": "Orhionmwon",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.25354,
+      "lng": 5.98405,
+      "summary": "Orhionmwon local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7114106",
+      "slug": "ovia-north-east-lga",
+      "name": "Ovia North-East",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.29312,
+      "lng": 5.543304,
+      "summary": "Ovia North-East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7114107",
+      "slug": "ovia-south-west-lga",
+      "name": "Ovia South-West",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.396,
+      "lng": 5.272,
+      "summary": "Ovia South-West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7114274",
+      "slug": "owan-east-lga",
+      "name": "Owan East",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.943126,
+      "lng": 5.985832,
+      "summary": "Owan East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7114275",
+      "slug": "owan-west-lga",
+      "name": "Owan West",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.929444444,
+      "lng": 5.893888888,
+      "summary": "Owan West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7878024",
+      "slug": "uhunmwonde-lga",
+      "name": "Uhunmwonde",
+      "type": "lga",
+      "parentId": "wd:Q682704",
+      "lat": 6.49222,
+      "lng": 5.88452,
+      "summary": "Uhunmwonde local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q49100385",
+      "slug": "ado-ekiti-lga",
+      "name": "Ado-Ekiti",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.6125,
+      "lng": 5.273888888,
+      "summary": "Ado-Ekiti local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5347554",
+      "slug": "efon-lga",
+      "name": "Efon",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.36667,
+      "lng": 3.63333,
+      "summary": "Efon local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3511633",
+      "slug": "ekiti-east-lga",
+      "name": "Ekiti East",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.7353,
+      "lng": 5.66928,
+      "summary": "Ekiti East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3511702",
+      "slug": "ekiti-south-west-lga",
+      "name": "Ekiti South-West",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.51325,
+      "lng": 5.05179,
+      "summary": "Ekiti South-West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3331544",
+      "slug": "ekiti-west-lga",
+      "name": "Ekiti West",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.68663,
+      "lng": 5.02847,
+      "summary": "Ekiti West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5374891",
+      "slug": "emure-lga",
+      "name": "Emure",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.45,
+      "lng": 5.46667,
+      "summary": "Emure local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5529352",
+      "slug": "gbonyin-lga",
+      "name": "Gbonyin",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.621623,
+      "lng": 5.239016,
+      "summary": "Gbonyin local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5989257",
+      "slug": "ido-osi-lga",
+      "name": "Ido-Osi",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.856505,
+      "lng": 5.175537,
+      "summary": "Ido-Osi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5995177",
+      "slug": "ijero-lga",
+      "name": "Ijero",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.81667,
+      "lng": 5.08333,
+      "summary": "Ijero local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q946097",
+      "slug": "ikere-lga",
+      "name": "Ikere",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.49748,
+      "lng": 5.23041,
+      "summary": "Ikere local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5996084",
+      "slug": "ikole-lga",
+      "name": "Ikole",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.78333,
+      "lng": 5.51667,
+      "summary": "Ikole local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5997498",
+      "slug": "ilejemeje-lga",
+      "name": "Ilejemeje",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.953263,
+      "lng": 5.230908,
+      "summary": "Ilejemeje local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6069392",
+      "slug": "irepodun-ifelodun-lga",
+      "name": "Irepodun/Ifelodun",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.62111111,
+      "lng": 5.22138889,
+      "summary": "Irepodun/Ifelodun local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6079560",
+      "slug": "ise-orun-lga",
+      "name": "Ise/Orun",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.44531,
+      "lng": 5.3945,
+      "summary": "Ise/Orun local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6886588",
+      "slug": "moba-lga",
+      "name": "Moba",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.987774,
+      "lng": 5.124049,
+      "summary": "Moba local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7116252",
+      "slug": "oye-lga",
+      "name": "Oye",
+      "type": "lga",
+      "parentId": "wd:Q534917",
+      "lat": 7.800042,
+      "lng": 5.331768,
+      "summary": "Oye local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4765240",
+      "slug": "aninri-lga",
+      "name": "Aninri",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.05,
+      "lng": 7.58333,
+      "summary": "Aninri local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4830051",
+      "slug": "awgu-lga",
+      "name": "Awgu",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.14311,
+      "lng": 7.43658,
+      "summary": "Awgu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5380873",
+      "slug": "enugu-east-lga",
+      "name": "Enugu East",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.53333,
+      "lng": 7.53333,
+      "summary": "Enugu East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5380874",
+      "slug": "enugu-north-lga",
+      "name": "Enugu North",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.444722222,
+      "lng": 7.535277777,
+      "summary": "Enugu North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5380875",
+      "slug": "enugu-south-lga",
+      "name": "Enugu South",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.3849,
+      "lng": 7.5139,
+      "summary": "Enugu South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5423113",
+      "slug": "ezeagu-lga",
+      "name": "Ezeagu",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.410555555,
+      "lng": 7.214722222,
+      "summary": "Ezeagu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5991568",
+      "slug": "igbo-etiti-lga",
+      "name": "Igbo Etiti",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.66667,
+      "lng": 7.36667,
+      "summary": "Igbo Etiti local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5991578",
+      "slug": "igbo-eze-north-lga",
+      "name": "Igbo Eze North",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.98333,
+      "lng": 7.45,
+      "summary": "Igbo Eze North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5991584",
+      "slug": "igbo-eze-south-lga",
+      "name": "Igbo Eze South",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.93368,
+      "lng": 7.36673,
+      "summary": "Igbo Eze South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q11274430",
+      "slug": "isi-uzo-lga",
+      "name": "Isi Uzo",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.73066,
+      "lng": 7.69294,
+      "summary": "Isi Uzo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7042529",
+      "slug": "nkanu-east-lga",
+      "name": "Nkanu East",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.31519,
+      "lng": 7.62422,
+      "summary": "Nkanu East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q11058668",
+      "slug": "nkanu-west-lga",
+      "name": "Nkanu West",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.3,
+      "lng": 7.55,
+      "summary": "Nkanu West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q681198",
+      "slug": "nsukka-lga",
+      "name": "Nsukka",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.8429,
+      "lng": 7.3733,
+      "summary": "Nsukka local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7081610",
+      "slug": "oji-river-lga",
+      "name": "Oji River",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.26667,
+      "lng": 7.26667,
+      "summary": "Oji River local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7877168",
+      "slug": "udenu-lga",
+      "name": "Udenu",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.871944444,
+      "lng": 7.567222222,
+      "summary": "Udenu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7877213",
+      "slug": "udi-lga",
+      "name": "Udi",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.31667,
+      "lng": 7.43333,
+      "summary": "Udi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7905110",
+      "slug": "uzo-uwani-lga",
+      "name": "Uzo Uwani",
+      "type": "lga",
+      "parentId": "wd:Q3817714",
+      "lat": 6.75,
+      "lng": 7.2,
+      "summary": "Uzo Uwani local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q1053237",
+      "slug": "abaji-lga",
+      "name": "Abaji",
+      "type": "lga",
+      "parentId": "wd:Q509300",
+      "lat": 8.475555555,
+      "lng": 6.943333333,
+      "summary": "Abaji local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q28468899",
+      "slug": "abuja-municipal-lga",
+      "name": "Abuja Municipal",
+      "type": "lga",
+      "parentId": "wd:Q509300",
+      "lat": 8.99997,
+      "lng": 7.37831,
+      "summary": "Abuja Municipal local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5003670",
+      "slug": "bwari-lga",
+      "name": "Bwari",
+      "type": "lga",
+      "parentId": "wd:Q509300",
+      "lat": 9.280277777,
+      "lng": 7.38,
+      "summary": "Bwari local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q2285343",
+      "slug": "gwagwalada-lga",
+      "name": "Gwagwalada",
+      "type": "lga",
+      "parentId": "wd:Q509300",
+      "lat": 8.939166666,
+      "lng": 7.075833333,
+      "summary": "Gwagwalada local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6442341",
+      "slug": "kuje-lga",
+      "name": "Kuje",
+      "type": "lga",
+      "parentId": "wd:Q509300",
+      "lat": 8.658888888,
+      "lng": 7.270555555,
+      "summary": "Kuje local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6450057",
+      "slug": "kwali-lga",
+      "name": "Kwali",
+      "type": "lga",
+      "parentId": "wd:Q509300",
+      "lat": 8.735555555,
+      "lng": 6.967777777,
+      "summary": "Kwali local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3510455",
+      "slug": "akko-lga",
+      "name": "Akko",
+      "type": "lga",
+      "parentId": "wd:Q376241",
+      "lat": 10.1,
+      "lng": 11.048333333,
+      "summary": "Akko local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4374738",
+      "slug": "balanga-lga",
+      "name": "Balanga",
+      "type": "lga",
+      "parentId": "wd:Q376241",
+      "lat": 9.8329,
+      "lng": 11.6613,
+      "summary": "Balanga local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3510517",
+      "slug": "billiri-lga",
+      "name": "Billiri",
+      "type": "lga",
+      "parentId": "wd:Q376241",
+      "lat": 9.815833333,
+      "lng": 11.124166666,
+      "summary": "Billiri local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5313235",
+      "slug": "dukku-lga",
+      "name": "Dukku",
+      "type": "lga",
+      "parentId": "wd:Q376241",
+      "lat": 10.8025,
+      "lng": 10.828333333,
+      "summary": "Dukku local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5508725",
+      "slug": "funakaye-lga",
+      "name": "Funakaye",
+      "type": "lga",
+      "parentId": "wd:Q376241",
+      "lat": 10.742222222,
+      "lng": 11.408333333,
+      "summary": "Funakaye local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q49103723",
+      "slug": "gombe-lga",
+      "name": "Gombe",
+      "type": "lga",
+      "parentId": "wd:Q376241",
+      "lat": 10.28263,
+      "lng": 11.16674,
+      "summary": "Gombe local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6354502",
+      "slug": "kaltungo-lga",
+      "name": "Kaltungo",
+      "type": "lga",
+      "parentId": "wd:Q376241",
+      "lat": 9.823611111,
+      "lng": 11.421944444,
+      "summary": "Kaltungo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6450109",
+      "slug": "kwami-lga",
+      "name": "Kwami",
+      "type": "lga",
+      "parentId": "wd:Q376241",
+      "lat": 10.493055555,
+      "lng": 11.21,
+      "summary": "Kwami local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6958144",
+      "slug": "nafada-lga",
+      "name": "Nafada",
+      "type": "lga",
+      "parentId": "wd:Q376241",
+      "lat": 11.090555555,
+      "lng": 11.215833333,
+      "summary": "Nafada local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7500408",
+      "slug": "shongom-lga",
+      "name": "Shongom",
+      "type": "lga",
+      "parentId": "wd:Q376241",
+      "lat": 9.65,
+      "lng": 11.2167,
+      "summary": "Shongom local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3510505",
+      "slug": "yamaltu-deba-lga",
+      "name": "Yamaltu/Deba",
+      "type": "lga",
+      "parentId": "wd:Q376241",
+      "lat": 10.2167,
+      "lng": 11.3833,
+      "summary": "Yamaltu/Deba local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q16733661",
+      "slug": "ilorin-south-lga",
+      "name": "Ilorin-South",
+      "type": "lga",
+      "parentId": "wd:Q587085",
+      "lat": 8.498688,
+      "lng": 4.562779,
+      "summary": "Ilorin-South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6001104",
+      "slug": "ilorin-west-lga",
+      "name": "Ilorin-West",
+      "type": "lga",
+      "parentId": "wd:Q587085",
+      "lat": 8.48752,
+      "lng": 4.5235,
+      "summary": "Ilorin-West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4668212",
+      "slug": "aboh-mbaise-lga",
+      "name": "Aboh-Mbaise",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.45,
+      "lng": 7.23333,
+      "summary": "Aboh-Mbaise local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4695100",
+      "slug": "ahiazu-mbaise-lga",
+      "name": "Ahiazu Mbaise",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.5625,
+      "lng": 7.261111111,
+      "summary": "Ahiazu Mbaise local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5348582",
+      "slug": "ehime-mbano-lga",
+      "name": "Ehime mbano",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.66258,
+      "lng": 7.30387,
+      "summary": "Ehime mbano local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5423295",
+      "slug": "ezinihitte-mbaise-lga",
+      "name": "Ezinihitte-Mbaise",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.47876,
+      "lng": 7.32626,
+      "summary": "Ezinihitte-Mbaise local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5988103",
+      "slug": "ideato-north-lga",
+      "name": "Ideato North",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.50511,
+      "lng": 7.367715,
+      "summary": "Ideato North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5988113",
+      "slug": "ideato-south-lga",
+      "name": "Ideato South",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.85,
+      "lng": 7.1,
+      "summary": "Ideato South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5994706",
+      "slug": "ihitte-uboma-lga",
+      "name": "Ihitte/Uboma",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.616412,
+      "lng": 7.349424,
+      "summary": "Ihitte/Uboma local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5995775",
+      "slug": "ikeduru-lga",
+      "name": "Ikeduru",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.550556,
+      "lng": 7.066389,
+      "summary": "Ikeduru local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6080814",
+      "slug": "isiala-mbano-lga",
+      "name": "Isiala Mbano",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.703582,
+      "lng": 7.179541,
+      "summary": "Isiala Mbano local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q11058579",
+      "slug": "isu-lga",
+      "name": "Isu",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.683888888,
+      "lng": 7.068888888,
+      "summary": "Isu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q11057544",
+      "slug": "mbaitoli-lga",
+      "name": "Mbaitoli",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.5828,
+      "lng": 7.0283,
+      "summary": "Mbaitoli local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7022569",
+      "slug": "ngor-okpala-lga",
+      "name": "Ngor Okpala",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.320277777,
+      "lng": 7.158888888,
+      "summary": "Ngor Okpala local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q10491509",
+      "slug": "njaba-lga",
+      "name": "Njaba",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.702103,
+      "lng": 7.018633,
+      "summary": "Njaba local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3509029",
+      "slug": "nkwerre-lga",
+      "name": "Nkwerre",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.75,
+      "lng": 7.1,
+      "summary": "Nkwerre local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7075319",
+      "slug": "obowo-lga",
+      "name": "Obowo",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.54927,
+      "lng": 7.3601,
+      "summary": "Obowo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3510973",
+      "slug": "oguta-lga",
+      "name": "Oguta",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.669166666,
+      "lng": 6.8,
+      "summary": "Oguta local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7080607",
+      "slug": "ohaji-egbema-lga",
+      "name": "Ohaji/Egbema",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.305833,
+      "lng": 6.945556,
+      "summary": "Ohaji/Egbema local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3509182",
+      "slug": "okigwe-lga",
+      "name": "Okigwe",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.81088,
+      "lng": 7.32559,
+      "summary": "Okigwe local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7095088",
+      "slug": "onuimo-lga",
+      "name": "Onuimo",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.77363,
+      "lng": 7.2411,
+      "summary": "Onuimo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3508985",
+      "slug": "orlu-lga",
+      "name": "Orlu",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.79565,
+      "lng": 7.03513,
+      "summary": "Orlu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7104193",
+      "slug": "orsu-lga",
+      "name": "Orsu",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.853889,
+      "lng": 6.86,
+      "summary": "Orsu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7105120",
+      "slug": "oru-east-lga",
+      "name": "Oru East",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.70557,
+      "lng": 6.96015,
+      "summary": "Oru East local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7105149",
+      "slug": "oru-west-lga",
+      "name": "Oru West",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.735833,
+      "lng": 6.883333,
+      "summary": "Oru West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7114779",
+      "slug": "owerri-municipal-lga",
+      "name": "Owerri Municipal",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.47656,
+      "lng": 7.01683,
+      "summary": "Owerri Municipal local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7114782",
+      "slug": "owerri-north-lga",
+      "name": "Owerri North",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.456666666,
+      "lng": 7.102777777,
+      "summary": "Owerri North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7114784",
+      "slug": "owerri-west-lga",
+      "name": "Owerri West",
+      "type": "lga",
+      "parentId": "wd:Q842939",
+      "lat": 5.43226,
+      "lng": 6.98041,
+      "summary": "Owerri West local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4827336",
+      "slug": "auyo-lga",
+      "name": "Auyo",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.36,
+      "lng": 9.98556,
+      "summary": "Auyo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4838099",
+      "slug": "babura-lga",
+      "name": "Babura",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.613888888,
+      "lng": 8.858611111,
+      "summary": "Babura local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140398",
+      "slug": "biriniwa-lga",
+      "name": "Biriniwa",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.83321,
+      "lng": 10.07471,
+      "summary": "Biriniwa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4916902",
+      "slug": "birnin-kudu-lga",
+      "name": "Birnin Kudu",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 11.45,
+      "lng": 9.475,
+      "summary": "Birnin Kudu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4986741",
+      "slug": "buji-lga",
+      "name": "Buji",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 11.579166666,
+      "lng": 9.72,
+      "summary": "Buji local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q1023713",
+      "slug": "dutse-lga",
+      "name": "Dutse",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 11.7,
+      "lng": 9.333333333,
+      "summary": "Dutse local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5516809",
+      "slug": "gagarawa-lga",
+      "name": "Gagarawa",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.407564,
+      "lng": 9.528397,
+      "summary": "Gagarawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5523392",
+      "slug": "garki-lga",
+      "name": "Garki",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.429722222,
+      "lng": 9.060555555,
+      "summary": "Garki local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q1023716",
+      "slug": "gumel-lga",
+      "name": "Gumel",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.633333333,
+      "lng": 9.4,
+      "summary": "Gumel local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140442",
+      "slug": "guri-lga",
+      "name": "Guri",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.632832,
+      "lng": 10.481424,
+      "summary": "Guri local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5623339",
+      "slug": "gwaram-lga",
+      "name": "Gwaram",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 11.185833333,
+      "lng": 9.968611111,
+      "summary": "Gwaram local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5623681",
+      "slug": "gwiwa-lga",
+      "name": "Gwiwa",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.736914,
+      "lng": 8.271095,
+      "summary": "Gwiwa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5637733",
+      "slug": "hadejia-lga",
+      "name": "Hadejia",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.43487,
+      "lng": 10.05266,
+      "summary": "Hadejia local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6123326",
+      "slug": "jahun-lga",
+      "name": "Jahun",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.0667,
+      "lng": 9.63333,
+      "summary": "Jahun local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q218744",
+      "slug": "kafin-hausa-lga",
+      "name": "Kafin Hausa",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 11.981763,
+      "lng": 8.496467,
+      "summary": "Kafin Hausa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6378697",
+      "slug": "kaugama-lga",
+      "name": "Kaugama",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.4833,
+      "lng": 9.73333,
+      "summary": "Kaugama local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6380928",
+      "slug": "kazaure-lga",
+      "name": "Kazaure",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.59681,
+      "lng": 8.51353,
+      "summary": "Kazaure local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6415076",
+      "slug": "kiri-kasama-lga",
+      "name": "Kiri Kasama",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.56531,
+      "lng": 10.25216,
+      "summary": "Kiri Kasama local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q109920909",
+      "slug": "kiri-kasamma-lga",
+      "name": "Kiri Kasamma",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.594172057,
+      "lng": 10.214425846,
+      "summary": "Kiri Kasamma local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6418966",
+      "slug": "kiyawa-lga",
+      "name": "Kiyawa",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 11.784444444,
+      "lng": 9.606944444,
+      "summary": "Kiyawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7682218",
+      "slug": "maigatari-lga",
+      "name": "Maigatari",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.725277777,
+      "lng": 9.585833333,
+      "summary": "Maigatari local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6741213",
+      "slug": "malam-madori-lga",
+      "name": "Malam Madori",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.554071,
+      "lng": 10.028136,
+      "summary": "Malam Madori local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q49106163",
+      "slug": "malam-maduri-lga",
+      "name": "Malam Maduri",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.56009,
+      "lng": 9.98599,
+      "summary": "Malam Maduri local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3857126",
+      "slug": "miga-lga",
+      "name": "Miga",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.2333,
+      "lng": 9.71667,
+      "summary": "Miga local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7334893",
+      "slug": "ringim-lga",
+      "name": "Ringim",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.186111111,
+      "lng": 9.103888888,
+      "summary": "Ringim local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7365684",
+      "slug": "roni-lga",
+      "name": "Roni",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.54925,
+      "lng": 8.33144,
+      "summary": "Roni local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7636102",
+      "slug": "sule-tankarkar-lga",
+      "name": "Sule Tankarkar",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.65577,
+      "lng": 9.18751,
+      "summary": "Sule Tankarkar local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7688838",
+      "slug": "taura-lga",
+      "name": "Taura",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.255555555,
+      "lng": 9.384166666,
+      "summary": "Taura local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q8048834",
+      "slug": "yankwashi-lga",
+      "name": "Yankwashi",
+      "type": "lga",
+      "parentId": "wd:Q682691",
+      "lat": 12.743623,
+      "lng": 8.53892,
+      "summary": "Yankwashi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140400",
+      "slug": "birnin-gwari-lga",
+      "name": "Birnin Gwari",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 10.6667,
+      "lng": 6.55,
+      "summary": "Birnin Gwari local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5097501",
+      "slug": "chikun-lga",
+      "name": "Chikun",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 10.285,
+      "lng": 7.110277777,
+      "summary": "Chikun local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5565892",
+      "slug": "giwa-lga",
+      "name": "Giwa",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 11.280784,
+      "lng": 7.417606,
+      "summary": "Giwa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5991414",
+      "slug": "igabi-lga",
+      "name": "Igabi",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 10.783333333,
+      "lng": 7.766666666,
+      "summary": "Igabi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5995371",
+      "slug": "ikara-lga",
+      "name": "Ikara",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 11.1833,
+      "lng": 8.23333,
+      "summary": "Ikara local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140472",
+      "slug": "jaba-lga",
+      "name": "Jaba",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 9.44818,
+      "lng": 8.00845,
+      "summary": "Jaba local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6177061",
+      "slug": "jema-a-lga",
+      "name": "Jema'a",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 9.578827,
+      "lng": 8.292147,
+      "summary": "Jema'a local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6344670",
+      "slug": "kachia-lga",
+      "name": "Kachia",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 9.872636,
+      "lng": 7.955089,
+      "summary": "Kachia local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140547",
+      "slug": "kaduna-north-lga",
+      "name": "Kaduna North",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 9.923174,
+      "lng": 7.430551,
+      "summary": "Kaduna North local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6345763",
+      "slug": "kaduna-south-lga",
+      "name": "Kaduna South",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 10.4631,
+      "lng": 7.4138,
+      "summary": "Kaduna South local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6346376",
+      "slug": "kagarko-lga",
+      "name": "Kagarko",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 9.45,
+      "lng": 7.68333,
+      "summary": "Kagarko local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6349067",
+      "slug": "kajuru-lga",
+      "name": "Kajuru",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 9.489736,
+      "lng": 7.695075,
+      "summary": "Kajuru local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6378873",
+      "slug": "kaura-lga",
+      "name": "Kaura",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 9.612222222,
+      "lng": 8.47,
+      "summary": "Kaura local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6378904",
+      "slug": "kauru-lga",
+      "name": "Kauru",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 10.65,
+      "lng": 8.15,
+      "summary": "Kauru local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6441191",
+      "slug": "kubau-lga",
+      "name": "Kubau",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 10.87876,
+      "lng": 8.38294,
+      "summary": "Kubau local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6441647",
+      "slug": "kudan-lga",
+      "name": "Kudan",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 11.26478,
+      "lng": 7.648952,
+      "summary": "Kudan local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6528787",
+      "slug": "lere-lga",
+      "name": "Lere",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 10.346388888,
+      "lng": 8.567222222,
+      "summary": "Lere local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6738780",
+      "slug": "makarfi-lga",
+      "name": "Makarfi",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 11.3766,
+      "lng": 7.8803,
+      "summary": "Makarfi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7396283",
+      "slug": "sabon-gari-lga",
+      "name": "Sabon Gari",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 11.1167,
+      "lng": 7.73333,
+      "summary": "Sabon Gari local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5290125",
+      "slug": "sanga-lga",
+      "name": "Sanga",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 9.25,
+      "lng": 8.45,
+      "summary": "Sanga local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7549885",
+      "slug": "soba-lga",
+      "name": "Soba",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 10.87005,
+      "lng": 7.96443,
+      "summary": "Soba local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q108794703",
+      "slug": "tudun-wada-lga",
+      "name": "Tudun Wada",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 11.25,
+      "lng": 8.4,
+      "summary": "Tudun Wada local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q8066201",
+      "slug": "zangon-kataf-lga",
+      "name": "Zangon Kataf",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 9.784597,
+      "lng": 8.283949,
+      "summary": "Zangon Kataf local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q49110334",
+      "slug": "zaria-lga",
+      "name": "Zaria",
+      "type": "lga",
+      "parentId": "wd:Q878284",
+      "lat": 10.98854,
+      "lng": 7.69622,
+      "summary": "Zaria local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4699747",
+      "slug": "ajingi-lga",
+      "name": "Ajingi",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.9686,
+      "lng": 9.0378,
+      "summary": "Ajingi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4709434",
+      "slug": "albasu-lga",
+      "name": "Albasu",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.6692,
+      "lng": 9.1401,
+      "summary": "Albasu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4842187",
+      "slug": "bagwai-lga",
+      "name": "Bagwai",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.1578,
+      "lng": 8.13583,
+      "summary": "Bagwai local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4878426",
+      "slug": "bebeji-lga",
+      "name": "Bebeji",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.666666666,
+      "lng": 8.266666666,
+      "summary": "Bebeji local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4903607",
+      "slug": "bichi-lga",
+      "name": "Bichi",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.2342,
+      "lng": 8.24111,
+      "summary": "Bichi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q13140410",
+      "slug": "bunkure-lga",
+      "name": "Bunkure",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.7,
+      "lng": 8.55,
+      "summary": "Bunkure local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5210142",
+      "slug": "dala-lga",
+      "name": "Dala",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.0053,
+      "lng": 8.5007,
+      "summary": "Dala local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5212087",
+      "slug": "dambatta-lga",
+      "name": "Dambatta",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.433055555,
+      "lng": 8.515277777,
+      "summary": "Dambatta local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5242270",
+      "slug": "dawakin-kudu-lga",
+      "name": "Dawakin Kudu",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.8347,
+      "lng": 8.59806,
+      "summary": "Dawakin Kudu local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5242271",
+      "slug": "dawakin-tofa-lga",
+      "name": "Dawakin Tofa",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.1028,
+      "lng": 8.33139,
+      "summary": "Dawakin Tofa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5288494",
+      "slug": "doguwa-lga",
+      "name": "Doguwa",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 10.75,
+      "lng": 8.73333,
+      "summary": "Doguwa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5429405",
+      "slug": "fagge-lga",
+      "name": "Fagge",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.0067,
+      "lng": 8.52917,
+      "summary": "Fagge local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5515278",
+      "slug": "gabasawa-lga",
+      "name": "Gabasawa",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.1,
+      "lng": 8.88333,
+      "summary": "Gabasawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5523394",
+      "slug": "garko-lga",
+      "name": "Garko",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.5485,
+      "lng": 8.8583,
+      "summary": "Garko local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5524488",
+      "slug": "garun-malam-lga",
+      "name": "Garun Malam",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.651,
+      "lng": 8.377,
+      "summary": "Garun Malam local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5528692",
+      "slug": "gaya-lga",
+      "name": "Gaya",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.781666666,
+      "lng": 9.028611111,
+      "summary": "Gaya local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5555061",
+      "slug": "gezawa-lga",
+      "name": "Gezawa",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.1,
+      "lng": 8.73333,
+      "summary": "Gezawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5623248",
+      "slug": "gwale-lga",
+      "name": "Gwale",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.9667,
+      "lng": 8.5,
+      "summary": "Gwale local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5623352",
+      "slug": "gwarzo-lga",
+      "name": "Gwarzo",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.916666666,
+      "lng": 7.933333333,
+      "summary": "Gwarzo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7210472",
+      "slug": "kabo-lga",
+      "name": "Kabo",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.8667,
+      "lng": 8.16667,
+      "summary": "Kabo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q10313749",
+      "slug": "kano-municipal-lga",
+      "name": "Kano Municipal",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.96,
+      "lng": 8.5007,
+      "summary": "Kano Municipal local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6368888",
+      "slug": "karaye-lga",
+      "name": "Karaye",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.7849,
+      "lng": 8.0111,
+      "summary": "Karaye local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6404045",
+      "slug": "kibiya-lga",
+      "name": "Kibiya",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.5333,
+      "lng": 8.66667,
+      "summary": "Kibiya local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6416264",
+      "slug": "kiru-lga",
+      "name": "Kiru",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.7,
+      "lng": 8.13333,
+      "summary": "Kiru local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6443769",
+      "slug": "kumbotso-lga",
+      "name": "Kumbotso",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.88806,
+      "lng": 8.50278,
+      "summary": "Kumbotso local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6444225",
+      "slug": "kunchi-lga",
+      "name": "Kunchi",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.5014,
+      "lng": 8.27167,
+      "summary": "Kunchi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6445487",
+      "slug": "kura-lga",
+      "name": "Kura",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.7714,
+      "lng": 8.43028,
+      "summary": "Kura local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6728324",
+      "slug": "madobi-lga",
+      "name": "Madobi",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.7772,
+      "lng": 8.28833,
+      "summary": "Madobi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6739854",
+      "slug": "makoda-lga",
+      "name": "Makoda",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.4186,
+      "lng": 8.4325,
+      "summary": "Makoda local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6867755",
+      "slug": "minjibir-lga",
+      "name": "Minjibir",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.1783,
+      "lng": 8.65917,
+      "summary": "Minjibir local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6966610",
+      "slug": "nasarawa-lga",
+      "name": "Nasarawa",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.9769,
+      "lng": 8.5625,
+      "summary": "Nasarawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7293412",
+      "slug": "rano-lga",
+      "name": "Rano",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.5572,
+      "lng": 8.58333,
+      "summary": "Rano local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3432111",
+      "slug": "rimin-gado-lga",
+      "name": "Rimin Gado",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.965,
+      "lng": 8.25,
+      "summary": "Rimin Gado local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7359427",
+      "slug": "rogo-lga",
+      "name": "Rogo",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.5667,
+      "lng": 7.83333,
+      "summary": "Rogo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7489007",
+      "slug": "shanono-lga",
+      "name": "Shanono",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.05,
+      "lng": 7.98333,
+      "summary": "Shanono local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7636917",
+      "slug": "sumaila-lga",
+      "name": "Sumaila",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.501388888,
+      "lng": 8.964444444,
+      "summary": "Sumaila local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7677083",
+      "slug": "takai-lga",
+      "name": "Takai",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.5833,
+      "lng": 9.11667,
+      "summary": "Takai local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q9081916",
+      "slug": "tarauni-lga",
+      "name": "Tarauni",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.9667,
+      "lng": 8.56667,
+      "summary": "Tarauni local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7812950",
+      "slug": "tofa-lga",
+      "name": "Tofa",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.05,
+      "lng": 8.26667,
+      "summary": "Tofa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7849383",
+      "slug": "tsanyawa-lga",
+      "name": "Tsanyawa",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.3,
+      "lng": 7.98333,
+      "summary": "Tsanyawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7851355",
+      "slug": "tudun-wada-lga",
+      "name": "Tudun Wada",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.25,
+      "lng": 8.4,
+      "summary": "Tudun Wada local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3510251",
+      "slug": "ungogo-lga",
+      "name": "Ungogo",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 12.090555555,
+      "lng": 8.496666666,
+      "summary": "Ungogo local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q7968824",
+      "slug": "warawa-lga",
+      "name": "Warawa",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.8833,
+      "lng": 8.68333,
+      "summary": "Warawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q8039048",
+      "slug": "wudil-lga",
+      "name": "Wudil",
+      "type": "lga",
+      "parentId": "wd:Q682571",
+      "lat": 11.8167,
+      "lng": 8.85,
+      "summary": "Wudil local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4849509",
+      "slug": "bakori-lga",
+      "name": "Bakori",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 11.55,
+      "lng": 7.433333333,
+      "summary": "Bakori local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4868527",
+      "slug": "batagarawa-lga",
+      "name": "Batagarawa",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.89377,
+      "lng": 7.60653,
+      "summary": "Batagarawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4869633",
+      "slug": "batsari-lga",
+      "name": "Batsari",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.7528,
+      "lng": 7.24194,
+      "summary": "Batsari local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4873577",
+      "slug": "baure-lga",
+      "name": "Baure",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.7833,
+      "lng": 8.76667,
+      "summary": "Baure local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q4913977",
+      "slug": "bindawa-lga",
+      "name": "Bindawa",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.710833333,
+      "lng": 7.831944444,
+      "summary": "Bindawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5073921",
+      "slug": "charanchi-lga",
+      "name": "Charanchi",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.675,
+      "lng": 7.7275,
+      "summary": "Charanchi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5214083",
+      "slug": "dan-musa-lga",
+      "name": "Dan Musa",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.2639,
+      "lng": 7.33389,
+      "summary": "Dan Musa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5215754",
+      "slug": "dandume-lga",
+      "name": "Dandume",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 11.4167,
+      "lng": 7.2,
+      "summary": "Dandume local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5219922",
+      "slug": "danja-lga",
+      "name": "Danja",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 11.395555555,
+      "lng": 7.548888888,
+      "summary": "Danja local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q49102727",
+      "slug": "daura-lga",
+      "name": "Daura",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.981944444,
+      "lng": 8.251666666,
+      "summary": "Daura local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5317531",
+      "slug": "dutsi-lga",
+      "name": "Dutsi",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.8253,
+      "lng": 8.14278,
+      "summary": "Dutsi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5317533",
+      "slug": "dutsin-ma-lga",
+      "name": "Dutsin-Ma",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.455,
+      "lng": 7.49139,
+      "summary": "Dutsin-Ma local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q5436812",
+      "slug": "faskari-lga",
+      "name": "Faskari",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 11.675555555,
+      "lng": 7.086111111,
+      "summary": "Faskari local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q3056264",
+      "slug": "funtua-lga",
+      "name": "Funtua",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 11.533333333,
+      "lng": 7.316666666,
+      "summary": "Funtua local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q15043610",
+      "slug": "ingawa-lga",
+      "name": "Ingawa",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.6397,
+      "lng": 8.05028,
+      "summary": "Ingawa local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6192032",
+      "slug": "jibia-lga",
+      "name": "Jibia",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 13.0917,
+      "lng": 7.22639,
+      "summary": "Jibia local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6346293",
+      "slug": "kafur-lga",
+      "name": "Kafur",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 11.65,
+      "lng": 7.7,
+      "summary": "Kafur local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6348575",
+      "slug": "kaita-lga",
+      "name": "Kaita",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 13.0806,
+      "lng": 7.75389,
+      "summary": "Kaita local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6363677",
+      "slug": "kankara-lga",
+      "name": "Kankara",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 11.973888888,
+      "lng": 7.362777777,
+      "summary": "Kankara local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6363735",
+      "slug": "kankia-lga",
+      "name": "Kankia",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.4667,
+      "lng": 7.8,
+      "summary": "Kankia local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q49105353",
+      "slug": "katsina-lga",
+      "name": "Katsina",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.9816,
+      "lng": 7.6223,
+      "summary": "Katsina local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6445904",
+      "slug": "kurfi-lga",
+      "name": "Kurfi",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.6661,
+      "lng": 7.48306,
+      "summary": "Kurfi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6447735",
+      "slug": "kusada-lga",
+      "name": "Kusada",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.4667,
+      "lng": 7.98333,
+      "summary": "Kusada local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6735083",
+      "slug": "mai-adua-lga",
+      "name": "Mai'Adua",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 13.19055556,
+      "lng": 8.21166667,
+      "summary": "Mai'Adua local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6744962",
+      "slug": "malumfashi-lga",
+      "name": "Malumfashi",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 11.8,
+      "lng": 7.616666666,
+      "summary": "Malumfashi local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6749389",
+      "slug": "mani-lga",
+      "name": "Mani",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 12.856111111,
+      "lng": 7.874444444,
+      "summary": "Mani local government area (Wikidata)."
+    },
+    {
+      "id": "wd:Q6783140",
+      "slug": "mashi-lga",
+      "name": "Mashi",
+      "type": "lga",
+      "parentId": "wd:Q657821",
+      "lat": 13.1,
+      "lng": 8,
+      "summary": "Mashi local government area (Wikidata)."
+    }
+  ]
+}

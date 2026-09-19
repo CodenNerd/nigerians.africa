@@ -1,0 +1,56 @@
+{
+  "sources": [
+    {
+      "id": "src-bof-fy2024-appropriation",
+      "type": "Government",
+      "title": "2024 Appropriation Act — Federal budget envelope",
+      "publisher": "Budget Office of the Federation",
+      "url": "https://www.budgetoffice.gov.ng/",
+      "publicationDate": "2024-01-01",
+      "description": "Federal Republic of Nigeria 2024 budget. Headline aggregate from Budget Office / Appropriation Act reporting (₦28.777 trillion).",
+      "reliability": "high"
+    }
+  ],
+  "budgets": [
+    {
+      "id": "budget-fed-2024-crawl",
+      "slug": "federal-budget-2024",
+      "title": "Federal Government of Nigeria — 2024 Appropriation",
+      "governmentLevel": "federal",
+      "institutionId": "wd:budget-office",
+      "fiscalYear": 2024,
+      "amount": 28777400000000,
+      "documentSourceId": "src-bof-fy2024-appropriation",
+      "description": "Aggregate federal budget for FY2024 as published via Budget Office of the Federation channels. Line-item expansion requires spreadsheet/PDF table extraction in a later pass."
+    }
+  ],
+  "allocations": [
+    {
+      "id": "alloc-fed-2024-capital",
+      "slug": "federal-2024-capital-expenditure",
+      "budgetId": "budget-fed-2024-crawl",
+      "program": "Capital expenditure (FY2024 aggregate)",
+      "amount": 9995000000000,
+      "recipient": "Federal MDAs — capital vote",
+      "sourceId": "src-bof-fy2024-appropriation",
+      "released": false,
+      "releasedAmount": 0,
+      "gapNote": "Aggregate capital envelope from FY2024 Appropriation reporting. MDA-level release tracking not yet extracted from BOF PDFs."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-bof-fy2024-page",
+      "slug": "budget-office-fy2024-documents",
+      "type": "Government Record",
+      "title": "Budget Office budget documents listing",
+      "description": "Fetched Budget Office resources page / home as provenance for FY2024 envelope figures.",
+      "sourceId": "src-bof-fy2024-appropriation",
+      "capturedAt": "2026-09-19",
+      "verificationStatus": "under_review",
+      "relatedEntityType": "money",
+      "relatedEntityId": "alloc-fed-2024-capital",
+      "fileLabel": "bof-html"
+    }
+  ]
+}

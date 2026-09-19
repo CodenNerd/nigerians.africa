@@ -1,0 +1,30 @@
+name: validate-seed
+
+on:
+  push:
+    paths:
+      - "packages/domain/src/seed/**"
+      - "packages/ingestion/**"
+      - "scripts/validate-seed.ts"
+  pull_request:
+    paths:
+      - "packages/domain/src/seed/**"
+      - "packages/ingestion/**"
+      - "scripts/validate-seed.ts"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm validate-seed
+      - run: pnpm --filter @nigeria-for-nigerians/domain typecheck
+      - run: pnpm --filter @nigeria-for-nigerians/ingestion typecheck

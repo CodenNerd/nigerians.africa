@@ -1,0 +1,2523 @@
+{
+  "sources": [
+    {
+      "id": "src-wikidata-government",
+      "type": "Official Dataset",
+      "title": "Wikidata — Nigerian federal institutions and offices",
+      "publisher": "Wikimedia Foundation / Wikidata",
+      "url": "https://www.wikidata.org/",
+      "publicationDate": "2026-09-19",
+      "description": "Federal ministries/agencies and executive offices via SPARQL (CC0).",
+      "reliability": "high"
+    }
+  ],
+  "institutions": [
+    {
+      "id": "wd:Q1033-presidency",
+      "slug": "presidency-of-nigeria",
+      "name": "The Presidency",
+      "type": "executive",
+      "level": "federal",
+      "mandate": "Executive arm of the Federal Government of Nigeria.",
+      "description": "Office of the President and Vice President of Nigeria.",
+      "website": "https://statehouse.gov.ng",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q1033-state-exec",
+      "slug": "state-executive-nigeria",
+      "name": "State Executive (Nigeria)",
+      "type": "executive",
+      "level": "state",
+      "mandate": "State governors and state executive offices.",
+      "description": "Grouping institution for state-level executive offices ingested from Wikidata.",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:budget-office",
+      "slug": "budget-office-of-the-federation",
+      "name": "Budget Office of the Federation",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Prepare and monitor the federal budget of Nigeria.",
+      "description": "Federal agency responsible for budget preparation and monitoring.",
+      "website": "https://www.budgetoffice.gov.ng",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q21531109",
+      "slug": "abia-state-ministry-of-environment",
+      "name": "Abia State Ministry of Environment",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Abia State Ministry of Environment.",
+      "description": "Abia State Ministry of Environment (Wikidata Q21531109).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122643726",
+      "slug": "adamawa-state-ministry-of-environment-and-natural-resources-development",
+      "name": "Adamawa State MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES DEVELOPMENT",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Adamawa State MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES DEVELOPMENT.",
+      "description": "Adamawa State MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES DEVELOPMENT (Wikidata Q122643726).",
+      "website": "https://adspc.ad.gov.ng/ministry-of-environment-and-natural-resources-development/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134611670",
+      "slug": "adamawa-state-urban-planning-dev-authority",
+      "name": "Adamawa State Urban Planning & Dev. Authority",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Adamawa State Urban Planning & Dev. Authority.",
+      "description": "Adamawa State Urban Planning & Dev. Authority (Wikidata Q134611670).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134611680",
+      "slug": "adamawa-state-water-board",
+      "name": "Adamawa State Water Board",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Adamawa State Water Board.",
+      "description": "Adamawa State Water Board (Wikidata Q134611680).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q30632373",
+      "slug": "akwa-ibom-state-ministry-of-justice",
+      "name": "Akwa Ibom State Ministry of Justice",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Akwa Ibom State Ministry of Justice.",
+      "description": "Akwa Ibom State Ministry of Justice (Wikidata Q30632373).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125680357",
+      "slug": "anambra-state-ministry-of-works-and-infrastructure",
+      "name": "Anambra State Ministry Of Works and Infrastructure",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Anambra State Ministry Of Works and Infrastructure.",
+      "description": "Anambra State Ministry Of Works and Infrastructure (Wikidata Q125680357).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125504410",
+      "slug": "anambra-state-ministry-of-agriculture",
+      "name": "Anambra State Ministry of Agriculture",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Anambra State Ministry of Agriculture.",
+      "description": "Anambra State Ministry of Agriculture (Wikidata Q125504410).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125504539",
+      "slug": "anambra-state-ministry-of-education",
+      "name": "Anambra State Ministry of Education",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Anambra State Ministry of Education.",
+      "description": "Anambra State Ministry of Education (Wikidata Q125504539).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125504784",
+      "slug": "anambra-state-ministry-of-petroleum-and-mineral-reources",
+      "name": "Anambra State Ministry of Petroleum and Mineral Reources",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Anambra State Ministry of Petroleum and Mineral Reources.",
+      "description": "Anambra State Ministry of Petroleum and Mineral Reources (Wikidata Q125504784).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125504420",
+      "slug": "anambra-state-ministry-of-women-and-children-affairs",
+      "name": "Anambra State Ministry of Women and Children Affairs",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Anambra State Ministry of Women and Children Affairs.",
+      "description": "Anambra State Ministry of Women and Children Affairs (Wikidata Q125504420).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125504470",
+      "slug": "anambra-state-ministry-of-health",
+      "name": "Anambra State ministry of health",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Anambra State ministry of health.",
+      "description": "Anambra State ministry of health (Wikidata Q125504470).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122648600",
+      "slug": "anambra-state-ministry-of-environment",
+      "name": "Anambra state Ministry of Environment",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Anambra state Ministry of Environment.",
+      "description": "Anambra state Ministry of Environment (Wikidata Q122648600).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125526387",
+      "slug": "anambra-state-ministry-of-petroleum-mineral-resources",
+      "name": "Anambra state Ministry of Petroleum & Mineral Resources",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Anambra state Ministry of Petroleum & Mineral Resources.",
+      "description": "Anambra state Ministry of Petroleum & Mineral Resources (Wikidata Q125526387).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125526354",
+      "slug": "anambra-state-ministry-of-transportation",
+      "name": "Anambra state Ministry of Transportation",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Anambra state Ministry of Transportation.",
+      "description": "Anambra state Ministry of Transportation (Wikidata Q125526354).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125526374",
+      "slug": "anambra-state-ministry-of-youth-development",
+      "name": "Anambra state Ministry of Youth Development",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Anambra state Ministry of Youth Development.",
+      "description": "Anambra state Ministry of Youth Development (Wikidata Q125526374).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122984840",
+      "slug": "bauchi-state-ministry-of-health",
+      "name": "Bauchi State Ministry of Health",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Bauchi State Ministry of Health.",
+      "description": "Bauchi State Ministry of Health (Wikidata Q122984840).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134611084",
+      "slug": "borno-state-agricultural-development-programme",
+      "name": "Borno State Agricultural Development Programme",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Borno State Agricultural Development Programme.",
+      "description": "Borno State Agricultural Development Programme (Wikidata Q134611084).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134604786",
+      "slug": "borno-state-civil-service-commission",
+      "name": "Borno State Civil Service Commission",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Borno State Civil Service Commission.",
+      "description": "Borno State Civil Service Commission (Wikidata Q134604786).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q123168577",
+      "slug": "borno-state-ministry-of-agriculture",
+      "name": "Borno State Ministry of Agriculture",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Borno State Ministry of Agriculture.",
+      "description": "Borno State Ministry of Agriculture (Wikidata Q123168577).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q137738576",
+      "slug": "borno-state-ministry-of-health-and-human-services",
+      "name": "Borno State Ministry of Health and Human Services",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Borno State Ministry of Health and Human Services.",
+      "description": "Borno State Ministry of Health and Human Services (Wikidata Q137738576).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134606561",
+      "slug": "borno-state-pilgrims-welfare-board",
+      "name": "Borno State Pilgrims Welfare Board",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Borno State Pilgrims Welfare Board.",
+      "description": "Borno State Pilgrims Welfare Board (Wikidata Q134606561).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134606596",
+      "slug": "borno-teaching-service-commission",
+      "name": "Borno Teaching Service Commission",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Borno Teaching Service Commission.",
+      "description": "Borno Teaching Service Commission (Wikidata Q134606596).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122643217",
+      "slug": "borno-state-ministry-of-environment",
+      "name": "Borno state Ministry of Environment",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Borno state Ministry of Environment.",
+      "description": "Borno state Ministry of Environment (Wikidata Q122643217).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122984908",
+      "slug": "borno-state-ministry-of-health",
+      "name": "Borno state Ministry of Health",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Borno state Ministry of Health.",
+      "description": "Borno state Ministry of Health (Wikidata Q122984908).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122733549",
+      "slug": "cross-river-state-ministry-of-environment",
+      "name": "Cross River State Ministry of Environment",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Cross River State Ministry of Environment.",
+      "description": "Cross River State Ministry of Environment (Wikidata Q122733549).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134560383",
+      "slug": "dan-auta-agric-extension-agent-and-horticulture-consultant",
+      "name": "Dan Auta, Agric Extension Agent And Horticulture Consultant",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Dan Auta, Agric Extension Agent And Horticulture Consultant.",
+      "description": "Dan Auta, Agric Extension Agent And Horticulture Consultant (Wikidata Q134560383).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122648526",
+      "slug": "delta-ministry-of-environment",
+      "name": "Delta Ministry of Environment",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Delta Ministry of Environment.",
+      "description": "Delta Ministry of Environment (Wikidata Q122648526).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q137205158",
+      "slug": "delta-state-ministry-of-health",
+      "name": "Delta State Ministry of Health",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Delta State Ministry of Health.",
+      "description": "Delta State Ministry of Health (Wikidata Q137205158).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q137737301",
+      "slug": "ebonyi-state-ministry-of-health",
+      "name": "Ebonyi State Ministry of Health",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ebonyi State Ministry of Health.",
+      "description": "Ebonyi State Ministry of Health (Wikidata Q137737301).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122650049",
+      "slug": "ekiti-state-ministry-of-environment-and-natural-resources",
+      "name": "Ekiti State Ministry of Environment and Natural Resources",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ekiti State Ministry of Environment and Natural Resources.",
+      "description": "Ekiti State Ministry of Environment and Natural Resources (Wikidata Q122650049).",
+      "website": "https://www.ekitistate.gov.ng/executive-council/mdas/ministry-of-environment-and-natural-resources/#1683230132009-53b0a62a-ede2",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125756599",
+      "slug": "ekiti-state-ministry-of-agriculture-and-food-security",
+      "name": "Ekiti state Ministry of Agriculture and Food Security",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ekiti state Ministry of Agriculture and Food Security.",
+      "description": "Ekiti state Ministry of Agriculture and Food Security (Wikidata Q125756599).",
+      "website": "https://www.ekitistate.gov.ng/executive-council/mdas/ministry-of-agriculture-and-rural-development",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125756649",
+      "slug": "ekiti-state-ministry-of-budget-economic-planning-and-performance-management",
+      "name": "Ekiti state Ministry of Budget, Economic Planning and Performance Management",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ekiti state Ministry of Budget, Economic Planning and Performance Management.",
+      "description": "Ekiti state Ministry of Budget, Economic Planning and Performance Management (Wikidata Q125756649).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q5440052",
+      "slug": "federal-capital-territory-administration",
+      "name": "Federal Capital Territory Administration",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Capital Territory Administration.",
+      "description": "Federal Capital Territory Administration (Wikidata Q5440052).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q7032900",
+      "slug": "federal-ministry-of-agriculture",
+      "name": "Federal Ministry of Agriculture",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Agriculture.",
+      "description": "Federal Ministry of Agriculture (Wikidata Q7032900).",
+      "website": "http://fmard.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q131717242",
+      "slug": "federal-ministry-of-agriculture-and-food-security",
+      "name": "Federal Ministry of Agriculture and Food Security",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Agriculture and Food Security.",
+      "description": "Federal Ministry of Agriculture and Food Security (Wikidata Q131717242).",
+      "website": "https://agriculture.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q130222739",
+      "slug": "federal-ministry-of-agriculture-and-rural-development",
+      "name": "Federal Ministry of Agriculture and Rural Development",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Agriculture and Rural Development.",
+      "description": "Federal Ministry of Agriculture and Rural Development (Wikidata Q130222739).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q140181862",
+      "slug": "federal-ministry-of-budget-and-economic-planning",
+      "name": "Federal Ministry of Budget and Economic Planning",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Budget and Economic Planning.",
+      "description": "Federal Ministry of Budget and Economic Planning (Wikidata Q140181862).",
+      "website": "https://nationalplanning.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q139987176",
+      "slug": "federal-ministry-of-communication-and-digital-economy",
+      "name": "Federal Ministry of Communication and Digital Economy",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Communication and Digital Economy.",
+      "description": "Federal Ministry of Communication and Digital Economy (Wikidata Q139987176).",
+      "website": "https://fmcide.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q139986828",
+      "slug": "federal-ministry-of-defence",
+      "name": "Federal Ministry of Defence",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Defence.",
+      "description": "Federal Ministry of Defence (Wikidata Q139986828).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q30266848",
+      "slug": "federal-ministry-of-environment-of-nigeria",
+      "name": "Federal Ministry of Environment of Nigeria",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Environment of Nigeria.",
+      "description": "Federal Ministry of Environment of Nigeria (Wikidata Q30266848).",
+      "website": "http://environment.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q5440303",
+      "slug": "federal-ministry-of-health",
+      "name": "Federal Ministry of Health",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Health.",
+      "description": "Federal Ministry of Health (Wikidata Q5440303).",
+      "website": "https://health.gov.ng",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q140183290",
+      "slug": "federal-ministry-of-humanitarian-affairs-and-poverty-reduction",
+      "name": "Federal Ministry of Humanitarian Affairs and Poverty Reduction",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Humanitarian Affairs and Poverty Reduction.",
+      "description": "Federal Ministry of Humanitarian Affairs and Poverty Reduction (Wikidata Q140183290).",
+      "website": "https://fmhds.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q7032908",
+      "slug": "federal-ministry-of-information-and-national-orientation",
+      "name": "Federal Ministry of Information and National Orientation",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Information and National Orientation.",
+      "description": "Federal Ministry of Information and National Orientation (Wikidata Q7032908).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q7032931",
+      "slug": "federal-ministry-of-labour-and-employment",
+      "name": "Federal Ministry of Labour and Employment",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Labour and Employment.",
+      "description": "Federal Ministry of Labour and Employment (Wikidata Q7032931).",
+      "website": "https://labour.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q140183380",
+      "slug": "federal-ministry-of-labour-employment-and-productivity",
+      "name": "Federal Ministry of Labour, Employment and Productivity",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Labour, Employment and Productivity.",
+      "description": "Federal Ministry of Labour, Employment and Productivity (Wikidata Q140183380).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q140181538",
+      "slug": "federal-ministry-of-livestock-development",
+      "name": "Federal Ministry of Livestock Development",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Livestock Development.",
+      "description": "Federal Ministry of Livestock Development (Wikidata Q140181538).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q139994667",
+      "slug": "federal-ministry-of-marine-and-blue-economy",
+      "name": "Federal Ministry of Marine and Blue Economy",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Marine and Blue Economy.",
+      "description": "Federal Ministry of Marine and Blue Economy (Wikidata Q139994667).",
+      "website": "https://fmmbe.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q39089702",
+      "slug": "federal-ministry-of-petroleum-resources",
+      "name": "Federal Ministry of Petroleum Resources",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Petroleum Resources.",
+      "description": "Federal Ministry of Petroleum Resources (Wikidata Q39089702).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q25203949",
+      "slug": "federal-ministry-of-science-and-technology",
+      "name": "Federal Ministry of Science and Technology",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Science and Technology.",
+      "description": "Federal Ministry of Science and Technology (Wikidata Q25203949).",
+      "website": "http://www.scienceandtech.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q138504480",
+      "slug": "federal-ministry-of-special-duties-intergovernmental-affairs",
+      "name": "Federal Ministry of Special Duties & Intergovernmental Affairs",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Special Duties & Intergovernmental Affairs.",
+      "description": "Federal Ministry of Special Duties & Intergovernmental Affairs (Wikidata Q138504480).",
+      "website": "https://fmsdiga.gov.ng",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q112577924",
+      "slug": "federal-ministry-of-water-resources-and-sanitation",
+      "name": "Federal Ministry of Water Resources and Sanitation",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of Water Resources and Sanitation.",
+      "description": "Federal Ministry of Water Resources and Sanitation (Wikidata Q112577924).",
+      "website": "https://waterresources.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q120498652",
+      "slug": "federal-ministry-of-water-resources-gombe",
+      "name": "Federal Ministry of water Resources, Gombe",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal Ministry of water Resources, Gombe.",
+      "description": "Federal Ministry of water Resources, Gombe (Wikidata Q120498652).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q113415803",
+      "slug": "federal-ministry-of-works-and-housing",
+      "name": "Federal ministry of works and housing",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Federal ministry of works and housing.",
+      "description": "Federal ministry of works and housing (Wikidata Q113415803).",
+      "website": "https://worksandhousing.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q123168547",
+      "slug": "gombe-ministry-of-agriculture",
+      "name": "GOMBE MINISTRY OF AGRICULTURE",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: GOMBE MINISTRY OF AGRICULTURE.",
+      "description": "GOMBE MINISTRY OF AGRICULTURE (Wikidata Q123168547).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q111915812",
+      "slug": "gombe-state-agency-for-community-and-social-development",
+      "name": "Gombe State Agency For Community and Social Development",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Gombe State Agency For Community and Social Development.",
+      "description": "Gombe State Agency For Community and Social Development (Wikidata Q111915812).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122947287",
+      "slug": "gombe-state-ministry-of-finance-and-economic-development",
+      "name": "Gombe State Ministry of Finance and Economic Development",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Gombe State Ministry of Finance and Economic Development.",
+      "description": "Gombe State Ministry of Finance and Economic Development (Wikidata Q122947287).",
+      "website": "https://mof.gm.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125996351",
+      "slug": "gombe-state-ministry-of-justice",
+      "name": "Gombe State Ministry of Justice",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Gombe State Ministry of Justice.",
+      "description": "Gombe State Ministry of Justice (Wikidata Q125996351).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122947446",
+      "slug": "gombe-state-ministry-of-science-technology-and-innovation",
+      "name": "Gombe State Ministry of Science, Technology and Innovation",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Gombe State Ministry of Science, Technology and Innovation.",
+      "description": "Gombe State Ministry of Science, Technology and Innovation (Wikidata Q122947446).",
+      "website": "https://msti.gm.gov.ng/home/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134612159",
+      "slug": "jamb-office-yola",
+      "name": "JAMB OFFICE YOLA",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: JAMB OFFICE YOLA.",
+      "description": "JAMB OFFICE YOLA (Wikidata Q134612159).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134554880",
+      "slug": "jigawa-health-alliances",
+      "name": "Jigawa Health Alliances",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Jigawa Health Alliances.",
+      "description": "Jigawa Health Alliances (Wikidata Q134554880).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134560482",
+      "slug": "jigawa-state-agric-and-rural-development-consultancy-services-cooperative-societ",
+      "name": "Jigawa State Agric And Rural Development Consultancy Services Cooperative Society Limited",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Jigawa State Agric And Rural Development Consultancy Services Cooperative Society Limited.",
+      "description": "Jigawa State Agric And Rural Development Consultancy Services Cooperative Society Limited (Wikidata Q134560482).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122640159",
+      "slug": "jigawa-state-ministry-of-environment",
+      "name": "Jigawa State Ministry of Environment",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Jigawa State Ministry of Environment.",
+      "description": "Jigawa State Ministry of Environment (Wikidata Q122640159).",
+      "website": "https://jigawastate.gov.ng/environment.php#:~:text=The%20Ministry%20of%20Environment%20was,JISEPA)%20and%20Alternative%20Energy%20Fund.",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q123003642",
+      "slug": "jigawa-state-ministry-of-health",
+      "name": "Jigawa State Ministry of Health",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Jigawa State Ministry of Health.",
+      "description": "Jigawa State Ministry of Health (Wikidata Q123003642).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122643808",
+      "slug": "kaduna-state-ministry-of-environment-natural-resources",
+      "name": "KADUNA STATE Ministry Of Environment & Natural Resources",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: KADUNA STATE Ministry Of Environment & Natural Resources.",
+      "description": "KADUNA STATE Ministry Of Environment & Natural Resources (Wikidata Q122643808).",
+      "website": "https://kdsg.gov.ng/2021/03/06/ministry-of-environment-natural-resources/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122644050",
+      "slug": "katsina-state-ministry-of-environment",
+      "name": "KATSINA STATE MINISTRY OF ENVIRONMENT",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: KATSINA STATE MINISTRY OF ENVIRONMENT.",
+      "description": "KATSINA STATE MINISTRY OF ENVIRONMENT (Wikidata Q122644050).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q130949003",
+      "slug": "kano-state-ministry-of-education",
+      "name": "Kano State Ministry of Education",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Kano State Ministry of Education.",
+      "description": "Kano State Ministry of Education (Wikidata Q130949003).",
+      "website": "https://ministryofeducation.kn.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122640018",
+      "slug": "kano-state-ministry-of-environment",
+      "name": "Kano State Ministry of Environment",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Kano State Ministry of Environment.",
+      "description": "Kano State Ministry of Environment (Wikidata Q122640018).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122947593",
+      "slug": "katsina-state-ministry-of-education",
+      "name": "Katsina State Ministry of Education",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Katsina State Ministry of Education.",
+      "description": "Katsina State Ministry of Education (Wikidata Q122947593).",
+      "website": "https://katsinastate.gov.ng/education/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q123073593",
+      "slug": "katsina-state-ministry-of-health",
+      "name": "Katsina State Ministry of Health",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Katsina State Ministry of Health.",
+      "description": "Katsina State Ministry of Health (Wikidata Q123073593).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122650476",
+      "slug": "kwara-state-ministry-of-environment",
+      "name": "Kwara State Ministry of Environment",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Kwara State Ministry of Environment.",
+      "description": "Kwara State Ministry of Environment (Wikidata Q122650476).",
+      "website": "https://kwarastate.gov.ng/ministry/lorem-ipsum/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q111130764",
+      "slug": "lagos-central-business-district",
+      "name": "Lagos Central Business District",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Lagos Central Business District.",
+      "description": "Lagos Central Business District (Wikidata Q111130764).",
+      "website": "https://cbd.lagosstate.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q110996076",
+      "slug": "lagos-state-agricultural-inputs-supply-authority",
+      "name": "Lagos State Agricultural Inputs Supply Authority",
+      "type": "agency",
+      "level": "federal",
+      "mandate": "Federal institution: Lagos State Agricultural Inputs Supply Authority.",
+      "description": "Lagos State Agricultural Inputs Supply Authority (Wikidata Q110996076).",
+      "website": "https://laisa.lagosstate.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q19604789",
+      "slug": "lagos-state-ministry-of-education",
+      "name": "Lagos State Ministry of Education",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Lagos State Ministry of Education.",
+      "description": "Lagos State Ministry of Education (Wikidata Q19604789).",
+      "website": "https://education.lagosstate.gov.ng",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q19604792",
+      "slug": "lagos-state-ministry-of-establishments-training-and-pensions",
+      "name": "Lagos State Ministry of Establishments, Training and Pensions",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Lagos State Ministry of Establishments, Training and Pensions.",
+      "description": "Lagos State Ministry of Establishments, Training and Pensions (Wikidata Q19604792).",
+      "website": "https://metp.lagosstate.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q19604793",
+      "slug": "lagos-state-ministry-of-finance",
+      "name": "Lagos State Ministry of Finance",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Lagos State Ministry of Finance.",
+      "description": "Lagos State Ministry of Finance (Wikidata Q19604793).",
+      "website": "https://finance.lagosstate.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q19604799",
+      "slug": "lagos-state-ministry-of-justice",
+      "name": "Lagos State Ministry of Justice",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Lagos State Ministry of Justice.",
+      "description": "Lagos State Ministry of Justice (Wikidata Q19604799).",
+      "website": "http://lagosministryofjustice.org/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q111307364",
+      "slug": "lagos-state-ministry-of-local-government-and-community-affairs",
+      "name": "Lagos State Ministry of Local Government and Community Affairs",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Lagos State Ministry of Local Government and Community Affairs.",
+      "description": "Lagos State Ministry of Local Government and Community Affairs (Wikidata Q111307364).",
+      "website": "https://mlgca.lagosstate.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q19604801",
+      "slug": "lagos-state-ministry-of-physical-planning-and-urban-development",
+      "name": "Lagos State Ministry of Physical Planning and Urban Development",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Lagos State Ministry of Physical Planning and Urban Development.",
+      "description": "Lagos State Ministry of Physical Planning and Urban Development (Wikidata Q19604801).",
+      "website": "https://mppud.lagosstate.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q19604804",
+      "slug": "lagos-state-ministry-of-special-duties-and-intergovernmental-relations",
+      "name": "Lagos State Ministry of Special Duties and Intergovernmental relations",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Lagos State Ministry of Special Duties and Intergovernmental relations.",
+      "description": "Lagos State Ministry of Special Duties and Intergovernmental relations (Wikidata Q19604804).",
+      "website": "http://specialduties.lagosstate.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q19604808",
+      "slug": "lagos-state-ministry-of-transport",
+      "name": "Lagos State Ministry of Transport",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Lagos State Ministry of Transport.",
+      "description": "Lagos State Ministry of Transport (Wikidata Q19604808).",
+      "website": "https://transportation.lagosstate.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122733701",
+      "slug": "ministry-of-environment-abakaliki-ebonyi-state",
+      "name": "MINISTRY OF ENVIRONMENT ABAKALIKI, EBONYI STATE",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: MINISTRY OF ENVIRONMENT ABAKALIKI, EBONYI STATE.",
+      "description": "MINISTRY OF ENVIRONMENT ABAKALIKI, EBONYI STATE (Wikidata Q122733701).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122650732",
+      "slug": "ministry-of-environment-and-natural-resources-imo-state",
+      "name": "MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES, IMO STATE",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES, IMO STATE.",
+      "description": "MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES, IMO STATE (Wikidata Q122650732).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q137193819",
+      "slug": "ministry-of-art-culture-tourism-and-the-creative-economy",
+      "name": "Ministry of Art, Culture, Tourism and the Creative Economy",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Art, Culture, Tourism and the Creative Economy.",
+      "description": "Ministry of Art, Culture, Tourism and the Creative Economy (Wikidata Q137193819).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125526326",
+      "slug": "ministry-of-chieftaincy-affairs-anambra-state",
+      "name": "Ministry of Chieftaincy Affairs Anambra state",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Chieftaincy Affairs Anambra state.",
+      "description": "Ministry of Chieftaincy Affairs Anambra state (Wikidata Q125526326).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114596682",
+      "slug": "ministry-of-commerce-cooperation-empowerment-osun-state",
+      "name": "Ministry of Commerce, Cooperation & Empowerment Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Commerce, Cooperation & Empowerment Osun State.",
+      "description": "Ministry of Commerce, Cooperation & Empowerment Osun State (Wikidata Q114596682).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q120498690",
+      "slug": "ministry-of-education-headquaters-gombe",
+      "name": "Ministry of Education Headquaters, Gombe",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Education Headquaters, Gombe.",
+      "description": "Ministry of Education Headquaters, Gombe (Wikidata Q120498690).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114597282",
+      "slug": "ministry-of-education-science-technology-osun-state",
+      "name": "Ministry of Education, Science & Technology Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Education, Science & Technology Osun State.",
+      "description": "Ministry of Education, Science & Technology Osun State (Wikidata Q114597282).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q96418969",
+      "slug": "ministry-of-education-science-and-technology",
+      "name": "Ministry of Education, Science and Technology",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Education, Science and Technology.",
+      "description": "Ministry of Education, Science and Technology (Wikidata Q96418969).",
+      "website": "https://agric.kdsg.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q19604790",
+      "slug": "ministry-of-energy-and-mineral-resources-lagos",
+      "name": "Ministry of Energy and Mineral Resources (Lagos)",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Energy and Mineral Resources (Lagos).",
+      "description": "Ministry of Energy and Mineral Resources (Lagos) (Wikidata Q19604790).",
+      "website": "https://memr.lagosstate.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114596831",
+      "slug": "ministry-of-environment-sanitation-osun-state",
+      "name": "Ministry of Environment & Sanitation Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Environment & Sanitation Osun State.",
+      "description": "Ministry of Environment & Sanitation Osun State (Wikidata Q114596831).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q122643299",
+      "slug": "ministry-of-environment-solid-minerals-kebbi-state",
+      "name": "Ministry of Environment & Solid Minerals Kebbi State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Environment & Solid Minerals Kebbi State.",
+      "description": "Ministry of Environment & Solid Minerals Kebbi State (Wikidata Q122643299).",
+      "website": "https://www.kebbistate.gov.ng/ministry-environment-solid-minerals",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q121598780",
+      "slug": "ministry-of-environment-and-forest-resources",
+      "name": "Ministry of Environment and Forest Resources",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Environment and Forest Resources.",
+      "description": "Ministry of Environment and Forest Resources (Wikidata Q121598780).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q6866944",
+      "slug": "ministry-of-finance",
+      "name": "Ministry of Finance",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Finance.",
+      "description": "Ministry of Finance (Wikidata Q6866944).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114597362",
+      "slug": "ministry-of-finance-economic-planning-budget-osun-state",
+      "name": "Ministry of Finance, Economic planning & Budget Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Finance, Economic planning & Budget Osun State.",
+      "description": "Ministry of Finance, Economic planning & Budget Osun State (Wikidata Q114597362).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q16753607",
+      "slug": "ministry-of-foreign-affairs-of-the-federal-republic-of-nigeria",
+      "name": "Ministry of Foreign Affairs of the Federal Republic of Nigeria",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Foreign Affairs of the Federal Republic of Nigeria.",
+      "description": "Ministry of Foreign Affairs of the Federal Republic of Nigeria (Wikidata Q16753607).",
+      "website": "http://www.foreignaffairs.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114596364",
+      "slug": "ministry-of-health-osun-state",
+      "name": "Ministry of Health Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Health Osun State.",
+      "description": "Ministry of Health Osun State (Wikidata Q114596364).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134604614",
+      "slug": "ministry-of-home-affairs-information-and-culture",
+      "name": "Ministry of Home Affairs, Information And Culture",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Home Affairs, Information And Culture.",
+      "description": "Ministry of Home Affairs, Information And Culture (Wikidata Q134604614).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114599598",
+      "slug": "ministry-of-human-resources-capacity-building-osun-state",
+      "name": "Ministry of Human Resources & Capacity Building Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Human Resources & Capacity Building Osun State.",
+      "description": "Ministry of Human Resources & Capacity Building Osun State (Wikidata Q114599598).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114599946",
+      "slug": "ministry-of-information-strategy-osun-state",
+      "name": "Ministry of Information & Strategy Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Information & Strategy Osun State.",
+      "description": "Ministry of Information & Strategy Osun State (Wikidata Q114599946).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q25351971",
+      "slug": "ministry-of-interior",
+      "name": "Ministry of Interior",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Interior.",
+      "description": "Ministry of Interior (Wikidata Q25351971).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114596887",
+      "slug": "ministry-of-justice-osun-state",
+      "name": "Ministry of Justice Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Justice Osun State.",
+      "description": "Ministry of Justice Osun State (Wikidata Q114596887).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q135156419",
+      "slug": "ministry-of-justice-anambra-state",
+      "name": "Ministry of Justice, Anambra State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Justice, Anambra State.",
+      "description": "Ministry of Justice, Anambra State (Wikidata Q135156419).",
+      "website": "https://anambrastate.gov.ng/ministry-of-justice/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q111341667",
+      "slug": "ministry-of-lagos-state-sport-commission",
+      "name": "Ministry of Lagos State Sport Commission",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Lagos State Sport Commission.",
+      "description": "Ministry of Lagos State Sport Commission (Wikidata Q111341667).",
+      "website": "https://sportcommission.lagosstate.gov.ng",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q134612179",
+      "slug": "ministry-of-land-and-survey-yola",
+      "name": "Ministry of Land and Survey yola",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Land and Survey yola.",
+      "description": "Ministry of Land and Survey yola (Wikidata Q134612179).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q125526335",
+      "slug": "ministry-of-lands-anambra-state",
+      "name": "Ministry of Lands Anambra state",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Lands Anambra state.",
+      "description": "Ministry of Lands Anambra state (Wikidata Q125526335).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114600109",
+      "slug": "ministry-of-lands-physical-planning-urban-dev-osun-state",
+      "name": "Ministry of Lands, Physical planning & Urban Dev Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Lands, Physical planning & Urban Dev Osun State.",
+      "description": "Ministry of Lands, Physical planning & Urban Dev Osun State (Wikidata Q114600109).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114600278",
+      "slug": "ministry-of-local-govt-chieftancy-affairs-osun-state",
+      "name": "Ministry of Local Govt & Chieftancy Affairs Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Local Govt & Chieftancy Affairs Osun State.",
+      "description": "Ministry of Local Govt & Chieftancy Affairs Osun State (Wikidata Q114600278).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q89675780",
+      "slug": "ministry-of-power",
+      "name": "Ministry of Power",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Power.",
+      "description": "Ministry of Power (Wikidata Q89675780).",
+      "website": "https://power.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114607414",
+      "slug": "ministry-of-regional-integration-special-duties-osun-state",
+      "name": "Ministry of Regional Integration & Special Duties Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Regional Integration & Special Duties Osun State.",
+      "description": "Ministry of Regional Integration & Special Duties Osun State (Wikidata Q114607414).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114600549",
+      "slug": "ministry-of-religion-integration-special-duties-osun-state",
+      "name": "Ministry of Religion, Integration & Special Duties Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Religion, Integration & Special Duties Osun State.",
+      "description": "Ministry of Religion, Integration & Special Duties Osun State (Wikidata Q114600549).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q139981211",
+      "slug": "ministry-of-solid-minerals-development",
+      "name": "Ministry of Solid Minerals Development",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Solid Minerals Development.",
+      "description": "Ministry of Solid Minerals Development (Wikidata Q139981211).",
+      "website": "https://msmd.gov.ng/",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q89751089",
+      "slug": "ministry-of-transportation",
+      "name": "Ministry of Transportation",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Transportation.",
+      "description": "Ministry of Transportation (Wikidata Q89751089).",
+      "website": "http://www.transport.gov.ng",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114607616",
+      "slug": "ministry-of-women-affairs-child-development-osun-state",
+      "name": "Ministry of Women Affairs & Child Development Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Women Affairs & Child Development Osun State.",
+      "description": "Ministry of Women Affairs & Child Development Osun State (Wikidata Q114607616).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q130259917",
+      "slug": "ministry-of-women-affairs-ado-ekiti",
+      "name": "Ministry of Women Affairs, Ado-Ekiti",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Women Affairs, Ado-Ekiti.",
+      "description": "Ministry of Women Affairs, Ado-Ekiti (Wikidata Q130259917).",
+      "website": "https://www.ekitistate.gov.ng/executive-council/mdas/ministry-of-women-affairs-and-social-development",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114605639",
+      "slug": "ministry-of-work-transport-osun-state",
+      "name": "Ministry of Work & Transport Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Work & Transport Osun State.",
+      "description": "Ministry of Work & Transport Osun State (Wikidata Q114605639).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114596946",
+      "slug": "ministry-of-works-transport-osun-state",
+      "name": "Ministry of Works & Transport Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Works & Transport Osun State.",
+      "description": "Ministry of Works & Transport Osun State (Wikidata Q114596946).",
+      "locationId": "wd:Q1033"
+    },
+    {
+      "id": "wd:Q114605805",
+      "slug": "ministry-of-youths-sports-and-special-needs-osun-state",
+      "name": "Ministry of Youths, Sports And Special Needs Osun State",
+      "type": "ministry",
+      "level": "federal",
+      "mandate": "Federal institution: Ministry of Youths, Sports And Special Needs Osun State.",
+      "description": "Ministry of Youths, Sports And Special Needs Osun State (Wikidata Q114605805).",
+      "locationId": "wd:Q1033"
+    }
+  ],
+  "offices": [
+    {
+      "id": "wd:Q500282",
+      "slug": "president-of-nigeria",
+      "institutionId": "wd:Q1033-presidency",
+      "name": "Office of the President",
+      "title": "President of Nigeria",
+      "mandate": "Head of state and government of the Federal Republic of Nigeria.",
+      "responsibilities": [
+        "Head of state and government of the Federal Republic of Nigeria."
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q2625960",
+      "slug": "vice-president-of-nigeria",
+      "institutionId": "wd:Q1033-presidency",
+      "name": "Office of the Vice President",
+      "title": "Vice President of Nigeria",
+      "mandate": "Deputy to the President of Nigeria.",
+      "responsibilities": [
+        "Deputy to the President of Nigeria."
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q21531109-minister",
+      "slug": "minister-abia-state-ministry-of-environment",
+      "institutionId": "wd:Q21531109",
+      "name": "Minister of Abia State Ministry of Environment",
+      "title": "Minister — Abia State Ministry of Environment",
+      "mandate": "Political head of Abia State Ministry of Environment.",
+      "responsibilities": [
+        "Lead Abia State Ministry of Environment"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122643726-minister",
+      "slug": "minister-adamawa-state-ministry-of-environment-and-natural-resources-development",
+      "institutionId": "wd:Q122643726",
+      "name": "Minister of Adamawa State MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES DEVELOPMENT",
+      "title": "Minister — Adamawa State MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES DEVELOPMENT",
+      "mandate": "Political head of Adamawa State MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES DEVELOPMENT.",
+      "responsibilities": [
+        "Lead Adamawa State MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES DEVELOPMENT"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q30632373-minister",
+      "slug": "minister-akwa-ibom-state-ministry-of-justice",
+      "institutionId": "wd:Q30632373",
+      "name": "Minister of Akwa Ibom State Ministry of Justice",
+      "title": "Minister — Akwa Ibom State Ministry of Justice",
+      "mandate": "Political head of Akwa Ibom State Ministry of Justice.",
+      "responsibilities": [
+        "Lead Akwa Ibom State Ministry of Justice"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125680357-minister",
+      "slug": "minister-anambra-state-ministry-of-works-and-infrastructure",
+      "institutionId": "wd:Q125680357",
+      "name": "Minister of Anambra State Ministry Of Works and Infrastructure",
+      "title": "Minister — Anambra State Ministry Of Works and Infrastructure",
+      "mandate": "Political head of Anambra State Ministry Of Works and Infrastructure.",
+      "responsibilities": [
+        "Lead Anambra State Ministry Of Works and Infrastructure"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125504410-minister",
+      "slug": "minister-anambra-state-ministry-of-agriculture",
+      "institutionId": "wd:Q125504410",
+      "name": "Minister of Anambra State Ministry of Agriculture",
+      "title": "Minister — Anambra State Ministry of Agriculture",
+      "mandate": "Political head of Anambra State Ministry of Agriculture.",
+      "responsibilities": [
+        "Lead Anambra State Ministry of Agriculture"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125504539-minister",
+      "slug": "minister-anambra-state-ministry-of-education",
+      "institutionId": "wd:Q125504539",
+      "name": "Minister of Anambra State Ministry of Education",
+      "title": "Minister — Anambra State Ministry of Education",
+      "mandate": "Political head of Anambra State Ministry of Education.",
+      "responsibilities": [
+        "Lead Anambra State Ministry of Education"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125504784-minister",
+      "slug": "minister-anambra-state-ministry-of-petroleum-and-mineral-reources",
+      "institutionId": "wd:Q125504784",
+      "name": "Minister of Anambra State Ministry of Petroleum and Mineral Reources",
+      "title": "Minister — Anambra State Ministry of Petroleum and Mineral Reources",
+      "mandate": "Political head of Anambra State Ministry of Petroleum and Mineral Reources.",
+      "responsibilities": [
+        "Lead Anambra State Ministry of Petroleum and Mineral Reources"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125504420-minister",
+      "slug": "minister-anambra-state-ministry-of-women-and-children-affairs",
+      "institutionId": "wd:Q125504420",
+      "name": "Minister of Anambra State Ministry of Women and Children Affairs",
+      "title": "Minister — Anambra State Ministry of Women and Children Affairs",
+      "mandate": "Political head of Anambra State Ministry of Women and Children Affairs.",
+      "responsibilities": [
+        "Lead Anambra State Ministry of Women and Children Affairs"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125504470-minister",
+      "slug": "minister-anambra-state-ministry-of-health",
+      "institutionId": "wd:Q125504470",
+      "name": "Minister of Anambra State ministry of health",
+      "title": "Minister — Anambra State ministry of health",
+      "mandate": "Political head of Anambra State ministry of health.",
+      "responsibilities": [
+        "Lead Anambra State ministry of health"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122648600-minister",
+      "slug": "minister-anambra-state-ministry-of-environment",
+      "institutionId": "wd:Q122648600",
+      "name": "Minister of Anambra state Ministry of Environment",
+      "title": "Minister — Anambra state Ministry of Environment",
+      "mandate": "Political head of Anambra state Ministry of Environment.",
+      "responsibilities": [
+        "Lead Anambra state Ministry of Environment"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125526387-minister",
+      "slug": "minister-anambra-state-ministry-of-petroleum-mineral-resources",
+      "institutionId": "wd:Q125526387",
+      "name": "Minister of Anambra state Ministry of Petroleum & Mineral Resources",
+      "title": "Minister — Anambra state Ministry of Petroleum & Mineral Resources",
+      "mandate": "Political head of Anambra state Ministry of Petroleum & Mineral Resources.",
+      "responsibilities": [
+        "Lead Anambra state Ministry of Petroleum & Mineral Resources"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125526354-minister",
+      "slug": "minister-anambra-state-ministry-of-transportation",
+      "institutionId": "wd:Q125526354",
+      "name": "Minister of Anambra state Ministry of Transportation",
+      "title": "Minister — Anambra state Ministry of Transportation",
+      "mandate": "Political head of Anambra state Ministry of Transportation.",
+      "responsibilities": [
+        "Lead Anambra state Ministry of Transportation"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125526374-minister",
+      "slug": "minister-anambra-state-ministry-of-youth-development",
+      "institutionId": "wd:Q125526374",
+      "name": "Minister of Anambra state Ministry of Youth Development",
+      "title": "Minister — Anambra state Ministry of Youth Development",
+      "mandate": "Political head of Anambra state Ministry of Youth Development.",
+      "responsibilities": [
+        "Lead Anambra state Ministry of Youth Development"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122984840-minister",
+      "slug": "minister-bauchi-state-ministry-of-health",
+      "institutionId": "wd:Q122984840",
+      "name": "Minister of Bauchi State Ministry of Health",
+      "title": "Minister — Bauchi State Ministry of Health",
+      "mandate": "Political head of Bauchi State Ministry of Health.",
+      "responsibilities": [
+        "Lead Bauchi State Ministry of Health"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q123168577-minister",
+      "slug": "minister-borno-state-ministry-of-agriculture",
+      "institutionId": "wd:Q123168577",
+      "name": "Minister of Borno State Ministry of Agriculture",
+      "title": "Minister — Borno State Ministry of Agriculture",
+      "mandate": "Political head of Borno State Ministry of Agriculture.",
+      "responsibilities": [
+        "Lead Borno State Ministry of Agriculture"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q137738576-minister",
+      "slug": "minister-borno-state-ministry-of-health-and-human-services",
+      "institutionId": "wd:Q137738576",
+      "name": "Minister of Borno State Ministry of Health and Human Services",
+      "title": "Minister — Borno State Ministry of Health and Human Services",
+      "mandate": "Political head of Borno State Ministry of Health and Human Services.",
+      "responsibilities": [
+        "Lead Borno State Ministry of Health and Human Services"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122643217-minister",
+      "slug": "minister-borno-state-ministry-of-environment",
+      "institutionId": "wd:Q122643217",
+      "name": "Minister of Borno state Ministry of Environment",
+      "title": "Minister — Borno state Ministry of Environment",
+      "mandate": "Political head of Borno state Ministry of Environment.",
+      "responsibilities": [
+        "Lead Borno state Ministry of Environment"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122984908-minister",
+      "slug": "minister-borno-state-ministry-of-health",
+      "institutionId": "wd:Q122984908",
+      "name": "Minister of Borno state Ministry of Health",
+      "title": "Minister — Borno state Ministry of Health",
+      "mandate": "Political head of Borno state Ministry of Health.",
+      "responsibilities": [
+        "Lead Borno state Ministry of Health"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122733549-minister",
+      "slug": "minister-cross-river-state-ministry-of-environment",
+      "institutionId": "wd:Q122733549",
+      "name": "Minister of Cross River State Ministry of Environment",
+      "title": "Minister — Cross River State Ministry of Environment",
+      "mandate": "Political head of Cross River State Ministry of Environment.",
+      "responsibilities": [
+        "Lead Cross River State Ministry of Environment"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122648526-minister",
+      "slug": "minister-delta-ministry-of-environment",
+      "institutionId": "wd:Q122648526",
+      "name": "Minister of Delta Ministry of Environment",
+      "title": "Minister — Delta Ministry of Environment",
+      "mandate": "Political head of Delta Ministry of Environment.",
+      "responsibilities": [
+        "Lead Delta Ministry of Environment"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q137205158-minister",
+      "slug": "minister-delta-state-ministry-of-health",
+      "institutionId": "wd:Q137205158",
+      "name": "Minister of Delta State Ministry of Health",
+      "title": "Minister — Delta State Ministry of Health",
+      "mandate": "Political head of Delta State Ministry of Health.",
+      "responsibilities": [
+        "Lead Delta State Ministry of Health"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q137737301-minister",
+      "slug": "minister-ebonyi-state-ministry-of-health",
+      "institutionId": "wd:Q137737301",
+      "name": "Minister of Ebonyi State Ministry of Health",
+      "title": "Minister — Ebonyi State Ministry of Health",
+      "mandate": "Political head of Ebonyi State Ministry of Health.",
+      "responsibilities": [
+        "Lead Ebonyi State Ministry of Health"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122650049-minister",
+      "slug": "minister-ekiti-state-ministry-of-environment-and-natural-resources",
+      "institutionId": "wd:Q122650049",
+      "name": "Minister of Ekiti State Ministry of Environment and Natural Resources",
+      "title": "Minister — Ekiti State Ministry of Environment and Natural Resources",
+      "mandate": "Political head of Ekiti State Ministry of Environment and Natural Resources.",
+      "responsibilities": [
+        "Lead Ekiti State Ministry of Environment and Natural Resources"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125756599-minister",
+      "slug": "minister-ekiti-state-ministry-of-agriculture-and-food-security",
+      "institutionId": "wd:Q125756599",
+      "name": "Minister of Ekiti state Ministry of Agriculture and Food Security",
+      "title": "Minister — Ekiti state Ministry of Agriculture and Food Security",
+      "mandate": "Political head of Ekiti state Ministry of Agriculture and Food Security.",
+      "responsibilities": [
+        "Lead Ekiti state Ministry of Agriculture and Food Security"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125756649-minister",
+      "slug": "minister-ekiti-state-ministry-of-budget-economic-planning-and-performance-manage",
+      "institutionId": "wd:Q125756649",
+      "name": "Minister of Ekiti state Ministry of Budget, Economic Planning and Performance Management",
+      "title": "Minister — Ekiti state Ministry of Budget, Economic Planning and Performance Management",
+      "mandate": "Political head of Ekiti state Ministry of Budget, Economic Planning and Performance Management.",
+      "responsibilities": [
+        "Lead Ekiti state Ministry of Budget, Economic Planning and Performance Management"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q7032900-minister",
+      "slug": "minister-federal-ministry-of-agriculture",
+      "institutionId": "wd:Q7032900",
+      "name": "Minister of Agriculture",
+      "title": "Minister — Federal Ministry of Agriculture",
+      "mandate": "Political head of Federal Ministry of Agriculture.",
+      "responsibilities": [
+        "Lead Federal Ministry of Agriculture"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q131717242-minister",
+      "slug": "minister-federal-ministry-of-agriculture-and-food-security",
+      "institutionId": "wd:Q131717242",
+      "name": "Minister of Agriculture and Food Security",
+      "title": "Minister — Federal Ministry of Agriculture and Food Security",
+      "mandate": "Political head of Federal Ministry of Agriculture and Food Security.",
+      "responsibilities": [
+        "Lead Federal Ministry of Agriculture and Food Security"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q130222739-minister",
+      "slug": "minister-federal-ministry-of-agriculture-and-rural-development",
+      "institutionId": "wd:Q130222739",
+      "name": "Minister of Agriculture and Rural Development",
+      "title": "Minister — Federal Ministry of Agriculture and Rural Development",
+      "mandate": "Political head of Federal Ministry of Agriculture and Rural Development.",
+      "responsibilities": [
+        "Lead Federal Ministry of Agriculture and Rural Development"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q140181862-minister",
+      "slug": "minister-federal-ministry-of-budget-and-economic-planning",
+      "institutionId": "wd:Q140181862",
+      "name": "Minister of Budget and Economic Planning",
+      "title": "Minister — Federal Ministry of Budget and Economic Planning",
+      "mandate": "Political head of Federal Ministry of Budget and Economic Planning.",
+      "responsibilities": [
+        "Lead Federal Ministry of Budget and Economic Planning"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q139987176-minister",
+      "slug": "minister-federal-ministry-of-communication-and-digital-economy",
+      "institutionId": "wd:Q139987176",
+      "name": "Minister of Communication and Digital Economy",
+      "title": "Minister — Federal Ministry of Communication and Digital Economy",
+      "mandate": "Political head of Federal Ministry of Communication and Digital Economy.",
+      "responsibilities": [
+        "Lead Federal Ministry of Communication and Digital Economy"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q139986828-minister",
+      "slug": "minister-federal-ministry-of-defence",
+      "institutionId": "wd:Q139986828",
+      "name": "Minister of Defence",
+      "title": "Minister — Federal Ministry of Defence",
+      "mandate": "Political head of Federal Ministry of Defence.",
+      "responsibilities": [
+        "Lead Federal Ministry of Defence"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q30266848-minister",
+      "slug": "minister-federal-ministry-of-environment-of-nigeria",
+      "institutionId": "wd:Q30266848",
+      "name": "Minister of Environment of Nigeria",
+      "title": "Minister — Federal Ministry of Environment of Nigeria",
+      "mandate": "Political head of Federal Ministry of Environment of Nigeria.",
+      "responsibilities": [
+        "Lead Federal Ministry of Environment of Nigeria"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q5440303-minister",
+      "slug": "minister-federal-ministry-of-health",
+      "institutionId": "wd:Q5440303",
+      "name": "Minister of Health",
+      "title": "Minister — Federal Ministry of Health",
+      "mandate": "Political head of Federal Ministry of Health.",
+      "responsibilities": [
+        "Lead Federal Ministry of Health"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q140183290-minister",
+      "slug": "minister-federal-ministry-of-humanitarian-affairs-and-poverty-reduction",
+      "institutionId": "wd:Q140183290",
+      "name": "Minister of Humanitarian Affairs and Poverty Reduction",
+      "title": "Minister — Federal Ministry of Humanitarian Affairs and Poverty Reduction",
+      "mandate": "Political head of Federal Ministry of Humanitarian Affairs and Poverty Reduction.",
+      "responsibilities": [
+        "Lead Federal Ministry of Humanitarian Affairs and Poverty Reduction"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q7032908-minister",
+      "slug": "minister-federal-ministry-of-information-and-national-orientation",
+      "institutionId": "wd:Q7032908",
+      "name": "Minister of Information and National Orientation",
+      "title": "Minister — Federal Ministry of Information and National Orientation",
+      "mandate": "Political head of Federal Ministry of Information and National Orientation.",
+      "responsibilities": [
+        "Lead Federal Ministry of Information and National Orientation"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q7032931-minister",
+      "slug": "minister-federal-ministry-of-labour-and-employment",
+      "institutionId": "wd:Q7032931",
+      "name": "Minister of Labour and Employment",
+      "title": "Minister — Federal Ministry of Labour and Employment",
+      "mandate": "Political head of Federal Ministry of Labour and Employment.",
+      "responsibilities": [
+        "Lead Federal Ministry of Labour and Employment"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q140183380-minister",
+      "slug": "minister-federal-ministry-of-labour-employment-and-productivity",
+      "institutionId": "wd:Q140183380",
+      "name": "Minister of Labour, Employment and Productivity",
+      "title": "Minister — Federal Ministry of Labour, Employment and Productivity",
+      "mandate": "Political head of Federal Ministry of Labour, Employment and Productivity.",
+      "responsibilities": [
+        "Lead Federal Ministry of Labour, Employment and Productivity"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q140181538-minister",
+      "slug": "minister-federal-ministry-of-livestock-development",
+      "institutionId": "wd:Q140181538",
+      "name": "Minister of Livestock Development",
+      "title": "Minister — Federal Ministry of Livestock Development",
+      "mandate": "Political head of Federal Ministry of Livestock Development.",
+      "responsibilities": [
+        "Lead Federal Ministry of Livestock Development"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q139994667-minister",
+      "slug": "minister-federal-ministry-of-marine-and-blue-economy",
+      "institutionId": "wd:Q139994667",
+      "name": "Minister of Marine and Blue Economy",
+      "title": "Minister — Federal Ministry of Marine and Blue Economy",
+      "mandate": "Political head of Federal Ministry of Marine and Blue Economy.",
+      "responsibilities": [
+        "Lead Federal Ministry of Marine and Blue Economy"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q39089702-minister",
+      "slug": "minister-federal-ministry-of-petroleum-resources",
+      "institutionId": "wd:Q39089702",
+      "name": "Minister of Petroleum Resources",
+      "title": "Minister — Federal Ministry of Petroleum Resources",
+      "mandate": "Political head of Federal Ministry of Petroleum Resources.",
+      "responsibilities": [
+        "Lead Federal Ministry of Petroleum Resources"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q25203949-minister",
+      "slug": "minister-federal-ministry-of-science-and-technology",
+      "institutionId": "wd:Q25203949",
+      "name": "Minister of Science and Technology",
+      "title": "Minister — Federal Ministry of Science and Technology",
+      "mandate": "Political head of Federal Ministry of Science and Technology.",
+      "responsibilities": [
+        "Lead Federal Ministry of Science and Technology"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q138504480-minister",
+      "slug": "minister-federal-ministry-of-special-duties-intergovernmental-affairs",
+      "institutionId": "wd:Q138504480",
+      "name": "Minister of Special Duties & Intergovernmental Affairs",
+      "title": "Minister — Federal Ministry of Special Duties & Intergovernmental Affairs",
+      "mandate": "Political head of Federal Ministry of Special Duties & Intergovernmental Affairs.",
+      "responsibilities": [
+        "Lead Federal Ministry of Special Duties & Intergovernmental Affairs"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q112577924-minister",
+      "slug": "minister-federal-ministry-of-water-resources-and-sanitation",
+      "institutionId": "wd:Q112577924",
+      "name": "Minister of Water Resources and Sanitation",
+      "title": "Minister — Federal Ministry of Water Resources and Sanitation",
+      "mandate": "Political head of Federal Ministry of Water Resources and Sanitation.",
+      "responsibilities": [
+        "Lead Federal Ministry of Water Resources and Sanitation"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q120498652-minister",
+      "slug": "minister-federal-ministry-of-water-resources-gombe",
+      "institutionId": "wd:Q120498652",
+      "name": "Minister of water Resources, Gombe",
+      "title": "Minister — Federal Ministry of water Resources, Gombe",
+      "mandate": "Political head of Federal Ministry of water Resources, Gombe.",
+      "responsibilities": [
+        "Lead Federal Ministry of water Resources, Gombe"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q113415803-minister",
+      "slug": "minister-federal-ministry-of-works-and-housing",
+      "institutionId": "wd:Q113415803",
+      "name": "Minister of works and housing",
+      "title": "Minister — Federal ministry of works and housing",
+      "mandate": "Political head of Federal ministry of works and housing.",
+      "responsibilities": [
+        "Lead Federal ministry of works and housing"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q123168547-minister",
+      "slug": "minister-gombe-ministry-of-agriculture",
+      "institutionId": "wd:Q123168547",
+      "name": "Minister of GOMBE MINISTRY OF AGRICULTURE",
+      "title": "Minister — GOMBE MINISTRY OF AGRICULTURE",
+      "mandate": "Political head of GOMBE MINISTRY OF AGRICULTURE.",
+      "responsibilities": [
+        "Lead GOMBE MINISTRY OF AGRICULTURE"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122947287-minister",
+      "slug": "minister-gombe-state-ministry-of-finance-and-economic-development",
+      "institutionId": "wd:Q122947287",
+      "name": "Minister of Gombe State Ministry of Finance and Economic Development",
+      "title": "Minister — Gombe State Ministry of Finance and Economic Development",
+      "mandate": "Political head of Gombe State Ministry of Finance and Economic Development.",
+      "responsibilities": [
+        "Lead Gombe State Ministry of Finance and Economic Development"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125996351-minister",
+      "slug": "minister-gombe-state-ministry-of-justice",
+      "institutionId": "wd:Q125996351",
+      "name": "Minister of Gombe State Ministry of Justice",
+      "title": "Minister — Gombe State Ministry of Justice",
+      "mandate": "Political head of Gombe State Ministry of Justice.",
+      "responsibilities": [
+        "Lead Gombe State Ministry of Justice"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122947446-minister",
+      "slug": "minister-gombe-state-ministry-of-science-technology-and-innovation",
+      "institutionId": "wd:Q122947446",
+      "name": "Minister of Gombe State Ministry of Science, Technology and Innovation",
+      "title": "Minister — Gombe State Ministry of Science, Technology and Innovation",
+      "mandate": "Political head of Gombe State Ministry of Science, Technology and Innovation.",
+      "responsibilities": [
+        "Lead Gombe State Ministry of Science, Technology and Innovation"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122640159-minister",
+      "slug": "minister-jigawa-state-ministry-of-environment",
+      "institutionId": "wd:Q122640159",
+      "name": "Minister of Jigawa State Ministry of Environment",
+      "title": "Minister — Jigawa State Ministry of Environment",
+      "mandate": "Political head of Jigawa State Ministry of Environment.",
+      "responsibilities": [
+        "Lead Jigawa State Ministry of Environment"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q123003642-minister",
+      "slug": "minister-jigawa-state-ministry-of-health",
+      "institutionId": "wd:Q123003642",
+      "name": "Minister of Jigawa State Ministry of Health",
+      "title": "Minister — Jigawa State Ministry of Health",
+      "mandate": "Political head of Jigawa State Ministry of Health.",
+      "responsibilities": [
+        "Lead Jigawa State Ministry of Health"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122643808-minister",
+      "slug": "minister-kaduna-state-ministry-of-environment-natural-resources",
+      "institutionId": "wd:Q122643808",
+      "name": "Minister of KADUNA STATE Ministry Of Environment & Natural Resources",
+      "title": "Minister — KADUNA STATE Ministry Of Environment & Natural Resources",
+      "mandate": "Political head of KADUNA STATE Ministry Of Environment & Natural Resources.",
+      "responsibilities": [
+        "Lead KADUNA STATE Ministry Of Environment & Natural Resources"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122644050-minister",
+      "slug": "minister-katsina-state-ministry-of-environment",
+      "institutionId": "wd:Q122644050",
+      "name": "Minister of KATSINA STATE MINISTRY OF ENVIRONMENT",
+      "title": "Minister — KATSINA STATE MINISTRY OF ENVIRONMENT",
+      "mandate": "Political head of KATSINA STATE MINISTRY OF ENVIRONMENT.",
+      "responsibilities": [
+        "Lead KATSINA STATE MINISTRY OF ENVIRONMENT"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q130949003-minister",
+      "slug": "minister-kano-state-ministry-of-education",
+      "institutionId": "wd:Q130949003",
+      "name": "Minister of Kano State Ministry of Education",
+      "title": "Minister — Kano State Ministry of Education",
+      "mandate": "Political head of Kano State Ministry of Education.",
+      "responsibilities": [
+        "Lead Kano State Ministry of Education"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122640018-minister",
+      "slug": "minister-kano-state-ministry-of-environment",
+      "institutionId": "wd:Q122640018",
+      "name": "Minister of Kano State Ministry of Environment",
+      "title": "Minister — Kano State Ministry of Environment",
+      "mandate": "Political head of Kano State Ministry of Environment.",
+      "responsibilities": [
+        "Lead Kano State Ministry of Environment"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122947593-minister",
+      "slug": "minister-katsina-state-ministry-of-education",
+      "institutionId": "wd:Q122947593",
+      "name": "Minister of Katsina State Ministry of Education",
+      "title": "Minister — Katsina State Ministry of Education",
+      "mandate": "Political head of Katsina State Ministry of Education.",
+      "responsibilities": [
+        "Lead Katsina State Ministry of Education"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q123073593-minister",
+      "slug": "minister-katsina-state-ministry-of-health",
+      "institutionId": "wd:Q123073593",
+      "name": "Minister of Katsina State Ministry of Health",
+      "title": "Minister — Katsina State Ministry of Health",
+      "mandate": "Political head of Katsina State Ministry of Health.",
+      "responsibilities": [
+        "Lead Katsina State Ministry of Health"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122650476-minister",
+      "slug": "minister-kwara-state-ministry-of-environment",
+      "institutionId": "wd:Q122650476",
+      "name": "Minister of Kwara State Ministry of Environment",
+      "title": "Minister — Kwara State Ministry of Environment",
+      "mandate": "Political head of Kwara State Ministry of Environment.",
+      "responsibilities": [
+        "Lead Kwara State Ministry of Environment"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q19604789-minister",
+      "slug": "minister-lagos-state-ministry-of-education",
+      "institutionId": "wd:Q19604789",
+      "name": "Minister of Lagos State Ministry of Education",
+      "title": "Minister — Lagos State Ministry of Education",
+      "mandate": "Political head of Lagos State Ministry of Education.",
+      "responsibilities": [
+        "Lead Lagos State Ministry of Education"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q19604792-minister",
+      "slug": "minister-lagos-state-ministry-of-establishments-training-and-pensions",
+      "institutionId": "wd:Q19604792",
+      "name": "Minister of Lagos State Ministry of Establishments, Training and Pensions",
+      "title": "Minister — Lagos State Ministry of Establishments, Training and Pensions",
+      "mandate": "Political head of Lagos State Ministry of Establishments, Training and Pensions.",
+      "responsibilities": [
+        "Lead Lagos State Ministry of Establishments, Training and Pensions"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q19604793-minister",
+      "slug": "minister-lagos-state-ministry-of-finance",
+      "institutionId": "wd:Q19604793",
+      "name": "Minister of Lagos State Ministry of Finance",
+      "title": "Minister — Lagos State Ministry of Finance",
+      "mandate": "Political head of Lagos State Ministry of Finance.",
+      "responsibilities": [
+        "Lead Lagos State Ministry of Finance"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q19604799-minister",
+      "slug": "minister-lagos-state-ministry-of-justice",
+      "institutionId": "wd:Q19604799",
+      "name": "Minister of Lagos State Ministry of Justice",
+      "title": "Minister — Lagos State Ministry of Justice",
+      "mandate": "Political head of Lagos State Ministry of Justice.",
+      "responsibilities": [
+        "Lead Lagos State Ministry of Justice"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q111307364-minister",
+      "slug": "minister-lagos-state-ministry-of-local-government-and-community-affairs",
+      "institutionId": "wd:Q111307364",
+      "name": "Minister of Lagos State Ministry of Local Government and Community Affairs",
+      "title": "Minister — Lagos State Ministry of Local Government and Community Affairs",
+      "mandate": "Political head of Lagos State Ministry of Local Government and Community Affairs.",
+      "responsibilities": [
+        "Lead Lagos State Ministry of Local Government and Community Affairs"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q19604801-minister",
+      "slug": "minister-lagos-state-ministry-of-physical-planning-and-urban-development",
+      "institutionId": "wd:Q19604801",
+      "name": "Minister of Lagos State Ministry of Physical Planning and Urban Development",
+      "title": "Minister — Lagos State Ministry of Physical Planning and Urban Development",
+      "mandate": "Political head of Lagos State Ministry of Physical Planning and Urban Development.",
+      "responsibilities": [
+        "Lead Lagos State Ministry of Physical Planning and Urban Development"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q19604804-minister",
+      "slug": "minister-lagos-state-ministry-of-special-duties-and-intergovernmental-relations",
+      "institutionId": "wd:Q19604804",
+      "name": "Minister of Lagos State Ministry of Special Duties and Intergovernmental relations",
+      "title": "Minister — Lagos State Ministry of Special Duties and Intergovernmental relations",
+      "mandate": "Political head of Lagos State Ministry of Special Duties and Intergovernmental relations.",
+      "responsibilities": [
+        "Lead Lagos State Ministry of Special Duties and Intergovernmental relations"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q19604808-minister",
+      "slug": "minister-lagos-state-ministry-of-transport",
+      "institutionId": "wd:Q19604808",
+      "name": "Minister of Lagos State Ministry of Transport",
+      "title": "Minister — Lagos State Ministry of Transport",
+      "mandate": "Political head of Lagos State Ministry of Transport.",
+      "responsibilities": [
+        "Lead Lagos State Ministry of Transport"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122733701-minister",
+      "slug": "minister-ministry-of-environment-abakaliki-ebonyi-state",
+      "institutionId": "wd:Q122733701",
+      "name": "Minister of MINISTRY OF ENVIRONMENT ABAKALIKI, EBONYI STATE",
+      "title": "Minister — MINISTRY OF ENVIRONMENT ABAKALIKI, EBONYI STATE",
+      "mandate": "Political head of MINISTRY OF ENVIRONMENT ABAKALIKI, EBONYI STATE.",
+      "responsibilities": [
+        "Lead MINISTRY OF ENVIRONMENT ABAKALIKI, EBONYI STATE"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122650732-minister",
+      "slug": "minister-ministry-of-environment-and-natural-resources-imo-state",
+      "institutionId": "wd:Q122650732",
+      "name": "Minister of MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES, IMO STATE",
+      "title": "Minister — MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES, IMO STATE",
+      "mandate": "Political head of MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES, IMO STATE.",
+      "responsibilities": [
+        "Lead MINISTRY OF ENVIRONMENT AND NATURAL RESOURCES, IMO STATE"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q137193819-minister",
+      "slug": "minister-ministry-of-art-culture-tourism-and-the-creative-economy",
+      "institutionId": "wd:Q137193819",
+      "name": "Minister of Ministry of Art, Culture, Tourism and the Creative Economy",
+      "title": "Minister — Ministry of Art, Culture, Tourism and the Creative Economy",
+      "mandate": "Political head of Ministry of Art, Culture, Tourism and the Creative Economy.",
+      "responsibilities": [
+        "Lead Ministry of Art, Culture, Tourism and the Creative Economy"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125526326-minister",
+      "slug": "minister-ministry-of-chieftaincy-affairs-anambra-state",
+      "institutionId": "wd:Q125526326",
+      "name": "Minister of Ministry of Chieftaincy Affairs Anambra state",
+      "title": "Minister — Ministry of Chieftaincy Affairs Anambra state",
+      "mandate": "Political head of Ministry of Chieftaincy Affairs Anambra state.",
+      "responsibilities": [
+        "Lead Ministry of Chieftaincy Affairs Anambra state"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114596682-minister",
+      "slug": "minister-ministry-of-commerce-cooperation-empowerment-osun-state",
+      "institutionId": "wd:Q114596682",
+      "name": "Minister of Ministry of Commerce, Cooperation & Empowerment Osun State",
+      "title": "Minister — Ministry of Commerce, Cooperation & Empowerment Osun State",
+      "mandate": "Political head of Ministry of Commerce, Cooperation & Empowerment Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Commerce, Cooperation & Empowerment Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q120498690-minister",
+      "slug": "minister-ministry-of-education-headquaters-gombe",
+      "institutionId": "wd:Q120498690",
+      "name": "Minister of Ministry of Education Headquaters, Gombe",
+      "title": "Minister — Ministry of Education Headquaters, Gombe",
+      "mandate": "Political head of Ministry of Education Headquaters, Gombe.",
+      "responsibilities": [
+        "Lead Ministry of Education Headquaters, Gombe"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114597282-minister",
+      "slug": "minister-ministry-of-education-science-technology-osun-state",
+      "institutionId": "wd:Q114597282",
+      "name": "Minister of Ministry of Education, Science & Technology Osun State",
+      "title": "Minister — Ministry of Education, Science & Technology Osun State",
+      "mandate": "Political head of Ministry of Education, Science & Technology Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Education, Science & Technology Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q96418969-minister",
+      "slug": "minister-ministry-of-education-science-and-technology",
+      "institutionId": "wd:Q96418969",
+      "name": "Minister of Ministry of Education, Science and Technology",
+      "title": "Minister — Ministry of Education, Science and Technology",
+      "mandate": "Political head of Ministry of Education, Science and Technology.",
+      "responsibilities": [
+        "Lead Ministry of Education, Science and Technology"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q19604790-minister",
+      "slug": "minister-ministry-of-energy-and-mineral-resources-lagos",
+      "institutionId": "wd:Q19604790",
+      "name": "Minister of Ministry of Energy and Mineral Resources (Lagos)",
+      "title": "Minister — Ministry of Energy and Mineral Resources (Lagos)",
+      "mandate": "Political head of Ministry of Energy and Mineral Resources (Lagos).",
+      "responsibilities": [
+        "Lead Ministry of Energy and Mineral Resources (Lagos)"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114596831-minister",
+      "slug": "minister-ministry-of-environment-sanitation-osun-state",
+      "institutionId": "wd:Q114596831",
+      "name": "Minister of Ministry of Environment & Sanitation Osun State",
+      "title": "Minister — Ministry of Environment & Sanitation Osun State",
+      "mandate": "Political head of Ministry of Environment & Sanitation Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Environment & Sanitation Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q122643299-minister",
+      "slug": "minister-ministry-of-environment-solid-minerals-kebbi-state",
+      "institutionId": "wd:Q122643299",
+      "name": "Minister of Ministry of Environment & Solid Minerals Kebbi State",
+      "title": "Minister — Ministry of Environment & Solid Minerals Kebbi State",
+      "mandate": "Political head of Ministry of Environment & Solid Minerals Kebbi State.",
+      "responsibilities": [
+        "Lead Ministry of Environment & Solid Minerals Kebbi State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q121598780-minister",
+      "slug": "minister-ministry-of-environment-and-forest-resources",
+      "institutionId": "wd:Q121598780",
+      "name": "Minister of Ministry of Environment and Forest Resources",
+      "title": "Minister — Ministry of Environment and Forest Resources",
+      "mandate": "Political head of Ministry of Environment and Forest Resources.",
+      "responsibilities": [
+        "Lead Ministry of Environment and Forest Resources"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q6866944-minister",
+      "slug": "minister-ministry-of-finance",
+      "institutionId": "wd:Q6866944",
+      "name": "Minister of Ministry of Finance",
+      "title": "Minister — Ministry of Finance",
+      "mandate": "Political head of Ministry of Finance.",
+      "responsibilities": [
+        "Lead Ministry of Finance"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114597362-minister",
+      "slug": "minister-ministry-of-finance-economic-planning-budget-osun-state",
+      "institutionId": "wd:Q114597362",
+      "name": "Minister of Ministry of Finance, Economic planning & Budget Osun State",
+      "title": "Minister — Ministry of Finance, Economic planning & Budget Osun State",
+      "mandate": "Political head of Ministry of Finance, Economic planning & Budget Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Finance, Economic planning & Budget Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q16753607-minister",
+      "slug": "minister-ministry-of-foreign-affairs-of-the-federal-republic-of-nigeria",
+      "institutionId": "wd:Q16753607",
+      "name": "Minister of Ministry of Foreign Affairs of the Federal Republic of Nigeria",
+      "title": "Minister — Ministry of Foreign Affairs of the Federal Republic of Nigeria",
+      "mandate": "Political head of Ministry of Foreign Affairs of the Federal Republic of Nigeria.",
+      "responsibilities": [
+        "Lead Ministry of Foreign Affairs of the Federal Republic of Nigeria"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114596364-minister",
+      "slug": "minister-ministry-of-health-osun-state",
+      "institutionId": "wd:Q114596364",
+      "name": "Minister of Ministry of Health Osun State",
+      "title": "Minister — Ministry of Health Osun State",
+      "mandate": "Political head of Ministry of Health Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Health Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q134604614-minister",
+      "slug": "minister-ministry-of-home-affairs-information-and-culture",
+      "institutionId": "wd:Q134604614",
+      "name": "Minister of Ministry of Home Affairs, Information And Culture",
+      "title": "Minister — Ministry of Home Affairs, Information And Culture",
+      "mandate": "Political head of Ministry of Home Affairs, Information And Culture.",
+      "responsibilities": [
+        "Lead Ministry of Home Affairs, Information And Culture"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114599598-minister",
+      "slug": "minister-ministry-of-human-resources-capacity-building-osun-state",
+      "institutionId": "wd:Q114599598",
+      "name": "Minister of Ministry of Human Resources & Capacity Building Osun State",
+      "title": "Minister — Ministry of Human Resources & Capacity Building Osun State",
+      "mandate": "Political head of Ministry of Human Resources & Capacity Building Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Human Resources & Capacity Building Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114599946-minister",
+      "slug": "minister-ministry-of-information-strategy-osun-state",
+      "institutionId": "wd:Q114599946",
+      "name": "Minister of Ministry of Information & Strategy Osun State",
+      "title": "Minister — Ministry of Information & Strategy Osun State",
+      "mandate": "Political head of Ministry of Information & Strategy Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Information & Strategy Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q25351971-minister",
+      "slug": "minister-ministry-of-interior",
+      "institutionId": "wd:Q25351971",
+      "name": "Minister of Ministry of Interior",
+      "title": "Minister — Ministry of Interior",
+      "mandate": "Political head of Ministry of Interior.",
+      "responsibilities": [
+        "Lead Ministry of Interior"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114596887-minister",
+      "slug": "minister-ministry-of-justice-osun-state",
+      "institutionId": "wd:Q114596887",
+      "name": "Minister of Ministry of Justice Osun State",
+      "title": "Minister — Ministry of Justice Osun State",
+      "mandate": "Political head of Ministry of Justice Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Justice Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q135156419-minister",
+      "slug": "minister-ministry-of-justice-anambra-state",
+      "institutionId": "wd:Q135156419",
+      "name": "Minister of Ministry of Justice, Anambra State",
+      "title": "Minister — Ministry of Justice, Anambra State",
+      "mandate": "Political head of Ministry of Justice, Anambra State.",
+      "responsibilities": [
+        "Lead Ministry of Justice, Anambra State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q111341667-minister",
+      "slug": "minister-ministry-of-lagos-state-sport-commission",
+      "institutionId": "wd:Q111341667",
+      "name": "Minister of Ministry of Lagos State Sport Commission",
+      "title": "Minister — Ministry of Lagos State Sport Commission",
+      "mandate": "Political head of Ministry of Lagos State Sport Commission.",
+      "responsibilities": [
+        "Lead Ministry of Lagos State Sport Commission"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q134612179-minister",
+      "slug": "minister-ministry-of-land-and-survey-yola",
+      "institutionId": "wd:Q134612179",
+      "name": "Minister of Ministry of Land and Survey yola",
+      "title": "Minister — Ministry of Land and Survey yola",
+      "mandate": "Political head of Ministry of Land and Survey yola.",
+      "responsibilities": [
+        "Lead Ministry of Land and Survey yola"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q125526335-minister",
+      "slug": "minister-ministry-of-lands-anambra-state",
+      "institutionId": "wd:Q125526335",
+      "name": "Minister of Ministry of Lands Anambra state",
+      "title": "Minister — Ministry of Lands Anambra state",
+      "mandate": "Political head of Ministry of Lands Anambra state.",
+      "responsibilities": [
+        "Lead Ministry of Lands Anambra state"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114600109-minister",
+      "slug": "minister-ministry-of-lands-physical-planning-urban-dev-osun-state",
+      "institutionId": "wd:Q114600109",
+      "name": "Minister of Ministry of Lands, Physical planning & Urban Dev Osun State",
+      "title": "Minister — Ministry of Lands, Physical planning & Urban Dev Osun State",
+      "mandate": "Political head of Ministry of Lands, Physical planning & Urban Dev Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Lands, Physical planning & Urban Dev Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114600278-minister",
+      "slug": "minister-ministry-of-local-govt-chieftancy-affairs-osun-state",
+      "institutionId": "wd:Q114600278",
+      "name": "Minister of Ministry of Local Govt & Chieftancy Affairs Osun State",
+      "title": "Minister — Ministry of Local Govt & Chieftancy Affairs Osun State",
+      "mandate": "Political head of Ministry of Local Govt & Chieftancy Affairs Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Local Govt & Chieftancy Affairs Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q89675780-minister",
+      "slug": "minister-ministry-of-power",
+      "institutionId": "wd:Q89675780",
+      "name": "Minister of Ministry of Power",
+      "title": "Minister — Ministry of Power",
+      "mandate": "Political head of Ministry of Power.",
+      "responsibilities": [
+        "Lead Ministry of Power"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114607414-minister",
+      "slug": "minister-ministry-of-regional-integration-special-duties-osun-state",
+      "institutionId": "wd:Q114607414",
+      "name": "Minister of Ministry of Regional Integration & Special Duties Osun State",
+      "title": "Minister — Ministry of Regional Integration & Special Duties Osun State",
+      "mandate": "Political head of Ministry of Regional Integration & Special Duties Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Regional Integration & Special Duties Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114600549-minister",
+      "slug": "minister-ministry-of-religion-integration-special-duties-osun-state",
+      "institutionId": "wd:Q114600549",
+      "name": "Minister of Ministry of Religion, Integration & Special Duties Osun State",
+      "title": "Minister — Ministry of Religion, Integration & Special Duties Osun State",
+      "mandate": "Political head of Ministry of Religion, Integration & Special Duties Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Religion, Integration & Special Duties Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q139981211-minister",
+      "slug": "minister-ministry-of-solid-minerals-development",
+      "institutionId": "wd:Q139981211",
+      "name": "Minister of Ministry of Solid Minerals Development",
+      "title": "Minister — Ministry of Solid Minerals Development",
+      "mandate": "Political head of Ministry of Solid Minerals Development.",
+      "responsibilities": [
+        "Lead Ministry of Solid Minerals Development"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q89751089-minister",
+      "slug": "minister-ministry-of-transportation",
+      "institutionId": "wd:Q89751089",
+      "name": "Minister of Ministry of Transportation",
+      "title": "Minister — Ministry of Transportation",
+      "mandate": "Political head of Ministry of Transportation.",
+      "responsibilities": [
+        "Lead Ministry of Transportation"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114607616-minister",
+      "slug": "minister-ministry-of-women-affairs-child-development-osun-state",
+      "institutionId": "wd:Q114607616",
+      "name": "Minister of Ministry of Women Affairs & Child Development Osun State",
+      "title": "Minister — Ministry of Women Affairs & Child Development Osun State",
+      "mandate": "Political head of Ministry of Women Affairs & Child Development Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Women Affairs & Child Development Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q130259917-minister",
+      "slug": "minister-ministry-of-women-affairs-ado-ekiti",
+      "institutionId": "wd:Q130259917",
+      "name": "Minister of Ministry of Women Affairs, Ado-Ekiti",
+      "title": "Minister — Ministry of Women Affairs, Ado-Ekiti",
+      "mandate": "Political head of Ministry of Women Affairs, Ado-Ekiti.",
+      "responsibilities": [
+        "Lead Ministry of Women Affairs, Ado-Ekiti"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114605639-minister",
+      "slug": "minister-ministry-of-work-transport-osun-state",
+      "institutionId": "wd:Q114605639",
+      "name": "Minister of Ministry of Work & Transport Osun State",
+      "title": "Minister — Ministry of Work & Transport Osun State",
+      "mandate": "Political head of Ministry of Work & Transport Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Work & Transport Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114596946-minister",
+      "slug": "minister-ministry-of-works-transport-osun-state",
+      "institutionId": "wd:Q114596946",
+      "name": "Minister of Ministry of Works & Transport Osun State",
+      "title": "Minister — Ministry of Works & Transport Osun State",
+      "mandate": "Political head of Ministry of Works & Transport Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Works & Transport Osun State"
+      ],
+      "level": "federal"
+    },
+    {
+      "id": "wd:Q114605805-minister",
+      "slug": "minister-ministry-of-youths-sports-and-special-needs-osun-state",
+      "institutionId": "wd:Q114605805",
+      "name": "Minister of Ministry of Youths, Sports And Special Needs Osun State",
+      "title": "Minister — Ministry of Youths, Sports And Special Needs Osun State",
+      "mandate": "Political head of Ministry of Youths, Sports And Special Needs Osun State.",
+      "responsibilities": [
+        "Lead Ministry of Youths, Sports And Special Needs Osun State"
+      ],
+      "level": "federal"
+    }
+  ]
+}

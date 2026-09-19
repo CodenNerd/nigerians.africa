@@ -1,0 +1,20 @@
+{
+  "name": "nigeria-for-nigerians",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm --filter @nigeria-for-nigerians/web dev",
+    "build": "pnpm --filter @nigeria-for-nigerians/web build",
+    "start": "pnpm --filter @nigeria-for-nigerians/web start",
+    "lint": "pnpm --filter @nigeria-for-nigerians/web lint",
+    "typecheck": "pnpm -r typecheck",
+    "seed": "pnpm --filter @nigeria-for-nigerians/domain seed",
+    "crawl": "pnpm --filter @nigeria-for-nigerians/ingestion exec tsx ../../scripts/crawl.ts",
+    "promote-seed": "pnpm --filter @nigeria-for-nigerians/ingestion exec tsx ../../scripts/promote-seed.ts",
+    "validate-seed": "pnpm --filter @nigeria-for-nigerians/ingestion exec tsx ../../scripts/validate-seed.ts"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

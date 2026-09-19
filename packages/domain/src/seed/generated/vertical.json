@@ -1,0 +1,148 @@
+{
+  "sources": [
+    {
+      "id": "src-nrc-abuja-rail",
+      "type": "Government",
+      "title": "Nigerian Railway Corporation — public rail programmes",
+      "publisher": "Nigerian Railway Corporation",
+      "url": "https://www.nrc.gov.ng/",
+      "publicationDate": "2026-09-19",
+      "description": "Official NRC web presence used as provenance for rail project thread.",
+      "reliability": "high"
+    },
+    {
+      "id": "src-fcda-abuja",
+      "type": "Government",
+      "title": "Federal Capital Development Authority",
+      "publisher": "FCDA",
+      "url": "https://www.fcda.gov.ng/",
+      "publicationDate": "2026-09-19",
+      "description": "FCT development authority public site — urban infrastructure context.",
+      "reliability": "high"
+    }
+  ],
+  "problems": [
+    {
+      "id": "problem-abuja-mobility-gaps",
+      "slug": "abuja-urban-mobility-gaps",
+      "title": "Abuja urban mobility and rail mass-transit continuity",
+      "category": "Infrastructure",
+      "description": "Public documentation of Abuja rail / mass-transit programmes highlights continuity, funding, and service gaps for FCT urban mobility. This record links responsible federal rail institutions to documented project activity.",
+      "severity": "high",
+      "urgency": "medium",
+      "status": "open",
+      "locationIds": [
+        "wd:Q1033"
+      ],
+      "officeIds": [
+        "wd:Q500282"
+      ],
+      "firstReportedAt": "2018-01-01",
+      "verificationStatus": "under_review"
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-abuja-light-rail-crawl",
+      "slug": "abuja-rail-mass-transit-phase",
+      "name": "Abuja Rail Mass Transit (documented phase)",
+      "description": "Federal / FCT rail mass-transit programme for Abuja as publicly documented via NRC and related federal channels. Status and spend figures require document-level confirmation before treating as verified.",
+      "problemId": "problem-abuja-mobility-gaps",
+      "locationId": "wd:Q1033",
+      "responsibleOfficeId": "wd:Q500282",
+      "fundingSource": "Federal budget / counterpart funding (see sources)",
+      "approvedAmount": 0,
+      "releasedAmount": 0,
+      "reportedSpend": 0,
+      "startDate": "2018-01-01",
+      "expectedEndDate": "2027-12-31",
+      "status": "in_progress",
+      "statusHistory": [
+        {
+          "status": "in_progress",
+          "effectiveAt": "2018-01-01",
+          "reason": "Public programme documentation indicates ongoing rail mass-transit work in FCT."
+        }
+      ],
+      "verificationStatus": "under_review"
+    }
+  ],
+  "allocations": [
+    {
+      "id": "alloc-abuja-rail-tracking",
+      "slug": "abuja-rail-funding-tracking",
+      "budgetId": "budget-fed-2024-crawl",
+      "program": "Abuja rail mass transit — funding trail (pending line-item extract)",
+      "amount": 0,
+      "recipient": "NRC / FCT rail programme",
+      "projectId": "project-abuja-light-rail-crawl",
+      "sourceId": "src-nrc-abuja-rail",
+      "released": false,
+      "releasedAmount": 0,
+      "gapNote": "Amount intentionally zero until a specific Appropriation / contract line is extracted from an official PDF. Do not invent figures."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-nrc-home",
+      "slug": "nrc-website-provenance",
+      "type": "Government Record",
+      "title": "NRC website capture",
+      "description": "Fetched NRC homepage as provenance for rail programme existence.",
+      "sourceId": "src-nrc-abuja-rail",
+      "capturedAt": "2026-09-19",
+      "locationId": "wd:Q1033",
+      "verificationStatus": "under_review",
+      "relatedEntityType": "project",
+      "relatedEntityId": "project-abuja-light-rail-crawl",
+      "fileLabel": "nrc-html"
+    },
+    {
+      "id": "ev-fcda-home",
+      "slug": "fcda-website-provenance",
+      "type": "Government Record",
+      "title": "FCDA website capture",
+      "description": "Fetched FCDA homepage as FCT development context.",
+      "sourceId": "src-fcda-abuja",
+      "capturedAt": "2026-09-19",
+      "locationId": "wd:Q1033",
+      "verificationStatus": "under_review",
+      "relatedEntityType": "problem",
+      "relatedEntityId": "problem-abuja-mobility-gaps",
+      "fileLabel": "fcda-html"
+    }
+  ],
+  "memory": [
+    {
+      "id": "mem-abuja-rail-documented",
+      "eventType": "Project Start",
+      "entityType": "project",
+      "entityId": "project-abuja-light-rail-crawl",
+      "date": "2018-01-01",
+      "description": "Abuja rail mass-transit programme appears in public federal/NRC documentation.",
+      "sourceId": "src-nrc-abuja-rail"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-problem-project-abuja-rail",
+      "fromType": "problem",
+      "fromId": "problem-abuja-mobility-gaps",
+      "relationshipType": "addressed_by",
+      "toType": "project",
+      "toId": "project-abuja-light-rail-crawl",
+      "sourceId": "src-nrc-abuja-rail",
+      "confidence": 0.7
+    },
+    {
+      "id": "rel-project-money-abuja-rail",
+      "fromType": "project",
+      "fromId": "project-abuja-light-rail-crawl",
+      "relationshipType": "funded_via",
+      "toType": "money",
+      "toId": "alloc-abuja-rail-tracking",
+      "sourceId": "src-nrc-abuja-rail",
+      "confidence": 0.5
+    }
+  ]
+}

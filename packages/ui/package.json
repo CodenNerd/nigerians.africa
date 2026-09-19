@@ -1,0 +1,9 @@
+{
+  "name": "@nigeria-for-nigerians/ui",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared UI primitives live in apps/web/src/components for this prototype; extract here when a second app needs them.",
+  "scripts": {
+    "typecheck": "echo 'UI package is a placeholder'"
+  }
+}
