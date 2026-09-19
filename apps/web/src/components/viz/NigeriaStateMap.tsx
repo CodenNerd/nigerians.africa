@@ -47,18 +47,14 @@ export function NigeriaStateMap({
                 tabIndex={0}
                 aria-label={`${s.name}${s.seeded ? "" : " (browse Places)"}`}
                 className={clsx(
-                  "cursor-pointer outline-none transition-[fill,stroke,stroke-width] duration-150",
+                  "cursor-pointer outline-none transition-[fill,stroke,stroke-width,filter] duration-150",
                   isHot
-                    ? "fill-civic-green stroke-white"
+                    ? "fill-civic-green stroke-white brightness-110"
                     : s.seeded
-                      ? dimmed
-                        ? "fill-[#6f9c76]/70 stroke-white"
-                        : "fill-[#6f9c76] stroke-white"
-                      : dimmed
-                        ? "fill-[#8fb896]/55 stroke-white"
-                        : "fill-[#8fb896] stroke-white",
+                      ? "fill-[#5f8f66] stroke-white"
+                      : "fill-[#8fb896] stroke-white",
                 )}
-                strokeWidth={isHot ? 1.75 : 0.6}
+                strokeWidth={isHot ? 2 : 0.65}
                 onMouseEnter={() => setHovered(s.slug)}
                 onMouseLeave={() => setHovered(null)}
                 onFocus={() => setHovered(s.slug)}
