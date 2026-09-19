@@ -96,6 +96,26 @@ export type ProjectFundingLedger = {
 
 export type OrgProjectRole = "contractor" | "implementer" | "funder" | "campaign_host";
 
+export type ProjectRecordEventKind =
+  | "status"
+  | "funding"
+  | "spend"
+  | "evidence"
+  | "campaign"
+  | "report"
+  | "response"
+  | "contract"
+  | "memory";
+
+export type ProjectRecordEvent = {
+  id: string;
+  date: string;
+  kind: ProjectRecordEventKind;
+  title: string;
+  description?: string;
+  href?: string;
+};
+
 export type OrgProjectLink = {
   project: Project;
   roles: OrgProjectRole[];
@@ -391,6 +411,126 @@ export class PublicRecordStore {
       inflows,
       spends,
     };
+  }
+
+  /**
+   * Comprehensive project dossier timeline: work status, money, evidence, reports, memory.
+   */
+  projectRecordTimeline(projectId: string): ProjectRecordEvent[] {
+    const project = this.db.projects.find((p) => p.id === projectId);
+    if (!project) return [];
+    const events: ProjectRecordEvent[] = [];
+
+    for (const h of project.statusHistory ?? []) {
+      events.push({
+        id: `status-${h.status}-${h.effectiveAt}`,
+        date: h.effectiveAt,
+        kind: "status",
+        title: `Work status · ${h.status.replace(/_/g, " ")}`,
+        description: h.reason,
+      });
+    }
+
+    for (const inflow of this.db.fundingInflows ?? []) {
+      if (inflow.projectId !== projectId) continue;
+      events.push({
+        id: `inflow-${inflow.id}`,
+        date: inflow.receivedAt,
+        kind: "funding",
+        title: `Funding received · ${this.formatNaira(inflow.amount)}`,
+        description: `${inflow.payerLabel} via ${inflow.channel.replace(/_/g, " ")}`,
+      });
+    }
+
+    for (const spend of this.db.projectSpends ?? []) {
+      if (spend.projectId !== projectId) continue;
+      events.push({
+        id: `spend-${spend.id}`,
+        date: spend.spentAt,
+        kind: "spend",
+        title: `Spend recorded · ${this.formatNaira(spend.amount)}`,
+        description: `${spend.category} — ${spend.payeeLabel}${spend.notes ? `. ${spend.notes}` : ""}`,
+      });
+    }
+
+    for (const camp of this.db.donationCampaigns ?? []) {
+      if (camp.projectId !== projectId) continue;
+      // Use earliest related inflow date or a synthetic open date from raised progress
+      const campInflows = (this.db.fundingInflows ?? []).filter((i) => i.campaignId === camp.id);
+      const openDate =
+        campInflows.map((i) => i.receivedAt).sort()[0] ??
+        project.startDate ??
+        "2024-01-01";
+      events.push({
+        id: `campaign-${camp.id}`,
+        date: openDate,
+        kind: "campaign",
+        title: `Funding request opened · ${camp.platform}`,
+        description: `${camp.title} — goal ${this.formatNaira(camp.goalAmount)}`,
+        href: camp.url,
+      });
+    }
+
+    const evidenceRows = [
+      ...this.evidenceFor("project", projectId),
+      ...(project.problemId ? this.evidenceFor("problem", project.problemId) : []),
+    ];
+    const seenEv = new Set<string>();
+    for (const e of evidenceRows) {
+      if (seenEv.has(e.id)) continue;
+      seenEv.add(e.id);
+      const kindLabel =
+        e.mediaKind === "video" ? "Video" : e.mediaKind === "image" ? "Photo" : e.type;
+      events.push({
+        id: `evidence-${e.id}`,
+        date: e.capturedAt,
+        kind: "evidence",
+        title: `${kindLabel} uploaded · ${e.title}`,
+        description: e.description,
+        href: `/evidence/${e.id}`,
+      });
+    }
+
+    for (const r of this.db.reports.filter((x) => x.projectId === projectId)) {
+      events.push({
+        id: `report-${r.id}`,
+        date: r.submittedAt || r.capturedAt,
+        kind: "report",
+        title: `Citizen report · ${r.title}`,
+        description: r.description,
+      });
+      for (const resp of this.responsesFor("report", r.id)) {
+        events.push({
+          id: `response-${resp.id}`,
+          date: resp.publishedAt,
+          kind: "response",
+          title: "Official response published",
+          description: resp.statement.slice(0, 160) + (resp.statement.length > 160 ? "…" : ""),
+        });
+      }
+    }
+
+    for (const c of this.db.contracts.filter((x) => x.projectId === projectId)) {
+      events.push({
+        id: `contract-${c.id}`,
+        date: c.awardedAt,
+        kind: "contract",
+        title: `Contract awarded · ${this.formatNaira(c.amount)}`,
+        description: `${c.title} — ${c.contractorName}`,
+      });
+    }
+
+    for (const m of this.memoryFor("project", projectId)) {
+      events.push({
+        id: `memory-${m.id}`,
+        date: m.date,
+        kind: "memory",
+        title: `Record · ${m.eventType}`,
+        description: m.description,
+      });
+    }
+
+    return events.sort((a, b) => byDateDesc(a.date, b.date));
   }
 
   projectsForOrganization(orgId: string): OrgProjectLink[] {

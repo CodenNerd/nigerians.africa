@@ -15,6 +15,8 @@ export function RecordPage({
   children,
   askContext,
   actions,
+  hero,
+  hideHeader,
 }: {
   eyebrow: string;
   title: string;
@@ -24,31 +26,40 @@ export function RecordPage({
   children: ReactNode;
   askContext?: string;
   actions?: { label: string; href: string }[];
+  /** Optional full-bleed hero above the container (e.g. project cover). */
+  hero?: ReactNode;
+  /** When true with hero, skip the in-container title block. */
+  hideHeader?: boolean;
 }) {
   return (
-    <article className="site-container py-10 lg:py-14">
-      <header className="anim-rise max-w-3xl">
-        <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-ink-faint">
-          {eyebrow}
-        </p>
-        <h1 className="mt-3 font-display text-4xl leading-[1.08] tracking-tight text-ink sm:text-5xl">
-          {title}
-        </h1>
-        {subtitle ? (
-          <p className="mt-4 text-base leading-relaxed text-ink-muted sm:text-lg">{subtitle}</p>
+    <article>
+      {hero}
+      <div className={`site-container ${hero ? "py-10 lg:py-12" : "py-10 lg:py-14"}`}>
+        {!hideHeader ? (
+          <header className="anim-rise max-w-3xl">
+            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-ink-faint">
+              {eyebrow}
+            </p>
+            <h1 className="mt-3 font-display text-4xl leading-[1.08] tracking-tight text-ink sm:text-5xl">
+              {title}
+            </h1>
+            {subtitle ? (
+              <p className="mt-4 text-base leading-relaxed text-ink-muted sm:text-lg">{subtitle}</p>
+            ) : null}
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              {status ? <StatusLabel status={status} /> : null}
+              {meta}
+            </div>
+          </header>
         ) : null}
-        <div className="mt-5 flex flex-wrap items-center gap-3">
-          {status ? <StatusLabel status={status} /> : null}
-          {meta}
-        </div>
-      </header>
 
-      <div className="mt-12 grid gap-14 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12">
-        <div className="space-y-16">{children}</div>
-        <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
-          <AskPanel context={askContext || title} />
-          <WhatCanYouDo actions={actions} />
-        </aside>
+        <div className={`${hideHeader ? "mt-0" : "mt-12"} grid gap-14 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12`}>
+          <div className="space-y-16">{children}</div>
+          <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
+            <AskPanel context={askContext || title} />
+            <WhatCanYouDo actions={actions} />
+          </aside>
+        </div>
       </div>
     </article>
   );
@@ -128,28 +139,76 @@ export function RelatedLinks({
 export function Timeline({
   items,
 }: {
-  items: { date: string; title: string; description?: string }[];
+  items: {
+    date: string;
+    title: string;
+    description?: string;
+    kind?: string;
+    href?: string;
+  }[];
 }) {
   if (!items.length) return <p className="text-ink-muted">No timeline events yet.</p>;
+
+  const toneFor = (kind?: string) => {
+    switch (kind) {
+      case "funding":
+      case "campaign":
+        return { plane: "bg-civic-amberSoft", ink: "text-civic-amber", bar: "bg-civic-amber" };
+      case "spend":
+      case "contract":
+        return { plane: "bg-civic-amberSoft", ink: "text-civic-amber", bar: "bg-civic-amber" };
+      case "evidence":
+        return { plane: "bg-civic-blueSoft", ink: "text-civic-blue", bar: "bg-civic-blue" };
+      case "report":
+        return { plane: "bg-civic-redSoft", ink: "text-civic-red", bar: "bg-civic-red" };
+      case "response":
+        return { plane: "bg-civic-blueSoft", ink: "text-civic-blue", bar: "bg-civic-blue" };
+      case "memory":
+        return { plane: "bg-paper", ink: "text-civic-slate", bar: "bg-civic-slate" };
+      case "status":
+      default:
+        return { plane: "bg-civic-greenSoft", ink: "text-civic-green", bar: "bg-civic-green" };
+    }
+  };
+
   return (
     <ol className="grid gap-px bg-paper-border">
-      {items.map((item, i) => (
-        <li
-          key={`${item.date}-${i}`}
-          className="grid grid-cols-[5.5rem_minmax(0,1fr)] bg-paper-card sm:grid-cols-[6.5rem_minmax(0,1fr)]"
-        >
-          <div className="bg-civic-greenSoft px-3 py-4">
-            <time className="font-mono text-xs text-civic-green">{item.date}</time>
-          </div>
-          <div className="relative px-5 py-4">
-            <span className="absolute left-0 top-0 h-full w-1 bg-civic-green" />
+      {items.map((item, i) => {
+        const tone = toneFor(item.kind);
+        const body = (
+          <>
             <div className="pl-2 font-medium text-ink">{item.title}</div>
             {item.description ? (
               <p className="mt-1 pl-2 text-sm text-ink-muted">{item.description}</p>
             ) : null}
-          </div>
-        </li>
-      ))}
+            {item.kind ? (
+              <p className={`mt-1.5 pl-2 text-[10px] uppercase tracking-wider ${tone.ink}`}>
+                {item.kind}
+              </p>
+            ) : null}
+          </>
+        );
+        return (
+          <li
+            key={`${item.date}-${item.title}-${i}`}
+            className="grid grid-cols-[5.5rem_minmax(0,1fr)] bg-paper-card sm:grid-cols-[6.5rem_minmax(0,1fr)]"
+          >
+            <div className={`${tone.plane} px-3 py-4`}>
+              <time className={`font-mono text-xs ${tone.ink}`}>{item.date}</time>
+            </div>
+            <div className="relative px-5 py-4">
+              <span className={`absolute left-0 top-0 h-full w-1 ${tone.bar}`} />
+              {item.href ? (
+                <Link href={item.href} className="block no-underline hover:opacity-90">
+                  {body}
+                </Link>
+              ) : (
+                body
+              )}
+            </div>
+          </li>
+        );
+      })}
     </ol>
   );
 }

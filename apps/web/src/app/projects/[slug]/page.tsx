@@ -15,6 +15,7 @@ import {
   FlowStrip,
   FundingRequest,
   MoneyComposition,
+  ProjectCover,
   ProjectGlance,
   WorkJourney,
 } from "@/components/viz";
@@ -60,6 +61,7 @@ export default async function ProjectDetailPage({
   const handlers = store.projectHandlers(project.id);
   const funding = store.fundingForProject(project.id);
   const progressPercent = store.progressForProject(project);
+  const recordTimeline = store.projectRecordTimeline(project.id);
 
   const unreleased = Math.max(0, funding.budgetTarget - funding.receivedTotal);
   const unspent = Math.max(0, funding.receivedTotal - funding.spendTotal);
@@ -98,6 +100,21 @@ export default async function ProjectDetailPage({
         { label: "Follow the money", href: allocation ? `/money/${allocation.slug}` : "/money" },
         { label: "Challenge information", href: "/action" },
       ]}
+      hideHeader
+      hero={
+        <ProjectCover
+          title={project.name}
+          subtitle={project.description}
+          coverUrl={project.coverUrl}
+          coverCredit={project.coverCredit}
+          status={project.verificationStatus}
+          meta={
+            <span>
+              {location?.name} · {project.status.replace(/_/g, " ")}
+            </span>
+          }
+        />
+      }
     >
       <ProjectGlance
         workPercent={progressPercent}
@@ -124,18 +141,22 @@ export default async function ProjectDetailPage({
         subtitle="Where the project sits on the delivery path — funding is tracked separately below."
       >
         <WorkJourney status={project.status} statusHistory={project.statusHistory} />
-        <div className="mt-8">
-          <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
-            Status timeline
-          </p>
-          <Timeline
-            items={project.statusHistory.map((h) => ({
-              date: h.effectiveAt,
-              title: h.status.replace(/_/g, " "),
-              description: h.reason,
-            }))}
-          />
-        </div>
+      </RecordSection>
+
+      <RecordSection
+        title="Record timeline"
+        subtitle="Work status, funding, spend, evidence, reports and memory — newest first."
+        meta={`${recordTimeline.length} events`}
+      >
+        <Timeline
+          items={recordTimeline.map((e) => ({
+            date: e.date,
+            title: e.title,
+            description: e.description,
+            kind: e.kind,
+            href: e.href,
+          }))}
+        />
       </RecordSection>
 
       {funding.campaigns.length > 0 ? (

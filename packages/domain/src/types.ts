@@ -224,6 +224,9 @@ export interface Project {
   featured?: boolean;
   /** Explicit progress 0–100 when known; otherwise derived from status. */
   progressPercent?: number;
+  /** Hero / cover image for the project dossier. */
+  coverUrl?: string;
+  coverCredit?: string;
 }
 
 export interface FundingSource {

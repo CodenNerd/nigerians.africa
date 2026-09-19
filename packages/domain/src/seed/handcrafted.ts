@@ -821,6 +821,9 @@ export const handcrafted: SeedDatabase = {
       verificationStatus: "official_record",
       featured: true,
       progressPercent: 42,
+      coverUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/8/8a/Bad_road_in_lagos_Nigeria_2020_07_02.jpg",
+      coverCredit: "Wikimedia Commons — bad road in Lagos (CC BY-SA)",
     },
     {
       id: "proj-omole-drain",
@@ -846,6 +849,8 @@ export const handcrafted: SeedDatabase = {
       verificationStatus: "reported",
       featured: true,
       progressPercent: 28,
+      coverUrl: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Lagos_Nigeria.jpg",
+      coverCredit: "Wikimedia Commons — Lagos, Nigeria",
     },
     {
       id: "proj-rural-power",
@@ -872,6 +877,9 @@ export const handcrafted: SeedDatabase = {
       verificationStatus: "official_record",
       featured: true,
       progressPercent: 55,
+      coverUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/e/ee/Aerial_view_of_Marina%2C_Lagos_Island_East%2C_Lagos-Nigeria.jpg",
+      coverCredit: "Wikimedia Commons — aerial Marina, Lagos",
     },
     {
       id: "proj-phc-rivers",
@@ -895,6 +903,8 @@ export const handcrafted: SeedDatabase = {
       verificationStatus: "unverified",
       featured: true,
       progressPercent: 12,
+      coverUrl: "https://upload.wikimedia.org/wikipedia/commons/7/77/Third_Mainland_Bridge.jpg",
+      coverCredit: "Wikimedia Commons — Third Mainland Bridge",
     },
     {
       id: "proj-fct-schools",
@@ -917,6 +927,9 @@ export const handcrafted: SeedDatabase = {
       ],
       verificationStatus: "official_record",
       progressPercent: 5,
+      coverUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
+      coverCredit: "Wikimedia Commons — Nigerian Presidential Complex",
     },
     {
       id: "proj-lagos-water",
@@ -943,6 +956,9 @@ export const handcrafted: SeedDatabase = {
       ],
       verificationStatus: "official_record",
       progressPercent: 100,
+      coverUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/b/b5/Marina_road_leading_to_uba_house%2C_lagos%2C_Nigeria.jpg",
+      coverCredit: "Wikimedia Commons — Marina road, Lagos",
     },
     {
       id: "proj-rivers-waste",
@@ -966,6 +982,8 @@ export const handcrafted: SeedDatabase = {
       ],
       verificationStatus: "reported",
       progressPercent: 22,
+      coverUrl: "https://upload.wikimedia.org/wikipedia/commons/7/77/Third_Mainland_Bridge.jpg",
+      coverCredit: "Wikimedia Commons — Third Mainland Bridge",
     },
   ],
 

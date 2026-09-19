@@ -12,6 +12,8 @@ export type {
   ProjectFundingLedger,
   OrgProjectLink,
   OrgProjectRole,
+  ProjectRecordEvent,
+  ProjectRecordEventKind,
 } from "./store";
 export { KANBAN_STATUSES, FUNDING_STATUS_LABEL } from "./store";
 

@@ -7,6 +7,7 @@ export { FlowStrip } from "./FlowStrip";
 export type { FlowStripItem } from "./FlowStrip";
 export { EvidenceMediaGallery } from "./EvidenceMediaGallery";
 export { FundingRequest } from "./FundingRequest";
+export { ProjectCover } from "./ProjectCover";
 export { VizFrame } from "./VizFrame";
 export { NIGERIA_STATES } from "./nigeria-states-meta";
 export { NIGERIA_STATE_PATHS } from "./nigeria-state-paths";
