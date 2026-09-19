@@ -78,95 +78,101 @@ export function SiteHeader() {
   return (
     <header
       ref={headerRef}
-      className="relative sticky top-0 z-40 border-b border-paper-border bg-paper/92 backdrop-blur-md"
+      className="relative sticky top-0 z-50 border-b border-paper-border bg-paper backdrop-blur-md"
       onMouseLeave={scheduleClose}
     >
-      <div className="site-container">
-        <div className="flex items-center justify-between gap-4 py-3.5">
-          <Link href="/" className="group no-underline" onClick={closeNow}>
-            <span className="block font-display text-xl tracking-tight text-ink transition group-hover:text-civic-green sm:text-2xl">
-              NigeriaForNigerians
-            </span>
-            <span className="mt-0.5 block text-[11px] uppercase tracking-[0.18em] text-ink-faint">
-              Public record
-            </span>
-          </Link>
-          <div className="hidden items-center gap-5 md:flex">
-            <Link href="/search" className="text-sm text-ink-muted no-underline hover:text-ink">
-              Search
+      <div className="relative z-50 bg-paper">
+        <div className="site-container">
+          <div className="flex items-center justify-between gap-4 py-3.5">
+            <Link href="/" className="group no-underline" onClick={closeNow}>
+              <span className="block font-display text-xl tracking-tight text-ink transition group-hover:text-civic-green sm:text-2xl">
+                NigeriaForNigerians
+              </span>
+              <span className="mt-0.5 block text-[11px] uppercase tracking-[0.18em] text-ink-faint">
+                Public record
+              </span>
             </Link>
-            <Link href="/ask" className="text-sm text-ink-muted no-underline hover:text-ink">
-              Ask
-            </Link>
-            <Link href="/about" className="text-sm text-ink-muted no-underline hover:text-ink">
-              About
-            </Link>
-            <Link
-              href="/signin"
-              className="border border-civic-green/25 bg-civic-greenSoft/50 px-3 py-1.5 text-sm text-civic-green no-underline transition hover:border-civic-green/50 hover:bg-civic-greenSoft"
+            <div className="hidden items-center gap-5 md:flex">
+              <Link href="/search" className="text-sm text-ink-muted no-underline hover:text-ink">
+                Search
+              </Link>
+              <Link href="/ask" className="text-sm text-ink-muted no-underline hover:text-ink">
+                Ask
+              </Link>
+              <Link href="/about" className="text-sm text-ink-muted no-underline hover:text-ink">
+                About
+              </Link>
+              <Link
+                href="/signin"
+                className="border border-civic-green/25 bg-civic-greenSoft/50 px-3 py-1.5 text-sm text-civic-green no-underline transition hover:border-civic-green/50 hover:bg-civic-greenSoft"
+              >
+                Sign in
+              </Link>
+            </div>
+            <button
+              type="button"
+              className="border border-paper-border px-3 py-1.5 text-sm md:hidden"
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav"
             >
-              Sign in
-            </Link>
+              Menu
+            </button>
           </div>
-          <button
-            type="button"
-            className="border border-paper-border px-3 py-1.5 text-sm md:hidden"
-            onClick={() => setMobileOpen((v) => !v)}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-nav"
-          >
-            Menu
-          </button>
-        </div>
 
-        {/* Desktop primary nav */}
-        <nav className="hidden border-t border-paper-border py-2.5 md:block" aria-label="Primary">
-          <ul className="flex flex-row flex-wrap gap-x-1 gap-y-1">
-            {NAV_MEGA.map((item) => {
-              const active =
-                pathname === item.href || pathname.startsWith(item.href + "/");
-              const isOpen = megaId === item.id;
-              return (
-                <li
-                  key={item.id}
-                  onMouseEnter={() => scheduleOpen(item.id)}
-                  onFocusCapture={() => openNow(item.id)}
-                >
-                  <Link
-                    href={item.href}
-                    aria-expanded={isOpen}
-                    aria-haspopup="true"
-                    className={clsx(
-                      "block border-b-2 px-2.5 py-1.5 text-sm no-underline transition",
-                      active || isOpen
-                        ? "border-civic-green font-medium text-civic-green"
-                        : "border-transparent text-ink-muted hover:text-ink",
-                    )}
+          {/* Desktop primary nav */}
+          <nav className="hidden border-t border-paper-border py-2.5 md:block" aria-label="Primary">
+            <ul className="flex flex-row flex-wrap gap-x-1 gap-y-1">
+              {NAV_MEGA.map((item) => {
+                const active =
+                  pathname === item.href || pathname.startsWith(item.href + "/");
+                const isOpen = megaId === item.id;
+                return (
+                  <li
+                    key={item.id}
+                    onMouseEnter={() => scheduleOpen(item.id)}
+                    onFocusCapture={() => openNow(item.id)}
                   >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+                    <Link
+                      href={item.href}
+                      aria-expanded={isOpen}
+                      aria-haspopup="true"
+                      className={clsx(
+                        "block border-b-2 px-2.5 py-1.5 text-sm no-underline transition",
+                        active || isOpen
+                          ? "border-civic-green font-medium text-civic-green"
+                          : "border-transparent text-ink-muted hover:text-ink",
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </div>
       </div>
 
-      {/* Desktop mega panel — full viewport width */}
+      {/* Desktop mega panel — opaque surface + dimmed page behind */}
       {activeMega ? (
-        <div
-          className="absolute left-0 right-0 top-full z-50 hidden border-b border-paper-border bg-paper/98 shadow-[0_24px_48px_rgba(0,0,0,0.08)] backdrop-blur-md md:block"
-          onMouseEnter={clearTimers}
-          onMouseLeave={scheduleClose}
-          role="region"
-          aria-label={`${activeMega.label} menu`}
-        >
+        <>
           <div
-            className="pointer-events-none absolute inset-x-0 top-full h-[40vh] bg-gradient-to-b from-ink/10 to-transparent"
+            className="fixed inset-0 z-40 hidden bg-ink/50 md:block"
             aria-hidden
+            onClick={closeNow}
+            onMouseEnter={scheduleClose}
           />
-          <MegaMenuPanel menu={activeMega} onNavigate={closeNow} />
-        </div>
+          <div
+            className="absolute left-0 right-0 top-full z-50 hidden border-b border-paper-border bg-paper shadow-[0_24px_48px_rgba(0,0,0,0.14)] md:block"
+            onMouseEnter={clearTimers}
+            onMouseLeave={scheduleClose}
+            role="region"
+            aria-label={`${activeMega.label} menu`}
+          >
+            <MegaMenuPanel menu={activeMega} onNavigate={closeNow} />
+          </div>
+        </>
       ) : null}
 
       {/* Mobile drawer with accordion mega content */}
