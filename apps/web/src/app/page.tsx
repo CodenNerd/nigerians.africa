@@ -84,15 +84,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
+      <div className="py-14 lg:py-16">
         {/*
-          Three-column shell: equal side rails + a comfortable center measure.
-          The live stream sits in the right rail (after the center), not inside it.
+          Center column matches site-container (max-w-site + same gutters) so it
+          lines up with the header/hero. Live stream sits in the right rail after it.
         */}
-        <div className="mx-auto grid max-w-[100rem] grid-cols-1 gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(0,42rem)_minmax(0,1fr)] xl:gap-0">
+        <div className="mx-auto grid max-w-[100rem] grid-cols-1 gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(0,72rem)_minmax(0,1fr)] xl:gap-0">
           <div className="hidden xl:block" aria-hidden />
 
-          <div className="min-w-0 space-y-14 lg:space-y-16">
+          <div className="min-w-0 space-y-14 px-4 sm:px-6 lg:space-y-16 lg:px-8">
             <section>
               <ProjectFeatureTiles />
             </section>
@@ -215,7 +215,7 @@ export default function HomePage() {
             </section>
           </div>
 
-          <aside className="min-w-0 xl:justify-self-start xl:pl-10 xl:pr-2">
+          <aside className="min-w-0 px-4 sm:px-6 xl:justify-self-start xl:px-0 xl:pl-8 xl:pr-4">
             <div className="border border-paper-border bg-paper-card/80 p-4 sm:p-5 xl:sticky xl:top-28 xl:w-[20rem] xl:max-h-[calc(100vh-8rem)] xl:overflow-y-auto 2xl:w-[22rem]">
               <RecordStream
                 items={stream}
