@@ -83,7 +83,9 @@ export type EntityType =
   | "response"
   | "event"
   | "claim"
-  | "source";
+  | "source"
+  | "scheme"
+  | "matter";
 
 export interface Source {
   id: string;
@@ -429,6 +431,62 @@ export interface CitizenReport {
   privacyLevel: "exact" | "community" | "lga" | "state" | "hidden";
 }
 
+/** Named civic programme (e.g. Make Nigeria Better). */
+export type CivicSchemeStatus = "active" | "pilot" | "archived";
+
+export interface CivicScheme {
+  id: string;
+  slug: string;
+  name: string;
+  tagline: string;
+  summary: string;
+  howItWorks: string[];
+  status: CivicSchemeStatus;
+}
+
+export type MatterStatus =
+  | "published"
+  | "under_review"
+  | "accepted"
+  | "filed"
+  | "in_hearing"
+  | "closed_won"
+  | "closed_lost"
+  | "closed_withdrawn"
+  | "archived";
+
+export type MatterCategory =
+  | "police_extortion"
+  | "public_violence"
+  | "electoral_intimidation"
+  | "official_misconduct"
+  | "traffic_shakedown"
+  | "other_lawlessness";
+
+/**
+ * A prosecution / accountability matter under a CivicScheme.
+ * Linked to citizen video evidence; optional prosecuting legal NGO.
+ */
+export interface ProsecutionMatter {
+  id: string;
+  slug: string;
+  schemeId: string;
+  title: string;
+  summary: string;
+  category: MatterCategory;
+  locationId: string;
+  occurredAt: string;
+  publishedAt: string;
+  status: MatterStatus;
+  verificationStatus: VerificationStatus;
+  evidenceIds: string[];
+  reportId?: string;
+  prosecutingOrgId?: string;
+  acceptedAt?: string;
+  outcomeSummary?: string;
+  privacyLevel: CitizenReport["privacyLevel"];
+}
+
 export interface OfficialResponse {
   id: string;
   slug: string;
@@ -568,6 +626,8 @@ export interface SeedDatabase {
   politicalCandidates: PoliticalCandidate[];
   electionResults: ElectionResult[];
   discrepancies: ResultDiscrepancy[];
+  civicSchemes: CivicScheme[];
+  prosecutionMatters: ProsecutionMatter[];
   guidance: GuidanceTopic[];
   actions: CivicActionRecord[];
   publicRecord: PublicRecordItem[];

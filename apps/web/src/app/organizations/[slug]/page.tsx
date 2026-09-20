@@ -39,6 +39,8 @@ export default async function OrganizationPage({
   const location = store.locations().find((l) => l.id === org.locationId);
   const vetted = org.vettingStatus === "platform_vetted";
   const spendLines = org.spendLineItems ?? [];
+  const prosecutingMatters = store.mattersForOrganization(org.id);
+  const mnbScheme = store.schemeBySlug("make-nigeria-better");
 
   return (
     <RecordPage
@@ -121,6 +123,28 @@ export default async function OrganizationPage({
           </ul>
         )}
       </RecordSection>
+
+      {prosecutingMatters.length > 0 && mnbScheme ? (
+        <RecordSection title="Prosecuting under Make Nigeria Better">
+          <p className="mb-4 text-sm text-ink-muted">
+            Matters this organization holds under{" "}
+            <Link
+              href={`/schemes/${mnbScheme.slug}`}
+              className="text-civic-green hover:underline"
+            >
+              {mnbScheme.name}
+            </Link>
+            . Status describes process — not a guilt verdict.
+          </p>
+          <RelatedLinks
+            items={prosecutingMatters.map((m) => ({
+              href: `/schemes/${mnbScheme.slug}/${m.slug}`,
+              label: m.title,
+              hint: m.status.replace(/_/g, " "),
+            }))}
+          />
+        </RecordSection>
+      ) : null}
 
       {problems.length > 0 ? (
         <RecordSection title="Problems">

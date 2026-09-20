@@ -207,6 +207,18 @@ function hrefFor(type: EntityType, id: string, db: SeedDatabase): string {
       return `/people/tunde-adebayo#claims`;
     case "source":
       return `/evidence`;
+    case "scheme": {
+      const s = db.civicSchemes.find((x) => x.id === id);
+      return s ? `/schemes/${s.slug}` : "/schemes/make-nigeria-better";
+    }
+    case "matter": {
+      const m = db.prosecutionMatters.find((x) => x.id === id);
+      if (!m) return "/schemes/make-nigeria-better";
+      const scheme = db.civicSchemes.find((x) => x.id === m.schemeId);
+      return scheme
+        ? `/schemes/${scheme.slug}/${m.slug}`
+        : `/schemes/make-nigeria-better/${m.slug}`;
+    }
     default:
       return "/";
   }
@@ -240,6 +252,10 @@ function labelFor(type: EntityType, id: string, db: SeedDatabase): string {
       return db.events.find((x) => x.id === id)?.title ?? id;
     case "claim":
       return db.claims.find((x) => x.id === id)?.statement.slice(0, 80) ?? id;
+    case "scheme":
+      return db.civicSchemes.find((x) => x.id === id)?.name ?? id;
+    case "matter":
+      return db.prosecutionMatters.find((x) => x.id === id)?.title ?? id;
     default:
       return id;
   }
@@ -834,6 +850,32 @@ export class PublicRecordStore {
 
   isPoliticalCandidate(personId: string): boolean {
     return this.candidaciesForPerson(personId).length > 0;
+  }
+
+  allCivicSchemes() {
+    return this.db.civicSchemes;
+  }
+
+  schemeBySlug(slug: string) {
+    return this.db.civicSchemes.find((s) => s.slug === slug);
+  }
+
+  allProsecutionMatters() {
+    return [...this.db.prosecutionMatters].sort((a, b) =>
+      b.publishedAt.localeCompare(a.publishedAt),
+    );
+  }
+
+  matterBySlug(slug: string) {
+    return this.db.prosecutionMatters.find((m) => m.slug === slug);
+  }
+
+  mattersForScheme(schemeId: string) {
+    return this.allProsecutionMatters().filter((m) => m.schemeId === schemeId);
+  }
+
+  mattersForOrganization(orgId: string) {
+    return this.allProsecutionMatters().filter((m) => m.prosecutingOrgId === orgId);
   }
 
   electionResults(electionId: string) {

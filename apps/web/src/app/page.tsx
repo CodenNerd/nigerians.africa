@@ -93,6 +93,29 @@ export default function HomePage() {
           <div className="hidden xl:block" aria-hidden />
 
           <div className="min-w-0 space-y-14 px-4 sm:px-6 lg:space-y-16 lg:px-8">
+            <section className="scroll-mt-28">
+              <Link
+                href="/schemes/make-nigeria-better"
+                className="plane-link group grid gap-px bg-paper-border no-underline sm:grid-cols-[minmax(0,1fr)_auto]"
+              >
+                <div className="bg-civic-greenSoft p-6 sm:p-8">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-civic-green">
+                    Civic scheme · Pilot
+                  </p>
+                  <h2 className="mt-3 font-display text-3xl tracking-tight text-ink sm:text-4xl">
+                    The Make Nigeria Better Project
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-muted sm:text-base">
+                    Film lawlessness. Publish it. Legal NGOs pick up the case — on the public
+                    record, without a guilt verdict from this platform.
+                  </p>
+                </div>
+                <div className="flex items-center justify-center bg-civic-green px-6 py-5 font-mono text-[11px] uppercase tracking-wider text-white transition group-hover:brightness-110 sm:px-8">
+                  See the scheme →
+                </div>
+              </Link>
+            </section>
+
             <section>
               <ProjectFeatureTiles />
             </section>
