@@ -84,9 +84,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="site-container py-14 lg:py-16">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_24rem]">
-          <div className="order-2 min-w-0 space-y-14 lg:order-1 lg:space-y-16">
+      <div className="px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
+        {/*
+          Three-column shell: equal side rails + a comfortable center measure.
+          The live stream sits in the right rail (after the center), not inside it.
+        */}
+        <div className="mx-auto grid max-w-[100rem] grid-cols-1 gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(0,42rem)_minmax(0,1fr)] xl:gap-0">
+          <div className="hidden xl:block" aria-hidden />
+
+          <div className="min-w-0 space-y-14 lg:space-y-16">
             <section>
               <ProjectFeatureTiles />
             </section>
@@ -94,7 +100,7 @@ export default function HomePage() {
             <section>
               <SectionHead
                 title="What people are facing"
-                subtitle="A short cut into problems — the side stream carries fuller chronology."
+                subtitle="A short cut into problems — the right-hand stream carries fuller chronology."
                 meta="Latest"
               />
               <EntityList
@@ -209,8 +215,8 @@ export default function HomePage() {
             </section>
           </div>
 
-          <aside className="order-1 min-w-0 lg:sticky lg:top-28 lg:order-2 lg:self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
-            <div className="border border-paper-border bg-paper-card/80 p-4 sm:p-5">
+          <aside className="min-w-0 xl:justify-self-start xl:pl-10 xl:pr-2">
+            <div className="border border-paper-border bg-paper-card/80 p-4 sm:p-5 xl:sticky xl:top-28 xl:w-[20rem] xl:max-h-[calc(100vh-8rem)] xl:overflow-y-auto 2xl:w-[22rem]">
               <RecordStream
                 items={stream}
                 compact
