@@ -59,11 +59,11 @@ export default async function SchemePage({
       ]}
     >
       <div className="space-y-14 lg:space-y-16">
+        <MatterReel items={reelItems} />
+
         <SchemeGlance glance={glance} />
 
         <SchemeLoop glance={glance} schemeSlug={scheme.slug} />
-
-        <MatterReel items={reelItems} />
 
         <section>
           <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-ink-faint">
