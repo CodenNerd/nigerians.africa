@@ -14,6 +14,7 @@ export type {
   OrgProjectRole,
   ProjectRecordEvent,
   ProjectRecordEventKind,
+  SchemeGlance,
 } from "./store";
-export { KANBAN_STATUSES, FUNDING_STATUS_LABEL } from "./store";
+export { KANBAN_STATUSES, FUNDING_STATUS_LABEL, matterProgressIndex, MATTER_PROGRESS_STEPS } from "./store";
 

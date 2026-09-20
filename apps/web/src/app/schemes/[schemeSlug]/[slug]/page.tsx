@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { store } from "@nigeria-for-nigerians/domain";
 import { RecordPage, RecordSection, RelatedLinks } from "@/components/RecordPage";
 import { StatusLabel } from "@/components/StatusLabel";
+import { EvidenceMediaGallery } from "@/components/viz";
 
 export function generateStaticParams() {
   return store.allProsecutionMatters().flatMap((m) => {
@@ -59,11 +60,6 @@ export default async function MatterPage({
           },
         ]
       : []),
-    {
-      href: `/report?scheme=${scheme.slug}`,
-      label: "Publish related evidence",
-      hint: "Report form",
-    },
   ];
 
   return (
@@ -79,6 +75,13 @@ export default async function MatterPage({
           : [{ label: "Publish a report", href: `/report?scheme=${scheme.slug}` }]),
       ]}
     >
+      <RecordSection title="Evidence">
+        <EvidenceMediaGallery
+          items={evidence}
+          emptyHint="No photos or videos linked to this matter yet."
+        />
+      </RecordSection>
+
       <RecordSection title="Status">
         <div className="flex flex-wrap items-center gap-2">
           <StatusLabel status={matter.verificationStatus} />
@@ -112,42 +115,13 @@ export default async function MatterPage({
             {org.mission}
           </p>
         ) : (
-          <p className="text-ink-muted">
-            Awaiting a legal NGO. Partner organizations browse published matters on the scheme
-            page.
-          </p>
+          <p className="text-ink-muted">Awaiting a legal NGO.</p>
         )}
       </RecordSection>
 
-      <RecordSection title="Evidence">
-        {evidence.length === 0 ? (
-          <p className="text-ink-muted">No evidence packages linked yet.</p>
-        ) : (
-          <ul className="grid gap-px bg-paper-border">
-            {evidence.map((e) => (
-              <li key={e.id}>
-                <Link
-                  href={`/evidence/${e.id}`}
-                  className="plane-link block bg-civic-blueSoft px-5 py-4 no-underline"
-                >
-                  <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-civic-blue">
-                    {e.mediaKind ?? e.type}
-                  </span>
-                  <span className="mt-1 block font-display text-lg text-ink">{e.title}</span>
-                  <span className="mt-1 block text-sm text-ink-muted">{e.description}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </RecordSection>
-
-      <RecordSection title="Principle">
-        <p className="prose-record">
-          This is a reported incident on the public record. Status labels describe process, not a
-          court verdict.
-        </p>
-      </RecordSection>
+      <p className="text-sm text-ink-faint">
+        Reported incident on the public record — status describes process, not a court verdict.
+      </p>
 
       <RecordSection title="Related">
         <RelatedLinks items={related} />

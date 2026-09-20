@@ -13,6 +13,8 @@ import type {
   GuidanceTopic,
   Institution,
   Location,
+  MatterCategory,
+  MatterStatus,
   Office,
   Organization,
   Person,
@@ -122,6 +124,54 @@ export type OrgProjectLink = {
   fundingStatus: FundingStatus;
   fundingPercent: number;
 };
+
+export type SchemeGlance = {
+  totalMatters: number;
+  awaitingNgo: number;
+  inProgress: number;
+  closed: number;
+  byStatus: Record<MatterStatus, number>;
+  byCategory: { category: MatterCategory; count: number }[];
+  partnerCount: number;
+  evidenceCount: number;
+};
+
+const MATTER_STATUSES: MatterStatus[] = [
+  "published",
+  "under_review",
+  "accepted",
+  "filed",
+  "in_hearing",
+  "closed_won",
+  "closed_lost",
+  "closed_withdrawn",
+  "archived",
+];
+
+/** Pipeline step 0..5 for progress meters on matter tiles. */
+export function matterProgressIndex(status: MatterStatus): number {
+  switch (status) {
+    case "published":
+      return 0;
+    case "under_review":
+      return 1;
+    case "accepted":
+      return 2;
+    case "filed":
+      return 3;
+    case "in_hearing":
+      return 4;
+    case "closed_won":
+    case "closed_lost":
+    case "closed_withdrawn":
+    case "archived":
+      return 5;
+    default:
+      return 0;
+  }
+}
+
+export const MATTER_PROGRESS_STEPS = 6;
 
 const PROGRESS_BY_STATUS: Record<Project["status"], number> = {
   planned: 5,
@@ -876,6 +926,71 @@ export class PublicRecordStore {
 
   mattersForOrganization(orgId: string) {
     return this.allProsecutionMatters().filter((m) => m.prosecutingOrgId === orgId);
+  }
+
+  schemeGlance(schemeId: string): SchemeGlance {
+    const matters = this.mattersForScheme(schemeId);
+    const byStatus = Object.fromEntries(MATTER_STATUSES.map((s) => [s, 0])) as Record<
+      MatterStatus,
+      number
+    >;
+    const categoryCounts = new Map<MatterCategory, number>();
+    const partnerIds = new Set<string>();
+    const evidenceIds = new Set<string>();
+
+    let awaitingNgo = 0;
+    let inProgress = 0;
+    let closed = 0;
+
+    for (const m of matters) {
+      byStatus[m.status] = (byStatus[m.status] ?? 0) + 1;
+      categoryCounts.set(m.category, (categoryCounts.get(m.category) ?? 0) + 1);
+      for (const eid of m.evidenceIds) evidenceIds.add(eid);
+      if (m.prosecutingOrgId) partnerIds.add(m.prosecutingOrgId);
+
+      const closedStatuses: MatterStatus[] = [
+        "closed_won",
+        "closed_lost",
+        "closed_withdrawn",
+        "archived",
+      ];
+      if (closedStatuses.includes(m.status)) {
+        closed += 1;
+      } else if (
+        m.status === "accepted" ||
+        m.status === "filed" ||
+        m.status === "in_hearing"
+      ) {
+        inProgress += 1;
+      } else if (
+        (m.status === "published" || m.status === "under_review") &&
+        !m.prosecutingOrgId
+      ) {
+        awaitingNgo += 1;
+      } else if (!m.prosecutingOrgId) {
+        awaitingNgo += 1;
+      }
+    }
+
+    // Also count legal_ngo partners registered for the programme even if unassigned
+    for (const o of this.db.organizations) {
+      if (o.type === "legal_ngo") partnerIds.add(o.id);
+    }
+
+    const byCategory = [...categoryCounts.entries()]
+      .map(([category, count]) => ({ category, count }))
+      .sort((a, b) => b.count - a.count || a.category.localeCompare(b.category));
+
+    return {
+      totalMatters: matters.length,
+      awaitingNgo,
+      inProgress,
+      closed,
+      byStatus,
+      byCategory,
+      partnerCount: partnerIds.size,
+      evidenceCount: evidenceIds.size,
+    };
   }
 
   electionResults(electionId: string) {

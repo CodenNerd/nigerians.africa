@@ -1936,6 +1936,8 @@ export const handcrafted: SeedDatabase = {
       fileLabel: "checkpoint-ikeja.mp4",
       mediaKind: "video",
       mediaUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+      posterUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/8/8a/Bad_road_in_lagos_Nigeria_2020_07_02.jpg",
     },
     {
       id: "ev-mnb-market",
@@ -1953,6 +1955,8 @@ export const handcrafted: SeedDatabase = {
       fileLabel: "market-assault.mp4",
       mediaKind: "video",
       mediaUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+      posterUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/e/ea/Lagos_Nigeria.jpg",
     },
     {
       id: "ev-mnb-traffic",
@@ -1969,6 +1973,8 @@ export const handcrafted: SeedDatabase = {
       fileLabel: "traffic-kano.mp4",
       mediaKind: "video",
       mediaUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+      posterUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/b/b5/Marina_road_leading_to_uba_house%2C_lagos%2C_Nigeria.jpg",
     },
     {
       id: "ev-mnb-poll",
@@ -1985,6 +1991,8 @@ export const handcrafted: SeedDatabase = {
       fileLabel: "poll-intimidation.mp4",
       mediaKind: "video",
       mediaUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+      posterUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/7/77/Third_Mainland_Bridge.jpg",
     },
     {
       id: "ev-mnb-office",
@@ -2001,6 +2009,8 @@ export const handcrafted: SeedDatabase = {
       fileLabel: "counter-gatekeeping.mp4",
       mediaKind: "video",
       mediaUrl: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+      posterUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/a/a7/Nigerian_Presidential_Complex.jpg",
     },
   ],
 
