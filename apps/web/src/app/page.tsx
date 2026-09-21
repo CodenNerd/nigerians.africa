@@ -104,26 +104,27 @@ export default function HomePage() {
           <div className="max-w-xl lg:max-w-lg">
             <HotMatterTickets items={tickets} />
 
-            <form action="/search" className="anim-fade mt-8 max-w-lg" style={{ animationDelay: "0.12s" }}>
-              <label htmlFor="home-search" className="sr-only">
-                Search anything about Nigeria
-              </label>
-              <div className="flex overflow-hidden border border-paper-border bg-paper-card/90 shadow-[0_8px_40px_rgba(0,0,0,0.04)]">
-                <input
-                  id="home-search"
-                  name="q"
-                  placeholder="Search the public record…"
-                  className="flex-1 bg-transparent px-4 py-3.5 text-ink outline-none"
-                  defaultValue="abandoned road Ikeja"
-                />
-                <button
-                  type="submit"
-                  className="bg-civic-green px-6 text-sm font-medium text-white transition hover:brightness-110"
-                >
-                  Search
-                </button>
-              </div>
-            </form>
+            <div className="anim-fade mt-8 max-w-lg" style={{ animationDelay: "0.12s" }}>
+              <Link
+                href="/report?scheme=make-nigeria-better"
+                className="plane-link group flex overflow-hidden border border-civic-green/30 bg-paper-card/90 no-underline shadow-[0_8px_40px_rgba(0,0,0,0.04)] transition hover:border-civic-green/55"
+              >
+                <div className="min-w-0 flex-1 px-4 py-3.5">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-civic-green">
+                    Your turn
+                  </p>
+                  <p className="mt-1 font-display text-xl leading-snug text-ink sm:text-2xl">
+                    Raise your own case
+                  </p>
+                  <p className="mt-1 text-sm text-ink-muted">
+                    Film it. Publish it. Legal NGOs can pick it up on the public record.
+                  </p>
+                </div>
+                <span className="flex shrink-0 items-center bg-civic-green px-5 text-sm font-medium text-white transition group-hover:brightness-110 sm:px-6">
+                  Raise a case
+                </span>
+              </Link>
+            </div>
           </div>
 
           {/* Mobile / tablet: full-width map under tickets */}

@@ -95,9 +95,23 @@ export function SiteHeader() {
             </Link>
             <div className="hidden items-center gap-5 md:flex">
               <ViewToggle />
-              <Link href="/search" className="text-sm text-ink-muted no-underline hover:text-ink">
-                Search
-              </Link>
+              <form action="/search" className="flex items-center border border-paper-border bg-paper-card">
+                <label htmlFor="header-search" className="sr-only">
+                  Search the public record
+                </label>
+                <input
+                  id="header-search"
+                  name="q"
+                  placeholder="Search record…"
+                  className="w-36 bg-transparent px-2.5 py-1.5 text-sm text-ink outline-none placeholder:text-ink-faint lg:w-44"
+                />
+                <button
+                  type="submit"
+                  className="border-l border-paper-border px-2.5 py-1.5 text-sm text-ink-muted transition hover:text-civic-green"
+                >
+                  Search
+                </button>
+              </form>
               <Link href="/ask" className="text-sm text-ink-muted no-underline hover:text-ink">
                 Ask
               </Link>
