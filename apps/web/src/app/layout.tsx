@@ -3,6 +3,8 @@ import { Libre_Baskerville, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ViewModeProvider } from "@/components/view/ViewModeProvider";
+import { VIEW_MODE_BOOTSTRAP_SCRIPT } from "@/lib/view-mode";
 
 const display = Libre_Baskerville({
   subsets: ["latin"],
@@ -27,19 +29,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" data-view="record" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: VIEW_MODE_BOOTSTRAP_SCRIPT }} />
+      </head>
       <body className={`${display.variable} ${sans.variable} font-sans min-h-screen flex flex-col`}>
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-paper focus:px-3 focus:py-2"
-        >
-          Skip to content
-        </a>
-        <SiteHeader />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
+        <ViewModeProvider>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-paper focus:px-3 focus:py-2"
+          >
+            Skip to content
+          </a>
+          <SiteHeader />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+        </ViewModeProvider>
       </body>
     </html>
   );
