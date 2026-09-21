@@ -11,12 +11,14 @@ import {
 export type { HotMatterTicket };
 
 const VISIBLE_DEPTH = 4;
-const FLIP_MS = 650;
-const HOLD_MS = 4200;
+const PEEK = 20;
+const SHIFT = 6;
+const FLIP_MS = 750;
+const HOLD_MS = 4500;
 
 /**
- * Stacked Jira-style matter tickets with an auto flip through the deck.
- * The exiting card animates in its own layer so stack transforms never fight the flip.
+ * Stacked Jira-style matter tickets.
+ * Front card flips away on the Y axis; the deck underneath is always visible.
  */
 export function HotMatterTickets({
   items,
@@ -27,34 +29,35 @@ export function HotMatterTickets({
 }) {
   const count = items.length;
   const [front, setFront] = useState(0);
-  const [exiting, setExiting] = useState<HotMatterTicket | null>(null);
+  const [leaving, setLeaving] = useState<HotMatterTicket | null>(null);
   const [paused, setPaused] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
-  const flipTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const holdTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const busy = useRef(false);
+  const holdRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const flipRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const locked = useRef(false);
 
-  const clearTimers = useCallback(() => {
-    if (flipTimer.current) clearTimeout(flipTimer.current);
-    if (holdTimer.current) clearTimeout(holdTimer.current);
-    flipTimer.current = null;
-    holdTimer.current = null;
+  const clearHold = useCallback(() => {
+    if (holdRef.current) clearTimeout(holdRef.current);
+    holdRef.current = null;
   }, []);
 
   const advance = useCallback(() => {
-    if (count < 2 || busy.current) return;
-    busy.current = true;
-    const leaving = items[front]!;
+    if (count < 2 || locked.current) return;
+
     if (reduceMotion) {
       setFront((i) => (i + 1) % count);
-      busy.current = false;
       return;
     }
-    setExiting(leaving);
+
+    locked.current = true;
+    const outgoing = items[front]!;
+    setLeaving(outgoing);
     setFront((i) => (i + 1) % count);
-    flipTimer.current = setTimeout(() => {
-      setExiting(null);
-      busy.current = false;
+
+    flipRef.current = setTimeout(() => {
+      setLeaving(null);
+      locked.current = false;
+      flipRef.current = null;
     }, FLIP_MS);
   }, [count, front, items, reduceMotion]);
 
@@ -67,24 +70,34 @@ export function HotMatterTickets({
   }, []);
 
   useEffect(() => {
-    clearTimers();
-    if (count < 2 || paused || reduceMotion || exiting) return;
-    holdTimer.current = setTimeout(advance, HOLD_MS);
-    return clearTimers;
-  }, [front, paused, reduceMotion, exiting, count, advance, clearTimers]);
+    clearHold();
+    if (count < 2 || paused || reduceMotion || leaving) return;
+    holdRef.current = setTimeout(advance, HOLD_MS);
+    return clearHold;
+  }, [front, paused, reduceMotion, leaving, count, advance, clearHold]);
+
+  useEffect(
+    () => () => {
+      clearHold();
+      if (flipRef.current) clearTimeout(flipRef.current);
+    },
+    [clearHold],
+  );
 
   if (!count) return null;
 
-  const stackH = 12.25 + (VISIBLE_DEPTH - 1) * 0.95;
-
-  const layers = Array.from({ length: Math.min(VISIBLE_DEPTH, count) }, (_, depth) => {
-    const index = (front + depth) % count;
-    return { ticket: items[index]!, depth };
-  });
+  const current = items[front]!;
+  const stack = Array.from(
+    { length: Math.min(VISIBLE_DEPTH, count) },
+    (_, depth) => ({
+      ticket: items[(front + depth) % count]!,
+      depth,
+    }),
+  );
 
   return (
     <div
-      className={clsx("anim-rise", className)}
+      className={clsx(className)}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -105,9 +118,9 @@ export function HotMatterTickets({
           <button
             type="button"
             className="font-mono text-[10px] uppercase tracking-wider text-ink-faint transition hover:text-civic-green disabled:opacity-40"
-            disabled={Boolean(exiting)}
+            disabled={Boolean(leaving)}
             onClick={() => {
-              clearTimers();
+              clearHold();
               advance();
             }}
             aria-label="Flip to next case"
@@ -123,51 +136,51 @@ export function HotMatterTickets({
         </div>
       </div>
 
-      <div className="[perspective:1400px]">
-        <ul
-          className="relative"
-          style={{ height: `${stackH}rem` }}
-          aria-label="Hottest cases being followed by legal NGOs"
-          aria-live="polite"
-        >
-          {[...layers].reverse().map(({ ticket, depth }) => {
-            const tone = MATTER_STATUS_TONE[ticket.status];
-            const isFront = depth === 0;
-            const offsetY = depth * 0.9;
-            const offsetX = depth * 0.28;
-            const scale = 1 - depth * 0.022;
+      <div
+        className="relative"
+        style={{ paddingBottom: (VISIBLE_DEPTH - 1) * PEEK }}
+      >
+        <div className="relative">
+          {/* Natural-height sizer so peeks aren't clipped by a short absolute box */}
+          <div className="invisible" aria-hidden>
+            <TicketCard ticket={current} tone={MATTER_STATUS_TONE[current.status]} isFront />
+          </div>
 
-            return (
-              <li
+          <div className="absolute inset-0 [perspective:1800px]">
+            {[...stack].reverse().map(({ ticket, depth }) => (
+              <div
                 key={ticket.key}
-                className="absolute left-0 right-0 top-0 origin-top transition-[transform,opacity,filter] duration-500 ease-out"
+                className="absolute inset-x-0 top-0 transition-[transform,opacity] duration-500 ease-out"
                 style={{
                   zIndex: VISIBLE_DEPTH - depth,
-                  transform: `translate(${offsetX}rem, ${offsetY}rem) scale(${scale})`,
-                  opacity: 1 - depth * 0.06,
-                  filter: depth > 0 ? `brightness(${1 - depth * 0.03})` : undefined,
+                  transform: `translate(${depth * SHIFT}px, ${depth * PEEK}px) scale(${1 - depth * 0.025})`,
+                  opacity: 1 - depth * 0.05,
                 }}
+                aria-hidden={depth > 0}
               >
-                <TicketCard ticket={ticket} tone={tone} isFront={isFront && !exiting} />
-              </li>
-            );
-          })}
+                <TicketCard
+                  ticket={ticket}
+                  tone={MATTER_STATUS_TONE[ticket.status]}
+                  isFront={depth === 0 && !leaving}
+                />
+              </div>
+            ))}
 
-          {exiting ? (
-            <li
-              key={`exit-${exiting.key}`}
-              className="ticket-flip-out pointer-events-none absolute left-0 right-0 top-0 origin-top"
-              style={{ zIndex: VISIBLE_DEPTH + 2 }}
-              aria-hidden
-            >
-              <TicketCard
-                ticket={exiting}
-                tone={MATTER_STATUS_TONE[exiting.status]}
-                isFront={false}
-              />
-            </li>
-          ) : null}
-        </ul>
+            {leaving ? (
+              <div
+                className="ticket-card-flip absolute inset-x-0 top-0"
+                style={{ zIndex: VISIBLE_DEPTH + 5 }}
+                aria-hidden
+              >
+                <TicketCard
+                  ticket={leaving}
+                  tone={MATTER_STATUS_TONE[leaving.status]}
+                  isFront={false}
+                />
+              </div>
+            ) : null}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -187,7 +200,7 @@ function TicketCard({
       href={ticket.href}
       tabIndex={isFront ? 0 : -1}
       aria-hidden={!isFront}
-      className="group relative block border border-paper-border bg-paper-card no-underline shadow-[0_1px_0_rgba(0,0,0,0.04)]"
+      className="group relative block border border-paper-border bg-paper-card no-underline shadow-[0_10px_28px_rgba(0,0,0,0.07)]"
     >
       <span className={clsx("absolute inset-y-0 left-0 w-[3px]", tone.bar)} aria-hidden />
 
