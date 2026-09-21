@@ -48,7 +48,7 @@ export type MegaMenuConfig = {
   browseAll: { href: string; label: string };
 };
 
-/** Curated mega-menu content for the seven primary hubs. */
+/** Curated mega-menu content for the eight primary hubs. */
 export const NAV_MEGA: MegaMenuConfig[] = [
   {
     id: "government",
@@ -347,6 +347,78 @@ export const NAV_MEGA: MegaMenuConfig[] = [
       { href: "/search?q=public+personality", label: "Public personality" },
     ],
     browseAll: { href: "/people", label: "Browse all People" },
+  },
+  {
+    id: "cases",
+    href: "/schemes/make-nigeria-better",
+    label: "Cases",
+    eyebrow: "Make Nigeria Better",
+    featured: [
+      {
+        href: "/schemes/make-nigeria-better",
+        title: "The Make Nigeria Better Project",
+        description: "Citizen video of lawlessness — legal NGOs pick up the case.",
+        kind: "Scheme",
+        tone: "green",
+        large: true,
+        initials: "MB",
+      },
+      {
+        href: "/schemes/make-nigeria-better/checkpoint-cash-demand-ikeja",
+        title: "Checkpoint cash demand — Ikeja",
+        kind: "Awaiting NGO",
+        tone: "amber",
+        initials: "CK",
+      },
+      {
+        href: "/schemes/make-nigeria-better/traffic-shakedown-kano",
+        title: "Traffic shakedown — Kano",
+        kind: "Filed",
+        tone: "red",
+        initials: "TR",
+      },
+      {
+        href: "/schemes/make-nigeria-better/market-stall-assault-lagos",
+        title: "Market stall assault — Lagos",
+        kind: "Accepted",
+        tone: "amber",
+        initials: "MK",
+      },
+    ],
+    quickLinks: [
+      { href: "/schemes/make-nigeria-better", label: "All cases", icon: "eye" },
+      {
+        href: "/report?scheme=make-nigeria-better",
+        label: "Publish evidence",
+        hint: "Video or report",
+        icon: "bolt",
+      },
+      {
+        href: "/organizations/citizens-legal-rights-initiative",
+        label: "Citizens Legal Rights",
+        hint: "Legal NGO",
+        icon: "org",
+      },
+      {
+        href: "/organizations/public-justice-network",
+        label: "Public Justice Network",
+        hint: "Legal NGO",
+        icon: "org",
+      },
+    ],
+    popular: [
+      { href: "/schemes/make-nigeria-better", label: "Make Nigeria Better" },
+      { href: "/report?scheme=make-nigeria-better", label: "Publish evidence" },
+      {
+        href: "/schemes/make-nigeria-better/checkpoint-cash-demand-ikeja",
+        label: "Checkpoint Ikeja",
+      },
+      {
+        href: "/schemes/make-nigeria-better/traffic-shakedown-kano",
+        label: "Traffic Kano",
+      },
+    ],
+    browseAll: { href: "/schemes/make-nigeria-better", label: "Browse all Cases" },
   },
   {
     id: "action",
