@@ -76,7 +76,7 @@ export function ProjectFeatureTiles({
   return (
     <div>
       <SectionHead title={title} subtitle={subtitle} meta={`${list.length} featured`} />
-      <ul className="mt-6 grid gap-px bg-paper-border sm:grid-cols-2">
+      <ul className="mt-6 grid gap-3 sm:grid-cols-2 sm:gap-4">
         {list.map((p, i) => {
           const handlers = store.projectHandlers(p.id);
           const loc = store.locations().find((l) => l.id === p.locationId);
