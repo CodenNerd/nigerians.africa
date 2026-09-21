@@ -7,7 +7,7 @@ import {
   type OrgProjectRole,
 } from "@nigeria-for-nigerians/domain";
 import { MoneyFigure, RecordPage, RecordSection, RelatedLinks } from "@/components/RecordPage";
-import { EntityList } from "@/components/ui";
+import { OrganizationPeople } from "@/components/OrganizationPeople";
 
 export function generateStaticParams() {
   return store.allOrganizations().map((o) => ({ slug: o.slug }));
@@ -88,21 +88,7 @@ export default async function OrganizationPage({
         subtitle="Staff, directors and counsel linked to this organization on the public record."
         meta={`${people.length} people`}
       >
-        <EntityList
-          empty="No people linked to this organization yet."
-          items={people.map(({ person, role }) => ({
-            href: `/people/${person.slug}`,
-            title: person.fullName,
-            description: person.bio.slice(0, 120) + (person.bio.length > 120 ? "…" : ""),
-            kind: role,
-            tone: "blue" as const,
-            meta: (
-              <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
-                {person.photoInitials}
-              </span>
-            ),
-          }))}
-        />
+        <OrganizationPeople people={people} />
       </RecordSection>
 
       <RecordSection title="Projects">
