@@ -4,6 +4,7 @@ import { Libre_Baskerville, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SiteBreadcrumbs } from "@/components/SiteBreadcrumbs";
 import { NavigationProgress } from "@/components/NavigationProgress";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { THEME_BOOTSTRAP_SCRIPT } from "@/lib/theme";
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             Skip to content
           </a>
           <SiteHeader />
+          <SiteBreadcrumbs />
           <main id="main" className="flex-1">
             {children}
           </main>
