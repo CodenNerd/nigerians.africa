@@ -6,11 +6,11 @@ import { FollowTheThread } from "@/components/FollowTheThread";
 import { RecordStream } from "@/components/RecordStream";
 import { NigeriaStateMap, ProjectFeatureTiles } from "@/components/viz";
 import { SectionHead, EntityList } from "@/components/ui";
+import { HotMatterTickets } from "@/components/HotMatterTickets";
 import {
-  HotMatterTickets,
   matterProgressLabel,
   type HotMatterTicket,
-} from "@/components/HotMatterTickets";
+} from "@/lib/hot-matter-tickets";
 
 const HOT_MATTER_ORDER = [
   "matter-office-assault",

@@ -3,70 +3,12 @@
 import Link from "next/link";
 import clsx from "clsx";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { MatterStatus } from "@nigeria-for-nigerians/domain";
+import {
+  MATTER_STATUS_TONE,
+  type HotMatterTicket,
+} from "@/lib/hot-matter-tickets";
 
-export type HotMatterTicket = {
-  key: string;
-  title: string;
-  href: string;
-  reportedBy: string;
-  followedUpBy: string;
-  progress: string;
-  status: MatterStatus;
-  location: string;
-  evidenceCount: number;
-};
-
-const STATUS_TONE: Record<
-  MatterStatus,
-  { bar: string; chip: string; label: string }
-> = {
-  published: {
-    bar: "bg-civic-amber",
-    chip: "border-civic-amber/30 bg-civic-amberSoft text-civic-amber",
-    label: "Intake",
-  },
-  under_review: {
-    bar: "bg-civic-amber",
-    chip: "border-civic-amber/30 bg-civic-amberSoft text-civic-amber",
-    label: "Screening",
-  },
-  accepted: {
-    bar: "bg-civic-green",
-    chip: "border-civic-green/30 bg-civic-greenSoft text-civic-green",
-    label: "Accepted",
-  },
-  filed: {
-    bar: "bg-civic-blue",
-    chip: "border-civic-blue/30 bg-civic-blueSoft text-civic-blue",
-    label: "Filed",
-  },
-  in_hearing: {
-    bar: "bg-civic-red",
-    chip: "border-civic-red/30 bg-civic-redSoft text-civic-red",
-    label: "In hearing",
-  },
-  closed_won: {
-    bar: "bg-civic-green",
-    chip: "border-civic-green/30 bg-civic-greenSoft text-civic-green",
-    label: "Closed",
-  },
-  closed_lost: {
-    bar: "bg-civic-slate",
-    chip: "border-paper-border bg-paper text-ink-faint",
-    label: "Closed",
-  },
-  closed_withdrawn: {
-    bar: "bg-civic-slate",
-    chip: "border-paper-border bg-paper text-ink-faint",
-    label: "Withdrawn",
-  },
-  archived: {
-    bar: "bg-civic-slate",
-    chip: "border-paper-border bg-paper text-ink-faint",
-    label: "Archived",
-  },
-};
+export type { HotMatterTicket };
 
 const VISIBLE_DEPTH = 4;
 const FLIP_MS = 700;
@@ -181,7 +123,7 @@ export function HotMatterTickets({
         >
           {/* Render back-to-front so the front card paints last */}
           {[...layers].reverse().map(({ ticket, depth }) => {
-            const tone = STATUS_TONE[ticket.status];
+            const tone = MATTER_STATUS_TONE[ticket.status];
             const isFront = depth === 0;
             const offsetY = depth * 0.9;
             const offsetX = depth * 0.28;
@@ -315,8 +257,4 @@ function PaperclipIcon() {
       />
     </svg>
   );
-}
-
-export function matterProgressLabel(status: MatterStatus): string {
-  return STATUS_TONE[status].label;
 }
