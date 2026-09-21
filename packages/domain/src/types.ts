@@ -371,6 +371,27 @@ export interface OrganizationPerson {
   role: string;
 }
 
+/** Thematic NGO focus areas — distinct from Organization.type (actor form). */
+export type NgoCategoryId =
+  | "humanitarian"
+  | "human_rights"
+  | "legal_aid"
+  | "anti_corruption"
+  | "civic"
+  | "community_development"
+  | "health"
+  | "education"
+  | "environment"
+  | "economic_empowerment"
+  | "youth"
+  | "women"
+  | "children"
+  | "disability"
+  | "research"
+  | "media"
+  | "professional"
+  | "faith_based";
+
 export interface Organization {
   id: string;
   slug: string;
@@ -395,6 +416,8 @@ export interface Organization {
   spendLineItems?: OrganizationFundingLine[];
   /** Organisation funds allocated toward linked projects. */
   projectAllocations?: OrganizationProjectAllocation[];
+  /** Thematic focus areas for civil-society / NGO actors. */
+  ngoCategories?: NgoCategoryId[];
 }
 
 export interface Evidence {

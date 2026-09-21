@@ -48,7 +48,7 @@ export type MegaMenuConfig = {
   browseAll: { href: string; label: string };
 };
 
-/** Curated mega-menu content for the eight primary hubs. */
+/** Curated mega-menu content for the primary hubs. */
 export const NAV_MEGA: MegaMenuConfig[] = [
   {
     id: "government",
@@ -347,6 +347,75 @@ export const NAV_MEGA: MegaMenuConfig[] = [
       { href: "/search?q=public+personality", label: "Public personality" },
     ],
     browseAll: { href: "/people", label: "Browse all People" },
+  },
+  {
+    id: "organizations",
+    href: "/organizations",
+    label: "Organizations",
+    eyebrow: "Civil society",
+    featured: [
+      {
+        href: "/organizations/civic-track-nigeria",
+        title: "Civic Track Nigeria",
+        description: "Project monitors publishing spend — anti-corruption & civic accountability.",
+        kind: "Anti-corruption · Civic",
+        tone: "green",
+        large: true,
+        initials: "CT",
+      },
+      {
+        href: "/organizations/public-justice-network",
+        title: "Public Justice Network",
+        kind: "Legal aid",
+        tone: "blue",
+        initials: "PJ",
+      },
+      {
+        href: "/organizations/election-observation-network",
+        title: "Election Observation Network",
+        kind: "Civic / Democracy",
+        tone: "amber",
+        initials: "EO",
+      },
+    ],
+    quickLinks: [
+      { href: "/organizations/ngos", label: "All NGOs", hint: "By activity", icon: "org" },
+      {
+        href: "/organizations/ngos?vetted=1",
+        label: "Vetted NGOs",
+        hint: "Published spend",
+        icon: "eye",
+      },
+      {
+        href: "/organizations/ngos/legal_aid",
+        label: "Legal / Legal Aid",
+        hint: "Litigation & advice",
+        icon: "document",
+      },
+      {
+        href: "/organizations/ngos/anti_corruption",
+        label: "Anti-Corruption",
+        hint: "Spending & FOI",
+        icon: "search",
+      },
+      {
+        href: "/organizations/ngos/health",
+        label: "Health",
+        hint: "Clinics & outcomes",
+        icon: "building",
+      },
+    ],
+    popular: [
+      { href: "/organizations/ngos/human_rights", label: "Human Rights" },
+      { href: "/organizations/ngos/civic", label: "Civic / Democracy" },
+      { href: "/organizations/ngos/education", label: "Education" },
+      { href: "/organizations/ngos/environment", label: "Environment" },
+      { href: "/organizations/ngos/women", label: "Women & Gender" },
+      { href: "/organizations/ngos/youth", label: "Youth" },
+      { href: "/organizations/ngos/humanitarian", label: "Humanitarian" },
+      { href: "/organizations/ngos/media", label: "Media" },
+    ],
+    browseAll: { href: "/organizations", label: "Browse all Organizations" },
   },
   {
     id: "cases",

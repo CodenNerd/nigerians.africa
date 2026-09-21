@@ -1,4 +1,6 @@
 export * from "./types";
+export { NGO_CATEGORIES, ngoCategoryById, isNgoCategoryId } from "./ngo-categories";
+export type { NgoCategoryMeta } from "./ngo-categories";
 export { seed } from "./seed/data";
 export { handcrafted } from "./seed/handcrafted";
 export { mergeSeed, emptySeed, countsOf, seedKeys } from "./seed/merge";

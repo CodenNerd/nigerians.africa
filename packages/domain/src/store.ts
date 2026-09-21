@@ -1,4 +1,5 @@
 import { seed } from "./seed/data";
+import { NGO_CATEGORIES, ngoCategoryById, type NgoCategoryMeta } from "./ngo-categories";
 import type {
   Allocation,
   CitizenReport,
@@ -15,6 +16,7 @@ import type {
   Location,
   MatterCategory,
   MatterStatus,
+  NgoCategoryId,
   Office,
   Organization,
   Person,
@@ -814,6 +816,65 @@ export class PublicRecordStore {
     return this.db.organizations.find((o) => o.slug === slug);
   }
 
+  /** Civil-society actor: NGO type, legacy legal_ngo, or tagged focus categories. */
+  isNgo(org: Organization): boolean {
+    const t = org.type.toLowerCase();
+    if (t === "ngo" || t === "legal_ngo") return true;
+    return (org.ngoCategories?.length ?? 0) > 0;
+  }
+
+  /** Legal / public-interest partners (scheme prosecution NGOs). */
+  isLegalNgo(org: Organization): boolean {
+    if (org.type.toLowerCase() === "legal_ngo") return true;
+    const cats = org.ngoCategories ?? [];
+    return this.isNgo(org) && (cats.includes("legal_aid") || cats.includes("human_rights"));
+  }
+
+  allNgos(): Organization[] {
+    return this.db.organizations.filter((o) => this.isNgo(o));
+  }
+
+  ngosByCategory(categoryId: NgoCategoryId): Organization[] {
+    return this.allNgos().filter((o) => (o.ngoCategories ?? []).includes(categoryId));
+  }
+
+  ngoCategoryMeta(categoryId: string): NgoCategoryMeta | undefined {
+    return ngoCategoryById(categoryId);
+  }
+
+  allNgoCategories(): NgoCategoryMeta[] {
+    return NGO_CATEGORIES;
+  }
+
+  /**
+   * Activity score for ranking “most active” NGOs.
+   * Weights: prosecuting matters, linked projects, published spend/income lines, people.
+   */
+  organizationActivityScore(org: Organization): number {
+    const matters = this.mattersForOrganization(org.id).length;
+    const projects = this.projectsForOrganization(org.id).length;
+    const spendLines = (org.spendLineItems ?? []).length;
+    const incomeLines = (org.incomeLineItems ?? []).length;
+    const people = org.people?.length ?? 0;
+    const allocations = (org.projectAllocations ?? []).length;
+    return (
+      matters * 12 +
+      projects * 8 +
+      spendLines * 3 +
+      incomeLines * 2 +
+      allocations * 4 +
+      people * 2 +
+      (org.vettingStatus === "platform_vetted" ? 5 : 0)
+    );
+  }
+
+  mostActiveNgos(limit = 6, categoryId?: NgoCategoryId): Organization[] {
+    const pool = categoryId ? this.ngosByCategory(categoryId) : this.allNgos();
+    return [...pool]
+      .sort((a, b) => this.organizationActivityScore(b) - this.organizationActivityScore(a))
+      .slice(0, limit);
+  }
+
   /** People linked to an organization, with their role labels. */
   peopleForOrganization(orgId: string): { person: Person; role: string }[] {
     const org = this.db.organizations.find((o) => o.id === orgId);
@@ -997,9 +1058,9 @@ export class PublicRecordStore {
       }
     }
 
-    // Also count legal_ngo partners registered for the programme even if unassigned
+    // Also count legal / public-interest partners registered for the programme even if unassigned
     for (const o of this.db.organizations) {
-      if (o.type === "legal_ngo") partnerIds.add(o.id);
+      if (this.isLegalNgo(o)) partnerIds.add(o.id);
     }
 
     const byCategory = [...categoryCounts.entries()]

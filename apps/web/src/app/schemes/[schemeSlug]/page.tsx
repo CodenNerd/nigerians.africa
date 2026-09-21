@@ -44,7 +44,7 @@ export default async function SchemePage({
 
   const partners = store
     .allOrganizations()
-    .filter((o) => o.type === "legal_ngo")
+    .filter((o) => store.isLegalNgo(o))
     .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
