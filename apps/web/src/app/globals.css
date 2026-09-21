@@ -4,6 +4,40 @@
 
 :root {
   color-scheme: light;
+  --ink: 26 26 26;
+  --ink-muted: 74 74 74;
+  --ink-faint: 107 107 107;
+  --paper: 247 245 240;
+  --paper-card: 255 255 255;
+  --paper-border: 226 221 211;
+  --civic-green: 27 94 59;
+  --civic-green-soft: 232 242 236;
+  --civic-amber: 138 109 26;
+  --civic-amber-soft: 245 239 216;
+  --civic-red: 139 46 46;
+  --civic-red-soft: 245 228 228;
+  --civic-blue: 30 58 95;
+  --civic-blue-soft: 230 238 246;
+  --civic-slate: 61 74 84;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: 236 232 224;
+  --ink-muted: 176 170 158;
+  --ink-faint: 138 132 120;
+  --paper: 22 21 18;
+  --paper-card: 32 30 26;
+  --paper-border: 58 54 46;
+  --civic-green: 110 168 132;
+  --civic-green-soft: 28 42 34;
+  --civic-amber: 196 164 72;
+  --civic-amber-soft: 42 36 22;
+  --civic-red: 196 112 112;
+  --civic-red-soft: 46 28 28;
+  --civic-blue: 130 158 196;
+  --civic-blue-soft: 28 36 48;
+  --civic-slate: 154 164 174;
 }
 
 html {
@@ -14,8 +48,8 @@ body {
   @apply bg-paper text-ink antialiased;
   font-feature-settings: "kern" 1, "liga" 1;
   background-image:
-    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(232, 242, 236, 0.7), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(230, 238, 246, 0.35), transparent 45%);
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgb(var(--civic-green-soft) / 0.7), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgb(var(--civic-blue-soft) / 0.35), transparent 45%);
   background-attachment: fixed;
 }
 
@@ -68,6 +102,10 @@ a {
     filter: brightness(0.97);
   }
 
+  html[data-theme="dark"] .plane-link:hover {
+    filter: brightness(1.14);
+  }
+
   .anim-rise {
     animation: rise-in 0.55s ease-out both;
   }
@@ -89,9 +127,9 @@ a {
   .hero-field {
     @apply relative overflow-hidden border-b border-paper-border;
     background:
-      linear-gradient(180deg, rgba(247, 245, 240, 0.2) 0%, rgba(232, 242, 236, 0.55) 100%),
-      radial-gradient(ellipse 90% 70% at 20% 10%, rgba(27, 94, 59, 0.08), transparent 50%),
-      radial-gradient(ellipse 70% 50% at 90% 30%, rgba(30, 58, 95, 0.06), transparent 45%);
+      linear-gradient(180deg, rgb(var(--paper) / 0.2) 0%, rgb(var(--civic-green-soft) / 0.55) 100%),
+      radial-gradient(ellipse 90% 70% at 20% 10%, rgb(var(--civic-green) / 0.08), transparent 50%),
+      radial-gradient(ellipse 70% 50% at 90% 30%, rgb(var(--civic-blue) / 0.06), transparent 45%);
   }
 }
 
@@ -122,41 +160,29 @@ a {
   backface-visibility: hidden;
 }
 
-/* View mode: eyebrow + toggle paint from html[data-view] (set before React) */
-.view-eyebrow-progressive {
-  display: none;
+/* Theme toggle: thumb + marks paint from html[data-theme] before React hydrates */
+html[data-theme="dark"] .theme-toggle {
+  border-color: rgb(var(--civic-green) / 0.4);
+  background-color: rgb(var(--civic-green-soft));
 }
 
-html[data-view="progressive"] .view-eyebrow-record {
-  display: none;
-}
-
-html[data-view="progressive"] .view-eyebrow-progressive {
-  display: inline;
-}
-
-html[data-view="progressive"] .view-toggle {
-  border-color: rgba(27, 94, 59, 0.4);
-  background-color: #e8f2ec;
-}
-
-html[data-view="progressive"] .view-toggle-mark-record {
+html[data-theme="dark"] .theme-toggle-mark-sun {
   opacity: 0.3;
 }
 
-html[data-view="progressive"] .view-toggle-mark-map {
+html[data-theme="dark"] .theme-toggle-mark-moon {
   opacity: 0.7;
 }
 
-html[data-view="progressive"] .view-toggle-thumb {
+html[data-theme="dark"] .theme-toggle-thumb {
   transform: translateX(1.55rem);
-  border-color: rgba(27, 94, 59, 0.3);
+  border-color: rgb(var(--civic-green) / 0.3);
 }
 
-html[data-view="progressive"] .view-toggle-label-record {
+html[data-theme="dark"] .theme-toggle-label-light {
   display: none;
 }
 
-html:not([data-view="progressive"]) .view-toggle-label-progressive {
+html:not([data-theme="dark"]) .theme-toggle-label-dark {
   display: none;
 }

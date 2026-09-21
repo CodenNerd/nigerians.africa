@@ -5,8 +5,8 @@ import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { NavigationProgress } from "@/components/NavigationProgress";
-import { ViewModeProvider } from "@/components/view/ViewModeProvider";
-import { VIEW_MODE_BOOTSTRAP_SCRIPT } from "@/lib/view-mode";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { THEME_BOOTSTRAP_SCRIPT } from "@/lib/theme";
 
 const display = Libre_Baskerville({
   subsets: ["latin"],
@@ -31,12 +31,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-view="record" suppressHydrationWarning>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: VIEW_MODE_BOOTSTRAP_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP_SCRIPT }} />
       </head>
       <body className={`${display.variable} ${sans.variable} font-sans min-h-screen flex flex-col`}>
-        <ViewModeProvider>
+        <ThemeProvider>
           <Suspense fallback={null}>
             <NavigationProgress />
           </Suspense>
@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
           <SiteFooter />
-        </ViewModeProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

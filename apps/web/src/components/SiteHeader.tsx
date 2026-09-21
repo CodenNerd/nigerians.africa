@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { NAV_MEGA } from "@/lib/nav-mega";
 import { BrandMark } from "@/components/BrandMark";
 import { MegaMenuPanel } from "@/components/nav/MegaMenu";
-import { ViewToggle } from "@/components/view/ViewToggle";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 const OPEN_DELAY = 100;
 const CLOSE_DELAY = 200;
@@ -89,12 +89,11 @@ export function SiteHeader() {
             <Link href="/" className="group no-underline" onClick={closeNow}>
               <BrandMark />
               <span className="mt-0.5 block text-[11px] uppercase tracking-[0.18em] text-ink-faint">
-                <span className="view-eyebrow-record">Public record</span>
-                <span className="view-eyebrow-progressive">Observatory</span>
+                Public record
               </span>
             </Link>
             <div className="hidden items-center gap-5 md:flex">
-              <ViewToggle />
+              <ThemeToggle />
               <form action="/search" className="flex items-center border border-paper-border bg-paper-card">
                 <label htmlFor="header-search" className="sr-only">
                   Search the public record
@@ -126,7 +125,7 @@ export function SiteHeader() {
               </Link>
             </div>
             <div className="flex items-center gap-2 md:hidden">
-              <ViewToggle />
+              <ThemeToggle />
               <button
                 type="button"
                 className="border border-paper-border px-3 py-1.5 text-sm"
@@ -249,8 +248,8 @@ export function SiteHeader() {
             );
           })}
           <li className="flex items-center justify-between gap-3 border-b border-paper-border px-4 py-3">
-            <span className="text-sm text-ink-muted">View</span>
-            <ViewToggle />
+            <span className="text-sm text-ink-muted">Appearance</span>
+            <ThemeToggle />
           </li>
           <li>
             <Link

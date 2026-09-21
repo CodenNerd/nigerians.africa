@@ -8,7 +8,7 @@ export function BrandMark({ className }: { className?: string }) {
       <span
         className="text-white"
         style={{
-          WebkitTextStroke: "1.25px #1b5e3b",
+          WebkitTextStroke: "1.25px rgb(var(--civic-green))",
           paintOrder: "stroke fill",
         }}
       >
