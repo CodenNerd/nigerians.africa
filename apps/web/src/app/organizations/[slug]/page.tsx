@@ -8,6 +8,7 @@ import {
 } from "@nigeria-for-nigerians/domain";
 import { MoneyFigure, RecordPage, RecordSection, RelatedLinks } from "@/components/RecordPage";
 import { OrganizationPeople } from "@/components/OrganizationPeople";
+import { seedFollowBase } from "@/lib/follow/seed-counts";
 
 export function generateStaticParams() {
   return store.allOrganizations().map((o) => ({ slug: o.slug }));
@@ -52,6 +53,7 @@ export default async function OrganizationPage({
       askContext={org.name}
       avatarUrl={org.logoUrl}
       follow={{ entityType: "organization", entityId: org.id, entityTitle: org.name }}
+      followCount={seedFollowBase("organization", org.id)}
       actions={[
         { label: "Support / volunteer", href: "/action" },
         { label: "Contact via report", href: "/report" },

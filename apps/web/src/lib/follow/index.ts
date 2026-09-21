@@ -20,3 +20,6 @@ export {
   emitAfterEvidenceReview,
   emitAfterReportStatus,
 } from "./hooks";
+export { seedFollowBase, allSeedFollowTargets } from "./seed-counts";
+export { getFollowCount, ensureSeedFollowRows } from "./counts";
+export { formatFollowCount } from "./types";

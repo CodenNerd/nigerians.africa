@@ -16,6 +16,7 @@ import {
   sendFollowEmail,
 } from "@/lib/follow";
 import { memoryFollowStore, resolveFollowBackend, withFollowBackend } from "@/lib/follow/backend";
+import { ensureSeedFollowRows } from "@/lib/follow/counts";
 
 function jsonError(message: string, status: number) {
   return NextResponse.json({ error: message }, { status });
@@ -23,6 +24,7 @@ function jsonError(message: string, status: number) {
 
 export async function POST(req: NextRequest) {
   try {
+    await ensureSeedFollowRows();
     const body = (await req.json()) as {
       entityType?: string;
       entityId?: string;
@@ -39,6 +41,9 @@ export async function POST(req: NextRequest) {
     if (!body.cadence || !isFollowCadence(body.cadence)) {
       return jsonError("cadence must be instant or weekly", 400);
     }
+    const cadence = body.cadence;
+    const entityType = body.entityType;
+    const entityId = body.entityId;
 
     const sessionEmail = await getSessionEmail();
     const emailRaw = (sessionEmail || body.email || "").trim().toLowerCase();
@@ -46,17 +51,17 @@ export async function POST(req: NextRequest) {
       return jsonError("Valid email required", 400);
     }
 
-    const resolved = resolveFollowable(body.entityType, body.entityId);
+    const resolved = resolveFollowable(entityType, entityId);
     if (!resolved) {
       return jsonError("Entity not found", 404);
     }
 
     return await withFollowBackend(async (backend) => {
       if (backend === "memory") {
-        const existing = memoryFollowStore.findActive(emailRaw, body.entityType!, body.entityId!);
+        const existing = memoryFollowStore.findActive(emailRaw, entityType, entityId);
         if (existing) {
-          if (existing.cadence !== body.cadence) {
-            existing.cadence = body.cadence!;
+          if (existing.cadence !== cadence) {
+            existing.cadence = cadence;
             existing.updatedAt = new Date();
             memoryFollowStore.upsert(existing);
           }
@@ -71,13 +76,13 @@ export async function POST(req: NextRequest) {
               entityId: existing.entityId,
               entitySlug: existing.entitySlug,
               entityTitle: existing.entityTitle,
-              cadence: body.cadence,
+              cadence,
               href: resolved.href,
             },
           });
         }
 
-        const inactive = memoryFollowStore.findInactive(emailRaw, body.entityType!, body.entityId!);
+        const inactive = memoryFollowStore.findInactive(emailRaw, entityType, entityId);
         let followId: string;
         let unsubToken: string;
         if (inactive) {
@@ -86,7 +91,7 @@ export async function POST(req: NextRequest) {
           memoryFollowStore.upsert({
             ...inactive,
             active: true,
-            cadence: body.cadence!,
+            cadence,
             entitySlug: resolved.entitySlug,
             entityTitle: resolved.entityTitle,
             sessionEmail,
@@ -98,11 +103,11 @@ export async function POST(req: NextRequest) {
           memoryFollowStore.upsert({
             id: followId,
             email: emailRaw,
-            entityType: body.entityType!,
-            entityId: body.entityId!,
+            entityType,
+            entityId,
             entitySlug: resolved.entitySlug,
             entityTitle: resolved.entityTitle,
-            cadence: body.cadence!,
+            cadence,
             unsubscribeToken: unsubToken,
             sessionEmail,
             active: true,
@@ -117,7 +122,7 @@ export async function POST(req: NextRequest) {
           html: ackFollowHtml({
             entityTitle: resolved.entityTitle,
             entityHref: resolved.href,
-            cadence: body.cadence!,
+            cadence,
             unsubToken,
           }),
         });
@@ -136,11 +141,11 @@ export async function POST(req: NextRequest) {
           follow: {
             id: followId,
             email: emailRaw,
-            entityType: body.entityType,
-            entityId: body.entityId,
+            entityType,
+            entityId,
             entitySlug: resolved.entitySlug,
             entityTitle: resolved.entityTitle,
-            cadence: body.cadence,
+            cadence,
             href: resolved.href,
           },
         });
@@ -153,18 +158,18 @@ export async function POST(req: NextRequest) {
         .where(
           and(
             eq(follows.email, emailRaw),
-            eq(follows.entityType, body.entityType!),
-            eq(follows.entityId, body.entityId!),
+            eq(follows.entityType, entityType),
+            eq(follows.entityId, entityId),
             eq(follows.active, true),
           ),
         )
         .limit(1);
 
       if (existing[0]) {
-        if (existing[0].cadence !== body.cadence) {
+        if (existing[0].cadence !== cadence) {
           await db
             .update(follows)
-            .set({ cadence: body.cadence!, updatedAt: new Date() })
+            .set({ cadence, updatedAt: new Date() })
             .where(eq(follows.id, existing[0].id));
         }
         return NextResponse.json({
@@ -178,7 +183,7 @@ export async function POST(req: NextRequest) {
             entityId: existing[0].entityId,
             entitySlug: existing[0].entitySlug,
             entityTitle: existing[0].entityTitle,
-            cadence: body.cadence,
+            cadence,
             href: resolved.href,
           },
         });
@@ -190,8 +195,8 @@ export async function POST(req: NextRequest) {
         .where(
           and(
             eq(follows.email, emailRaw),
-            eq(follows.entityType, body.entityType!),
-            eq(follows.entityId, body.entityId!),
+            eq(follows.entityType, entityType),
+            eq(follows.entityId, entityId),
             eq(follows.active, false),
           ),
         )
@@ -207,7 +212,7 @@ export async function POST(req: NextRequest) {
           .update(follows)
           .set({
             active: true,
-            cadence: body.cadence!,
+            cadence,
             entitySlug: resolved.entitySlug,
             entityTitle: resolved.entityTitle,
             sessionEmail: sessionEmail,
@@ -220,11 +225,11 @@ export async function POST(req: NextRequest) {
         await db.insert(follows).values({
           id: followId,
           email: emailRaw,
-          entityType: body.entityType!,
-          entityId: body.entityId!,
+          entityType,
+          entityId,
           entitySlug: resolved.entitySlug,
           entityTitle: resolved.entityTitle,
-          cadence: body.cadence!,
+          cadence,
           unsubscribeToken: unsubToken,
           sessionEmail: sessionEmail,
           active: true,
@@ -237,7 +242,7 @@ export async function POST(req: NextRequest) {
         html: ackFollowHtml({
           entityTitle: resolved.entityTitle,
           entityHref: resolved.href,
-          cadence: body.cadence!,
+          cadence,
           unsubToken,
         }),
       });
@@ -256,11 +261,11 @@ export async function POST(req: NextRequest) {
         follow: {
           id: followId,
           email: emailRaw,
-          entityType: body.entityType,
-          entityId: body.entityId,
+          entityType,
+          entityId,
           entitySlug: resolved.entitySlug,
           entityTitle: resolved.entityTitle,
-          cadence: body.cadence,
+          cadence,
           href: resolved.href,
         },
       });

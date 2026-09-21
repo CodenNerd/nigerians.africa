@@ -1,15 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Office, Person } from "@nigeria-for-nigerians/domain";
+import { RecordFollowButton } from "@/components/RecordFollowButton";
 
 export function PersonHero({
   person,
   currentOffice,
   isPoliticalCandidate = false,
+  followCount,
 }: {
   person: Person;
   currentOffice?: Office;
   isPoliticalCandidate?: boolean;
+  followCount?: number;
 }) {
   const credit = person.imageCredit;
 
@@ -51,6 +54,14 @@ export function PersonHero({
                 {person.aliases.join("  ·  ")}
               </p>
             ) : null}
+            <RecordFollowButton
+              className="mt-5"
+              variant="onDark"
+              entityType="person"
+              entityId={person.id}
+              entityTitle={person.fullName}
+              initialCount={followCount}
+            />
           </div>
         </div>
       </div>
@@ -111,7 +122,6 @@ export function PersonHero({
         <div className="mt-6 inline-flex flex-wrap gap-px bg-paper-border">
           {[
             { href: "#sources", label: "View sources" },
-            { href: "/action", label: "Follow" },
             { href: "/report", label: "Report an issue" },
           ].map((a) => (
             <Link

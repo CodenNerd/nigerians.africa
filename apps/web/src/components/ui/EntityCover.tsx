@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { RecordFollowButton } from "@/components/RecordFollowButton";
+import type { FollowableEntityType } from "@/lib/follow/types";
 
 /** Thin cover strip for problem / place / organization dossiers. */
 export function EntityCover({
@@ -6,17 +8,29 @@ export function EntityCover({
   coverUrl,
   coverCredit,
   eyebrow,
+  follow,
+  followCount,
 }: {
   title: string;
   coverUrl?: string;
   coverCredit?: string;
   eyebrow?: string;
+  follow?: {
+    entityType: FollowableEntityType;
+    entityId: string;
+    entityTitle?: string;
+  };
+  followCount?: number;
 }) {
   if (!coverUrl) return null;
 
   return (
     <header className="relative mb-10 border-b border-paper-border">
-      <div className="relative isolate h-[11rem] w-full overflow-hidden sm:h-[14rem]">
+      <div
+        className={`relative isolate w-full overflow-hidden ${
+          follow ? "min-h-[16rem] sm:min-h-[18rem]" : "h-[11rem] sm:h-[14rem]"
+        }`}
+      >
         <Image
           src={coverUrl}
           alt=""
@@ -33,6 +47,16 @@ export function EntityCover({
             </p>
           ) : null}
           <h1 className="mt-1 font-display text-2xl text-white sm:text-3xl">{title}</h1>
+          {follow ? (
+            <RecordFollowButton
+              className="mt-3"
+              variant="onDark"
+              entityType={follow.entityType}
+              entityId={follow.entityId}
+              entityTitle={follow.entityTitle ?? title}
+              initialCount={followCount}
+            />
+          ) : null}
           {coverCredit ? (
             <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-white/60">
               {coverCredit}

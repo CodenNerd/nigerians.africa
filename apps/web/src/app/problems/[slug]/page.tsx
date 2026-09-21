@@ -12,6 +12,7 @@ import { FollowTheThread } from "@/components/FollowTheThread";
 import { StatusLabel } from "@/components/StatusLabel";
 import { PlacesMap } from "@/components/PlacesMap";
 import { EntityCover } from "@/components/ui";
+import { seedFollowBase } from "@/lib/follow/seed-counts";
 
 export function generateStaticParams() {
   return store.allProblems().map((p) => ({ slug: p.slug }));
@@ -60,6 +61,12 @@ export default async function ProblemDetailPage({
             coverUrl={problem.coverUrl}
             coverCredit={problem.coverCredit}
             eyebrow="Problem"
+            follow={{
+              entityType: "problem",
+              entityId: problem.id,
+              entityTitle: problem.title,
+            }}
+            followCount={seedFollowBase("problem", problem.id)}
           />
         ) : undefined
       }
@@ -69,6 +76,7 @@ export default async function ProblemDetailPage({
         { label: "See responsible offices", href: "/government" },
       ]}
       follow={{ entityType: "problem", entityId: problem.id, entityTitle: problem.title }}
+      followCount={seedFollowBase("problem", problem.id)}
     >
       <RecordSection title="What is happening">
         <p className="prose-record">{problem.description}</p>

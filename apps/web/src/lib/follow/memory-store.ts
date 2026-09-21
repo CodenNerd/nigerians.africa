@@ -140,4 +140,18 @@ export const memoryFollowStore = {
       (d) => d.followId === followId && d.eventId === eventId && d.channel === "instant",
     );
   },
+
+  listActiveForEntity(entityType: string, entityId: string): MemoryFollow[] {
+    return bucket().follows.filter(
+      (f) => f.active && f.entityType === entityType && f.entityId === entityId,
+    );
+  },
+
+  countActiveForEntity(entityType: string, entityId: string, opts?: { excludeSeed?: boolean }): number {
+    return bucket().follows.filter((f) => {
+      if (!f.active || f.entityType !== entityType || f.entityId !== entityId) return false;
+      if (opts?.excludeSeed && f.email.endsWith("@followers.seed")) return false;
+      return true;
+    }).length;
+  },
 };

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { store } from "@nigeria-for-nigerians/domain";
 import { PersonProfile } from "@/components/ppp/PersonProfile";
 import { RecordPage, RecordSection, RelatedLinks } from "@/components/RecordPage";
+import { seedFollowBase } from "@/lib/follow/seed-counts";
 
 export function generateStaticParams() {
   return store.allPeople().map((p) => ({ slug: p.slug }));
@@ -43,6 +44,7 @@ export default async function PersonPage({
       subtitle={person.bio}
       askContext={person.fullName}
       follow={{ entityType: "person", entityId: person.id, entityTitle: person.fullName }}
+      followCount={seedFollowBase("person", person.id)}
       actions={[
         { label: "Browse people", href: "/people" },
         { label: "Report an issue", href: "/report" },

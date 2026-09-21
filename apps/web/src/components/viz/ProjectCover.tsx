@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { RecordFollowButton } from "@/components/RecordFollowButton";
 
 /** Full-bleed cover hero for project dossiers — photo first, minimal chrome. */
 export function ProjectCover({
@@ -8,6 +9,8 @@ export function ProjectCover({
   locationName,
   workStatus,
   verificationLabel,
+  follow,
+  followCount,
 }: {
   title: string;
   coverUrl?: string;
@@ -15,6 +18,8 @@ export function ProjectCover({
   locationName?: string;
   workStatus: string;
   verificationLabel?: string;
+  follow?: { entityId: string; entityTitle?: string };
+  followCount?: number;
 }) {
   const metaBits = [
     locationName,
@@ -37,7 +42,6 @@ export function ProjectCover({
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-civic-slate via-ink to-ink" />
         )}
-        {/* Single bottom wash — keep the photo readable */}
         <div
           className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent"
           aria-hidden
@@ -55,6 +59,16 @@ export function ProjectCover({
               <p className="mt-2.5 font-mono text-[11px] tracking-wide text-white/60 sm:text-xs">
                 {metaBits.join(" · ")}
               </p>
+            ) : null}
+            {follow ? (
+              <RecordFollowButton
+                className="mt-4"
+                variant="onDark"
+                entityType="project"
+                entityId={follow.entityId}
+                entityTitle={follow.entityTitle ?? title}
+                initialCount={followCount}
+              />
             ) : null}
           </div>
         </div>

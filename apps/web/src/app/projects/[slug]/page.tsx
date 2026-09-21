@@ -19,6 +19,7 @@ import {
   ProjectGlance,
   WorkJourney,
 } from "@/components/viz";
+import { seedFollowBase } from "@/lib/follow/seed-counts";
 
 export function generateStaticParams() {
   return store.allProjects().map((p) => ({ slug: p.slug }));
@@ -96,6 +97,7 @@ export default async function ProjectDetailPage({
       }
       askContext={`${project.name}. What happened to this project?`}
       follow={{ entityType: "project", entityId: project.id, entityTitle: project.name }}
+      followCount={seedFollowBase("project", project.id)}
       actions={[
         { label: "Report an update", href: "/report" },
         { label: "Follow the money", href: allocation ? `/money/${allocation.slug}` : "/money" },
@@ -110,6 +112,8 @@ export default async function ProjectDetailPage({
           locationName={location?.name}
           workStatus={project.status}
           verificationLabel={project.verificationStatus.replace(/_/g, " ")}
+          follow={{ entityId: project.id, entityTitle: project.name }}
+          followCount={seedFollowBase("project", project.id)}
         />
       }
     >

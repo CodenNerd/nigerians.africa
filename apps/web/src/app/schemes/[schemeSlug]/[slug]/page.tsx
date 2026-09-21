@@ -4,6 +4,7 @@ import { store } from "@nigeria-for-nigerians/domain";
 import { RecordPage, RecordSection, RelatedLinks } from "@/components/RecordPage";
 import { StatusLabel } from "@/components/StatusLabel";
 import { EvidenceMediaGallery } from "@/components/viz";
+import { seedFollowBase } from "@/lib/follow/seed-counts";
 
 export function generateStaticParams() {
   return store.allProsecutionMatters().flatMap((m) => {
@@ -69,6 +70,7 @@ export default async function MatterPage({
       subtitle={`${matter.status.replace(/_/g, " ")} · ${scheme.name}`}
       askContext={matter.title}
       follow={{ entityType: "matter", entityId: matter.id, entityTitle: matter.title }}
+      followCount={seedFollowBase("matter", matter.id)}
       actions={[
         { label: "Back to scheme", href: `/schemes/${scheme.slug}` },
         ...(org

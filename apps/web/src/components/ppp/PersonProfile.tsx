@@ -13,6 +13,7 @@ import { WhatCanYouDo } from "@/components/WhatCanYouDo";
 import { SourceList } from "@/components/RecordPage";
 import { FollowTheThread } from "@/components/FollowTheThread";
 import { SectionHead } from "./visual";
+import { seedFollowBase } from "@/lib/follow/seed-counts";
 
 function ProjectsViz({ projects }: { projects: Project[] }) {
   return (
@@ -263,6 +264,7 @@ export function PersonProfile({ person }: { person: Person }) {
         person={person}
         currentOffice={currentOffice}
         isPoliticalCandidate={isCandidate}
+        followCount={seedFollowBase("person", person.id)}
       />
       <ProfileGuideNav showCandidacies={isCandidate} />
 

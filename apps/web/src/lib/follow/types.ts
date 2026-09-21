@@ -70,3 +70,9 @@ export function followableLabel(type: FollowableEntityType): string {
       return "case";
   }
 }
+
+export function formatFollowCount(n: number): string {
+  if (n >= 10000) return `${(n / 1000).toFixed(1).replace(/\.0$/, "")}k`;
+  if (n >= 1000) return `${(n / 1000).toFixed(1).replace(/\.0$/, "")}k`;
+  return n.toLocaleString("en-NG");
+}

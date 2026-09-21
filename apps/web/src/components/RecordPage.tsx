@@ -5,6 +5,7 @@ import { StatusLabel } from "./StatusLabel";
 import type { VerificationStatus } from "@nigeria-for-nigerians/domain";
 import { AskPanel } from "./AskPanel";
 import { WhatCanYouDo } from "./WhatCanYouDo";
+import { RecordFollowButton } from "./RecordFollowButton";
 import { SectionHead } from "@/components/ui";
 import type { FollowableEntityType } from "@/lib/follow/types";
 
@@ -18,6 +19,7 @@ export function RecordPage({
   askContext,
   actions,
   follow,
+  followCount,
   hero,
   hideHeader,
   avatarUrl,
@@ -35,6 +37,8 @@ export function RecordPage({
     entityId: string;
     entityTitle?: string;
   };
+  /** Optional server-provided initial follower count. */
+  followCount?: number;
   /** Optional full-bleed hero above the container (e.g. project cover). */
   hero?: ReactNode;
   /** When true with hero, skip the in-container title block. */
@@ -42,6 +46,15 @@ export function RecordPage({
   /** Optional logo / mark beside the title. */
   avatarUrl?: string;
 }) {
+  const followCta = follow ? (
+    <RecordFollowButton
+      entityType={follow.entityType}
+      entityId={follow.entityId}
+      entityTitle={follow.entityTitle ?? title}
+      initialCount={followCount}
+    />
+  ) : null;
+
   return (
     <article>
       {hero}
@@ -68,6 +81,7 @@ export function RecordPage({
                   {status ? <StatusLabel status={status} /> : null}
                   {meta}
                 </div>
+                {followCta ? <div className="mt-6">{followCta}</div> : null}
               </div>
             </div>
           </header>
