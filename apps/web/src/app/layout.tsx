@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Libre_Baskerville, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { NavigationProgress } from "@/components/NavigationProgress";
 import { ViewModeProvider } from "@/components/view/ViewModeProvider";
 import { VIEW_MODE_BOOTSTRAP_SCRIPT } from "@/lib/view-mode";
 
@@ -35,6 +37,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${display.variable} ${sans.variable} font-sans min-h-screen flex flex-col`}>
         <ViewModeProvider>
+          <Suspense fallback={null}>
+            <NavigationProgress />
+          </Suspense>
           <a
             href="#main"
             className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-paper focus:px-3 focus:py-2"
