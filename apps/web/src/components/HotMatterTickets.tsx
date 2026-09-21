@@ -11,12 +11,12 @@ import {
 export type { HotMatterTicket };
 
 const VISIBLE_DEPTH = 4;
-const FLIP_MS = 700;
+const FLIP_MS = 650;
 const HOLD_MS = 4200;
 
 /**
  * Stacked Jira-style matter tickets with an auto flip through the deck.
- * Civic paper planes + mono ticket chrome; pause on hover / focus / reduced motion.
+ * The exiting card animates in its own layer so stack transforms never fight the flip.
  */
 export function HotMatterTickets({
   items,
@@ -27,11 +27,12 @@ export function HotMatterTickets({
 }) {
   const count = items.length;
   const [front, setFront] = useState(0);
-  const [flipping, setFlipping] = useState(false);
+  const [exiting, setExiting] = useState<HotMatterTicket | null>(null);
   const [paused, setPaused] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
   const flipTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const holdTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const busy = useRef(false);
 
   const clearTimers = useCallback(() => {
     if (flipTimer.current) clearTimeout(flipTimer.current);
@@ -41,13 +42,21 @@ export function HotMatterTickets({
   }, []);
 
   const advance = useCallback(() => {
-    if (count < 2) return;
-    setFlipping(true);
-    flipTimer.current = setTimeout(() => {
+    if (count < 2 || busy.current) return;
+    busy.current = true;
+    const leaving = items[front]!;
+    if (reduceMotion) {
       setFront((i) => (i + 1) % count);
-      setFlipping(false);
+      busy.current = false;
+      return;
+    }
+    setExiting(leaving);
+    setFront((i) => (i + 1) % count);
+    flipTimer.current = setTimeout(() => {
+      setExiting(null);
+      busy.current = false;
     }, FLIP_MS);
-  }, [count]);
+  }, [count, front, items, reduceMotion]);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -59,10 +68,10 @@ export function HotMatterTickets({
 
   useEffect(() => {
     clearTimers();
-    if (count < 2 || paused || reduceMotion || flipping) return;
+    if (count < 2 || paused || reduceMotion || exiting) return;
     holdTimer.current = setTimeout(advance, HOLD_MS);
     return clearTimers;
-  }, [front, paused, reduceMotion, flipping, count, advance, clearTimers]);
+  }, [front, paused, reduceMotion, exiting, count, advance, clearTimers]);
 
   if (!count) return null;
 
@@ -70,7 +79,7 @@ export function HotMatterTickets({
 
   const layers = Array.from({ length: Math.min(VISIBLE_DEPTH, count) }, (_, depth) => {
     const index = (front + depth) % count;
-    return { ticket: items[index]!, depth, index };
+    return { ticket: items[index]!, depth };
   });
 
   return (
@@ -95,9 +104,9 @@ export function HotMatterTickets({
         <div className="flex items-center gap-3">
           <button
             type="button"
-            className="font-mono text-[10px] uppercase tracking-wider text-ink-faint transition hover:text-civic-green"
+            className="font-mono text-[10px] uppercase tracking-wider text-ink-faint transition hover:text-civic-green disabled:opacity-40"
+            disabled={Boolean(exiting)}
             onClick={() => {
-              if (flipping) return;
               clearTimers();
               advance();
             }}
@@ -114,45 +123,50 @@ export function HotMatterTickets({
         </div>
       </div>
 
-      <div className="[perspective:1200px]">
+      <div className="[perspective:1400px]">
         <ul
           className="relative"
           style={{ height: `${stackH}rem` }}
           aria-label="Hottest cases being followed by legal NGOs"
           aria-live="polite"
         >
-          {/* Render back-to-front so the front card paints last */}
           {[...layers].reverse().map(({ ticket, depth }) => {
             const tone = MATTER_STATUS_TONE[ticket.status];
             const isFront = depth === 0;
             const offsetY = depth * 0.9;
             const offsetX = depth * 0.28;
             const scale = 1 - depth * 0.022;
-            const z = VISIBLE_DEPTH - depth;
 
             return (
               <li
                 key={ticket.key}
-                className={clsx(
-                  "absolute left-0 right-0 top-0 origin-center transition-[transform,opacity,filter] ease-out",
-                  isFront && flipping && !reduceMotion
-                    ? "ticket-flip-out pointer-events-none"
-                    : "duration-500",
-                )}
+                className="absolute left-0 right-0 top-0 origin-top transition-[transform,opacity,filter] duration-500 ease-out"
                 style={{
-                  zIndex: z,
-                  transform:
-                    isFront && flipping && !reduceMotion
-                      ? undefined
-                      : `translate(${offsetX}rem, ${offsetY}rem) scale(${scale})`,
-                  opacity: isFront && flipping && reduceMotion ? 0 : 1 - depth * 0.06,
+                  zIndex: VISIBLE_DEPTH - depth,
+                  transform: `translate(${offsetX}rem, ${offsetY}rem) scale(${scale})`,
+                  opacity: 1 - depth * 0.06,
                   filter: depth > 0 ? `brightness(${1 - depth * 0.03})` : undefined,
                 }}
               >
-                <TicketCard ticket={ticket} tone={tone} isFront={isFront && !flipping} />
+                <TicketCard ticket={ticket} tone={tone} isFront={isFront && !exiting} />
               </li>
             );
           })}
+
+          {exiting ? (
+            <li
+              key={`exit-${exiting.key}`}
+              className="ticket-flip-out pointer-events-none absolute left-0 right-0 top-0 origin-top"
+              style={{ zIndex: VISIBLE_DEPTH + 2 }}
+              aria-hidden
+            >
+              <TicketCard
+                ticket={exiting}
+                tone={MATTER_STATUS_TONE[exiting.status]}
+                isFront={false}
+              />
+            </li>
+          ) : null}
         </ul>
       </div>
     </div>
@@ -173,7 +187,7 @@ function TicketCard({
       href={ticket.href}
       tabIndex={isFront ? 0 : -1}
       aria-hidden={!isFront}
-      className="group relative block border border-paper-border bg-paper-card no-underline shadow-[0_1px_0_rgba(0,0,0,0.04)] [backface-visibility:hidden]"
+      className="group relative block border border-paper-border bg-paper-card no-underline shadow-[0_1px_0_rgba(0,0,0,0.04)]"
     >
       <span className={clsx("absolute inset-y-0 left-0 w-[3px]", tone.bar)} aria-hidden />
 

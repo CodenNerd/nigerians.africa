@@ -97,22 +97,24 @@ a {
 
 @keyframes ticket-flip-out {
   0% {
-    transform: translateY(0) rotateX(0deg) scale(1);
+    transform: translateY(0) rotateX(0deg);
     opacity: 1;
   }
-  45% {
-    transform: translateY(-0.35rem) rotateX(-88deg) scale(0.98);
-    opacity: 0.55;
+  55% {
+    transform: translateY(-0.6rem) rotateX(-72deg);
+    opacity: 0.45;
   }
   100% {
-    transform: translateY(-0.9rem) rotateX(-110deg) scale(0.94);
+    transform: translateY(-1.4rem) rotateX(-105deg);
     opacity: 0;
   }
 }
 
 .ticket-flip-out {
-  animation: ticket-flip-out 0.7s ease-in forwards;
+  animation: ticket-flip-out 0.65s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: top center;
   transform-style: preserve-3d;
+  will-change: transform, opacity;
 }
 
 /* View mode: eyebrow + toggle paint from html[data-view] (set before React) */
