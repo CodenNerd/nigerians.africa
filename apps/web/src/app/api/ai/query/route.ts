@@ -1,7 +1,8 @@
 import { store } from "@nigeria-for-nigerians/domain";
 import { NextRequest, NextResponse } from "next/server";
 
-type Body = { question?: string; context?: string };
+type HistoryTurn = { role: "user" | "assistant"; content: string };
+type Body = { question?: string; context?: string; history?: HistoryTurn[] };
 
 function retrieve(question: string, context?: string) {
   const q = `${question} ${context ?? ""}`.trim();
@@ -69,7 +70,11 @@ function retrieve(question: string, context?: string) {
   };
 }
 
-async function maybeLlm(question: string, retrieval: ReturnType<typeof retrieve>) {
+async function maybeLlm(
+  question: string,
+  retrieval: ReturnType<typeof retrieve>,
+  history: HistoryTurn[] = [],
+) {
   const key = process.env.AI_API_KEY;
   if (!key) return null;
 
@@ -83,7 +88,16 @@ Rules:
 - Do not declare guilt or fraud.
 - Always point readers back to citations.
 - Label uncertainty clearly.
-- Keep answers concise (under 220 words).`;
+- Keep answers concise (under 220 words).
+- You may use prior chat turns for continuity, but still ground claims in retrieved records.`;
+
+  const prior = history
+    .slice(-6)
+    .filter((t) => t.content.trim())
+    .map((t) => ({
+      role: t.role === "assistant" ? ("assistant" as const) : ("user" as const),
+      content: t.content.slice(0, 1200),
+    }));
 
   const user = `Question: ${question}
 
@@ -103,10 +117,7 @@ ${retrieval.answer}`;
       body: JSON.stringify({
         model,
         temperature: 0.2,
-        messages: [
-          { role: "system", content: system },
-          { role: "user", content: user },
-        ],
+        messages: [{ role: "system", content: system }, ...prior, { role: "user", content: user }],
       }),
     });
     if (!res.ok) return null;
@@ -126,8 +137,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Question required" }, { status: 400 });
   }
 
+  const history = Array.isArray(body.history) ? body.history : [];
   const retrieval = retrieve(question, body.context);
-  const llm = await maybeLlm(question, retrieval);
+  const llm = await maybeLlm(question, retrieval, history);
 
   return NextResponse.json({
     answer: llm ?? retrieval.answer,

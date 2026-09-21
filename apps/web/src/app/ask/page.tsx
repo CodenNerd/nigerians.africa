@@ -14,14 +14,16 @@ export default function AskPage() {
       </p>
       <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
         <div className="space-y-8">
-          <AskPanel context="NigeriaForNigerians public record. Signature thread: Allen Avenue spur." />
+          <AskPanel
+            variant="page"
+            context="NigeriaForNigerians public record. Signature thread: Allen Avenue spur."
+          />
           <div className="border border-paper-border bg-paper-card p-5 text-sm text-ink-muted">
-            <p className="font-medium text-ink">Example questions</p>
+            <p className="font-medium text-ink">How it works</p>
             <ul className="mt-3 list-disc space-y-1 pl-5">
-              <li>What happened to the abandoned road project in Ikeja?</li>
-              <li>Who is responsible for Allen Avenue spur?</li>
-              <li>How much money was allocated and released?</li>
-              <li>What evidence exists?</li>
+              <li>Ask a question or tap a starter prompt.</li>
+              <li>Follow up in the same thread — the record stays the source of truth.</li>
+              <li>Answers are labelled AI Generated and cite underlying records.</li>
             </ul>
           </div>
         </div>
