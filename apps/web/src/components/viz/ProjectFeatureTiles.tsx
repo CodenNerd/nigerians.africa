@@ -102,8 +102,47 @@ export function ProjectFeatureTiles({
                   {p.name}
                 </h3>
                 <p className="mt-2 line-clamp-2 pl-3 text-sm text-ink-muted">{p.description}</p>
+              </Link>
 
-                <div className="mt-4 flex flex-wrap gap-1.5 pl-3">
+              {media.length > 0 ? (
+                <div className="border-y border-paper-border pl-1">
+                  <p className="px-5 pt-2.5 font-mono text-[9px] uppercase tracking-[0.16em] text-ink-faint sm:px-6">
+                    Evidence · {media.length} media
+                  </p>
+                  <ul className="mt-2 flex gap-px overflow-x-auto bg-paper-border">
+                    {media.map((m) => (
+                      <li key={m.id} className="min-w-0 shrink-0 basis-[30%] sm:basis-[28%]">
+                        <Link
+                          href={m.href}
+                          className="plane-link relative block aspect-[4/3] overflow-hidden bg-ink/10 no-underline"
+                          title={m.title}
+                        >
+                          <Image
+                            src={m.src}
+                            alt=""
+                            fill
+                            className="object-cover"
+                            sizes="160px"
+                          />
+                          {m.kind === "video" ? (
+                            <span className="absolute inset-0 flex items-center justify-center bg-ink/30">
+                              <span className="border border-paper/80 bg-paper/90 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wider text-ink">
+                                Play
+                              </span>
+                            </span>
+                          ) : null}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              <Link
+                href={`/projects/${p.slug}`}
+                className="plane-link group flex flex-1 flex-col p-5 no-underline sm:p-6"
+              >
+                <div className="flex flex-wrap gap-1.5 pl-3">
                   {handlers.length === 0 ? (
                     <span className="border border-paper-border px-2 py-0.5 text-[10px] uppercase tracking-wider text-ink-faint">
                       Handler not linked
@@ -144,40 +183,6 @@ export function ProjectFeatureTiles({
                   </span>
                 </div>
               </Link>
-
-              {media.length > 0 ? (
-                <div className="border-t border-paper-border pl-1">
-                  <p className="px-5 pt-2.5 font-mono text-[9px] uppercase tracking-[0.16em] text-ink-faint sm:px-6">
-                    Evidence · {media.length} media
-                  </p>
-                  <ul className="mt-2 flex gap-px overflow-x-auto bg-paper-border">
-                    {media.map((m) => (
-                      <li key={m.id} className="min-w-0 shrink-0 basis-[30%] sm:basis-[28%]">
-                        <Link
-                          href={m.href}
-                          className="plane-link relative block aspect-[4/3] overflow-hidden bg-ink/10 no-underline"
-                          title={m.title}
-                        >
-                          <Image
-                            src={m.src}
-                            alt=""
-                            fill
-                            className="object-cover"
-                            sizes="160px"
-                          />
-                          {m.kind === "video" ? (
-                            <span className="absolute inset-0 flex items-center justify-center bg-ink/30">
-                              <span className="border border-paper/80 bg-paper/90 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wider text-ink">
-                                Play
-                              </span>
-                            </span>
-                          ) : null}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
             </li>
           );
         })}
