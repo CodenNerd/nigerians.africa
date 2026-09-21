@@ -17,7 +17,7 @@ export default async function MoneyDetailPage({
   const allocation = store.allocationBySlug(id);
   if (!allocation) notFound();
 
-  const budget = store.allBudgets().find((b) => b.id === allocation.budgetId);
+  const budget = store.budgetById(allocation.budgetId);
   const project = allocation.projectId
     ? store.allProjects().find((p) => p.id === allocation.projectId)
     : undefined;
@@ -49,7 +49,14 @@ export default async function MoneyDetailPage({
         <ol className="space-y-3 font-mono text-sm">
           <li>
             <span className="text-ink-faint">Budget → </span>
-            {budget?.title} ({store.formatNaira(budget?.amount ?? 0)})
+            {budget ? (
+              <Link href={`/money/budgets/${budget.slug}`} className="text-civic-green hover:underline">
+                {budget.title}
+              </Link>
+            ) : (
+              "—"
+            )}{" "}
+            ({store.formatNaira(budget?.amount ?? 0)})
           </li>
           <li>
             <span className="text-ink-faint">Institution → </span>

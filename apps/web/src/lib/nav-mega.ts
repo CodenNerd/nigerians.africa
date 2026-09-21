@@ -187,14 +187,14 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         initials: "₦",
       },
       {
-        href: "/money#budget-lagos-2024",
+        href: "/money/budgets/lagos-capital-2024-works",
         title: "Lagos capital — Works",
         kind: "Budget",
         tone: "blue",
         initials: "LG",
       },
       {
-        href: "/money#budget-fed-national-2025",
+        href: "/money/budgets/federal-national-2025",
         title: "Federal national budget 2025",
         kind: "Budget",
         tone: "amber",

@@ -11,6 +11,8 @@ export type EntityListItem = {
   date?: string;
   meta?: ReactNode;
   tone?: PlaneTone;
+  /** Anchor id for deep links / legacy hash bookmarks. */
+  id?: string;
   /** Leading logo / photo / cover. */
   imageUrl?: string;
   imageAlt?: string;
@@ -32,7 +34,7 @@ export function EntityList({
       {items.map((item) => {
         const t = planeTone[item.tone ?? "green"];
         return (
-          <li key={item.href + item.title}>
+          <li key={item.href + item.title} id={item.id} className={item.id ? "scroll-mt-28" : undefined}>
             <Link
               href={item.href}
               className={`group plane-link relative block ${t.plane} p-5 no-underline sm:p-6`}

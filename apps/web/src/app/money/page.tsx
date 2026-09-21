@@ -19,24 +19,28 @@ export default function MoneyPage() {
 
       <section className="mt-14">
         <SectionHead title="Budgets" subtitle="Fiscal envelopes, newest year first." meta={`${budgets.length}`} />
-        <ul className="mt-6 grid gap-px bg-paper-border">
-          {budgets.map((b) => (
-            <li key={b.id} id={b.id} className="scroll-mt-28 bg-civic-amberSoft p-5 sm:p-6">
-              <div className="font-display text-xl text-ink sm:text-2xl">{b.title}</div>
-              <p className="mt-2 text-sm text-ink-muted">{b.description}</p>
-              <p className="mt-3 font-mono text-sm text-civic-amber">
-                FY{b.fiscalYear} · {store.formatNaira(b.amount)} · {b.governmentLevel}
-              </p>
-              {b.id === "budget-fed-national-2025" || b.slug === "federal-budget-2024" ? (
-                <p className="mt-2 text-sm">
-                  <Link href="/people/bola-ahmed-tinubu" className="text-civic-green no-underline hover:underline">
-                    Related personality: Bola Ahmed Tinubu
-                  </Link>
-                </p>
-              ) : null}
-            </li>
-          ))}
-        </ul>
+        <EntityList
+          items={budgets.map((b) => {
+            const institution = store.allInstitutions().find((i) => i.id === b.institutionId);
+            const allocCount = store.allocationsForBudget(b.id).length;
+            return {
+              href: `/money/budgets/${b.slug}`,
+              id: b.id,
+              title: b.title,
+              description: b.description,
+              kind: `${b.governmentLevel} · FY${b.fiscalYear}`,
+              tone: "amber" as const,
+              meta: (
+                <span className="font-mono text-xs">
+                  {store.formatNaira(b.amount)}
+                  {institution ? ` · ${institution.name}` : ""}
+                  {allocCount ? ` · ${allocCount} allocation${allocCount === 1 ? "" : "s"}` : ""}
+                </span>
+              ),
+            };
+          })}
+          empty="No budgets in the record yet."
+        />
       </section>
 
       <section className="mt-16">

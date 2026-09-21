@@ -258,7 +258,7 @@ export const handcrafted: SeedDatabase = {
         {
           kind: "Budget",
           label: "National budget",
-          href: "/money#budget-fed-national-2025",
+          href: "/money/budgets/federal-national-2025",
           description:
             "Federal Capital Budget 2025 — national spending envelope under the Presidency’s fiscal cycle.",
         },
@@ -4090,7 +4090,7 @@ export const handcrafted: SeedDatabase = {
       kind: "Budget",
       title: "Lagos capital Works envelope recorded",
       summary: "State fiscal envelope for roads and drainage enters the money graph.",
-      href: "/money#budget-lagos-2024",
+      href: "/money/budgets/lagos-capital-2024-works",
       status: "official_record",
       entityType: "money",
       relatedLabel: "Lagos FY2024",

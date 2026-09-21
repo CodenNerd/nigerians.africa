@@ -934,6 +934,20 @@ export class PublicRecordStore {
     return [...this.db.budgets].sort((a, b) => b.fiscalYear - a.fiscalYear);
   }
 
+  budgetBySlug(slug: string) {
+    return this.db.budgets.find((b) => b.slug === slug);
+  }
+
+  budgetById(id: string) {
+    return this.db.budgets.find((b) => b.id === id);
+  }
+
+  allocationsForBudget(budgetId: string): Allocation[] {
+    return [...this.db.allocations.filter((a) => a.budgetId === budgetId)].sort(
+      (a, b) => b.amount - a.amount,
+    );
+  }
+
   allAllocations(): Allocation[] {
     const yearOf = (a: Allocation) =>
       this.db.budgets.find((b) => b.id === a.budgetId)?.fiscalYear ?? 0;
