@@ -111,6 +111,7 @@ export default async function NgoCategoryPage({
                   kind: vetted ? "NGO · Platform vetted" : "NGO",
                   meta: `Activity ${store.organizationActivityScore(o)}`,
                   tone: (vetted ? "green" : "slate") as "green" | "slate",
+                  imageUrl: o.logoUrl,
                 };
               })}
             />

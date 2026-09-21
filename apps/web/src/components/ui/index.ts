@@ -3,3 +3,4 @@ export type { PlaneTone } from "./SectionHead";
 export { PageIntro } from "./PageIntro";
 export { EntityList } from "./EntityList";
 export type { EntityListItem } from "./EntityList";
+export { EntityCover } from "./EntityCover";

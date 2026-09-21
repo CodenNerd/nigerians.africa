@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="survivors-justice-collective">
+  <rect width="64" height="64" fill="#f5e4e4"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#8b2e2e" stroke-opacity="0.15" stroke-width="2"/>
+  <path d="M32 46 C32 46 14 34 14 24 C14 18 18 14 24 14 C28 14 32 18 32 18 C32 18 36 14 40 14 C46 14 50 18 50 24 C50 34 32 46 32 46 Z" fill="#8b2e2e"/>
+  <text x="32" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="#8b2e2e" opacity="0.55">SJ</text>
+</svg>

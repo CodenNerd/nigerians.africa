@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="access-bridge-nigeria">
+  <rect width="64" height="64" fill="#e8f2ec"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#1b5e3b" stroke-opacity="0.15" stroke-width="2"/>
+  <path d="M10 40 H54 M14 40 Q32 18 50 40 M20 40 V48 M44 40 V48" fill="none" stroke="#1b5e3b" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="32" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="#1b5e3b" opacity="0.55">AB</text>
+</svg>

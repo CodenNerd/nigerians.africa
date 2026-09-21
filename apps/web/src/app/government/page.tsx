@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { store } from "@nigeria-for-nigerians/domain";
 import { PageIntro, SectionHead, EntityList } from "@/components/ui";
 
@@ -35,11 +36,18 @@ export default function GovernmentPage() {
                 <li key={i.id}>
                   <Link
                     href={`/government/institutions/${i.slug}`}
-                    className={`plane-link block ${col.tone} px-4 py-3 text-sm text-ink no-underline`}
+                    className={`plane-link flex items-center gap-3 ${col.tone} px-4 py-3 text-sm text-ink no-underline`}
                   >
-                    {i.name}
-                    <span className="mt-0.5 block text-[10px] uppercase tracking-wider text-ink-faint">
-                      {i.type}
+                    {i.logoUrl ? (
+                      <span className="relative h-10 w-10 shrink-0 overflow-hidden border border-paper-border bg-paper">
+                        <Image src={i.logoUrl} alt="" fill className="object-cover" sizes="40px" />
+                      </span>
+                    ) : null}
+                    <span className="min-w-0">
+                      {i.name}
+                      <span className="mt-0.5 block text-[10px] uppercase tracking-wider text-ink-faint">
+                        {i.type}
+                      </span>
                     </span>
                   </Link>
                 </li>
@@ -61,12 +69,14 @@ export default function GovernmentPage() {
         <EntityList
           items={offices.slice(0, 60).map((o) => {
             const holder = store.currentHolder(o.id);
+            const inst = store.allInstitutions().find((i) => i.id === o.institutionId);
             return {
               href: `/government/offices/${o.slug}`,
               title: o.name,
               description: o.mandate,
               kind: o.level,
               tone: "blue" as const,
+              imageUrl: holder?.photoUrl ?? inst?.logoUrl,
               meta: holder ? (
                 <span>
                   Current holder:{" "}

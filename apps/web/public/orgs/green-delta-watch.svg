@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="green-delta-watch">
+  <rect width="64" height="64" fill="#e8f2ec"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#1b5e3b" stroke-opacity="0.15" stroke-width="2"/>
+  <path d="M32 50 C18 40 14 24 32 12 C50 24 46 40 32 50 Z M32 20 V42" fill="none" stroke="#1b5e3b" stroke-width="2.5"/>
+  <text x="32" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="#1b5e3b" opacity="0.55">GD</text>
+</svg>

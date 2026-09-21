@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="sahel-relief-initiative">
+  <rect width="64" height="64" fill="#f5efd8"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#8a6d1a" stroke-opacity="0.15" stroke-width="2"/>
+  <path d="M20 34 V22 C20 20 22 18 24 18 C26 18 28 20 28 22 V30 M28 30 V16 C28 14 30 12 32 12 C34 12 36 14 36 16 V30 M36 28 V18 C36 16 38 14 40 14 C42 14 44 16 44 18 V36 C44 44 38 50 32 50 C24 50 20 44 20 38" fill="none" stroke="#8a6d1a" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="32" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="#8a6d1a" opacity="0.55">SR</text>
+</svg>

@@ -22,6 +22,7 @@ export default function ProblemsPage() {
           kind: p.category,
           date: p.firstReportedAt,
           tone: "red" as const,
+          imageUrl: p.coverUrl,
           meta: <StatusLabel status={p.verificationStatus} />,
         }))}
       />

@@ -11,6 +11,7 @@ import {
 import { FollowTheThread } from "@/components/FollowTheThread";
 import { StatusLabel } from "@/components/StatusLabel";
 import { PlacesMap } from "@/components/PlacesMap";
+import { EntityCover } from "@/components/ui";
 
 export function generateStaticParams() {
   return store.allProblems().map((p) => ({ slug: p.slug }));
@@ -52,6 +53,17 @@ export default async function ProblemDetailPage({
         </span>
       }
       askContext={problem.title}
+      hero={
+        problem.coverUrl ? (
+          <EntityCover
+            title={problem.title}
+            coverUrl={problem.coverUrl}
+            coverCredit={problem.coverCredit}
+            eyebrow="Problem"
+          />
+        ) : undefined
+      }
+      hideHeader={Boolean(problem.coverUrl)}
       actions={[
         { label: "Report an update", href: "/report" },
         { label: "See responsible offices", href: "/government" },

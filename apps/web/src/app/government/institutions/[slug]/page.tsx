@@ -27,6 +27,7 @@ export default async function InstitutionPage({
       title={inst.name}
       subtitle={inst.description}
       askContext={inst.name}
+      avatarUrl={inst.logoUrl}
     >
       <RecordSection title="What this institution does">
         <p className="prose-record">{inst.mandate}</p>

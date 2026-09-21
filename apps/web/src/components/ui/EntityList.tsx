@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { planeTone, type PlaneTone } from "./SectionHead";
@@ -10,6 +11,9 @@ export type EntityListItem = {
   date?: string;
   meta?: ReactNode;
   tone?: PlaneTone;
+  /** Leading logo / photo / cover. */
+  imageUrl?: string;
+  imageAlt?: string;
 };
 
 export function EntityList({
@@ -35,23 +39,36 @@ export function EntityList({
             >
               <span className={`absolute left-0 top-0 h-full w-1 ${t.accent} opacity-80`} />
               <div className="flex flex-wrap items-start justify-between gap-3 pl-3">
-                <div className="min-w-0 flex-1">
-                  {item.kind ? (
-                    <span
-                      className={`text-[10px] font-medium uppercase tracking-[0.2em] ${t.ink}`}
-                    >
-                      {item.kind}
+                <div className="flex min-w-0 flex-1 gap-4">
+                  {item.imageUrl ? (
+                    <span className="relative mt-0.5 h-14 w-14 shrink-0 overflow-hidden border border-paper-border bg-paper">
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.imageAlt ?? ""}
+                        fill
+                        className="object-cover"
+                        sizes="56px"
+                      />
                     </span>
                   ) : null}
-                  <span className="mt-1.5 block font-display text-xl leading-snug text-ink sm:text-2xl">
-                    {item.title}
-                  </span>
-                  {item.description ? (
-                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-muted">
-                      {item.description}
-                    </p>
-                  ) : null}
-                  {item.meta ? <div className="mt-3 text-sm text-ink-faint">{item.meta}</div> : null}
+                  <div className="min-w-0 flex-1">
+                    {item.kind ? (
+                      <span
+                        className={`text-[10px] font-medium uppercase tracking-[0.2em] ${t.ink}`}
+                      >
+                        {item.kind}
+                      </span>
+                    ) : null}
+                    <span className="mt-1.5 block font-display text-xl leading-snug text-ink sm:text-2xl">
+                      {item.title}
+                    </span>
+                    {item.description ? (
+                      <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-muted">
+                        {item.description}
+                      </p>
+                    ) : null}
+                    {item.meta ? <div className="mt-3 text-sm text-ink-faint">{item.meta}</div> : null}
+                  </div>
                 </div>
                 <div className="flex shrink-0 flex-col items-end gap-2">
                   {item.date ? (

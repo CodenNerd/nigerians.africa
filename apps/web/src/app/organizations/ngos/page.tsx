@@ -68,6 +68,7 @@ export default async function AllNgosPage({
               kind: isVetted ? "NGO · Platform vetted" : "NGO",
               meta: catLabels || undefined,
               tone: (isVetted ? "green" : "slate") as "green" | "slate",
+              imageUrl: o.logoUrl,
             };
           })}
         />

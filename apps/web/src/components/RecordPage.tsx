@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { StatusLabel } from "./StatusLabel";
 import type { VerificationStatus } from "@nigeria-for-nigerians/domain";
@@ -17,6 +18,7 @@ export function RecordPage({
   actions,
   hero,
   hideHeader,
+  avatarUrl,
 }: {
   eyebrow: string;
   title: string;
@@ -30,6 +32,8 @@ export function RecordPage({
   hero?: ReactNode;
   /** When true with hero, skip the in-container title block. */
   hideHeader?: boolean;
+  /** Optional logo / mark beside the title. */
+  avatarUrl?: string;
 }) {
   return (
     <article>
@@ -37,18 +41,27 @@ export function RecordPage({
       <div className={`site-container ${hero ? "pb-10 pt-8 lg:pb-12 lg:pt-9" : "py-10 lg:py-14"}`}>
         {!hideHeader ? (
           <header className="anim-rise max-w-3xl">
-            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-ink-faint">
-              {eyebrow}
-            </p>
-            <h1 className="mt-3 font-display text-4xl leading-[1.08] tracking-tight text-ink sm:text-5xl">
-              {title}
-            </h1>
-            {subtitle ? (
-              <p className="mt-4 text-base leading-relaxed text-ink-muted sm:text-lg">{subtitle}</p>
-            ) : null}
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              {status ? <StatusLabel status={status} /> : null}
-              {meta}
+            <div className="flex items-start gap-5">
+              {avatarUrl ? (
+                <span className="relative mt-1 h-16 w-16 shrink-0 overflow-hidden border border-paper-border bg-paper sm:h-20 sm:w-20">
+                  <Image src={avatarUrl} alt="" fill className="object-cover" sizes="80px" />
+                </span>
+              ) : null}
+              <div className="min-w-0 flex-1">
+                <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-ink-faint">
+                  {eyebrow}
+                </p>
+                <h1 className="mt-3 font-display text-4xl leading-[1.08] tracking-tight text-ink sm:text-5xl">
+                  {title}
+                </h1>
+                {subtitle ? (
+                  <p className="mt-4 text-base leading-relaxed text-ink-muted sm:text-lg">{subtitle}</p>
+                ) : null}
+                <div className="mt-5 flex flex-wrap items-center gap-3">
+                  {status ? <StatusLabel status={status} /> : null}
+                  {meta}
+                </div>
+              </div>
             </div>
           </header>
         ) : null}

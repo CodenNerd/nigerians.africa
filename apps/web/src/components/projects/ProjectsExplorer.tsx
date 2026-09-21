@@ -2,6 +2,7 @@
 
 import { Suspense, useCallback, useMemo, type ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   FUNDING_STATUS_LABEL,
@@ -520,7 +521,13 @@ function ProjectListView({ entries }: { entries: ProjectIndexEntry[] }) {
             href={`/projects/${e.slug}`}
             className="plane-link group flex flex-col gap-3 px-4 py-4 no-underline sm:flex-row sm:items-center sm:justify-between sm:px-5"
           >
-            <div className="min-w-0 flex-1">
+            <div className="flex min-w-0 flex-1 gap-4">
+              {e.coverUrl ? (
+                <span className="relative hidden h-16 w-20 shrink-0 overflow-hidden border border-paper-border bg-paper sm:block">
+                  <Image src={e.coverUrl} alt="" fill className="object-cover" sizes="80px" />
+                </span>
+              ) : null}
+              <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
                   {e.status.replace(/_/g, " ")}
@@ -534,6 +541,7 @@ function ProjectListView({ entries }: { entries: ProjectIndexEntry[] }) {
               </h3>
               <div className="mt-2 flex flex-wrap gap-1.5">
                 <HandlerChips entry={e} />
+              </div>
               </div>
             </div>
             <div className="flex flex-wrap items-end gap-6 sm:justify-end">

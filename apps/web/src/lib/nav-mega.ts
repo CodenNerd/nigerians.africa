@@ -63,6 +63,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         kind: "Federal office",
         tone: "green",
         large: true,
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/b/bc/Coat_of_arms_of_Nigeria.svg",
         initials: "PR",
       },
       {
@@ -70,6 +72,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         title: "Governor of Lagos State",
         kind: "State office",
         tone: "blue",
+        imageUrl:
+          "/institutions/lagos-state-government.svg",
         initials: "LG",
       },
       {
@@ -77,6 +81,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         title: "Commissioner for Works",
         kind: "Lagos",
         tone: "amber",
+        imageUrl:
+          "/institutions/lagos-ministry-of-works.svg",
         initials: "WK",
       },
     ],
@@ -122,6 +128,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         kind: "Infrastructure",
         tone: "amber",
         large: true,
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/8/8a/Bad_road_in_lagos_Nigeria_2020_07_02.jpg",
         initials: "RD",
       },
       {
@@ -129,6 +137,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         title: "Electricity access",
         kind: "National",
         tone: "red",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/e/ee/Aerial_view_of_Marina%2C_Lagos_Island_East%2C_Lagos-Nigeria.jpg",
         initials: "EL",
       },
       {
@@ -136,6 +146,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         title: "Urban flooding",
         kind: "Environment",
         tone: "blue",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/4/45/Flooded_road_in_Lagos.jpg",
         initials: "FL",
       },
     ],
@@ -170,6 +182,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         kind: "Allocation",
         tone: "green",
         large: true,
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/8/8a/Bad_road_in_lagos_Nigeria_2020_07_02.jpg",
         initials: "₦",
       },
       {
@@ -226,6 +240,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         title: "Omole drainage upgrade",
         kind: "Lagos",
         tone: "blue",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/4/45/Flooded_road_in_Lagos.jpg",
         initials: "OM",
       },
       {
@@ -233,6 +249,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         title: "Kano peri-urban electrification",
         kind: "Power",
         tone: "amber",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/e/ee/Aerial_view_of_Marina%2C_Lagos_Island_East%2C_Lagos-Nigeria.jpg",
         initials: "KN",
       },
     ],
@@ -320,6 +338,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         title: "Engr. Tunde Adebayo",
         kind: "State official",
         tone: "blue",
+        imageUrl:
+          "https://i.pravatar.cc/300?u=person-adebayo",
         initials: "TA",
       },
       {
@@ -327,6 +347,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         title: "Chioma Okonkwo",
         kind: "Legislator",
         tone: "amber",
+        imageUrl:
+          "https://i.pravatar.cc/300?u=person-okonkwo",
         initials: "CO",
       },
     ],
@@ -361,6 +383,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         kind: "Anti-corruption · Civic",
         tone: "green",
         large: true,
+        imageUrl:
+          "/orgs/civic-track-nigeria.svg",
         initials: "CT",
       },
       {
@@ -368,6 +392,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         title: "Public Justice Network",
         kind: "Legal aid",
         tone: "blue",
+        imageUrl:
+          "/orgs/public-justice-network.svg",
         initials: "PJ",
       },
       {
@@ -375,6 +401,8 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         title: "Election Observation Network",
         kind: "Civic / Democracy",
         tone: "amber",
+        imageUrl:
+          "/orgs/election-observation-network.svg",
         initials: "EO",
       },
     ],

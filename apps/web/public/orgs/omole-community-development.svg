@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="omole-community-development">
+  <rect width="64" height="64" fill="#e8f2ec"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#1b5e3b" stroke-opacity="0.15" stroke-width="2"/>
+  <path d="M16 30 L32 14 L48 30 V48 H36 V36 H28 V48 H16 Z" fill="#1b5e3b"/>
+  <text x="32" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="#1b5e3b" opacity="0.55">OM</text>
+</svg>

@@ -108,6 +108,9 @@ export interface Location {
   lng: number;
   summary: string;
   population?: string;
+  /** Place photograph for dossier / list covers. */
+  coverUrl?: string;
+  coverCredit?: string;
 }
 
 export interface PersonImageCredit {
@@ -184,6 +187,9 @@ export interface Institution {
   foiPortalUrl?: string;
   contactNotes?: string;
   transparencyNotes?: string;
+  /** Agency / institution mark. */
+  logoUrl?: string;
+  logoCredit?: string;
 }
 
 export interface Office {
@@ -223,6 +229,9 @@ export interface Problem {
   officeIds: string[];
   firstReportedAt: string;
   verificationStatus: VerificationStatus;
+  /** Thematic photograph for list / dossier covers. */
+  coverUrl?: string;
+  coverCredit?: string;
 }
 
 export interface Project {
@@ -418,6 +427,9 @@ export interface Organization {
   projectAllocations?: OrganizationProjectAllocation[];
   /** Thematic focus areas for civil-society / NGO actors. */
   ngoCategories?: NgoCategoryId[];
+  /** Brand mark — local SVG or remote logo URL. */
+  logoUrl?: string;
+  logoCredit?: string;
 }
 
 export interface Evidence {

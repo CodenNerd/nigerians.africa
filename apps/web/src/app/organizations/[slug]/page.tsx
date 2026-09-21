@@ -50,6 +50,7 @@ export default async function OrganizationPage({
       title={org.name}
       subtitle={org.mission}
       askContext={org.name}
+      avatarUrl={org.logoUrl}
       actions={[
         { label: "Support / volunteer", href: "/action" },
         { label: "Contact via report", href: "/report" },

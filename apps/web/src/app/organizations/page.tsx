@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   NGO_CATEGORIES,
   store,
@@ -81,15 +82,22 @@ export default function OrganizationsPage() {
                 {top ? (
                   <Link
                     href={`/organizations/${top.slug}`}
-                    className="plane-link block bg-civic-blueSoft px-5 py-4 no-underline"
+                    className="plane-link flex gap-4 bg-civic-blueSoft px-5 py-4 no-underline"
                   >
-                    <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-civic-blue">
-                      {meta.label}
-                    </span>
-                    <span className="mt-1 block font-display text-xl text-ink">{top.name}</span>
-                    <span className="mt-1 block text-sm text-ink-muted line-clamp-2">{top.mission}</span>
-                    <span className="mt-2 block font-mono text-[11px] text-ink-faint">
-                      Activity score {store.organizationActivityScore(top)}
+                    {top.logoUrl ? (
+                      <span className="relative mt-0.5 h-14 w-14 shrink-0 overflow-hidden border border-paper-border bg-paper">
+                        <Image src={top.logoUrl} alt="" fill className="object-cover" sizes="56px" />
+                      </span>
+                    ) : null}
+                    <span className="min-w-0">
+                      <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-civic-blue">
+                        {meta.label}
+                      </span>
+                      <span className="mt-1 block font-display text-xl text-ink">{top.name}</span>
+                      <span className="mt-1 block text-sm text-ink-muted line-clamp-2">{top.mission}</span>
+                      <span className="mt-2 block font-mono text-[11px] text-ink-faint">
+                        Activity score {store.organizationActivityScore(top)}
+                      </span>
                     </span>
                   </Link>
                 ) : (
@@ -139,6 +147,7 @@ export default function OrganizationsPage() {
                 kind: vetted ? `NGO · Platform vetted` : "NGO",
                 meta: catLabels || undefined,
                 tone: (vetted ? "green" : "slate") as "green" | "slate",
+                imageUrl: o.logoUrl,
               };
             })}
         />
@@ -168,6 +177,7 @@ export default function OrganizationsPage() {
               description: o.mission,
               kind: o.type,
               tone: "slate" as const,
+              imageUrl: o.logoUrl,
             }))}
           />
         </section>

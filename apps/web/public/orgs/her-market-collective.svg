@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="her-market-collective">
+  <rect width="64" height="64" fill="#f5e4e4"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#8b2e2e" stroke-opacity="0.15" stroke-width="2"/>
+  <path d="M14 24 H50 L46 48 H18 Z M18 24 V18 H46 V24 M26 30 V42 M38 30 V42" fill="none" stroke="#8b2e2e" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="32" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="#8b2e2e" opacity="0.55">HM</text>
+</svg>

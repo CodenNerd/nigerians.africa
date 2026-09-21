@@ -2,7 +2,7 @@ import Link from "next/link";
 import { store } from "@nigeria-for-nigerians/domain";
 import { RecordPage, RecordSection, RelatedLinks } from "@/components/RecordPage";
 import { PlacesMap } from "@/components/PlacesMap";
-import { EntityList } from "@/components/ui";
+import { EntityCover, EntityList } from "@/components/ui";
 import { StatusLabel } from "@/components/StatusLabel";
 
 function childHref(type: string, childSlug: string) {
@@ -30,6 +30,17 @@ export function PlaceRecord({ slug }: { slug: string }) {
       title={place.name}
       subtitle={place.summary}
       askContext={`What is happening in ${place.name}?`}
+      hero={
+        place.coverUrl ? (
+          <EntityCover
+            title={place.name}
+            coverUrl={place.coverUrl}
+            coverCredit={place.coverCredit}
+            eyebrow={`Place · ${place.type}`}
+          />
+        ) : undefined
+      }
+      hideHeader={Boolean(place.coverUrl)}
     >
       <RecordSection title="Map">
         <PlacesMap
@@ -75,6 +86,7 @@ export function PlaceRecord({ slug }: { slug: string }) {
             kind: p.category,
             date: p.firstReportedAt,
             tone: "red" as const,
+            imageUrl: p.coverUrl,
             meta: <StatusLabel status={p.verificationStatus} />,
           }))}
           empty="No problems linked to this place yet."
@@ -89,6 +101,7 @@ export function PlaceRecord({ slug }: { slug: string }) {
             kind: p.status.replace(/_/g, " "),
             date: p.startDate,
             tone: "green" as const,
+            imageUrl: p.coverUrl,
           }))}
           empty="No projects linked to this place yet."
         />

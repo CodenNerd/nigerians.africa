@@ -75,6 +75,7 @@ export type ProjectIndexEntry = {
   budgetId?: string;
   budgetLabel?: string;
   hasCampaign: boolean;
+  coverUrl?: string;
 };
 
 export type ProjectFacets = {
@@ -695,6 +696,7 @@ export class PublicRecordStore {
         budgetId: budget?.id,
         budgetLabel: budget ? `${budget.title} (${budget.fiscalYear})` : undefined,
         hasCampaign: funding.campaigns.length > 0,
+        coverUrl: p.coverUrl,
       };
     });
   }

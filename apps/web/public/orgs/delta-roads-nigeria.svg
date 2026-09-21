@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="delta-roads-nigeria">
+  <rect width="64" height="64" fill="#e6eef6"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#1e3a5f" stroke-opacity="0.15" stroke-width="2"/>
+  <path d="M16 44 L28 12 H36 L48 44 H40 L36 32 H28 L24 44 Z M29 28 H35" fill="none" stroke="#1e3a5f" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="32" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="7" fill="#1e3a5f" opacity="0.55">DR</text>
+</svg>
