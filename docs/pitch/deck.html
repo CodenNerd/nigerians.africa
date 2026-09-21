@@ -469,6 +469,96 @@
       color: var(--faint);
     }
 
+    .spot2 {
+      margin-top: 0.2in;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.14in;
+      flex: 1;
+      min-height: 0;
+    }
+    .spot {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 0.22in 0.24in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .spot:first-child { border-top: 4px solid var(--red); }
+    .spot:last-child { border-top: 4px solid var(--amber); }
+    .spot .tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    .spot:last-child .tag { color: var(--amber); }
+    .spot h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.25;
+      margin: 0.1in 0 0.1in;
+    }
+    .spot p { font-size: 15.5px; line-height: 1.4; color: var(--muted); }
+
+    .outcomes {
+      margin-top: 0.18in;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.14in;
+      flex: 1;
+    }
+    .outcome {
+      padding: 0.22in 0.24in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .outcome.least { background: var(--green-soft); }
+    .outcome.best { background: var(--blue-soft); }
+    .outcome span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .outcome.best span { color: var(--blue); }
+    .outcome h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.2;
+      margin: 0.08in 0 0.1in;
+    }
+    .outcome p { font-size: 15.5px; line-height: 1.4; color: var(--muted); }
+
+    .caps {
+      margin-top: 0.18in;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.1in;
+      flex: 1;
+    }
+    .cap {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 0.16in 0.16in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cap strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 0.05in;
+    }
+    .cap p { font-size: 14px; line-height: 1.35; color: var(--muted); }
+
     .conds {
       margin-top: 0.22in;
       display: grid;
@@ -648,7 +738,7 @@
       <div>
         <p class="eyebrow">OSF × Andela · Information you can trust</p>
         <h1>NigeriaForNigerians</h1>
-        <p class="deck-sub">A public record of government, problems, money, and evidence — connected so people can see it, check it, and act.</p>
+        <p class="deck-sub">A public record of government, problems, money, organisations, and evidence — connected so people can see it, follow it, and act.</p>
       </div>
       <svg class="thread-svg" width="220" height="36" viewBox="0 0 220 36" aria-hidden="true">
         <path d="M8 18 H212" stroke="#1b5e3b" stroke-width="1.5" fill="none"/>
@@ -689,13 +779,19 @@
       <p class="num">02</p>
     </header>
     <div class="main">
-      <h1>People cannot see the public life that shapes them.</h1>
-      <p class="lede">Rights, services, and accountability depend on information people understand and trust. In Nigeria that information is scattered across gazettes, budgets, ministry sites, news, and rumour.</p>
-      <div class="qgrid">
-        <div class="q"><b>01</b><strong>Who is responsible?</strong><p>A stalled road, a dark street, a clinic that never opened — which office owns it.</p></div>
-        <div class="q"><b>02</b><strong>Where did the money go?</strong><p>What was allocated, what was released, and what was reported as spent.</p></div>
-        <div class="q"><b>03</b><strong>What actually happened?</strong><p>The promise, the project status, the evidence, and the official reply, in one place.</p></div>
-        <div class="q"><b>04</b><strong>What can I do next?</strong><p>Who to contact, what to keep, and how to make a report or a request.</p></div>
+      <h1>Two everyday failures of civic memory.</h1>
+      <p class="lede">The typical Nigerian moves through a day of visible wrongs and invisible money. Neither leaves a durable public trail.</p>
+      <div class="spot2">
+        <article class="spot">
+          <p class="tag">Spotlight 01 · Lawlessness</p>
+          <h3>See it. Complain. Then nothing.</h3>
+          <p>People experience and talk about blatant law violation — shakedowns, violence, official misconduct — but have no clear action item. The moment passes. The record does not form. Organisations that could prosecute never see the case in time.</p>
+        </article>
+        <article class="spot">
+          <p class="tag">Spotlight 02 · Local money</p>
+          <h3>A CDA raises funds in the dark.</h3>
+          <p>A community development association far from the capital collects dues and donations for local projects. The community stays vulnerable: there is no public record of who runs the CDA, how the money was raised, or how it was spent.</p>
+        </article>
       </div>
     </div>
     <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
@@ -711,11 +807,11 @@
       <div class="three">
         <article class="piece">
           <h3>A budget names a figure.</h3>
-          <p>Allocations sit in documents that few people can search, and fewer can connect to a place they know.</p>
+          <p>Allocations sit in documents that few people can search, and fewer can connect to a place or a community association they know.</p>
         </article>
         <article class="piece">
-          <h3>A signboard names a contractor.</h3>
-          <p>A project appears, stalls, and leaves. The office, the payment, and the outcome drift apart.</p>
+          <h3>A violation names no next step.</h3>
+          <p>Complaints fill group chats. Evidence never becomes a matter. Legal NGOs never see the case while it is still fresh.</p>
         </article>
         <article class="piece">
           <h3>A report names a delay.</h3>
@@ -738,19 +834,19 @@
       <div class="roles">
         <div class="role">
           <strong>Residents</strong>
-          <p>Search a place, follow a problem, learn a right, and see the office that owns it.</p>
+          <p>Raise a case, follow a problem or matter by email, and see the office or organisation that owns the next step.</p>
         </div>
         <div class="role">
-          <strong>Contributors</strong>
-          <p>Attach a photo or observation to an office, a problem, or a polling unit.</p>
+          <strong>Community associations</strong>
+          <p>Publish who runs the CDA, how funds were raised, and how they were spent — so the community is not left guessing.</p>
         </div>
         <div class="role">
           <strong>Press &amp; civil society</strong>
-          <p>Follow a sourced trail and pick up a documented case.</p>
+          <p>Pick up a sourced trail or a Make Nigeria Better matter with evidence already attached.</p>
         </div>
         <div class="role">
-          <strong>Public offices</strong>
-          <p>Publish a response that stays beside the evidence. The record keeps both.</p>
+          <strong>Public offices &amp; legal NGOs</strong>
+          <p>Respond on the record, or prosecute a documented case until resolution. The history stays beside the outcome.</p>
         </div>
       </div>
     </div>
@@ -763,17 +859,21 @@
       <p class="num">05</p>
     </header>
     <div class="main">
-      <h1>A public memory of civic life.</h1>
-      <p class="lede">NigeriaForNigerians connects government, places, people, problems, projects, money, evidence, and history as one graph. Finding a fact is the start of engaging the institution behind it.</p>
-      <div class="loop">
-        <div class="step"><span>01</span><strong>Discover</strong><em>Search a place, a project, or a question.</em></div>
-        <div class="step"><span>02</span><strong>Understand</strong><em>See the office, the money, and the status.</em></div>
-        <div class="step"><span>03</span><strong>Verify</strong><em>Check the source, the date, and the label.</em></div>
-        <div class="step"><span>04</span><strong>Act</strong><em>Report, request, or contact.</em></div>
-        <div class="step"><span>05</span><strong>Track</strong><em>Watch the response arrive on the same page.</em></div>
-        <div class="step"><span>06</span><strong>Remember</strong><em>The outcome stays after the news moves on.</em></div>
+      <h1>From a forgotten moment to a living case.</h1>
+      <p class="lede">The product’s job is to catch what usually disappears — and leave a path open when someone is ready to pursue it.</p>
+      <div class="outcomes">
+        <article class="outcome least">
+          <span>Least case</span>
+          <h3>Immortalise the little record.</h3>
+          <p>A photo, a spend line, a named officer, a budget envelope — the everyday fragments journalists and organisations often miss until they matter. The platform keeps them attached to place, people, and money.</p>
+        </article>
+        <article class="outcome best">
+          <span>Best case</span>
+          <h3>A matter reaches resolution.</h3>
+          <p>Documented evidence becomes a Make Nigeria Better case. A vetted legal NGO picks it up and prosecutes until there is an outcome. The platform keeps the trail. Courts decide guilt.</p>
+        </article>
       </div>
-      <p class="note">Primary track: Transparency &amp; Accountability. Reporting and protection use the same path, so a record of spending can also become a record of harm and a route to support.</p>
+      <p class="note">Between those poles: follow a record by email, publish CDA people and spend, walk budget → allocation → project, and ask the graph what happened.</p>
     </div>
     <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
   </section>
@@ -791,8 +891,9 @@
           <li><b>Office</b><span>Works commissioner</span></li>
           <li><b>Person</b><span>Office holder</span></li>
           <li><b>Project</b><span>Allen Avenue spur</span></li>
+          <li><b>Budget</b><span>Lagos capital envelope</span></li>
           <li><b>Money</b><span>Allocated and released</span></li>
-          <li><b>Contractor</b><span>Who was paid to build</span></li>
+          <li><b>Organisation</b><span>Contractor and spend lines</span></li>
           <li><b>Evidence</b><span>Photographs of the site</span></li>
           <li><b>Report</b><span>What residents observed</span></li>
           <li><b>Response</b><span>What the office said back</span></li>
@@ -800,8 +901,8 @@
         <div class="story">
           <p class="eyebrow">Worked example in the prototype</p>
           <h2>A stalled spur in Ikeja.</h2>
-          <p>The demonstration follows one road from the problem to the office, the money, the contractor, the photographs, the citizen report, and the official reply. Amounts in this example are demonstration records, so the path can be walked in full.</p>
-          <p>Every page is a node. Leave it, and the relationship is still there.</p>
+          <p>The demonstration follows one road from the problem to the office, the budget, the allocation, the contractor, the photographs, the citizen report, and the official reply. Amounts in this example are demonstration records, so the path can be walked in full.</p>
+          <p>Parallel path: a Make Nigeria Better matter carries video evidence to a prosecuting NGO. Leave either page, and the relationship is still there.</p>
           <div class="ask">
             <strong>Ask the record</strong>
             “What happened to the abandoned road project in Ikeja?” The answer is marked AI Generated and cites the records underneath.
@@ -822,24 +923,62 @@
       <p class="lede">The prototype turns a fact into a path: who to contact, what to keep, and where a case can go.</p>
       <div class="actions">
         <article class="action g">
-          <span>Guidance</span>
-          <h3>What should I do?</h3>
-          <p>Plain language on rights, evidence to keep, the responsible office, and where to report — from a stalled project to a police encounter.</p>
+          <span>Raise a case</span>
+          <h3>From complaint to record.</h3>
+          <p>Home CTA opens Make Nigeria Better. Capture video evidence of lawlessness so the moment becomes a matter other people can follow.</p>
         </article>
         <article class="action b">
-          <span>Report</span>
-          <h3>See something.</h3>
-          <p>Submit a photo, video, or note tied to an office, a problem, or a polling unit. It joins the public record.</p>
+          <span>Report &amp; FOI</span>
+          <h3>Ask and attach.</h3>
+          <p>Submit a photo or note tied to an office, problem, or polling unit. Start a Freedom of Information request against the institution already on the page.</p>
         </article>
         <article class="action a">
-          <span>Freedom of Information</span>
-          <h3>Ask the office, on the record.</h3>
-          <p>Start a request against the institution already linked to the project, and keep the reply beside the question.</p>
+          <span>Organisations</span>
+          <h3>Who runs it. What they spent.</h3>
+          <p>CDAs, NGOs, contractors, and other actors publish people, income, spend, and project allocations — so local money is not invisible.</p>
         </article>
         <article class="action r">
           <span>Make Nigeria Better</span>
           <h3>A case can move.</h3>
-          <p>Documented matters can be picked up by vetted legal organisations. The platform keeps the case. Courts decide guilt.</p>
+          <p>Documented matters can be picked up by vetted legal organisations and prosecuted until resolution. The platform keeps the case. Courts decide guilt.</p>
+        </article>
+      </div>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">In the prototype</p>
+      <p class="num">08</p>
+    </header>
+    <div class="main">
+      <h1>What judges can walk today.</h1>
+      <p class="lede">Recent surfaces that make the two spotlights real in the seed, not only in the pitch.</p>
+      <div class="caps">
+        <article class="cap">
+          <strong>Follow by email</strong>
+          <p>Instant or weekly updates on organisations, people, problems, projects, and cases — with unsubscribe on every mail.</p>
+        </article>
+        <article class="cap">
+          <strong>Organisation dossiers</strong>
+          <p>Actor types (CDA, NGO, contractor…), people tiles, and clickable funding for income, spend, and project allocations.</p>
+        </article>
+        <article class="cap">
+          <strong>Budget pages</strong>
+          <p>Dedicated envelopes at /money/budgets — then allocations, releases, and projects on the same thread.</p>
+        </article>
+        <article class="cap">
+          <strong>Make Nigeria Better</strong>
+          <p>Hot-case tickets on the home deck; matters with evidence and prosecuting NGO assignment.</p>
+        </article>
+        <article class="cap">
+          <strong>NGO browse</strong>
+          <p>Organisations hub with thematic categories and spotlights so civil society is findable, not buried.</p>
+        </article>
+        <article class="cap">
+          <strong>Ask the graph</strong>
+          <p>Cited answers from the connected record, plus guidance that turns a fact into a next step.</p>
         </article>
       </div>
     </div>
@@ -849,7 +988,7 @@
   <section class="slide">
     <header class="top">
       <p class="eyebrow">Trust and accuracy</p>
-      <p class="num">08</p>
+      <p class="num">09</p>
     </header>
     <div class="main">
       <h1>Every serious claim carries a trail.</h1>
@@ -879,7 +1018,7 @@
   <section class="slide">
     <header class="top">
       <p class="eyebrow">Real conditions</p>
-      <p class="num">09</p>
+      <p class="num">10</p>
     </header>
     <div class="main">
       <h1>Useful where the connection is thin and the stakes are high.</h1>
@@ -916,7 +1055,7 @@
   <section class="slide">
     <header class="top">
       <p class="eyebrow">Scale</p>
-      <p class="num">10</p>
+      <p class="num">11</p>
     </header>
     <div class="main">
       <h1>Scale is another place on the same graph.</h1>
@@ -929,7 +1068,7 @@
         <article>
           <span>02</span>
           <h3>A new source is an adapter.</h3>
-          <p>Places, government, people, budgets, and sector threads are crawled, staged, reviewed, then promoted. Nothing enters without a source check.</p>
+          <p>Places, government, people, budgets, organisations, and sector threads are crawled, staged, reviewed, then promoted. Nothing enters without a source check.</p>
         </article>
         <article>
           <span>03</span>
@@ -945,7 +1084,7 @@
   <section class="slide">
     <header class="top">
       <p class="eyebrow">AI coding</p>
-      <p class="num">11</p>
+      <p class="num">12</p>
     </header>
     <div class="main">
       <h1>Built with AI coding tools. Grounded in the public record.</h1>
@@ -976,36 +1115,36 @@
   <section class="slide">
     <header class="top">
       <p class="eyebrow">Potential impact</p>
-      <p class="num">12</p>
+      <p class="num">13</p>
     </header>
     <div class="main">
       <h1>What changes when the thread is public.</h1>
       <div class="impacts">
         <article class="impact">
-          <strong>A resident</strong>
-          <p>Can name the office on a stalled project and see what was released, then choose a next step.</p>
+          <strong>A resident who saw a violation</strong>
+          <p>Has an action item: raise a case, attach evidence, and follow the matter instead of only complaining.</p>
         </article>
         <article class="impact">
-          <strong>A journalist or organisation</strong>
-          <p>Can cite a chain — problem, money, evidence, response — instead of a single post.</p>
+          <strong>A CDA community</strong>
+          <p>Can see who runs the association and how dues and donations were raised and spent.</p>
+        </article>
+        <article class="impact">
+          <strong>A journalist or legal NGO</strong>
+          <p>Can cite a chain — problem, money, evidence, matter — and pick up a case before it dies in a chat thread.</p>
         </article>
         <article class="impact">
           <strong>A public office</strong>
           <p>Can answer where the question already lives, and the answer remains part of the history.</p>
         </article>
-        <article class="impact">
-          <strong>A community</strong>
-          <p>Can document a site so the evidence stays attached after the news cycle ends.</p>
-        </article>
       </div>
       <div class="nextrow">
         <div class="now">
           <strong>This proof of concept</strong>
-          <p>Shows that journey working end to end on a connected public graph, with citations, guidance, and a path to action.</p>
+          <p>Shows both poles working: little records that stay, and a path for a matter to be prosecuted until resolution.</p>
         </div>
         <div class="later">
           <strong>What follows</strong>
-          <p>Live budget feeds, verifier capacity, language layers, and confidential reporting for sensitive cases.</p>
+          <p>Live budget feeds, verifier capacity, language layers, confidential reporting, and more organisations publishing spend.</p>
         </div>
       </div>
     </div>
@@ -1016,7 +1155,7 @@
     <div>
       <p class="eyebrow">NigeriaForNigerians</p>
       <h1>The platform remembers. Citizens decide.</h1>
-      <p class="motto">A public record people can check, follow, and act on.</p>
+      <p class="motto">A public record people can check, follow, and act on — from a forgotten moment to a prosecuted case.</p>
     </div>
     <div class="close-bottom">
       <p>Transparency &amp; Accountability, with Safety, Reporting &amp; Protection.<br>OSF × Andela · Information you can trust · September 2026</p>
