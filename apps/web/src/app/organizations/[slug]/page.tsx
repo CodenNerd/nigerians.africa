@@ -7,6 +7,7 @@ import {
   type OrgProjectRole,
 } from "@nigeria-for-nigerians/domain";
 import { MoneyFigure, RecordPage, RecordSection, RelatedLinks } from "@/components/RecordPage";
+import { EntityList } from "@/components/ui";
 
 export function generateStaticParams() {
   return store.allOrganizations().map((o) => ({ slug: o.slug }));
@@ -36,6 +37,7 @@ export default async function OrganizationPage({
 
   const problems = store.allProblems().filter((p) => org.problemIds.includes(p.id));
   const projectLinks = store.projectsForOrganization(org.id);
+  const people = store.peopleForOrganization(org.id);
   const location = store.locations().find((l) => l.id === org.locationId);
   const vetted = org.vettingStatus === "platform_vetted";
   const spendLines = org.spendLineItems ?? [];
@@ -79,6 +81,28 @@ export default async function OrganizationPage({
             {vetted ? "Platform vetted" : "Not yet vetted"}
           </span>
         </p>
+      </RecordSection>
+
+      <RecordSection
+        title="People"
+        subtitle="Staff, directors and counsel linked to this organization on the public record."
+        meta={`${people.length} people`}
+      >
+        <EntityList
+          empty="No people linked to this organization yet."
+          items={people.map(({ person, role }) => ({
+            href: `/people/${person.slug}`,
+            title: person.fullName,
+            description: person.bio.slice(0, 120) + (person.bio.length > 120 ? "…" : ""),
+            kind: role,
+            tone: "blue" as const,
+            meta: (
+              <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+                {person.photoInitials}
+              </span>
+            ),
+          }))}
+        />
       </RecordSection>
 
       <RecordSection title="Projects">

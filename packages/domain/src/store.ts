@@ -814,6 +814,31 @@ export class PublicRecordStore {
     return this.db.organizations.find((o) => o.slug === slug);
   }
 
+  /** People linked to an organization, with their role labels. */
+  peopleForOrganization(orgId: string): { person: Person; role: string }[] {
+    const org = this.db.organizations.find((o) => o.id === orgId);
+    if (!org?.people?.length) return [];
+    const out: { person: Person; role: string }[] = [];
+    for (const entry of org.people) {
+      const person = this.db.people.find((p) => p.id === entry.personId);
+      if (person) out.push({ person, role: entry.role });
+    }
+    return out;
+  }
+
+  /** Organizations a person is linked to. */
+  organizationsForPerson(personId: string): { organization: Organization; role: string }[] {
+    const out: { organization: Organization; role: string }[] = [];
+    for (const org of this.db.organizations) {
+      for (const entry of org.people ?? []) {
+        if (entry.personId === personId) {
+          out.push({ organization: org, role: entry.role });
+        }
+      }
+    }
+    return out;
+  }
+
   allBudgets() {
     return [...this.db.budgets].sort((a, b) => b.fiscalYear - a.fiscalYear);
   }

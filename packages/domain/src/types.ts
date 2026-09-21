@@ -351,6 +351,12 @@ export interface Contract {
   sourceId?: string;
 }
 
+export interface OrganizationPerson {
+  personId: string;
+  /** Role at the organization — e.g. Executive director, Lead counsel. */
+  role: string;
+}
+
 export interface Organization {
   id: string;
   slug: string;
@@ -363,6 +369,8 @@ export interface Organization {
   locationId: string;
   problemIds: string[];
   projectIds: string[];
+  /** People linked to this organization (staff, directors, counsel, monitors). */
+  people: OrganizationPerson[];
   fundingReceived: number;
   fundingSpent: number;
   transparencyNotes: string;
