@@ -409,6 +409,18 @@ export const NAV_MEGA: MegaMenuConfig[] = [
     quickLinks: [
       { href: "/organizations/ngos", label: "All NGOs", hint: "By activity", icon: "org" },
       {
+        href: "/organizations/types/community_organization",
+        label: "Community organizations",
+        hint: "CDS / CDA-style",
+        icon: "building",
+      },
+      {
+        href: "/organizations/types/contractor",
+        label: "Contractors",
+        hint: "Public works firms",
+        icon: "hammer",
+      },
+      {
         href: "/organizations/ngos?vetted=1",
         label: "Vetted NGOs",
         hint: "Published spend",
@@ -419,18 +431,6 @@ export const NAV_MEGA: MegaMenuConfig[] = [
         label: "Legal / Legal Aid",
         hint: "Litigation & advice",
         icon: "document",
-      },
-      {
-        href: "/organizations/ngos/anti_corruption",
-        label: "Anti-Corruption",
-        hint: "Spending & FOI",
-        icon: "search",
-      },
-      {
-        href: "/organizations/ngos/health",
-        label: "Health",
-        hint: "Clinics & outcomes",
-        icon: "building",
       },
     ],
     popular: [

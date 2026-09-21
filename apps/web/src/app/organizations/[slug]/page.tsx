@@ -82,8 +82,19 @@ export default async function OrganizationPage({
             {vetted ? "Platform vetted" : "Not yet vetted"}
           </span>
         </p>
-        {(org.ngoCategories ?? []).length > 0 ? (
+        {(org.ngoCategories ?? []).length > 0 || store.organizationTypeFor(org) ? (
           <div className="mt-4 flex flex-wrap gap-2">
+            {(() => {
+              const actor = store.organizationTypeFor(org);
+              return actor ? (
+                <Link
+                  href={`/organizations/types/${actor.id}`}
+                  className="border border-civic-blue/30 bg-civic-blueSoft/60 px-2.5 py-1 text-xs text-civic-blue no-underline transition hover:border-civic-blue/50"
+                >
+                  {actor.label}
+                </Link>
+              ) : null;
+            })()}
             {(org.ngoCategories ?? []).map((id) => {
               const cat = store.ngoCategoryMeta(id);
               if (!cat) return null;

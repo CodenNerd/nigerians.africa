@@ -1,5 +1,12 @@
 import { seed } from "./seed/data";
 import { NGO_CATEGORIES, ngoCategoryById, type NgoCategoryMeta } from "./ngo-categories";
+import {
+  ORGANIZATION_TYPES,
+  organizationTypeById,
+  organizationTypeByLabel,
+  type OrganizationTypeId,
+  type OrganizationTypeMeta,
+} from "./organization-types";
 import type {
   Allocation,
   CitizenReport,
@@ -846,6 +853,27 @@ export class PublicRecordStore {
 
   allNgoCategories(): NgoCategoryMeta[] {
     return NGO_CATEGORIES;
+  }
+
+  allOrganizationTypes(): OrganizationTypeMeta[] {
+    return ORGANIZATION_TYPES;
+  }
+
+  organizationTypeMeta(typeId: string): OrganizationTypeMeta | undefined {
+    return organizationTypeById(typeId);
+  }
+
+  /** Exact match on Organization.type label (e.g. "Contractor"). */
+  organizationsByType(typeId: OrganizationTypeId): Organization[] {
+    const meta = organizationTypeById(typeId);
+    if (!meta) return [];
+    return this.db.organizations.filter(
+      (o) => o.type.toLowerCase() === meta.label.toLowerCase(),
+    );
+  }
+
+  organizationTypeFor(org: Organization): OrganizationTypeMeta | undefined {
+    return organizationTypeByLabel(org.type);
   }
 
   /**
