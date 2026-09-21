@@ -1,10 +1,74 @@
 import Link from "next/link";
 import { store } from "@nigeria-for-nigerians/domain";
+import type { MatterStatus } from "@nigeria-for-nigerians/domain";
 import { StatusLabel } from "@/components/StatusLabel";
 import { FollowTheThread } from "@/components/FollowTheThread";
 import { RecordStream } from "@/components/RecordStream";
 import { NigeriaStateMap, ProjectFeatureTiles } from "@/components/viz";
 import { SectionHead, EntityList } from "@/components/ui";
+import {
+  HotMatterTickets,
+  matterProgressLabel,
+  type HotMatterTicket,
+} from "@/components/HotMatterTickets";
+
+const HOT_MATTER_ORDER = [
+  "matter-office-assault",
+  "matter-checkpoint-ikeja",
+  "matter-electoral-ikeja",
+  "matter-market-violence",
+] as const;
+
+/** Demo reporter labels — most matters stay anonymous. */
+const REPORTER_BY_MATTER: Record<string, string> = {
+  "matter-market-violence": "Tunde Okonkwo",
+};
+
+function formatLocation(locationId: string): string {
+  const loc = store.locations().find((l) => l.id === locationId);
+  if (!loc) return "Nigeria";
+  if (loc.id === "loc-abuja" || loc.slug === "fct") {
+    return "Abuja, FCT";
+  }
+  if (loc.type === "state") {
+    return loc.name.replace(/ State$/, "");
+  }
+  const parent = loc.parentId
+    ? store.locations().find((l) => l.id === loc.parentId)
+    : undefined;
+  if (parent) {
+    const parentLabel =
+      parent.id === "loc-abuja" || parent.slug === "fct"
+        ? "FCT"
+        : parent.name.replace(/ State$/, "");
+    return `${loc.name}, ${parentLabel}`;
+  }
+  return loc.name;
+}
+
+function hotMatterTickets(): HotMatterTicket[] {
+  const scheme = store.schemeBySlug("make-nigeria-better");
+  const byId = new Map(store.allProsecutionMatters().map((m) => [m.id, m]));
+
+  return HOT_MATTER_ORDER.map((id, index) => {
+    const matter = byId.get(id);
+    if (!matter || !scheme) return null;
+    const org = matter.prosecutingOrgId
+      ? store.allOrganizations().find((o) => o.id === matter.prosecutingOrgId)
+      : undefined;
+    return {
+      key: `MNB-${104 - index}`,
+      title: matter.title,
+      href: `/schemes/${scheme.slug}/${matter.slug}`,
+      reportedBy: REPORTER_BY_MATTER[matter.id] ?? "Anonymous citizen",
+      followedUpBy: org?.name ?? "Awaiting legal NGO",
+      progress: matterProgressLabel(matter.status as MatterStatus),
+      status: matter.status,
+      location: formatLocation(matter.locationId),
+      evidenceCount: matter.evidenceIds.length,
+    };
+  }).filter((t): t is HotMatterTicket => Boolean(t));
+}
 
 export default function HomePage() {
   const problems = store.allProblems().slice(0, 3);
@@ -12,6 +76,7 @@ export default function HomePage() {
   const allocation = store.allocationBySlug("alloc-allen-avenue-spur");
   const project = store.projectBySlug("allen-avenue-spur-rehabilitation");
   const thread = store.signatureThread();
+  const tickets = hotMatterTickets();
 
   return (
     <div>
@@ -26,11 +91,11 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="site-container relative z-10 py-16 sm:py-20 lg:py-24">
+        <div className="site-container relative z-10 py-12 sm:py-14 lg:py-16">
           <h1 className="sr-only">NigeriaForNigerians</h1>
-          <div className="max-w-xl text-center lg:max-w-xl lg:text-left">
+          <div className="max-w-xl lg:max-w-lg">
             <div className="anim-rise">
-              <form action="/search" className="mx-auto max-w-lg lg:mx-0">
+              <form action="/search" className="max-w-lg">
                 <label htmlFor="home-search" className="sr-only">
                   Search anything about Nigeria
                 </label>
@@ -51,10 +116,12 @@ export default function HomePage() {
                 </div>
               </form>
             </div>
+
+            <HotMatterTickets items={tickets} className="mt-8" />
           </div>
 
-          {/* Mobile / tablet: full-width map under copy, still capped to hero feel */}
-          <div className="anim-fade relative mt-10 w-full lg:hidden" style={{ animationDelay: "0.1s" }}>
+          {/* Mobile / tablet: full-width map under tickets */}
+          <div className="anim-fade relative mt-12 w-full lg:hidden" style={{ animationDelay: "0.1s" }}>
             <p className="mb-2 text-center text-[10px] font-medium uppercase tracking-[0.22em] text-civic-green">
               Click a state to explore
             </p>
