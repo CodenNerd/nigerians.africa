@@ -1,0 +1,11 @@
+Pitch-deck fonts, embedded for offline PDF rendering.
+
+Libre Baskerville
+Copyright 2012 The Libre Baskerville Project Authors
+Licensed under the SIL Open Font License, Version 1.1.
+https://github.com/impallari/Libre-Baskerville
+
+Source Sans 3
+Copyright 2020 Adobe
+Licensed under the SIL Open Font License, Version 1.1.
+https://github.com/adobe-fonts/source-sans

@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>NigeriaForNigerians — OSF Hackathon pitch</title>
+  <style>
+    @font-face {
+      font-family: "Libre Baskerville";
+      font-style: italic;
+      font-weight: 400;
+      src: url("fonts/LibreBaskerville-Italic.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "Libre Baskerville";
+      font-style: normal;
+      font-weight: 400;
+      src: url("fonts/LibreBaskerville-Regular.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "Libre Baskerville";
+      font-style: normal;
+      font-weight: 700;
+      src: url("fonts/LibreBaskerville-Bold.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      font-style: normal;
+      font-weight: 400;
+      src: url("fonts/SourceSans3-Regular.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      font-style: normal;
+      font-weight: 600;
+      src: url("fonts/SourceSans3-Semibold.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      font-style: normal;
+      font-weight: 700;
+      src: url("fonts/SourceSans3-Bold.ttf") format("truetype");
+    }
+
+    :root {
+      --ink: #1a1a1a;
+      --muted: #4a4a4a;
+      --faint: #6b6b6b;
+      --paper: #f7f5f0;
+      --card: #ffffff;
+      --line: #e2ddd3;
+      --green: #1b5e3b;
+      --green-deep: #143d28;
+      --green-soft: #e8f2ec;
+      --blue: #1e3a5f;
+      --blue-soft: #e6eef6;
+      --amber: #8a6d1a;
+      --amber-soft: #f5efd8;
+      --red: #8b2e2e;
+      --red-soft: #f6e8e8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #111; }
+    body {
+      font-family: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+      color: var(--ink);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @page { size: 13.333in 7.5in; margin: 0; }
+
+    .slide {
+      width: 13.333in;
+      height: 7.5in;
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(ellipse 70% 55% at 100% -10%, rgba(232, 242, 236, 0.95), transparent 55%),
+        var(--paper);
+      page-break-after: always;
+      break-after: page;
+      display: flex;
+      flex-direction: column;
+      padding: 0.42in 0.62in 0.34in;
+    }
+    .slide:last-child { page-break-after: auto; break-after: auto; }
+
+    .top, .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex: 0 0 auto;
+    }
+    .eyebrow, .num, .foot, .kicker {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .eyebrow { color: var(--green); }
+    .num { color: var(--faint); font-variant-numeric: tabular-nums; letter-spacing: 0.12em; }
+    .foot {
+      color: var(--faint);
+      letter-spacing: 0.14em;
+      padding-top: 0.16in;
+      border-top: 1px solid var(--line);
+      margin-top: 0.18in;
+    }
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      padding-top: 0.22in;
+    }
+    h1 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      max-width: 11.2in;
+    }
+    h1 em { font-style: italic; }
+    .lede {
+      margin-top: 0.14in;
+      max-width: 10.4in;
+      font-size: 18px;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+
+    /* Cover */
+    .cover {
+      display: grid;
+      grid-template-columns: 1.42fr 0.9fr;
+      padding: 0;
+      background: var(--paper);
+    }
+    .cover-left, .cover-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+    }
+    .cover-left { padding: 0.52in 0.58in 0.46in 0.64in; }
+    .cover-right {
+      background:
+        radial-gradient(ellipse 80% 50% at 80% 0%, rgba(255,255,255,0.08), transparent 50%),
+        var(--green);
+      color: #f4f1ea;
+      padding: 0.52in 0.5in 0.46in;
+    }
+    .cover .eyebrow { color: var(--green); }
+    .cover h1 {
+      font-size: 52px;
+      line-height: 1.02;
+      margin-top: 0.18in;
+      max-width: none;
+    }
+    .cover .deck-sub {
+      margin-top: 0.22in;
+      font-size: 20px;
+      line-height: 1.4;
+      color: var(--muted);
+      max-width: 6.3in;
+    }
+    .cover-mark {
+      margin-top: auto;
+      padding-top: 0.3in;
+    }
+    .thread-svg { display: block; }
+    .cover-right .track-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c9e6d4;
+    }
+    .cover-right h2 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 32px;
+      line-height: 1.25;
+      margin-top: 0.2in;
+    }
+    .cover-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1in;
+      font-size: 14px;
+      line-height: 1.35;
+      color: #e7f3eb;
+    }
+    .cover-meta strong {
+      display: block;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .cover-meta span { color: #c9e6d4; font-size: 13px; }
+
+    /* Grids */
+    .qgrid {
+      margin-top: 0.22in;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0.12in;
+      flex: 1;
+    }
+    .q {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 0.2in 0.22in;
+      display: grid;
+      grid-template-columns: 0.42in 1fr;
+      gap: 0.06in 0.14in;
+      align-content: center;
+    }
+    .q b {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 22px;
+      color: var(--green);
+      font-weight: 400;
+      line-height: 1;
+    }
+    .q strong { font-size: 18px; font-weight: 600; line-height: 1.25; }
+    .q p { grid-column: 2; font-size: 15px; line-height: 1.35; color: var(--muted); }
+
+    .three {
+      margin-top: 0.22in;
+      margin-bottom: 0.16in;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.14in;
+      flex: 1;
+    }
+    .piece {
+      border-top: 3px solid var(--green);
+      background: var(--card);
+      padding: 0.22in 0.2in 0.2in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .piece:nth-child(2) { border-top-color: var(--blue); }
+    .piece:nth-child(3) { border-top-color: var(--amber); }
+    .piece h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+    .piece p { margin-top: 0.12in; font-size: 15.5px; line-height: 1.4; color: var(--muted); }
+    .band {
+      margin-top: 0;
+      background: var(--green);
+      color: #f4f1ea;
+      padding: 0.16in 0.22in;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .roles {
+      margin-top: 0.22in;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1in;
+      flex: 1;
+    }
+    .role {
+      display: grid;
+      grid-template-columns: 2.35in 1fr;
+      gap: 0.22in;
+      align-items: center;
+      padding: 0.16in 0.22in;
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+    .role:nth-child(1) { background: var(--green-soft); border-color: transparent; }
+    .role:nth-child(2) { background: var(--blue-soft); border-color: transparent; }
+    .role:nth-child(3) { background: var(--amber-soft); border-color: transparent; }
+    .role strong {
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .role p { font-size: 16.5px; line-height: 1.35; color: var(--ink); }
+
+    .loop {
+      margin-top: 0.24in;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.08in;
+      flex: 1;
+    }
+    .step {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 0.18in 0.14in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .step span {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--green);
+    }
+    .step strong {
+      display: block;
+      margin-top: 0.1in;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 400;
+      font-size: 18px;
+    }
+    .step em {
+      display: block;
+      margin-top: 0.08in;
+      font-style: normal;
+      font-size: 13px;
+      line-height: 1.3;
+      color: var(--muted);
+    }
+    .note {
+      margin-top: 0.16in;
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--muted);
+      max-width: 11in;
+    }
+
+    .split {
+      margin-top: 0.2in;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 0.36in;
+      flex: 1;
+      min-height: 0;
+    }
+    .timeline {
+      list-style: none;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 0.02in;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 0.08in;
+      bottom: 0.08in;
+      width: 1px;
+      background: #b7d4c3;
+    }
+    .timeline li {
+      display: grid;
+      grid-template-columns: 0.22in 1.4in 1fr;
+      gap: 0.08in;
+      align-items: center;
+      position: relative;
+      font-size: 15px;
+    }
+    .timeline li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 3px var(--paper);
+    }
+    .timeline b { font-weight: 600; }
+    .timeline span { color: var(--muted); }
+    .story { display: flex; flex-direction: column; }
+    .story h2 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 1.15;
+      margin: 0.08in 0 0.12in;
+    }
+    .story p { font-size: 16px; line-height: 1.42; color: var(--muted); }
+    .story p + p { margin-top: 0.1in; }
+    .ask {
+      margin-top: auto;
+      background: var(--green-soft);
+      padding: 0.16in 0.18in;
+      font-size: 15.5px;
+      line-height: 1.4;
+    }
+    .ask strong { display: block; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 0.06in; }
+
+    .actions {
+      margin-top: 0.24in;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.12in;
+      flex: 1;
+    }
+    .action {
+      padding: 0.2in 0.22in;
+      background: var(--card);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .action.g { background: var(--green-soft); border-color: transparent; }
+    .action.b { background: var(--blue-soft); border-color: transparent; }
+    .action.a { background: var(--amber-soft); border-color: transparent; }
+    .action.r { background: var(--red-soft); border-color: transparent; }
+    .action span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .action.b span { color: var(--blue); }
+    .action.a span { color: var(--amber); }
+    .action.r span { color: var(--red); }
+    .action h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 400;
+      font-size: 22px;
+      margin: 0.06in 0 0.06in;
+    }
+    .action p { font-size: 15px; line-height: 1.38; color: var(--muted); }
+
+    .rules {
+      margin-top: 0.22in;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0.12in;
+      flex: 1;
+    }
+    .rule {
+      background: var(--card);
+      border-top: 3px solid var(--green);
+      padding: 0.16in 0.18in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .rule:nth-child(2) { border-top-color: var(--blue); }
+    .rule:nth-child(3) { border-top-color: var(--amber); }
+    .rule:nth-child(4) { border-top-color: var(--green); }
+    .rule h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 400;
+      font-size: 20px;
+      margin-bottom: 0.06in;
+    }
+    .rule p { font-size: 15px; line-height: 1.38; color: var(--muted); }
+    .sources {
+      margin-top: 0.12in;
+      font-size: 13.5px;
+      line-height: 1.4;
+      color: var(--faint);
+    }
+
+    .conds {
+      margin-top: 0.22in;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.1in;
+      flex: 1;
+    }
+    .cond {
+      background: var(--card);
+      border-top: 3px solid var(--green);
+      padding: 0.16in 0.16in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cond:nth-child(2) { border-top-color: var(--blue); }
+    .cond:nth-child(3) { border-top-color: var(--amber); }
+    .cond:nth-child(4) { border-top-color: var(--blue); }
+    .cond:nth-child(5) { border-top-color: var(--amber); }
+    .cond:nth-child(6) { border-top-color: var(--green); }
+    .cond h3 { font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.06in; }
+    .cond p { font-size: 14.5px; line-height: 1.35; color: var(--muted); }
+
+    .scale {
+      margin-top: 0.22in;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.14in;
+      flex: 1;
+    }
+    .scale article {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 0.22in 0.2in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .scale span {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 28px;
+      color: var(--green);
+    }
+    .scale h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 400;
+      font-size: 20px;
+      margin: 0.08in 0;
+      line-height: 1.25;
+    }
+    .scale p { font-size: 14.5px; line-height: 1.38; color: var(--muted); }
+
+    .cols {
+      margin-top: 0.22in;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.28in;
+      flex: 1;
+    }
+    .col {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 0.22in 0.24in;
+      display: flex;
+      flex-direction: column;
+    }
+    .col.soft { background: var(--green-soft); border-color: transparent; }
+    .col h3 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-weight: 400;
+      font-size: 24px;
+      margin-bottom: 0.1in;
+    }
+    .col ul {
+      list-style: disc;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 0.1in;
+    }
+    .col li {
+      margin-left: 0.18in;
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+    .impacts {
+      margin-top: 0.18in;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.1in;
+      flex: 1;
+    }
+    .impact {
+      padding: 0.16in 0.18in;
+      background: var(--card);
+      border-left: 3px solid var(--green);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .impact:nth-child(2) { border-left-color: var(--blue); }
+    .impact:nth-child(3) { border-left-color: var(--amber); }
+    .impact:nth-child(4) { border-left-color: var(--green); }
+    .impact strong { display: block; font-size: 15px; margin-bottom: 0.03in; }
+    .impact p { font-size: 14.5px; line-height: 1.35; color: var(--muted); }
+    .nextrow {
+      margin-top: 0.12in;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 0.12in;
+    }
+    .nextrow div { padding: 0.14in 0.16in; }
+    .nextrow .now { background: var(--green); color: #f4f1ea; }
+    .nextrow .later { background: var(--blue-soft); }
+    .nextrow strong {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.05in;
+    }
+    .nextrow .now strong { color: #c9e6d4; }
+    .nextrow .later strong { color: var(--blue); }
+    .nextrow p { font-size: 14.5px; line-height: 1.35; }
+    .nextrow .later p { color: var(--muted); }
+
+    .close {
+      background: var(--green);
+      color: #f4f1ea;
+      padding: 0.62in 0.72in;
+      justify-content: space-between;
+    }
+    .close .eyebrow { color: #c9e6d4; }
+    .close h1 {
+      font-size: 58px;
+      color: #f4f1ea;
+      max-width: 10in;
+      margin-top: 0.16in;
+    }
+    .close .motto {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-style: italic;
+      font-size: 28px;
+      margin-top: 0.18in;
+    }
+    .close-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 0.4in;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      padding-top: 0.22in;
+    }
+    .close-bottom p { font-size: 16px; line-height: 1.45; max-width: 7.2in; color: #e7f3eb; }
+    .close-bottom .repo {
+      text-align: right;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: #f4f1ea;
+    }
+    .close-bottom .repo span {
+      display: block;
+      color: #c9e6d4;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.04in;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="slide cover">
+    <div class="cover-left">
+      <div>
+        <p class="eyebrow">OSF × Andela · Information you can trust</p>
+        <h1>NigeriaForNigerians</h1>
+        <p class="deck-sub">A public record of government, problems, money, and evidence — connected so people can see it, check it, and act.</p>
+      </div>
+      <svg class="thread-svg" width="220" height="36" viewBox="0 0 220 36" aria-hidden="true">
+        <path d="M8 18 H212" stroke="#1b5e3b" stroke-width="1.5" fill="none"/>
+        <circle cx="8" cy="18" r="4" fill="#1b5e3b"/>
+        <circle cx="46" cy="18" r="4" fill="#1b5e3b"/>
+        <circle cx="84" cy="18" r="4" fill="#1e3a5f"/>
+        <circle cx="122" cy="18" r="4" fill="#1b5e3b"/>
+        <circle cx="160" cy="18" r="4" fill="#8a6d1a"/>
+        <circle cx="198" cy="18" r="4" fill="#1b5e3b"/>
+        <circle cx="212" cy="18" r="3" fill="none" stroke="#1b5e3b" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="cover-right">
+      <div>
+        <p class="track-label">Challenge track</p>
+        <h2>The platform remembers. Citizens decide.</h2>
+      </div>
+      <div class="cover-meta">
+        <div>
+          <strong>Transparency &amp; Accountability</strong>
+          <span>Primary track. Decisions, spending, and services made visible and open to scrutiny.</span>
+        </div>
+        <div>
+          <strong>Safety, Reporting &amp; Protection</strong>
+          <span>Cross-track. Reports, guidance, and a path from evidence to support.</span>
+        </div>
+        <div>
+          <strong>Proof of concept · September 2026</strong>
+          <span>An invention sprint. A working record, ready to walk.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">The problem</p>
+      <p class="num">02</p>
+    </header>
+    <div class="main">
+      <h1>People cannot see the public life that shapes them.</h1>
+      <p class="lede">Rights, services, and accountability depend on information people understand and trust. In Nigeria that information is scattered across gazettes, budgets, ministry sites, news, and rumour.</p>
+      <div class="qgrid">
+        <div class="q"><b>01</b><strong>Who is responsible?</strong><p>A stalled road, a dark street, a clinic that never opened — which office owns it.</p></div>
+        <div class="q"><b>02</b><strong>Where did the money go?</strong><p>What was allocated, what was released, and what was reported as spent.</p></div>
+        <div class="q"><b>03</b><strong>What actually happened?</strong><p>The promise, the project status, the evidence, and the official reply, in one place.</p></div>
+        <div class="q"><b>04</b><strong>What can I do next?</strong><p>Who to contact, what to keep, and how to make a report or a request.</p></div>
+      </div>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">Why it stays broken</p>
+      <p class="num">03</p>
+    </header>
+    <div class="main">
+      <h1>The pieces are published. The thread is missing.</h1>
+      <div class="three">
+        <article class="piece">
+          <h3>A budget names a figure.</h3>
+          <p>Allocations sit in documents that few people can search, and fewer can connect to a place they know.</p>
+        </article>
+        <article class="piece">
+          <h3>A signboard names a contractor.</h3>
+          <p>A project appears, stalls, and leaves. The office, the payment, and the outcome drift apart.</p>
+        </article>
+        <article class="piece">
+          <h3>A report names a delay.</h3>
+          <p>News and social posts move on. The evidence, the response, and the history do not stay attached.</p>
+        </article>
+      </div>
+      <p class="band">People are asked to hold institutions accountable with fragments.</p>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">The users</p>
+      <p class="num">04</p>
+    </header>
+    <div class="main">
+      <h1>One record, for everyone who has to use it.</h1>
+      <p class="lede">Reading is public. An account is for taking part — submitting, responding, verifying — so the record stays open to anyone with a basic phone.</p>
+      <div class="roles">
+        <div class="role">
+          <strong>Residents</strong>
+          <p>Search a place, follow a problem, learn a right, and see the office that owns it.</p>
+        </div>
+        <div class="role">
+          <strong>Contributors</strong>
+          <p>Attach a photo or observation to an office, a problem, or a polling unit.</p>
+        </div>
+        <div class="role">
+          <strong>Press &amp; civil society</strong>
+          <p>Follow a sourced trail and pick up a documented case.</p>
+        </div>
+        <div class="role">
+          <strong>Public offices</strong>
+          <p>Publish a response that stays beside the evidence. The record keeps both.</p>
+        </div>
+      </div>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">The solution</p>
+      <p class="num">05</p>
+    </header>
+    <div class="main">
+      <h1>A public memory of civic life.</h1>
+      <p class="lede">NigeriaForNigerians connects government, places, people, problems, projects, money, evidence, and history as one graph. Finding a fact is the start of engaging the institution behind it.</p>
+      <div class="loop">
+        <div class="step"><span>01</span><strong>Discover</strong><em>Search a place, a project, or a question.</em></div>
+        <div class="step"><span>02</span><strong>Understand</strong><em>See the office, the money, and the status.</em></div>
+        <div class="step"><span>03</span><strong>Verify</strong><em>Check the source, the date, and the label.</em></div>
+        <div class="step"><span>04</span><strong>Act</strong><em>Report, request, or contact.</em></div>
+        <div class="step"><span>05</span><strong>Track</strong><em>Watch the response arrive on the same page.</em></div>
+        <div class="step"><span>06</span><strong>Remember</strong><em>The outcome stays after the news moves on.</em></div>
+      </div>
+      <p class="note">Primary track: Transparency &amp; Accountability. Reporting and protection use the same path, so a record of spending can also become a record of harm and a route to support.</p>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">How it works</p>
+      <p class="num">06</p>
+    </header>
+    <div class="main">
+      <h1>Follow the thread.</h1>
+      <div class="split">
+        <ol class="timeline">
+          <li><b>Problem</b><span>Roads in Ikeja</span></li>
+          <li><b>Office</b><span>Works commissioner</span></li>
+          <li><b>Person</b><span>Office holder</span></li>
+          <li><b>Project</b><span>Allen Avenue spur</span></li>
+          <li><b>Money</b><span>Allocated and released</span></li>
+          <li><b>Contractor</b><span>Who was paid to build</span></li>
+          <li><b>Evidence</b><span>Photographs of the site</span></li>
+          <li><b>Report</b><span>What residents observed</span></li>
+          <li><b>Response</b><span>What the office said back</span></li>
+        </ol>
+        <div class="story">
+          <p class="eyebrow">Worked example in the prototype</p>
+          <h2>A stalled spur in Ikeja.</h2>
+          <p>The demonstration follows one road from the problem to the office, the money, the contractor, the photographs, the citizen report, and the official reply. Amounts in this example are demonstration records, so the path can be walked in full.</p>
+          <p>Every page is a node. Leave it, and the relationship is still there.</p>
+          <div class="ask">
+            <strong>Ask the record</strong>
+            “What happened to the abandoned road project in Ikeja?” The answer is marked AI Generated and cites the records underneath.
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">Clear next steps</p>
+      <p class="num">07</p>
+    </header>
+    <div class="main">
+      <h1>Seeing the record is the beginning.</h1>
+      <p class="lede">The prototype turns a fact into a path: who to contact, what to keep, and where a case can go.</p>
+      <div class="actions">
+        <article class="action g">
+          <span>Guidance</span>
+          <h3>What should I do?</h3>
+          <p>Plain language on rights, evidence to keep, the responsible office, and where to report — from a stalled project to a police encounter.</p>
+        </article>
+        <article class="action b">
+          <span>Report</span>
+          <h3>See something.</h3>
+          <p>Submit a photo, video, or note tied to an office, a problem, or a polling unit. It joins the public record.</p>
+        </article>
+        <article class="action a">
+          <span>Freedom of Information</span>
+          <h3>Ask the office, on the record.</h3>
+          <p>Start a request against the institution already linked to the project, and keep the reply beside the question.</p>
+        </article>
+        <article class="action r">
+          <span>Make Nigeria Better</span>
+          <h3>A case can move.</h3>
+          <p>Documented matters can be picked up by vetted legal organisations. The platform keeps the case. Courts decide guilt.</p>
+        </article>
+      </div>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">Trust and accuracy</p>
+      <p class="num">08</p>
+    </header>
+    <div class="main">
+      <h1>Every serious claim carries a trail.</h1>
+      <div class="rules">
+        <article class="rule">
+          <h3>Status is on the page.</h3>
+          <p>Official record, reported, under review, disputed, AI Generated. A reader can see what kind of statement they are looking at.</p>
+        </article>
+        <article class="rule">
+          <h3>Sources are required.</h3>
+          <p>Money, claims, office-holder history, and evidence are refused when a source link is missing. The check runs before the record updates.</p>
+        </article>
+        <article class="rule">
+          <h3>A person reviews first.</h3>
+          <p>Public data lands in a staging area. A reviewer approves it before it enters the record. The crawler never writes the live record directly.</p>
+        </article>
+        <article class="rule">
+          <h3>AI explains. It cites.</h3>
+          <p>Ask retrieves from the graph, then summarises. Thin evidence is described as thin. The model does not invent a source or a verdict.</p>
+        </article>
+      </div>
+      <p class="sources">Sources in this proof of concept: Wikidata, Wikimedia Commons, the Budget Office of the Federation, curated government pages, and citizen submissions. Each carries a publisher and a link.</p>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">Real conditions</p>
+      <p class="num">09</p>
+    </header>
+    <div class="main">
+      <h1>Useful where the connection is thin and the stakes are high.</h1>
+      <div class="conds">
+        <article class="cond">
+          <h3>Trust</h3>
+          <p>Who said it, when, what supports it, and whether the status later changed. History stays visible.</p>
+        </article>
+        <article class="cond">
+          <h3>Low bandwidth</h3>
+          <p>Maps have list fallbacks. The record is text, status, and links, readable when images are too heavy.</p>
+        </article>
+        <article class="cond">
+          <h3>Inclusion</h3>
+          <p>Plain-language guidance, semantic pages, a skip link, and status a screen reader can name.</p>
+        </article>
+        <article class="cond">
+          <h3>Privacy</h3>
+          <p>Reading is open. Submitting requires sign-in. Guidance says to capture only what is lawful and safe.</p>
+        </article>
+        <article class="cond">
+          <h3>Languages</h3>
+          <p>English in this prototype. Translations can sit beside the graph — Hausa, Yoruba, Igbo, Pidgin — without rewriting relationships.</p>
+        </article>
+        <article class="cond">
+          <h3>Local reality</h3>
+          <p>States, local governments, wards, offices, and laws are specific. Another community reuses the model with its own institutions.</p>
+        </article>
+      </div>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">Scale</p>
+      <p class="num">10</p>
+    </header>
+    <div class="main">
+      <h1>Scale is another place on the same graph.</h1>
+      <div class="scale">
+        <article>
+          <span>01</span>
+          <h3>Nigeria is already the map.</h3>
+          <p>States, local governments, and wards are first-class places. A new community is a new location with its offices, problems, and projects attached.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>A new source is an adapter.</h3>
+          <p>Places, government, people, budgets, and sector threads are crawled, staged, reviewed, then promoted. Nothing enters without a source check.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Another country keeps the thread.</h3>
+          <p>Office, money, project, evidence, response. Institutions and laws change. The path from a problem to a next step stays the same.</p>
+        </article>
+      </div>
+      <p class="note">Cross-track by design: bribery guidance, election observation, and the Make Nigeria Better scheme sit on the accountability record, so reporting leads somewhere.</p>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">AI coding</p>
+      <p class="num">11</p>
+    </header>
+    <div class="main">
+      <h1>Built with AI coding tools. Grounded in the public record.</h1>
+      <div class="cols">
+        <article class="col soft">
+          <h3>Inside the product</h3>
+          <ul>
+            <li>Ask retrieves matching records from the graph before any summary is written.</li>
+            <li>Answers are labelled AI Generated and cite the pages they used.</li>
+            <li>With no model key, the same question still returns the structured record.</li>
+            <li>The model is instructed to point back to citations and to avoid verdicts.</li>
+          </ul>
+        </article>
+        <article class="col">
+          <h3>How the prototype was made</h3>
+          <ul>
+            <li>The civic idea — a public memory people can follow and act on — was set by the team.</li>
+            <li>AI coding tools in Cursor implemented the domain graph, the public interface, ingestion, and the connected seed.</li>
+            <li>Judges can run the journey locally: install, start, and open the Allen Avenue thread.</li>
+            <li>The proof of concept is the argument: every documented path is navigable.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide">
+    <header class="top">
+      <p class="eyebrow">Potential impact</p>
+      <p class="num">12</p>
+    </header>
+    <div class="main">
+      <h1>What changes when the thread is public.</h1>
+      <div class="impacts">
+        <article class="impact">
+          <strong>A resident</strong>
+          <p>Can name the office on a stalled project and see what was released, then choose a next step.</p>
+        </article>
+        <article class="impact">
+          <strong>A journalist or organisation</strong>
+          <p>Can cite a chain — problem, money, evidence, response — instead of a single post.</p>
+        </article>
+        <article class="impact">
+          <strong>A public office</strong>
+          <p>Can answer where the question already lives, and the answer remains part of the history.</p>
+        </article>
+        <article class="impact">
+          <strong>A community</strong>
+          <p>Can document a site so the evidence stays attached after the news cycle ends.</p>
+        </article>
+      </div>
+      <div class="nextrow">
+        <div class="now">
+          <strong>This proof of concept</strong>
+          <p>Shows that journey working end to end on a connected public graph, with citations, guidance, and a path to action.</p>
+        </div>
+        <div class="later">
+          <strong>What follows</strong>
+          <p>Live budget feeds, verifier capacity, language layers, and confidential reporting for sensitive cases.</p>
+        </div>
+      </div>
+    </div>
+    <footer class="foot"><span>NigeriaForNigerians</span><span>OSF Hackathon · 2026</span></footer>
+  </section>
+
+  <section class="slide close">
+    <div>
+      <p class="eyebrow">NigeriaForNigerians</p>
+      <h1>The platform remembers. Citizens decide.</h1>
+      <p class="motto">A public record people can check, follow, and act on.</p>
+    </div>
+    <div class="close-bottom">
+      <p>Transparency &amp; Accountability, with Safety, Reporting &amp; Protection.<br>OSF × Andela · Information you can trust · September 2026</p>
+      <p class="repo"><span>Repository</span>github.com/CodenNerd/nigerians.africa</p>
+    </div>
+  </section>
+
+</body>
+</html>
