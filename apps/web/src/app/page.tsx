@@ -17,11 +17,19 @@ const HOT_MATTER_ORDER = [
   "matter-checkpoint-ikeja",
   "matter-electoral-ikeja",
   "matter-market-violence",
+  "matter-customs-lagos",
+  "matter-hospital-rivers",
+  "matter-clerk-abuja",
+  "matter-traffic-kano",
+  "matter-school-kano",
+  "matter-water-ikeja",
 ] as const;
 
 /** Demo reporter labels — most matters stay anonymous. */
 const REPORTER_BY_MATTER: Record<string, string> = {
   "matter-market-violence": "Tunde Okonkwo",
+  "matter-hospital-rivers": "Chinyere Okoro",
+  "matter-water-ikeja": "Anonymous citizen",
 };
 
 function formatLocation(locationId: string): string {
@@ -94,30 +102,28 @@ export default function HomePage() {
         <div className="site-container relative z-10 py-12 sm:py-14 lg:py-16">
           <h1 className="sr-only">NigeriaForNigerians</h1>
           <div className="max-w-xl lg:max-w-lg">
-            <div className="anim-rise">
-              <form action="/search" className="max-w-lg">
-                <label htmlFor="home-search" className="sr-only">
-                  Search anything about Nigeria
-                </label>
-                <div className="flex overflow-hidden border border-paper-border bg-paper-card/90 shadow-[0_8px_40px_rgba(0,0,0,0.04)]">
-                  <input
-                    id="home-search"
-                    name="q"
-                    placeholder="Search the public record…"
-                    className="flex-1 bg-transparent px-4 py-3.5 text-ink outline-none"
-                    defaultValue="abandoned road Ikeja"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-civic-green px-6 text-sm font-medium text-white transition hover:brightness-110"
-                  >
-                    Search
-                  </button>
-                </div>
-              </form>
-            </div>
+            <HotMatterTickets items={tickets} />
 
-            <HotMatterTickets items={tickets} className="mt-8" />
+            <form action="/search" className="anim-fade mt-8 max-w-lg" style={{ animationDelay: "0.12s" }}>
+              <label htmlFor="home-search" className="sr-only">
+                Search anything about Nigeria
+              </label>
+              <div className="flex overflow-hidden border border-paper-border bg-paper-card/90 shadow-[0_8px_40px_rgba(0,0,0,0.04)]">
+                <input
+                  id="home-search"
+                  name="q"
+                  placeholder="Search the public record…"
+                  className="flex-1 bg-transparent px-4 py-3.5 text-ink outline-none"
+                  defaultValue="abandoned road Ikeja"
+                />
+                <button
+                  type="submit"
+                  className="bg-civic-green px-6 text-sm font-medium text-white transition hover:brightness-110"
+                >
+                  Search
+                </button>
+              </div>
+            </form>
           </div>
 
           {/* Mobile / tablet: full-width map under tickets */}

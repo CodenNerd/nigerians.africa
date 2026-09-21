@@ -95,6 +95,26 @@ a {
   }
 }
 
+@keyframes ticket-flip-out {
+  0% {
+    transform: translateY(0) rotateX(0deg) scale(1);
+    opacity: 1;
+  }
+  45% {
+    transform: translateY(-0.35rem) rotateX(-88deg) scale(0.98);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-0.9rem) rotateX(-110deg) scale(0.94);
+    opacity: 0;
+  }
+}
+
+.ticket-flip-out {
+  animation: ticket-flip-out 0.7s ease-in forwards;
+  transform-style: preserve-3d;
+}
+
 /* View mode: eyebrow + toggle paint from html[data-view] (set before React) */
 .view-eyebrow-progressive {
   display: none;
