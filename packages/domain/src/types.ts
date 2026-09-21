@@ -351,6 +351,20 @@ export interface Contract {
   sourceId?: string;
 }
 
+export interface OrganizationFundingLine {
+  label: string;
+  amount: number;
+  period: string;
+  sourceId?: string;
+}
+
+export interface OrganizationProjectAllocation {
+  projectId: string;
+  /** Amount of organisation funds earmarked or paid toward this project. */
+  amount: number;
+  note?: string;
+}
+
 export interface OrganizationPerson {
   personId: string;
   /** Role at the organization — e.g. Executive director, Lead counsel. */
@@ -373,15 +387,14 @@ export interface Organization {
   people: OrganizationPerson[];
   fundingReceived: number;
   fundingSpent: number;
+  /** How programme money was received (grants, dues, contracts, donors). */
+  incomeLineItems?: OrganizationFundingLine[];
   transparencyNotes: string;
   /** Platform transparency process — NGOs earn trust by publishing spend. */
   vettingStatus?: "none" | "platform_vetted";
-  spendLineItems?: {
-    label: string;
-    amount: number;
-    period: string;
-    sourceId?: string;
-  }[];
+  spendLineItems?: OrganizationFundingLine[];
+  /** Organisation funds allocated toward linked projects. */
+  projectAllocations?: OrganizationProjectAllocation[];
 }
 
 export interface Evidence {

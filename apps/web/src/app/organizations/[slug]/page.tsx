@@ -171,20 +171,84 @@ export default async function OrganizationPage({
       <RecordSection title="Organisation funding">
         <p className="mb-3 text-sm text-ink-muted">
           Programme-level money received and spent by this organisation — distinct from per-project
-          ledgers on each project dossier.
+          ledgers on each project dossier. Open Received or Spent to see the breakdown.
         </p>
-        <div className="grid gap-3 sm:grid-cols-2">
-          <MoneyFigure label="Received" value={store.formatNaira(org.fundingReceived)} />
-          <MoneyFigure label="Spent" value={store.formatNaira(org.fundingSpent)} />
+        <div className="grid gap-3 sm:grid-cols-3">
+          <MoneyFigure
+            label="Received"
+            value={store.formatNaira(org.fundingReceived)}
+            href="#funding-received"
+            hint="How was the money made? →"
+            tone="amber"
+          />
+          <MoneyFigure
+            label="Spent"
+            value={store.formatNaira(org.fundingSpent)}
+            href="#funding-spent"
+            hint="How was it spent? →"
+            tone="amber"
+          />
+          <MoneyFigure
+            label="Still to spend"
+            value={store.formatNaira(Math.max(0, org.fundingReceived - org.fundingSpent))}
+            href="#funding-projects"
+            hint="Remaining & project allocations →"
+            tone="green"
+          />
         </div>
       </RecordSection>
 
-      {spendLines.length > 0 ? (
-        <RecordSection title="Published spend">
-          <p className="mb-4 text-sm text-ink-muted">
-            Line items published by the organization. Citizens and donors can inspect where money
-            went — required to earn the vetted badge.
-          </p>
+      <RecordSection
+        id="funding-received"
+        title="How money was received"
+        subtitle="Income lines published for this organisation — grants, dues, contracts and donations."
+        meta={`${(org.incomeLineItems ?? []).length} lines`}
+      >
+        {(org.incomeLineItems ?? []).length === 0 ? (
+          <p className="text-sm text-ink-muted">No income lines published yet.</p>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[28rem] border-collapse text-sm">
+              <thead>
+                <tr className="border-b border-paper-border text-left text-xs uppercase tracking-wider text-ink-faint">
+                  <th className="py-2 pr-4">Source</th>
+                  <th className="py-2 pr-4">Period</th>
+                  <th className="py-2">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(org.incomeLineItems ?? []).map((line, i) => (
+                  <tr key={`${line.label}-${i}`} className="border-b border-paper-border">
+                    <td className="py-3 pr-4 font-medium text-ink">{line.label}</td>
+                    <td className="py-3 pr-4 font-mono text-ink-muted">{line.period}</td>
+                    <td className="py-3 font-mono">{store.formatNaira(line.amount)}</td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr className="border-t border-paper-border">
+                  <td className="py-3 pr-4 font-medium text-ink" colSpan={2}>
+                    Total received
+                  </td>
+                  <td className="py-3 font-mono font-medium text-civic-amber">
+                    {store.formatNaira(org.fundingReceived)}
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        )}
+      </RecordSection>
+
+      <RecordSection
+        id="funding-spent"
+        title="How money was spent"
+        subtitle="Published spend lines — where programme money went on the public record."
+        meta={`${spendLines.length} lines`}
+      >
+        {spendLines.length === 0 ? (
+          <p className="text-sm text-ink-muted">No spend lines published yet.</p>
+        ) : (
           <div className="overflow-x-auto">
             <table className="w-full min-w-[28rem] border-collapse text-sm">
               <thead>
@@ -203,10 +267,96 @@ export default async function OrganizationPage({
                   </tr>
                 ))}
               </tbody>
+              <tfoot>
+                <tr className="border-t border-paper-border">
+                  <td className="py-3 pr-4 font-medium text-ink" colSpan={2}>
+                    Total spent
+                  </td>
+                  <td className="py-3 font-mono font-medium text-civic-amber">
+                    {store.formatNaira(org.fundingSpent)}
+                  </td>
+                </tr>
+              </tfoot>
             </table>
           </div>
-        </RecordSection>
-      ) : null}
+        )}
+      </RecordSection>
+
+      <RecordSection
+        id="funding-projects"
+        title="Allocated to projects"
+        subtitle="Organisation funds earmarked or paid toward linked projects — and what remains unallocated."
+        meta={`${(org.projectAllocations ?? []).length} projects`}
+      >
+        {(() => {
+          const allocations = org.projectAllocations ?? [];
+          const allocatedTotal = allocations.reduce((sum, a) => sum + a.amount, 0);
+          const remaining = Math.max(0, org.fundingReceived - org.fundingSpent);
+          const unallocated = Math.max(0, org.fundingReceived - allocatedTotal);
+
+          if (!allocations.length) {
+            return (
+              <div className="space-y-3">
+                <p className="text-sm text-ink-muted">
+                  No project allocations published yet. Remaining to spend:{" "}
+                  <span className="font-mono text-civic-green">{store.formatNaira(remaining)}</span>.
+                </p>
+              </div>
+            );
+          }
+
+          return (
+            <div className="space-y-4">
+              <div className="grid gap-3 sm:grid-cols-2">
+                <MoneyFigure
+                  label="Allocated to projects"
+                  value={store.formatNaira(allocatedTotal)}
+                  tone="blue"
+                />
+                <MoneyFigure
+                  label="Still to spend"
+                  value={store.formatNaira(remaining)}
+                  tone="green"
+                  hint={
+                    unallocated > 0
+                      ? `${store.formatNaira(unallocated)} of received not yet tied to a project line`
+                      : "All received funds appear on project lines"
+                  }
+                />
+              </div>
+              <ul className="grid gap-px bg-paper-border">
+                {allocations.map((row) => {
+                  const project = store.allProjects().find((p) => p.id === row.projectId);
+                  if (!project) return null;
+                  return (
+                    <li key={row.projectId}>
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="plane-link block bg-civic-blueSoft px-5 py-4 no-underline"
+                      >
+                        <div className="flex flex-wrap items-start justify-between gap-3">
+                          <div className="min-w-0">
+                            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-civic-blue">
+                              Project allocation
+                            </p>
+                            <p className="mt-1 font-display text-xl text-ink">{project.name}</p>
+                            {row.note ? (
+                              <p className="mt-1 text-sm text-ink-muted">{row.note}</p>
+                            ) : null}
+                          </div>
+                          <p className="shrink-0 font-mono text-base text-civic-blue">
+                            {store.formatNaira(row.amount)}
+                          </p>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })()}
+      </RecordSection>
 
       <RecordSection title="Transparency">
         <p className="prose-record">{org.transparencyNotes}</p>

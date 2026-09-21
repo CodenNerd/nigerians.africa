@@ -1753,6 +1753,18 @@ export const handcrafted: SeedDatabase = {
       ],
       fundingReceived: 1_850_000_000,
       fundingSpent: 1_850_000_000,
+      incomeLineItems: [
+        { label: "Contract payments — Allen Avenue spur (Lagos State)", amount: 1_450_000_000, period: "FY2024–25" },
+        { label: "Mobilisation advance", amount: 400_000_000, period: "FY2024" },
+      ],
+      spendLineItems: [
+        { label: "Asphalt, base course & materials", amount: 980_000_000, period: "FY2024–25" },
+        { label: "Plant hire & site labour", amount: 520_000_000, period: "FY2024–25" },
+        { label: "Subcontractor retention & contingencies", amount: 350_000_000, period: "FY2025" },
+      ],
+      projectAllocations: [
+        { projectId: "proj-allen-spur", amount: 1_850_000_000, note: "Full contract envelope on this dossier" },
+      ],
       transparencyNotes: "Contract award published; detailed subcontractor spend not fully public.",
       vettingStatus: "none",
     },
@@ -1772,6 +1784,18 @@ export const handcrafted: SeedDatabase = {
       ],
       fundingReceived: 3_200_000_000,
       fundingSpent: 3_200_000_000,
+      incomeLineItems: [
+        { label: "Federal Power capital — Phase II milestones", amount: 2_400_000_000, period: "FY2024–25" },
+        { label: "Advance payment certificate", amount: 800_000_000, period: "FY2024" },
+      ],
+      spendLineItems: [
+        { label: "Poles, conductors & transformers", amount: 1_900_000_000, period: "FY2024–25" },
+        { label: "Civil works & pad construction", amount: 780_000_000, period: "FY2024–25" },
+        { label: "Logistics & site administration", amount: 520_000_000, period: "FY2025" },
+      ],
+      projectAllocations: [
+        { projectId: "proj-rural-power", amount: 3_200_000_000, note: "Contract spend attributed to Phase II" },
+      ],
       transparencyNotes: "Award notice published; milestone certificates partially public.",
       vettingStatus: "none",
     },
@@ -1791,6 +1815,19 @@ export const handcrafted: SeedDatabase = {
       ],
       fundingReceived: 4_500_000,
       fundingSpent: 3_800_000,
+      incomeLineItems: [
+        { label: "Member dues & levies", amount: 2_200_000, period: "FY2024" },
+        { label: "Small community grant — drainage advocacy", amount: 1_800_000, period: "FY2024" },
+        { label: "In-kind cash for evidence kits", amount: 500_000, period: "FY2025" },
+      ],
+      spendLineItems: [
+        { label: "Flood-point documentation & transport", amount: 1_600_000, period: "FY2024" },
+        { label: "Community meetings & notices", amount: 900_000, period: "FY2024" },
+        { label: "Evidence kits & storage", amount: 1_300_000, period: "FY2025" },
+      ],
+      projectAllocations: [
+        { projectId: "proj-omole-drain", amount: 3_200_000, note: "Advocacy & monitoring envelope" },
+      ],
       transparencyNotes: "Volunteer-led; dues and small grants disclosed in community meetings (demo).",
       vettingStatus: "none",
     },
@@ -1813,6 +1850,11 @@ export const handcrafted: SeedDatabase = {
       ],
       fundingReceived: 85_000_000,
       fundingSpent: 62_000_000,
+      incomeLineItems: [
+        { label: "Foundation grant — civic monitoring", amount: 45_000_000, period: "FY2024" },
+        { label: "Individual donors (pooled)", amount: 28_000_000, period: "FY2024" },
+        { label: "Training workshop fees", amount: 12_000_000, period: "FY2024" },
+      ],
       transparencyNotes: "Publishes annual programme reports and audited statements (demo).",
       vettingStatus: "platform_vetted",
       spendLineItems: [
@@ -1838,6 +1880,11 @@ export const handcrafted: SeedDatabase = {
           period: "FY2024",
         },
       ],
+      projectAllocations: [
+        { projectId: "proj-allen-spur", amount: 24_000_000, note: "Monitor training & site documentation" },
+        { projectId: "proj-omole-drain", amount: 18_000_000, note: "Flood evidence & community briefings" },
+        { projectId: "proj-lagos-water", amount: 8_000_000, note: "Water-works monitoring pilot" },
+      ],
     },
     {
       id: "org-healthwatch",
@@ -1855,6 +1902,19 @@ export const handcrafted: SeedDatabase = {
       ],
       fundingReceived: 40_000_000,
       fundingSpent: 28_000_000,
+      incomeLineItems: [
+        { label: "State CSO partnership grant", amount: 22_000_000, period: "FY2024" },
+        { label: "Member contributions", amount: 10_000_000, period: "FY2024" },
+        { label: "In-kind facility assessment support", amount: 8_000_000, period: "FY2025" },
+      ],
+      spendLineItems: [
+        { label: "PHC facility visits & stock audits", amount: 14_000_000, period: "FY2024" },
+        { label: "Monitor stipends & transport", amount: 9_000_000, period: "FY2024" },
+        { label: "Reporting & community feedback", amount: 5_000_000, period: "FY2025" },
+      ],
+      projectAllocations: [
+        { projectId: "proj-phc-rivers", amount: 28_000_000, note: "Accountability monitoring for PHC rehab" },
+      ],
       transparencyNotes: "Partial financial disclosure published quarterly.",
       vettingStatus: "none",
     },
@@ -1874,12 +1934,18 @@ export const handcrafted: SeedDatabase = {
       ],
       fundingReceived: 120_000_000,
       fundingSpent: 95_000_000,
+      incomeLineItems: [
+        { label: "International election-support grant", amount: 70_000_000, period: "2023 cycle" },
+        { label: "Domestic foundation support", amount: 35_000_000, period: "2023 cycle" },
+        { label: "Member subscriptions", amount: 15_000_000, period: "2023 cycle" },
+      ],
       transparencyNotes: "Observer methodology published; raw sheets archived with hashes.",
       vettingStatus: "platform_vetted",
       spendLineItems: [
         { label: "Observer deployment — Lagos", amount: 45_000_000, period: "2023 cycle" },
         { label: "Evidence archival & chain-of-custody", amount: 15_000_000, period: "2023 cycle" },
         { label: "Training & materials", amount: 20_000_000, period: "2023 cycle" },
+        { label: "Operations & admin", amount: 15_000_000, period: "2023 cycle" },
       ],
     },
     {
@@ -1902,6 +1968,11 @@ export const handcrafted: SeedDatabase = {
       ],
       fundingReceived: 95_000_000,
       fundingSpent: 71_000_000,
+      incomeLineItems: [
+        { label: "Legal-aid foundation grant", amount: 50_000_000, period: "FY2025" },
+        { label: "Pro-bono chamber contributions (cash)", amount: 25_000_000, period: "FY2025" },
+        { label: "Public donations", amount: 20_000_000, period: "FY2025" },
+      ],
       transparencyNotes: "Publishes case-load summaries and retained-counsel spend (demo).",
       vettingStatus: "platform_vetted",
       spendLineItems: [
@@ -1930,6 +2001,11 @@ export const handcrafted: SeedDatabase = {
       ],
       fundingReceived: 110_000_000,
       fundingSpent: 88_000_000,
+      incomeLineItems: [
+        { label: "Rights-fund programme grant", amount: 60_000_000, period: "FY2025" },
+        { label: "Partner chamber contributions", amount: 30_000_000, period: "FY2025" },
+        { label: "Training fees & donations", amount: 20_000_000, period: "FY2025" },
+      ],
       transparencyNotes: "Annual litigation report published; partner chambers disclosed.",
       vettingStatus: "platform_vetted",
       spendLineItems: [
@@ -1959,6 +2035,11 @@ export const handcrafted: SeedDatabase = {
       ],
       fundingReceived: 72_000_000,
       fundingSpent: 54_000_000,
+      incomeLineItems: [
+        { label: "Survivor-support foundation grant", amount: 40_000_000, period: "FY2025" },
+        { label: "Anonymous major gift", amount: 20_000_000, period: "FY2025" },
+        { label: "Community fundraising", amount: 12_000_000, period: "FY2025" },
+      ],
       transparencyNotes: "Publishes anonymised caseload and counsel spend (demo).",
       vettingStatus: "platform_vetted",
       spendLineItems: [

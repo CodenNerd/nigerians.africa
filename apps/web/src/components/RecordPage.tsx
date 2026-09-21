@@ -213,13 +213,50 @@ export function Timeline({
   );
 }
 
-export function MoneyFigure({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="bg-civic-amberSoft px-5 py-4">
-      <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-civic-amber">
-        {label}
-      </div>
+export function MoneyFigure({
+  label,
+  value,
+  href,
+  hint,
+  tone = "amber",
+}: {
+  label: string;
+  value: string;
+  href?: string;
+  hint?: string;
+  tone?: "amber" | "green" | "blue";
+}) {
+  const plane =
+    tone === "green"
+      ? "bg-civic-greenSoft"
+      : tone === "blue"
+        ? "bg-civic-blueSoft"
+        : "bg-civic-amberSoft";
+  const ink =
+    tone === "green"
+      ? "text-civic-green"
+      : tone === "blue"
+        ? "text-civic-blue"
+        : "text-civic-amber";
+
+  const body = (
+    <>
+      <div className={`text-[10px] font-medium uppercase tracking-[0.18em] ${ink}`}>{label}</div>
       <div className="mt-2 font-display text-2xl text-ink">{value}</div>
-    </div>
+      {hint ? <div className={`mt-1.5 text-xs ${ink} opacity-80`}>{hint}</div> : null}
+    </>
   );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className={`plane-link block ${plane} px-5 py-4 no-underline transition hover:brightness-[0.97]`}
+      >
+        {body}
+      </Link>
+    );
+  }
+
+  return <div className={`${plane} px-5 py-4`}>{body}</div>;
 }
