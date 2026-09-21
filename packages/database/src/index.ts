@@ -25,7 +25,7 @@ export function requireDatabaseUrl(): string {
 export function getDb() {
   if (db) return db;
   const url = requireDatabaseUrl();
-  client = postgres(url, { max: 5, prepare: false });
+  client = postgres(url, { max: 5, prepare: false, connect_timeout: 3 });
   db = drizzle(client, { schema });
   return db;
 }

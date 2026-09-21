@@ -4,18 +4,18 @@ import {
   followEvents,
   follows,
   getDb,
-  isDatabaseConfigured,
   type Follow,
 } from "@nigeria-for-nigerians/database";
 import { sendFollowEmail } from "./email";
 import { resolveFollowable } from "./resolve";
-import { instantEventHtml } from "./templates";
+import { instantEventHtml, weeklyDigestHtml } from "./templates";
 import {
   isFollowEventKind,
   type FollowableEntityType,
 } from "./types";
+import { memoryFollowStore, resolveFollowBackend, toFollow } from "./backend";
 
-function newId(prefix: string): string {
+export function newId(prefix: string): string {
   return `${prefix}_${crypto.randomUUID().replace(/-/g, "").slice(0, 16)}`;
 }
 
@@ -31,9 +31,6 @@ export type EmitFollowEventInput = {
 export async function emitFollowEvent(
   input: EmitFollowEventInput,
 ): Promise<{ eventId: string | null; emailed: number; error?: string }> {
-  if (!isDatabaseConfigured()) {
-    return { eventId: null, emailed: 0, error: "DATABASE_URL not configured" };
-  }
   if (!isFollowEventKind(input.entityType, input.kind)) {
     return { eventId: null, emailed: 0, error: `Unknown event kind: ${input.kind}` };
   }
@@ -43,73 +40,160 @@ export async function emitFollowEvent(
     return { eventId: null, emailed: 0, error: "Entity not found" };
   }
 
-  const db = getDb();
-  const eventId = newId("fev");
   const href = input.href || resolved.href;
+  const eventId = newId("fev");
+  const backend = await resolveFollowBackend();
 
-  await db.insert(followEvents).values({
-    id: eventId,
-    entityType: input.entityType,
-    entityId: input.entityId,
-    kind: input.kind,
-    title: input.title,
-    summary: input.summary,
-    href,
-  });
-
-  const subscribers = await db
-    .select()
-    .from(follows)
-    .where(
-      and(
-        eq(follows.active, true),
-        eq(follows.entityType, input.entityType),
-        eq(follows.entityId, input.entityId),
-        eq(follows.cadence, "instant"),
-      ),
-    );
-
-  let emailed = 0;
-  for (const follow of subscribers) {
-    const already = await db
-      .select({ id: followDeliveries.id })
-      .from(followDeliveries)
-      .where(
-        and(
-          eq(followDeliveries.followId, follow.id),
-          eq(followDeliveries.eventId, eventId),
-          eq(followDeliveries.channel, "instant"),
-        ),
-      )
-      .limit(1);
-    if (already.length) continue;
-
-    const sent = await sendFollowEmail({
-      to: follow.email,
-      subject: `${input.title} · ${resolved.entityTitle}`,
-      html: instantEventHtml({
-        entityTitle: resolved.entityTitle,
-        entityHref: href,
-        eventTitle: input.title,
-        eventSummary: input.summary,
-        unsubToken: follow.unsubscribeToken,
-      }),
+  if (backend === "memory") {
+    memoryFollowStore.insertEvent({
+      id: eventId,
+      entityType: input.entityType,
+      entityId: input.entityId,
+      kind: input.kind,
+      title: input.title,
+      summary: input.summary,
+      href,
+      createdAt: new Date(),
     });
 
-    await db.insert(followDeliveries).values({
-      id: newId("fdl"),
-      followId: follow.id,
-      eventId,
-      channel: "instant",
-      providerId: sent.id,
-    });
-    if (!sent.error) emailed += 1;
+    let emailed = 0;
+    for (const follow of memoryFollowStore.listInstantSubscribers(
+      input.entityType,
+      input.entityId,
+    )) {
+      if (memoryFollowStore.hasInstantDelivery(follow.id, eventId)) continue;
+      const sent = await sendFollowEmail({
+        to: follow.email,
+        subject: `${input.title} · ${resolved.entityTitle}`,
+        html: instantEventHtml({
+          entityTitle: resolved.entityTitle,
+          entityHref: href,
+          eventTitle: input.title,
+          eventSummary: input.summary,
+          unsubToken: follow.unsubscribeToken,
+        }),
+      });
+      memoryFollowStore.insertDelivery({
+        id: newId("fdl"),
+        followId: follow.id,
+        eventId,
+        channel: "instant",
+        sentAt: new Date(),
+        providerId: sent.id,
+      });
+      if (!sent.error) emailed += 1;
+    }
+    return { eventId, emailed };
   }
 
-  return { eventId, emailed };
+  try {
+    const db = getDb();
+    await db.insert(followEvents).values({
+      id: eventId,
+      entityType: input.entityType,
+      entityId: input.entityId,
+      kind: input.kind,
+      title: input.title,
+      summary: input.summary,
+      href,
+    });
+
+    const subscribers = await db
+      .select()
+      .from(follows)
+      .where(
+        and(
+          eq(follows.active, true),
+          eq(follows.entityType, input.entityType),
+          eq(follows.entityId, input.entityId),
+          eq(follows.cadence, "instant"),
+        ),
+      );
+
+    let emailed = 0;
+    for (const follow of subscribers) {
+      const already = await db
+        .select({ id: followDeliveries.id })
+        .from(followDeliveries)
+        .where(
+          and(
+            eq(followDeliveries.followId, follow.id),
+            eq(followDeliveries.eventId, eventId),
+            eq(followDeliveries.channel, "instant"),
+          ),
+        )
+        .limit(1);
+      if (already.length) continue;
+
+      const sent = await sendFollowEmail({
+        to: follow.email,
+        subject: `${input.title} · ${resolved.entityTitle}`,
+        html: instantEventHtml({
+          entityTitle: resolved.entityTitle,
+          entityHref: href,
+          eventTitle: input.title,
+          eventSummary: input.summary,
+          unsubToken: follow.unsubscribeToken,
+        }),
+      });
+
+      await db.insert(followDeliveries).values({
+        id: newId("fdl"),
+        followId: follow.id,
+        eventId,
+        channel: "instant",
+        providerId: sent.id,
+      });
+      if (!sent.error) emailed += 1;
+    }
+
+    return { eventId, emailed };
+  } catch (err) {
+    console.warn("[follow] emit postgres failed, using memory", err);
+    // Force memory path for this and future calls in this process
+    const { memoryFollowStore: mem } = await import("./memory-store");
+    const { preferredReset } = await import("./backend");
+    preferredReset("memory");
+
+    mem.insertEvent({
+      id: eventId,
+      entityType: input.entityType,
+      entityId: input.entityId,
+      kind: input.kind,
+      title: input.title,
+      summary: input.summary,
+      href,
+      createdAt: new Date(),
+    });
+
+    let emailed = 0;
+    for (const follow of mem.listInstantSubscribers(input.entityType, input.entityId)) {
+      if (mem.hasInstantDelivery(follow.id, eventId)) continue;
+      const sent = await sendFollowEmail({
+        to: follow.email,
+        subject: `${input.title} · ${resolved.entityTitle}`,
+        html: instantEventHtml({
+          entityTitle: resolved.entityTitle,
+          entityHref: href,
+          eventTitle: input.title,
+          eventSummary: input.summary,
+          unsubToken: follow.unsubscribeToken,
+        }),
+      });
+      mem.insertDelivery({
+        id: newId("fdl"),
+        followId: follow.id,
+        eventId,
+        channel: "instant",
+        sentAt: new Date(),
+        providerId: sent.id,
+      });
+      if (!sent.error) emailed += 1;
+    }
+    return { eventId, emailed };
+  }
 }
 
-/** Sample simulate payloads for demos. */
 export function inventSimulateEvent(
   entityType: FollowableEntityType,
   entityId: string,
@@ -159,6 +243,10 @@ export function inventSimulateEvent(
 }
 
 export async function listActiveFollowsForEmail(email: string): Promise<Follow[]> {
+  const backend = await resolveFollowBackend();
+  if (backend === "memory") {
+    return memoryFollowStore.listActiveByEmail(email).map(toFollow);
+  }
   const db = getDb();
   return db
     .select()
@@ -167,6 +255,15 @@ export async function listActiveFollowsForEmail(email: string): Promise<Follow[]
 }
 
 export async function deactivateFollowByToken(token: string): Promise<Follow | null> {
+  const backend = await resolveFollowBackend();
+  if (backend === "memory") {
+    const row = memoryFollowStore.findByToken(token);
+    if (!row) return null;
+    if (!row.active) return toFollow(row);
+    const updated = { ...row, active: false, updatedAt: new Date() };
+    memoryFollowStore.upsert(updated);
+    return toFollow(updated);
+  }
   const db = getDb();
   const rows = await db
     .select()
@@ -184,6 +281,14 @@ export async function deactivateFollowByToken(token: string): Promise<Follow | n
 }
 
 export async function deactivateFollowById(id: string, email?: string): Promise<boolean> {
+  const backend = await resolveFollowBackend();
+  if (backend === "memory") {
+    const row = memoryFollowStore.findById(id);
+    if (!row || !row.active) return false;
+    if (email && row.email !== email.toLowerCase()) return false;
+    memoryFollowStore.upsert({ ...row, active: false, updatedAt: new Date() });
+    return true;
+  }
   const db = getDb();
   const conditions = [eq(follows.id, id), eq(follows.active, true)];
   if (email) conditions.push(eq(follows.email, email.toLowerCase()));
@@ -200,6 +305,14 @@ export async function updateFollowCadence(
   cadence: "instant" | "weekly",
   email?: string,
 ): Promise<boolean> {
+  const backend = await resolveFollowBackend();
+  if (backend === "memory") {
+    const row = memoryFollowStore.findById(id);
+    if (!row || !row.active) return false;
+    if (email && row.email !== email.toLowerCase()) return false;
+    memoryFollowStore.upsert({ ...row, cadence, updatedAt: new Date() });
+    return true;
+  }
   const db = getDb();
   const conditions = [eq(follows.id, id), eq(follows.active, true)];
   if (email) conditions.push(eq(follows.email, email.toLowerCase()));
@@ -211,24 +324,74 @@ export async function updateFollowCadence(
   return updated.length > 0;
 }
 
-export { newId };
-
-/** Weekly digest runner — gather undelivered events for weekly follows. */
 export async function runWeeklyDigest(): Promise<{
   sent: number;
   skipped: number;
   errors: string[];
 }> {
-  const db = getDb();
+  const backend = await resolveFollowBackend();
   const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+  let sent = 0;
+  let skipped = 0;
+  const errors: string[] = [];
+
+  if (backend === "memory") {
+    for (const follow of memoryFollowStore.listWeekly()) {
+      const events = memoryFollowStore.eventsSince(follow.entityType, follow.entityId, since);
+      if (!events.length) {
+        skipped += 1;
+        continue;
+      }
+      const delivered = memoryFollowStore.deliveredEventIds(
+        follow.id,
+        events.map((e) => e.id),
+      );
+      const undelivered = events.filter((e) => !delivered.has(e.id));
+      if (!undelivered.length) {
+        skipped += 1;
+        continue;
+      }
+      const html = weeklyDigestHtml({
+        groups: [
+          {
+            entityTitle: follow.entityTitle,
+            entityHref:
+              resolveFollowable(follow.entityType as FollowableEntityType, follow.entityId)
+                ?.href ?? `/${follow.entityType}`,
+            events: undelivered.map((e) => ({ title: e.title, summary: e.summary })),
+          },
+        ],
+        unsubToken: follow.unsubscribeToken,
+      });
+      const result = await sendFollowEmail({
+        to: follow.email,
+        subject: `Weekly digest · ${follow.entityTitle}`,
+        html,
+      });
+      if (result.error) {
+        errors.push(`${follow.email}: ${result.error}`);
+        continue;
+      }
+      for (const e of undelivered) {
+        memoryFollowStore.insertDelivery({
+          id: newId("fdl"),
+          followId: follow.id,
+          eventId: e.id,
+          channel: "digest",
+          sentAt: new Date(),
+          providerId: result.id,
+        });
+      }
+      sent += 1;
+    }
+    return { sent, skipped, errors };
+  }
+
+  const db = getDb();
   const weekly = await db
     .select()
     .from(follows)
     .where(and(eq(follows.active, true), eq(follows.cadence, "weekly")));
-
-  let sent = 0;
-  let skipped = 0;
-  const errors: string[] = [];
 
   for (const follow of weekly) {
     const events = await db
@@ -264,13 +427,13 @@ export async function runWeeklyDigest(): Promise<{
       continue;
     }
 
-    const { weeklyDigestHtml } = await import("./templates");
     const html = weeklyDigestHtml({
       groups: [
         {
           entityTitle: follow.entityTitle,
-          entityHref: resolveFollowable(follow.entityType as FollowableEntityType, follow.entityId)
-            ?.href ?? `/${follow.entityType}`,
+          entityHref:
+            resolveFollowable(follow.entityType as FollowableEntityType, follow.entityId)?.href ??
+            `/${follow.entityType}`,
           events: undelivered.map((e) => ({ title: e.title, summary: e.summary })),
         },
       ],

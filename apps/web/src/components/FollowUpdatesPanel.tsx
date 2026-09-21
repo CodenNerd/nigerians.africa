@@ -13,6 +13,16 @@ type Props = {
 
 type Status = "idle" | "following" | "done" | "error";
 
+async function readJson<T>(res: Response): Promise<T> {
+  const text = await res.text();
+  if (!text) return {} as T;
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    return { error: text.slice(0, 200) || "Invalid server response" } as T;
+  }
+}
+
 export function FollowUpdatesPanel({
   entityType,
   entityId,
@@ -77,75 +87,90 @@ export function FollowUpdatesPanel({
   function follow() {
     setMessage(null);
     startTransition(async () => {
-      const res = await fetch("/api/follow", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          entityType,
-          entityId,
-          cadence,
-          email: sessionEmail ? undefined : email,
-        }),
-      });
-      const data = (await res.json()) as {
-        error?: string;
-        alreadyFollowing?: boolean;
-        follow?: { id: string };
-      };
-      if (!res.ok) {
+      try {
+        const res = await fetch("/api/follow", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            entityType,
+            entityId,
+            cadence,
+            email: sessionEmail ? undefined : email,
+          }),
+        });
+        const data = await readJson<{
+          error?: string;
+          alreadyFollowing?: boolean;
+          follow?: { id: string };
+        }>(res);
+        if (!res.ok) {
+          setStatus("error");
+          setMessage(data.error || "Could not follow");
+          return;
+        }
+        setFollowId(data.follow?.id ?? null);
+        setStatus("following");
+        setMessage(
+          data.alreadyFollowing
+            ? "You're already following — cadence updated."
+            : "You're following. Check your inbox for a confirmation.",
+        );
+      } catch (err) {
         setStatus("error");
-        setMessage(data.error || "Could not follow");
-        return;
+        setMessage(err instanceof Error ? err.message : "Could not follow");
       }
-      setFollowId(data.follow?.id ?? null);
-      setStatus("following");
-      setMessage(
-        data.alreadyFollowing
-          ? "You're already following — cadence updated."
-          : "You're following. Check your inbox for a confirmation.",
-      );
     });
   }
 
   function unfollow() {
     setMessage(null);
     startTransition(async () => {
-      const res = await fetch("/api/follow", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(
-          followId ? { id: followId } : { entityType, entityId },
-        ),
-      });
-      if (!res.ok) {
-        const data = (await res.json()) as { error?: string };
+      try {
+        const res = await fetch("/api/follow", {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(
+            followId ? { id: followId } : { entityType, entityId },
+          ),
+        });
+        const data = await readJson<{ error?: string }>(res);
+        if (!res.ok) {
+          setStatus("error");
+          setMessage(data.error || "Could not unfollow");
+          return;
+        }
+        setFollowId(null);
+        setStatus("idle");
+        setMessage("Unfollowed.");
+      } catch (err) {
         setStatus("error");
-        setMessage(data.error || "Could not unfollow");
-        return;
+        setMessage(err instanceof Error ? err.message : "Could not unfollow");
       }
-      setFollowId(null);
-      setStatus("idle");
-      setMessage("Unfollowed.");
     });
   }
 
   function simulate() {
     setMessage(null);
     startTransition(async () => {
-      const res = await fetch("/api/follow/simulate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ entityType, entityId }),
-      });
-      const data = (await res.json()) as { error?: string; emailed?: number };
-      if (!res.ok) {
+      try {
+        const res = await fetch("/api/follow/simulate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ entityType, entityId }),
+        });
+        const data = await readJson<{ error?: string; emailed?: number }>(res);
+        if (!res.ok) {
+          setStatus("error");
+          setMessage(data.error || "Simulate failed");
+          return;
+        }
+        setMessage(
+          `Simulated update sent to ${data.emailed ?? 0} instant follower(s).`,
+        );
+      } catch (err) {
         setStatus("error");
-        setMessage(data.error || "Simulate failed");
-        return;
+        setMessage(err instanceof Error ? err.message : "Simulate failed");
       }
-      setMessage(
-        `Simulated update sent to ${data.emailed ?? 0} instant follower(s).`,
-      );
     });
   }
 

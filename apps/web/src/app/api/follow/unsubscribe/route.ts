@@ -1,38 +1,38 @@
 import { NextRequest, NextResponse } from "next/server";
-import { isDatabaseConfigured } from "@nigeria-for-nigerians/database";
 import { deactivateFollowByToken } from "@/lib/follow";
 
 export async function GET(req: NextRequest) {
-  if (!isDatabaseConfigured()) {
-    return new NextResponse(pageHtml("Follow updates unavailable", "Database is not configured."), {
-      status: 503,
-      headers: { "Content-Type": "text/html; charset=utf-8" },
-    });
-  }
+  try {
+    const token = req.nextUrl.searchParams.get("token")?.trim();
+    if (!token) {
+      return new NextResponse(pageHtml("Missing token", "This unsubscribe link is incomplete."), {
+        status: 400,
+        headers: { "Content-Type": "text/html; charset=utf-8" },
+      });
+    }
 
-  const token = req.nextUrl.searchParams.get("token")?.trim();
-  if (!token) {
-    return new NextResponse(pageHtml("Missing token", "This unsubscribe link is incomplete."), {
-      status: 400,
-      headers: { "Content-Type": "text/html; charset=utf-8" },
-    });
-  }
+    const row = await deactivateFollowByToken(token);
+    if (!row) {
+      return new NextResponse(pageHtml("Not found", "This follow subscription was not found."), {
+        status: 404,
+        headers: { "Content-Type": "text/html; charset=utf-8" },
+      });
+    }
 
-  const row = await deactivateFollowByToken(token);
-  if (!row) {
-    return new NextResponse(pageHtml("Not found", "This follow subscription was not found."), {
-      status: 404,
-      headers: { "Content-Type": "text/html; charset=utf-8" },
-    });
+    return new NextResponse(
+      pageHtml(
+        "Unsubscribed",
+        `You will no longer receive email updates about <strong>${escape(row.entityTitle)}</strong>. You can follow again anytime from the record page.`,
+      ),
+      { status: 200, headers: { "Content-Type": "text/html; charset=utf-8" } },
+    );
+  } catch (err) {
+    console.error("[follow] unsubscribe failed", err);
+    return new NextResponse(
+      pageHtml("Error", "Could not process unsubscribe. Try again from /following."),
+      { status: 500, headers: { "Content-Type": "text/html; charset=utf-8" } },
+    );
   }
-
-  return new NextResponse(
-    pageHtml(
-      "Unsubscribed",
-      `You will no longer receive email updates about <strong>${escape(row.entityTitle)}</strong>. You can follow again anytime from the record page.`,
-    ),
-    { status: 200, headers: { "Content-Type": "text/html; charset=utf-8" } },
-  );
 }
 
 function escape(s: string): string {
