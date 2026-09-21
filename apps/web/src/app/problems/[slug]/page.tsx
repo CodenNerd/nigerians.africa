@@ -67,8 +67,8 @@ export default async function ProblemDetailPage({
       actions={[
         { label: "Report an update", href: "/report" },
         { label: "See responsible offices", href: "/government" },
-        { label: "Follow this problem", href: "/action" },
       ]}
+      follow={{ entityType: "problem", entityId: problem.id, entityTitle: problem.title }}
     >
       <RecordSection title="What is happening">
         <p className="prose-record">{problem.description}</p>

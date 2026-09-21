@@ -10,13 +10,16 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@nigeria-for-nigerians/database": "workspace:^",
     "@nigeria-for-nigerians/domain": "workspace:*",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.39.3",
     "leaflet": "^1.9.4",
     "next": "15.1.12",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-leaflet": "^5.0.0"
+    "react-leaflet": "^5.0.0",
+    "resend": "^6.28.1"
   },
   "devDependencies": {
     "@types/leaflet": "^1.9.15",

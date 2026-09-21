@@ -294,10 +294,14 @@ export function PersonProfile({ person }: { person: Person }) {
           <aside className="space-y-8 lg:sticky lg:top-36 lg:self-start">
             <AskPanel context={`Public Personality Profile: ${person.fullName}`} />
             <WhatCanYouDo
+              follow={{
+                entityType: "person",
+                entityId: person.id,
+                entityTitle: person.fullName,
+              }}
               actions={[
                 { label: "View sources", href: "#sources" },
                 { label: "Report an issue", href: "/report" },
-                { label: "Follow", href: "/action" },
                 { label: "Find who is responsible", href: "/government" },
                 ...(isCandidate
                   ? [{ label: "All candidacies", href: "/candidates" }]

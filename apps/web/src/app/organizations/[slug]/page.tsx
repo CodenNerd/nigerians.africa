@@ -51,6 +51,7 @@ export default async function OrganizationPage({
       subtitle={org.mission}
       askContext={org.name}
       avatarUrl={org.logoUrl}
+      follow={{ entityType: "organization", entityId: org.id, entityTitle: org.name }}
       actions={[
         { label: "Support / volunteer", href: "/action" },
         { label: "Contact via report", href: "/report" },

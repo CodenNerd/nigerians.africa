@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { getDemoReportsStore } from "@/lib/demo-store";
+import { emitAfterReportStatus } from "@/lib/follow/hooks";
 
 export async function POST(req: NextRequest) {
   const jar = await cookies();
@@ -17,5 +18,15 @@ export async function POST(req: NextRequest) {
   if (idx < 0) return NextResponse.json({ error: "Not found" }, { status: 404 });
   reports[idx] = { ...reports[idx], status: body.status || reports[idx].status };
   store.__demoReports = reports;
+
+  const report = reports[idx];
+  await emitAfterReportStatus({
+    id: report.id,
+    title: report.title,
+    status: report.status,
+    personId: report.personId,
+    problemId: report.problemId,
+  });
+
   return NextResponse.json({ reports });
 }

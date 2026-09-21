@@ -6,6 +6,7 @@ import type { VerificationStatus } from "@nigeria-for-nigerians/domain";
 import { AskPanel } from "./AskPanel";
 import { WhatCanYouDo } from "./WhatCanYouDo";
 import { SectionHead } from "@/components/ui";
+import type { FollowableEntityType } from "@/lib/follow/types";
 
 export function RecordPage({
   eyebrow,
@@ -16,6 +17,7 @@ export function RecordPage({
   children,
   askContext,
   actions,
+  follow,
   hero,
   hideHeader,
   avatarUrl,
@@ -28,6 +30,11 @@ export function RecordPage({
   children: ReactNode;
   askContext?: string;
   actions?: { label: string; href: string }[];
+  follow?: {
+    entityType: FollowableEntityType;
+    entityId: string;
+    entityTitle?: string;
+  };
   /** Optional full-bleed hero above the container (e.g. project cover). */
   hero?: ReactNode;
   /** When true with hero, skip the in-container title block. */
@@ -70,7 +77,7 @@ export function RecordPage({
           <div className="space-y-16">{children}</div>
           <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
             <AskPanel context={askContext || title} />
-            <WhatCanYouDo actions={actions} />
+            <WhatCanYouDo actions={actions} follow={follow} />
           </aside>
         </div>
       </div>

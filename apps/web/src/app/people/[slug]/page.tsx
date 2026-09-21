@@ -42,6 +42,7 @@ export default async function PersonPage({
       title={person.fullName}
       subtitle={person.bio}
       askContext={person.fullName}
+      follow={{ entityType: "person", entityId: person.id, entityTitle: person.fullName }}
       actions={[
         { label: "Browse people", href: "/people" },
         { label: "Report an issue", href: "/report" },

@@ -95,6 +95,7 @@ export default async function ProjectDetailPage({
         </span>
       }
       askContext={`${project.name}. What happened to this project?`}
+      follow={{ entityType: "project", entityId: project.id, entityTitle: project.name }}
       actions={[
         { label: "Report an update", href: "/report" },
         { label: "Follow the money", href: allocation ? `/money/${allocation.slug}` : "/money" },

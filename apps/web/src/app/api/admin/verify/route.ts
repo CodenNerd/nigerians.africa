@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { getRecordPatchStore } from "@/lib/demo-store";
+import { emitAfterClaimReview, emitAfterEvidenceReview } from "@/lib/follow/hooks";
 
 export async function GET() {
   const patch = getRecordPatchStore();
@@ -35,12 +36,14 @@ export async function POST(req: NextRequest) {
       lastReviewedAt: now,
       lastReviewedBy: by,
     };
+    await emitAfterClaimReview(body.id, body.status);
   } else {
     patch.evidence[body.id] = {
       verificationStatus: body.status,
       lastReviewedAt: now,
       lastReviewedBy: by,
     };
+    await emitAfterEvidenceReview(body.id, body.status);
   }
 
   return NextResponse.json({ ok: true, patch });

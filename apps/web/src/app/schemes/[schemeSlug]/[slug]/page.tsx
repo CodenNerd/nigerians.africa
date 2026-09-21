@@ -68,6 +68,7 @@ export default async function MatterPage({
       title={matter.title}
       subtitle={`${matter.status.replace(/_/g, " ")} · ${scheme.name}`}
       askContext={matter.title}
+      follow={{ entityType: "matter", entityId: matter.id, entityTitle: matter.title }}
       actions={[
         { label: "Back to scheme", href: `/schemes/${scheme.slug}` },
         ...(org

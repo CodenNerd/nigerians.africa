@@ -3,6 +3,7 @@ import { store } from "@nigeria-for-nigerians/domain";
 import { StatusLabel } from "@/components/StatusLabel";
 import { PageIntro, SectionHead, EntityList } from "@/components/ui";
 import { LiveReportsList } from "@/components/LiveReportsList";
+import { ActionFollowingSection } from "@/components/ActionFollowingSection";
 
 export const metadata = { title: "Action" };
 
@@ -43,6 +44,8 @@ export default function ActionPage() {
           </li>
         ))}
       </ul>
+
+      <ActionFollowingSection />
 
       <section className="mt-16" id="foi">
         <SectionHead
