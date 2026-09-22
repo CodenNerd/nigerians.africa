@@ -254,7 +254,7 @@ function MattersExplorerInner({
           No matters match these filters. Clear filters or try another search.
         </p>
       ) : view === "grid" ? (
-        <ul className="mt-6 grid gap-px bg-paper-border sm:grid-cols-2 xl:grid-cols-3">
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {filtered.map((item) => (
             <MatterGridCard key={item.matter.id} item={item} />
           ))}
@@ -272,14 +272,140 @@ function MattersExplorerInner({
 
 const TILE_MAX = 4;
 
-function MatterListRow({ item }: { item: MatterReelItem }) {
-  const { matter, locationName, org, media, evidence, href } = item;
+function matterTiles(item: MatterReelItem) {
+  const { media, evidence } = item;
+  const all = media?.length ? media : evidence ? [evidence] : [];
+  return {
+    tiles: all.slice(0, TILE_MAX),
+    extra: Math.max(0, all.length - TILE_MAX),
+  };
+}
+
+function MatterStatusChips({
+  matter,
+  locationName,
+}: {
+  matter: MatterReelItem["matter"];
+  locationName?: string;
+}) {
+  const tone = MATTER_STATUS_TONE[matter.status];
+  return (
+    <div className="flex flex-wrap items-center gap-2">
+      <span
+        className={`border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider ${tone.chip}`}
+      >
+        {tone.label}
+      </span>
+      <span className="border border-civic-amber/25 bg-civic-amberSoft/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-civic-amber">
+        {categoryLabel(matter.category)}
+      </span>
+      {locationName ? (
+        <span className="border border-civic-blue/25 bg-civic-blueSoft/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-civic-blue">
+          {locationName}
+        </span>
+      ) : null}
+    </div>
+  );
+}
+
+function MatterAnnotations({
+  item,
+  compact = false,
+}: {
+  item: MatterReelItem;
+  compact?: boolean;
+}) {
+  const { matter, org } = item;
   const progress = matterProgressIndex(matter.status);
   const pct = Math.round((progress / (MATTER_PROGRESS_STEPS - 1)) * 100);
   const tone = MATTER_STATUS_TONE[matter.status];
-  const tiles = (media?.length ? media : evidence ? [evidence] : []).slice(0, TILE_MAX);
-  const extra = Math.max(0, (media?.length ?? 0) - TILE_MAX);
   const awaiting = !org;
+
+  return (
+    <div
+      className={`flex flex-wrap gap-x-5 gap-y-2 text-xs ${compact ? "flex-col gap-y-2" : ""}`}
+    >
+      <span>
+        <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">Handling</span>{" "}
+        {awaiting ? (
+          <span className="font-medium text-civic-amber">Awaiting NGO</span>
+        ) : (
+          <span className="font-medium text-civic-green">{org.name}</span>
+        )}
+      </span>
+      <span>
+        <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">Published</span>{" "}
+        <span className="font-mono text-civic-slate">{matter.publishedAt}</span>
+      </span>
+      {matter.evidenceIds.length ? (
+        <span>
+          <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">Evidence</span>{" "}
+          <span className="font-mono text-civic-blue">{matter.evidenceIds.length}</span>
+        </span>
+      ) : null}
+      <span
+        className={`flex items-center gap-2 ${compact ? "w-full" : "ml-auto min-w-[7.5rem]"}`}
+      >
+        <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">Progress</span>
+        <span className="font-mono text-[11px] text-ink">{pct}%</span>
+        <span className="h-1.5 min-w-[3.5rem] flex-1 bg-ink/10" aria-hidden>
+          <span
+            className={`block h-full ${tone.bar}`}
+            style={{ width: `${Math.max(8, pct)}%` }}
+          />
+        </span>
+      </span>
+    </div>
+  );
+}
+
+function MatterMediaTiles({
+  item,
+  tileClassName = "h-16 w-24 sm:h-[4.5rem] sm:w-28",
+}: {
+  item: MatterReelItem;
+  tileClassName?: string;
+}) {
+  const { tiles, extra } = matterTiles(item);
+  if (!tiles.length) return null;
+
+  return (
+    <div className="flex gap-2 overflow-x-auto pb-0.5">
+      {tiles.map((ev) => {
+        const src = ev.posterUrl || ev.mediaUrl;
+        if (!src) return null;
+        return (
+          <span
+            key={ev.id}
+            className={`relative shrink-0 overflow-hidden border border-paper-border bg-ink/10 ${tileClassName}`}
+          >
+            <Image
+              src={src}
+              alt=""
+              fill
+              className="object-cover transition duration-300 group-hover:brightness-[0.97]"
+              sizes="112px"
+            />
+            {ev.mediaKind === "video" ? (
+              <span className="absolute bottom-1 left-1 border border-paper/80 bg-paper/90 px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider text-ink">
+                Video
+              </span>
+            ) : null}
+          </span>
+        );
+      })}
+      {extra > 0 ? (
+        <span className="flex h-16 w-16 shrink-0 items-center justify-center border border-dashed border-civic-blue/40 bg-civic-blueSoft/50 font-mono text-xs text-civic-blue sm:h-[4.5rem] sm:w-[4.5rem]">
+          +{extra}
+        </span>
+      ) : null}
+    </div>
+  );
+}
+
+function MatterListRow({ item }: { item: MatterReelItem }) {
+  const { matter, locationName, href } = item;
+  const tone = MATTER_STATUS_TONE[matter.status];
 
   return (
     <li>
@@ -290,21 +416,7 @@ function MatterListRow({ item }: { item: MatterReelItem }) {
         <span className={`absolute inset-y-0 left-0 w-1 ${tone.bar}`} aria-hidden />
 
         <div className="space-y-4 px-4 py-4 pl-5 sm:px-5 sm:py-5 sm:pl-6">
-          <div className="flex flex-wrap items-center gap-2">
-            <span
-              className={`border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider ${tone.chip}`}
-            >
-              {tone.label}
-            </span>
-            <span className="border border-civic-amber/25 bg-civic-amberSoft/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-civic-amber">
-              {categoryLabel(matter.category)}
-            </span>
-            {locationName ? (
-              <span className="border border-civic-blue/25 bg-civic-blueSoft/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-civic-blue">
-                {locationName}
-              </span>
-            ) : null}
-          </div>
+          <MatterStatusChips matter={matter} locationName={locationName} />
 
           <div>
             <span className="block font-display text-xl leading-snug text-ink transition group-hover:text-civic-green sm:text-2xl">
@@ -315,77 +427,8 @@ function MatterListRow({ item }: { item: MatterReelItem }) {
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs">
-            <span>
-              <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">
-                Handling
-              </span>{" "}
-              {awaiting ? (
-                <span className="font-medium text-civic-amber">Awaiting NGO</span>
-              ) : (
-                <span className="font-medium text-civic-green">{org.name}</span>
-              )}
-            </span>
-            <span>
-              <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">
-                Published
-              </span>{" "}
-              <span className="font-mono text-civic-slate">{matter.publishedAt}</span>
-            </span>
-            {matter.evidenceIds.length ? (
-              <span>
-                <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">
-                  Evidence
-                </span>{" "}
-                <span className="font-mono text-civic-blue">{matter.evidenceIds.length}</span>
-              </span>
-            ) : null}
-            <span className="ml-auto flex min-w-[7.5rem] items-center gap-2">
-              <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">
-                Progress
-              </span>
-              <span className="font-mono text-[11px] text-ink">{pct}%</span>
-              <span className="h-1.5 min-w-[3.5rem] flex-1 bg-ink/10" aria-hidden>
-                <span
-                  className={`block h-full ${tone.bar}`}
-                  style={{ width: `${Math.max(8, pct)}%` }}
-                />
-              </span>
-            </span>
-          </div>
-
-          {tiles.length > 0 ? (
-            <div className="flex gap-2 overflow-x-auto pb-0.5">
-              {tiles.map((ev) => {
-                const src = ev.posterUrl || ev.mediaUrl;
-                if (!src) return null;
-                return (
-                  <span
-                    key={ev.id}
-                    className="relative h-16 w-24 shrink-0 overflow-hidden border border-paper-border bg-ink/10 sm:h-[4.5rem] sm:w-28"
-                  >
-                    <Image
-                      src={src}
-                      alt=""
-                      fill
-                      className="object-cover transition duration-300 group-hover:brightness-[0.97]"
-                      sizes="112px"
-                    />
-                    {ev.mediaKind === "video" ? (
-                      <span className="absolute bottom-1 left-1 border border-paper/80 bg-paper/90 px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider text-ink">
-                        Video
-                      </span>
-                    ) : null}
-                  </span>
-                );
-              })}
-              {extra > 0 ? (
-                <span className="flex h-16 w-16 shrink-0 items-center justify-center border border-dashed border-civic-blue/40 bg-civic-blueSoft/50 font-mono text-xs text-civic-blue sm:h-[4.5rem] sm:w-[4.5rem]">
-                  +{extra}
-                </span>
-              ) : null}
-            </div>
-          ) : null}
+          <MatterAnnotations item={item} />
+          <MatterMediaTiles item={item} />
         </div>
       </Link>
     </li>
@@ -393,55 +436,31 @@ function MatterListRow({ item }: { item: MatterReelItem }) {
 }
 
 function MatterGridCard({ item }: { item: MatterReelItem }) {
-  const { matter, locationName, org, evidence, href } = item;
-  const progress = matterProgressIndex(matter.status);
-  const pct = Math.round((progress / (MATTER_PROGRESS_STEPS - 1)) * 100);
+  const { matter, locationName, href } = item;
   const tone = MATTER_STATUS_TONE[matter.status];
-  const poster = evidence?.posterUrl || evidence?.mediaUrl;
-  const isVideo = evidence?.mediaKind === "video";
 
   return (
-    <li className="bg-paper-card">
-      <Link href={href} className="plane-link group block h-full no-underline">
-        <div className="relative aspect-[16/10] overflow-hidden bg-ink/10">
-          {poster ? (
-            <Image
-              src={poster}
-              alt=""
-              fill
-              className="object-cover transition duration-300 group-hover:brightness-[0.97]"
-              sizes="(max-width: 640px) 100vw, 33vw"
-            />
-          ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-civic-slate to-ink" />
-          )}
-          {isVideo ? (
-            <span className="absolute bottom-2 left-2 border border-paper bg-paper/90 px-2 py-1 text-[10px] font-medium uppercase tracking-wider text-ink">
-              Video
+    <li>
+      <Link
+        href={href}
+        className="plane-link group relative flex h-full flex-col overflow-hidden border border-paper-border bg-paper-card no-underline transition hover:border-civic-green/40"
+      >
+        <span className={`absolute inset-y-0 left-0 w-1 ${tone.bar}`} aria-hidden />
+
+        <div className="flex flex-1 flex-col space-y-3 px-4 py-4 pl-5 sm:px-5 sm:pl-6">
+          <MatterStatusChips matter={matter} locationName={locationName} />
+
+          <div className="flex-1">
+            <span className="block font-display text-lg leading-snug text-ink transition group-hover:text-civic-green sm:text-xl">
+              {matter.title}
             </span>
-          ) : null}
-        </div>
-        <div className="space-y-2 px-4 py-4">
-          <div className="flex flex-wrap items-center gap-2">
-            <span
-              className={`border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider ${tone.chip}`}
-            >
-              {tone.label}
-            </span>
-            <span className="text-[10px] uppercase tracking-wider text-ink-faint">
-              {categoryLabel(matter.category)}
+            <span className="mt-2 block text-sm leading-relaxed text-ink-muted line-clamp-3">
+              {matter.summary}
             </span>
           </div>
-          <p className="font-display text-lg leading-snug text-ink group-hover:text-civic-green">
-            {matter.title}
-          </p>
-          <p className="text-xs text-ink-faint">
-            {locationName ? `${locationName} · ` : ""}
-            {org ? org.name : "Awaiting NGO"}
-          </p>
-          <div className="h-1.5 w-full bg-ink/10" aria-hidden>
-            <div className={`h-full ${tone.bar}`} style={{ width: `${Math.max(8, pct)}%` }} />
-          </div>
+
+          <MatterAnnotations item={item} compact />
+          <MatterMediaTiles item={item} tileClassName="h-14 w-20" />
         </div>
       </Link>
     </li>
