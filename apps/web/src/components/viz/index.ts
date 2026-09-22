@@ -13,6 +13,7 @@ export { SchemeGlance } from "./SchemeGlance";
 export { SchemeLoop } from "./SchemeLoop";
 export { MatterReel } from "./MatterReel";
 export type { MatterReelItem } from "./MatterReel";
+export { MattersExplorer } from "./MattersExplorer";
 export { SchemeSafetyStrip } from "./SchemeSafetyStrip";
 export { NIGERIA_STATES } from "./nigeria-states-meta";
 export { NIGERIA_STATE_PATHS } from "./nigeria-state-paths";

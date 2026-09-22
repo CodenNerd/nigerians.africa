@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { store } from "@nigeria-for-nigerians/domain";
 import { RecordPage, RelatedLinks } from "@/components/RecordPage";
 import {
-  MatterReel,
+  MattersExplorer,
   SchemeGlance,
   SchemeLoop,
   SchemeSafetyStrip,
@@ -59,7 +59,7 @@ export default async function SchemePage({
       ]}
     >
       <div className="space-y-14 lg:space-y-16">
-        <MatterReel items={reelItems} />
+        <MattersExplorer items={reelItems} />
 
         <SchemeGlance glance={glance} />
 
