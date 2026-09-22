@@ -123,83 +123,6 @@ export default async function OrganizationPage({
         <OrganizationPeople people={people} />
       </RecordSection>
 
-      <RecordSection title="Projects">
-        {projectLinks.length === 0 ? (
-          <p className="text-sm text-ink-muted">No linked projects in the public record yet.</p>
-        ) : (
-          <ul className="divide-y divide-paper-border border border-paper-border">
-            {projectLinks.map(({ project, roles, fundingStatus, fundingPercent }) => (
-              <li key={project.id}>
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="plane-link block px-4 py-4 no-underline hover:bg-paper"
-                >
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
-                      {project.status.replace(/_/g, " ")}
-                    </span>
-                    <span
-                      className={`border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider ${FUNDING_TONE[fundingStatus]}`}
-                    >
-                      {FUNDING_STATUS_LABEL[fundingStatus]}
-                    </span>
-                  </div>
-                  <h3 className="mt-1 font-display text-xl text-ink sm:text-2xl">{project.name}</h3>
-                  <p className="mt-1 line-clamp-2 text-sm text-ink-muted">{project.description}</p>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {roles.map((role) => (
-                      <span
-                        key={role}
-                        className="border border-paper-border px-2 py-0.5 text-[10px] uppercase tracking-wider text-ink-faint"
-                      >
-                        {ROLE_LABEL[role]}
-                      </span>
-                    ))}
-                    <span className="font-mono text-[11px] text-ink-faint">
-                      {fundingPercent}% funded
-                    </span>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </RecordSection>
-
-      {prosecutingMatters.length > 0 && mnbScheme ? (
-        <RecordSection title="Prosecuting under Make Nigeria Better">
-          <p className="mb-4 text-sm text-ink-muted">
-            Matters this organization holds under{" "}
-            <Link
-              href={`/schemes/${mnbScheme.slug}`}
-              className="text-civic-green hover:underline"
-            >
-              {mnbScheme.name}
-            </Link>
-            . Status describes process — not a guilt verdict.
-          </p>
-          <RelatedLinks
-            items={prosecutingMatters.map((m) => ({
-              href: `/schemes/${mnbScheme.slug}/${m.slug}`,
-              label: m.title,
-              hint: m.status.replace(/_/g, " "),
-            }))}
-          />
-        </RecordSection>
-      ) : null}
-
-      {problems.length > 0 ? (
-        <RecordSection title="Problems">
-          <RelatedLinks
-            items={problems.map((p) => ({
-              href: `/problems/${p.slug}`,
-              label: p.title,
-              hint: "Problem",
-            }))}
-          />
-        </RecordSection>
-      ) : null}
-
       <RecordSection title="Organisation funding">
         <p className="mb-3 text-sm text-ink-muted">
           Programme-level money received and spent by this organisation — distinct from per-project
@@ -389,6 +312,83 @@ export default async function OrganizationPage({
           );
         })()}
       </RecordSection>
+
+      <RecordSection title="Projects">
+        {projectLinks.length === 0 ? (
+          <p className="text-sm text-ink-muted">No linked projects in the public record yet.</p>
+        ) : (
+          <ul className="divide-y divide-paper-border border border-paper-border">
+            {projectLinks.map(({ project, roles, fundingStatus, fundingPercent }) => (
+              <li key={project.id}>
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="plane-link block px-4 py-4 no-underline hover:bg-paper"
+                >
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
+                      {project.status.replace(/_/g, " ")}
+                    </span>
+                    <span
+                      className={`border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider ${FUNDING_TONE[fundingStatus]}`}
+                    >
+                      {FUNDING_STATUS_LABEL[fundingStatus]}
+                    </span>
+                  </div>
+                  <h3 className="mt-1 font-display text-xl text-ink sm:text-2xl">{project.name}</h3>
+                  <p className="mt-1 line-clamp-2 text-sm text-ink-muted">{project.description}</p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {roles.map((role) => (
+                      <span
+                        key={role}
+                        className="border border-paper-border px-2 py-0.5 text-[10px] uppercase tracking-wider text-ink-faint"
+                      >
+                        {ROLE_LABEL[role]}
+                      </span>
+                    ))}
+                    <span className="font-mono text-[11px] text-ink-faint">
+                      {fundingPercent}% funded
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </RecordSection>
+
+      {prosecutingMatters.length > 0 && mnbScheme ? (
+        <RecordSection title="Prosecuting under Make Nigeria Better">
+          <p className="mb-4 text-sm text-ink-muted">
+            Matters this organization holds under{" "}
+            <Link
+              href={`/schemes/${mnbScheme.slug}`}
+              className="text-civic-green hover:underline"
+            >
+              {mnbScheme.name}
+            </Link>
+            . Status describes process — not a guilt verdict.
+          </p>
+          <RelatedLinks
+            items={prosecutingMatters.map((m) => ({
+              href: `/schemes/${mnbScheme.slug}/${m.slug}`,
+              label: m.title,
+              hint: m.status.replace(/_/g, " "),
+            }))}
+          />
+        </RecordSection>
+      ) : null}
+
+      {problems.length > 0 ? (
+        <RecordSection title="Problems">
+          <RelatedLinks
+            items={problems.map((p) => ({
+              href: `/problems/${p.slug}`,
+              label: p.title,
+              hint: "Problem",
+            }))}
+          />
+        </RecordSection>
+      ) : null}
 
       <RecordSection title="Transparency">
         <p className="prose-record">{org.transparencyNotes}</p>
