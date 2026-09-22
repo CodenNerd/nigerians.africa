@@ -41,6 +41,7 @@ export function PlaceRecord({ slug }: { slug: string }) {
         ) : undefined
       }
       hideHeader={Boolean(place.coverUrl)}
+      contributions={{ entityType: "place", entityId: place.id, entityTitle: place.name }}
     >
       <RecordSection title="Map">
         <PlacesMap

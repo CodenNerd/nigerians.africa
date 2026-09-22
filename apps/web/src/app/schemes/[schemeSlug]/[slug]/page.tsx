@@ -70,6 +70,7 @@ export default async function MatterPage({
       subtitle={`${matter.status.replace(/_/g, " ")} · ${scheme.name}`}
       askContext={matter.title}
       follow={{ entityType: "matter", entityId: matter.id, entityTitle: matter.title }}
+      contributions={{ entityType: "matter", entityId: matter.id, entityTitle: matter.title }}
       followCount={seedFollowBase("matter", matter.id)}
       actions={[
         { label: "Back to scheme", href: `/schemes/${scheme.slug}` },

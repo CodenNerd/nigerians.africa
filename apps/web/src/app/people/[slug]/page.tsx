@@ -44,6 +44,7 @@ export default async function PersonPage({
       subtitle={person.bio}
       askContext={person.fullName}
       follow={{ entityType: "person", entityId: person.id, entityTitle: person.fullName }}
+      contributions={{ entityType: "person", entityId: person.id, entityTitle: person.fullName }}
       followCount={seedFollowBase("person", person.id)}
       actions={[
         { label: "Browse people", href: "/people" },

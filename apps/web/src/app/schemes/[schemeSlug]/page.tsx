@@ -59,6 +59,7 @@ export default async function SchemePage({
       title={scheme.name}
       subtitle={scheme.tagline}
       askContext={scheme.name}
+      contributions={{ entityType: "scheme", entityId: scheme.id, entityTitle: scheme.name }}
       actions={[
         { label: "Publish a report", href: reportHref },
         { label: "Partner organizations", href: "/organizations" },

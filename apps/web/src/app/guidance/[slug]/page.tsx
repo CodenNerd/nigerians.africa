@@ -29,6 +29,7 @@ export default async function GuidanceDetailPage({
       title={topic.title}
       subtitle={topic.situation}
       askContext={topic.title}
+      contributions={{ entityType: "guidance", entityId: topic.id, entityTitle: topic.title }}
       actions={[
         { label: "Report this issue", href: "/report" },
         { label: "Ask for more help", href: "/ask" },

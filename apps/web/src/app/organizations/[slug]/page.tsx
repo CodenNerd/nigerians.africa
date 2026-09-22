@@ -54,6 +54,7 @@ export default async function OrganizationPage({
       avatarUrl={org.logoUrl}
       follow={{ entityType: "organization", entityId: org.id, entityTitle: org.name }}
       followCount={seedFollowBase("organization", org.id)}
+      contributions={{ entityType: "organization", entityId: org.id, entityTitle: org.name }}
       actions={[
         { label: "Support / volunteer", href: "/action" },
         { label: "Contact via report", href: "/report" },

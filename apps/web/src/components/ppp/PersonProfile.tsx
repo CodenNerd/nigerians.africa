@@ -10,6 +10,7 @@ import { RelatedRecords } from "./RelatedRecords";
 import { MemorySpine } from "./MemorySpine";
 import { AskPanel } from "@/components/AskPanel";
 import { WhatCanYouDo } from "@/components/WhatCanYouDo";
+import { PublicContributions } from "@/components/contributions/PublicContributions";
 import { SourceList } from "@/components/RecordPage";
 import { FollowTheThread } from "@/components/FollowTheThread";
 import { SectionHead } from "./visual";
@@ -280,6 +281,12 @@ export function PersonProfile({ person }: { person: Person }) {
             <MoneyViz allocations={allocations} />
             <RelatedRecords items={person.relatedItems ?? []} />
             {related.length > 0 ? <FollowTheThread nodes={related} /> : null}
+
+            <PublicContributions
+              entityType="person"
+              entityId={person.id}
+              entityTitle={person.fullName}
+            />
 
             <section id="sources" className="scroll-mt-28">
               <SectionHead

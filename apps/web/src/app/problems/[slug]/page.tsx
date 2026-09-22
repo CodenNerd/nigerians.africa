@@ -76,6 +76,7 @@ export default async function ProblemDetailPage({
         { label: "See responsible offices", href: "/government" },
       ]}
       follow={{ entityType: "problem", entityId: problem.id, entityTitle: problem.title }}
+      contributions={{ entityType: "problem", entityId: problem.id, entityTitle: problem.title }}
       followCount={seedFollowBase("problem", problem.id)}
     >
       <RecordSection title="What is happening">

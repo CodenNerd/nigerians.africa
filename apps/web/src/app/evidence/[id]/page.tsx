@@ -31,6 +31,7 @@ export default async function EvidencePage({ params }: { params: Promise<{ id: s
       subtitle={evidence.description}
       status={evidence.verificationStatus}
       askContext={evidence.title}
+      contributions={{ entityType: "evidence", entityId: evidence.id, entityTitle: evidence.title }}
     >
       {(isImage || isVideo) && (
         <RecordSection title="Media">

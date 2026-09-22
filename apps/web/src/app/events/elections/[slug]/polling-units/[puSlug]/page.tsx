@@ -47,6 +47,7 @@ export default async function PollingUnitPage({
       title={pu.name}
       subtitle={`${event.title} — official vs observer correlation`}
       askContext={`${pu.name} ${event.title}`}
+      contributions={{ entityType: "place", entityId: pu.id, entityTitle: pu.name }}
       actions={[
         {
           label: "Submit your count",

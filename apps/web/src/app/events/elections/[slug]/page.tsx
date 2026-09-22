@@ -39,6 +39,7 @@ export default async function ElectionPage({ params }: { params: Promise<{ slug:
       title={event.title}
       subtitle={event.summary}
       askContext={event.title}
+      contributions={{ entityType: "event", entityId: event.id, entityTitle: event.title }}
       actions={
         isUpcoming
           ? [

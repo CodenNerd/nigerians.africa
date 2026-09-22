@@ -97,6 +97,7 @@ export default async function ProjectDetailPage({
       }
       askContext={`${project.name}. What happened to this project?`}
       follow={{ entityType: "project", entityId: project.id, entityTitle: project.name }}
+      contributions={{ entityType: "project", entityId: project.id, entityTitle: project.name }}
       followCount={seedFollowBase("project", project.id)}
       actions={[
         { label: "Report an update", href: "/report" },

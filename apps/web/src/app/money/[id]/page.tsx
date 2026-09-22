@@ -40,6 +40,7 @@ export default async function MoneyDetailPage({
       title={allocation.program}
       subtitle={`Recipient: ${allocation.recipient}`}
       askContext={`Where did the money go for ${allocation.program}?`}
+      contributions={{ entityType: "money", entityId: allocation.id, entityTitle: allocation.program }}
       actions={[
         { label: "Submit FOI", href: "/action" },
         { label: "Challenge figures", href: "/action" },

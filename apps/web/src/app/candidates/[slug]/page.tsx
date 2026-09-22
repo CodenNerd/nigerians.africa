@@ -56,6 +56,11 @@ export default async function CandidatePage({ params }: { params: Promise<{ slug
       title={candidacy.ballotName ?? person?.fullName ?? candidacy.slug}
       subtitle={`${candidacy.party} · ${candidacy.status.replace(/_/g, " ")}`}
       askContext={`Candidacy: ${candidacy.ballotName ?? candidacy.slug}`}
+      contributions={{
+        entityType: "candidate",
+        entityId: candidacy.id,
+        entityTitle: candidacy.ballotName ?? person?.fullName ?? candidacy.slug,
+      }}
       actions={[
         ...(person ? [{ label: "Open person", href: `/people/${person.slug}` }] : []),
         ...(election

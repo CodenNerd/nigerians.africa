@@ -15,7 +15,7 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
   if (!event || event.type === "election") notFound();
 
   return (
-    <RecordPage eyebrow={`Event · ${event.type}`} title={event.title} subtitle={event.summary} askContext={event.title}>
+    <RecordPage eyebrow={`Event · ${event.type}`} title={event.title} subtitle={event.summary} askContext={event.title} contributions={{ entityType: "event", entityId: event.id, entityTitle: event.title }}>
       <RecordSection title="Summary">
         <p className="prose-record">{event.summary}</p>
         <p className="mt-3 text-sm text-ink-faint">

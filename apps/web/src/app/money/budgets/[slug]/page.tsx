@@ -71,6 +71,7 @@ export default async function BudgetDetailPage({
           FY{budget.fiscalYear} · {store.formatNaira(budget.amount)}
         </span>
       }
+      contributions={{ entityType: "budget", entityId: budget.id, entityTitle: budget.title }}
       actions={[
         { label: "Browse all money", href: "/money" },
         { label: "Submit FOI", href: "/action" },

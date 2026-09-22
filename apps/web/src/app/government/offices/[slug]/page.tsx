@@ -38,6 +38,7 @@ export default async function OfficePage({
       title={office.name}
       subtitle={institution ? `${institution.name} · ${office.level}` : office.level}
       askContext={office.name}
+      contributions={{ entityType: "office", entityId: office.id, entityTitle: office.name }}
       actions={[
         {
           label: "Report something related",
