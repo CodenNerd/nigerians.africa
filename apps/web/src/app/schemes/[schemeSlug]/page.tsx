@@ -30,14 +30,20 @@ export default async function SchemePage({
     const org = m.prosecutingOrgId
       ? store.allOrganizations().find((o) => o.id === m.prosecutingOrgId)
       : undefined;
-    const evidence = m.evidenceIds
+    const media = m.evidenceIds
       .map((id) => store.evidenceById(id))
-      .find((e) => e && (e.mediaKind === "video" || e.mediaKind === "image"));
+      .filter(
+        (e): e is NonNullable<typeof e> =>
+          !!e &&
+          (e.mediaKind === "video" || e.mediaKind === "image") &&
+          !!(e.posterUrl || e.mediaUrl),
+      );
     return {
       matter: m,
       locationName: location?.name,
       org,
-      evidence,
+      evidence: media[0],
+      media,
       href: `/schemes/${scheme.slug}/${m.slug}`,
     };
   });

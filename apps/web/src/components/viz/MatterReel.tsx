@@ -12,6 +12,8 @@ export type MatterReelItem = {
   locationName?: string;
   org?: Organization;
   evidence?: Evidence;
+  /** Image/video evidence for tile strips on list cards. */
+  media?: Evidence[];
   href: string;
 };
 

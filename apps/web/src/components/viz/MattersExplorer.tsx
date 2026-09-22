@@ -260,7 +260,7 @@ function MattersExplorerInner({
           ))}
         </ul>
       ) : (
-        <ul className="mt-6 divide-y divide-paper-border border-y border-paper-border">
+        <ul className="mt-6 grid gap-3">
           {filtered.map((item) => (
             <MatterListRow key={item.matter.id} item={item} />
           ))}
@@ -270,69 +270,123 @@ function MattersExplorerInner({
   );
 }
 
+const TILE_MAX = 4;
+
 function MatterListRow({ item }: { item: MatterReelItem }) {
-  const { matter, locationName, org, evidence, href } = item;
+  const { matter, locationName, org, media, evidence, href } = item;
   const progress = matterProgressIndex(matter.status);
   const pct = Math.round((progress / (MATTER_PROGRESS_STEPS - 1)) * 100);
   const tone = MATTER_STATUS_TONE[matter.status];
-  const poster = evidence?.posterUrl || evidence?.mediaUrl;
+  const tiles = (media?.length ? media : evidence ? [evidence] : []).slice(0, TILE_MAX);
+  const extra = Math.max(0, (media?.length ?? 0) - TILE_MAX);
+  const awaiting = !org;
 
   return (
     <li>
       <Link
         href={href}
-        className="plane-link group grid gap-4 py-4 no-underline sm:grid-cols-[4.5rem_minmax(0,1fr)_auto] sm:items-center"
+        className="plane-link group relative block overflow-hidden border border-paper-border bg-paper-card no-underline transition hover:border-civic-green/40"
       >
-        <span className="relative hidden h-[4.5rem] w-[4.5rem] overflow-hidden border border-paper-border bg-ink/10 sm:block">
-          {poster ? (
-            <Image src={poster} alt="" fill className="object-cover" sizes="72px" />
-          ) : (
-            <span className="absolute inset-0 bg-gradient-to-br from-civic-slate to-ink" />
-          )}
-        </span>
-        <span className="min-w-0">
-          <span className="flex flex-wrap items-center gap-2">
+        <span className={`absolute inset-y-0 left-0 w-1 ${tone.bar}`} aria-hidden />
+
+        <div className="space-y-4 px-4 py-4 pl-5 sm:px-5 sm:py-5 sm:pl-6">
+          <div className="flex flex-wrap items-center gap-2">
             <span
               className={`border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider ${tone.chip}`}
             >
               {tone.label}
             </span>
-            <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-ink-faint">
+            <span className="border border-civic-amber/25 bg-civic-amberSoft/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-civic-amber">
               {categoryLabel(matter.category)}
-              {locationName ? ` · ${locationName}` : ""}
             </span>
-          </span>
-          <span className="mt-1.5 block font-display text-xl leading-snug text-ink group-hover:text-civic-green">
-            {matter.title}
-          </span>
-          <span className="mt-1 block text-sm text-ink-muted line-clamp-2">{matter.summary}</span>
-          <span className="mt-2 block text-xs text-ink-faint">
-            {org ? (
-              <>
-                Handling · <span className="text-civic-green">{org.name}</span>
-              </>
-            ) : (
-              <span className="text-civic-amber">Awaiting NGO</span>
-            )}
-            {" · "}
-            Published {matter.publishedAt}
-            {matter.evidenceIds.length
-              ? ` · ${matter.evidenceIds.length} evidence`
-              : ""}
-          </span>
-        </span>
-        <span className="hidden w-28 shrink-0 sm:block">
-          <span className="flex items-baseline justify-between gap-1 font-mono text-[10px] uppercase tracking-wider text-ink-faint">
-            <span>Progress</span>
-            <span>{pct}%</span>
-          </span>
-          <span className="mt-1.5 block h-1.5 w-full bg-ink/10" aria-hidden>
-            <span
-              className={`block h-full ${tone.bar}`}
-              style={{ width: `${Math.max(8, pct)}%` }}
-            />
-          </span>
-        </span>
+            {locationName ? (
+              <span className="border border-civic-blue/25 bg-civic-blueSoft/70 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-civic-blue">
+                {locationName}
+              </span>
+            ) : null}
+          </div>
+
+          <div>
+            <span className="block font-display text-xl leading-snug text-ink transition group-hover:text-civic-green sm:text-2xl">
+              {matter.title}
+            </span>
+            <span className="mt-2 block max-w-3xl text-sm leading-relaxed text-ink-muted line-clamp-2">
+              {matter.summary}
+            </span>
+          </div>
+
+          <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs">
+            <span>
+              <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">
+                Handling
+              </span>{" "}
+              {awaiting ? (
+                <span className="font-medium text-civic-amber">Awaiting NGO</span>
+              ) : (
+                <span className="font-medium text-civic-green">{org.name}</span>
+              )}
+            </span>
+            <span>
+              <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">
+                Published
+              </span>{" "}
+              <span className="font-mono text-civic-slate">{matter.publishedAt}</span>
+            </span>
+            {matter.evidenceIds.length ? (
+              <span>
+                <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">
+                  Evidence
+                </span>{" "}
+                <span className="font-mono text-civic-blue">{matter.evidenceIds.length}</span>
+              </span>
+            ) : null}
+            <span className="ml-auto flex min-w-[7.5rem] items-center gap-2">
+              <span className="font-medium uppercase tracking-[0.14em] text-ink-faint">
+                Progress
+              </span>
+              <span className="font-mono text-[11px] text-ink">{pct}%</span>
+              <span className="h-1.5 min-w-[3.5rem] flex-1 bg-ink/10" aria-hidden>
+                <span
+                  className={`block h-full ${tone.bar}`}
+                  style={{ width: `${Math.max(8, pct)}%` }}
+                />
+              </span>
+            </span>
+          </div>
+
+          {tiles.length > 0 ? (
+            <div className="flex gap-2 overflow-x-auto pb-0.5">
+              {tiles.map((ev) => {
+                const src = ev.posterUrl || ev.mediaUrl;
+                if (!src) return null;
+                return (
+                  <span
+                    key={ev.id}
+                    className="relative h-16 w-24 shrink-0 overflow-hidden border border-paper-border bg-ink/10 sm:h-[4.5rem] sm:w-28"
+                  >
+                    <Image
+                      src={src}
+                      alt=""
+                      fill
+                      className="object-cover transition duration-300 group-hover:brightness-[0.97]"
+                      sizes="112px"
+                    />
+                    {ev.mediaKind === "video" ? (
+                      <span className="absolute bottom-1 left-1 border border-paper/80 bg-paper/90 px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider text-ink">
+                        Video
+                      </span>
+                    ) : null}
+                  </span>
+                );
+              })}
+              {extra > 0 ? (
+                <span className="flex h-16 w-16 shrink-0 items-center justify-center border border-dashed border-civic-blue/40 bg-civic-blueSoft/50 font-mono text-xs text-civic-blue sm:h-[4.5rem] sm:w-[4.5rem]">
+                  +{extra}
+                </span>
+              ) : null}
+            </div>
+          ) : null}
+        </div>
       </Link>
     </li>
   );
