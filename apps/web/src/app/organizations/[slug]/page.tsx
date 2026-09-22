@@ -66,63 +66,6 @@ export default async function OrganizationPage({
         </div>
       ) : null}
 
-      <RecordSection title="About">
-        <p className="prose-record">{org.description}</p>
-        {org.registrationNumber ? (
-          <p className="mt-3 text-sm text-ink-faint">Registration: {org.registrationNumber}</p>
-        ) : null}
-        {org.website ? (
-          <p className="mt-1 text-sm">
-            <a href={org.website} target="_blank" rel="noopener noreferrer" className="text-civic-green">
-              Website (external)
-            </a>
-          </p>
-        ) : null}
-        {location ? <p className="mt-1 text-sm text-ink-faint">Based in {location.name}</p> : null}
-        <p className="mt-3 text-sm">
-          Status:{" "}
-          <span className={vetted ? "font-medium text-civic-green" : "text-ink-muted"}>
-            {vetted ? "Platform vetted" : "Not yet vetted"}
-          </span>
-        </p>
-        {(org.ngoCategories ?? []).length > 0 || store.organizationTypeFor(org) ? (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {(() => {
-              const actor = store.organizationTypeFor(org);
-              return actor ? (
-                <Link
-                  href={`/organizations/types/${actor.id}`}
-                  className="border border-civic-blue/30 bg-civic-blueSoft/60 px-2.5 py-1 text-xs text-civic-blue no-underline transition hover:border-civic-blue/50"
-                >
-                  {actor.label}
-                </Link>
-              ) : null;
-            })()}
-            {(org.ngoCategories ?? []).map((id) => {
-              const cat = store.ngoCategoryMeta(id);
-              if (!cat) return null;
-              return (
-                <Link
-                  key={id}
-                  href={`/organizations/ngos/${id}`}
-                  className="border border-civic-green/30 bg-civic-greenSoft/60 px-2.5 py-1 text-xs text-civic-green no-underline transition hover:border-civic-green/50"
-                >
-                  {cat.label}
-                </Link>
-              );
-            })}
-          </div>
-        ) : null}
-      </RecordSection>
-
-      <RecordSection
-        title="People"
-        subtitle="Staff, directors and counsel linked to this organization on the public record."
-        meta={`${people.length} people`}
-      >
-        <OrganizationPeople people={people} />
-      </RecordSection>
-
       <RecordSection title="Organisation funding">
         <p className="mb-3 text-sm text-ink-muted">
           Programme-level money received and spent by this organisation — distinct from per-project
@@ -311,6 +254,63 @@ export default async function OrganizationPage({
             </div>
           );
         })()}
+      </RecordSection>
+
+      <RecordSection title="About">
+        <p className="prose-record">{org.description}</p>
+        {org.registrationNumber ? (
+          <p className="mt-3 text-sm text-ink-faint">Registration: {org.registrationNumber}</p>
+        ) : null}
+        {org.website ? (
+          <p className="mt-1 text-sm">
+            <a href={org.website} target="_blank" rel="noopener noreferrer" className="text-civic-green">
+              Website (external)
+            </a>
+          </p>
+        ) : null}
+        {location ? <p className="mt-1 text-sm text-ink-faint">Based in {location.name}</p> : null}
+        <p className="mt-3 text-sm">
+          Status:{" "}
+          <span className={vetted ? "font-medium text-civic-green" : "text-ink-muted"}>
+            {vetted ? "Platform vetted" : "Not yet vetted"}
+          </span>
+        </p>
+        {(org.ngoCategories ?? []).length > 0 || store.organizationTypeFor(org) ? (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {(() => {
+              const actor = store.organizationTypeFor(org);
+              return actor ? (
+                <Link
+                  href={`/organizations/types/${actor.id}`}
+                  className="border border-civic-blue/30 bg-civic-blueSoft/60 px-2.5 py-1 text-xs text-civic-blue no-underline transition hover:border-civic-blue/50"
+                >
+                  {actor.label}
+                </Link>
+              ) : null;
+            })()}
+            {(org.ngoCategories ?? []).map((id) => {
+              const cat = store.ngoCategoryMeta(id);
+              if (!cat) return null;
+              return (
+                <Link
+                  key={id}
+                  href={`/organizations/ngos/${id}`}
+                  className="border border-civic-green/30 bg-civic-greenSoft/60 px-2.5 py-1 text-xs text-civic-green no-underline transition hover:border-civic-green/50"
+                >
+                  {cat.label}
+                </Link>
+              );
+            })}
+          </div>
+        ) : null}
+      </RecordSection>
+
+      <RecordSection
+        title="People"
+        subtitle="Staff, directors and counsel linked to this organization on the public record."
+        meta={`${people.length} people`}
+      >
+        <OrganizationPeople people={people} />
       </RecordSection>
 
       <RecordSection title="Projects">
