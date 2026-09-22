@@ -21,7 +21,7 @@ export function requireDatabaseUrl(): string {
   return url;
 }
 
-/** Lazy Drizzle client for Follow tables. */
+/** Lazy Drizzle client for Follow and Contributions tables. */
 export function getDb() {
   if (db) return db;
   const url = requireDatabaseUrl();

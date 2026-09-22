@@ -6,6 +6,7 @@ import type { VerificationStatus } from "@nigeria-for-nigerians/domain";
 import { AskPanel } from "./AskPanel";
 import { WhatCanYouDo } from "./WhatCanYouDo";
 import { RecordFollowButton } from "./RecordFollowButton";
+import { PublicContributions } from "@/components/contributions/PublicContributions";
 import { SectionHead } from "@/components/ui";
 import type { FollowableEntityType } from "@/lib/follow/types";
 
@@ -23,6 +24,7 @@ export function RecordPage({
   hero,
   hideHeader,
   avatarUrl,
+  contributions,
 }: {
   eyebrow: string;
   title: string;
@@ -45,6 +47,12 @@ export function RecordPage({
   hideHeader?: boolean;
   /** Optional logo / mark beside the title. */
   avatarUrl?: string;
+  /** Public contribution space scoped to this entity. */
+  contributions?: {
+    entityType: string;
+    entityId: string;
+    entityTitle?: string;
+  };
 }) {
   const followCta = follow ? (
     <RecordFollowButton
@@ -88,7 +96,16 @@ export function RecordPage({
         ) : null}
 
         <div className={`${hideHeader ? "mt-0" : "mt-12"} grid gap-14 lg:grid-cols-[minmax(0,1fr)_16.5rem] lg:gap-12`}>
-          <div className="space-y-16">{children}</div>
+          <div className="space-y-16">
+            {children}
+            {contributions ? (
+              <PublicContributions
+                entityType={contributions.entityType}
+                entityId={contributions.entityId}
+                entityTitle={contributions.entityTitle ?? title}
+              />
+            ) : null}
+          </div>
           <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
             <AskPanel context={askContext || title} />
             <WhatCanYouDo actions={actions} follow={follow} />
