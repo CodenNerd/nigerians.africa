@@ -66,34 +66,179 @@ export default async function OrganizationPage({
         </div>
       ) : null}
 
-      <RecordSection title="Organisation funding">
-        <p className="mb-3 text-sm text-ink-muted">
-          Programme-level money received and spent by this organisation — distinct from per-project
-          ledgers on each project dossier. Open Received or Spent to see the breakdown.
+      <RecordSection title="About">
+        <p className="prose-record">{org.description}</p>
+        {org.registrationNumber ? (
+          <p className="mt-3 text-sm text-ink-faint">Registration: {org.registrationNumber}</p>
+        ) : null}
+        {org.website ? (
+          <p className="mt-1 text-sm">
+            <a href={org.website} target="_blank" rel="noopener noreferrer" className="text-civic-green">
+              Website (external)
+            </a>
+          </p>
+        ) : null}
+        {location ? <p className="mt-1 text-sm text-ink-faint">Based in {location.name}</p> : null}
+        <p className="mt-3 text-sm">
+          Status:{" "}
+          <span className={vetted ? "font-medium text-civic-green" : "text-ink-muted"}>
+            {vetted ? "Platform vetted" : "Not yet vetted"}
+          </span>
         </p>
-        <div className="grid gap-3 sm:grid-cols-3">
-          <MoneyFigure
-            label="Received"
-            value={store.formatNaira(org.fundingReceived)}
-            href="#funding-received"
-            hint="How was the money made? →"
-            tone="amber"
-          />
-          <MoneyFigure
-            label="Spent"
-            value={store.formatNaira(org.fundingSpent)}
-            href="#funding-spent"
-            hint="How was it spent? →"
-            tone="amber"
-          />
-          <MoneyFigure
-            label="Still to spend"
-            value={store.formatNaira(Math.max(0, org.fundingReceived - org.fundingSpent))}
-            href="#funding-projects"
-            hint="Remaining & project allocations →"
-            tone="green"
-          />
+        {(org.ngoCategories ?? []).length > 0 || store.organizationTypeFor(org) ? (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {(() => {
+              const actor = store.organizationTypeFor(org);
+              return actor ? (
+                <Link
+                  href={`/organizations/types/${actor.id}`}
+                  className="border border-civic-blue/30 bg-civic-blueSoft/60 px-2.5 py-1 text-xs text-civic-blue no-underline transition hover:border-civic-blue/50"
+                >
+                  {actor.label}
+                </Link>
+              ) : null;
+            })()}
+            {(org.ngoCategories ?? []).map((id) => {
+              const cat = store.ngoCategoryMeta(id);
+              if (!cat) return null;
+              return (
+                <Link
+                  key={id}
+                  href={`/organizations/ngos/${id}`}
+                  className="border border-civic-green/30 bg-civic-greenSoft/60 px-2.5 py-1 text-xs text-civic-green no-underline transition hover:border-civic-green/50"
+                >
+                  {cat.label}
+                </Link>
+              );
+            })}
+          </div>
+        ) : null}
+
+        <div className="mt-8 border-t border-paper-border pt-6">
+          <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
+            Programme funding
+          </p>
+          <p className="mt-2 text-sm text-ink-muted">
+            Summary on the public record — open a card for income, spend, and project allocation
+            lines below.
+          </p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            <MoneyFigure
+              label="Received"
+              value={store.formatNaira(org.fundingReceived)}
+              href="#funding-received"
+              hint="Income lines below →"
+              tone="amber"
+            />
+            <MoneyFigure
+              label="Spent"
+              value={store.formatNaira(org.fundingSpent)}
+              href="#funding-spent"
+              hint="Spend lines below →"
+              tone="amber"
+            />
+            <MoneyFigure
+              label="Still to spend"
+              value={store.formatNaira(Math.max(0, org.fundingReceived - org.fundingSpent))}
+              href="#funding-projects"
+              hint="Allocations below →"
+              tone="green"
+            />
+          </div>
         </div>
+      </RecordSection>
+
+      <RecordSection
+        title="People"
+        subtitle="Staff, directors and counsel linked to this organization on the public record."
+        meta={`${people.length} people`}
+      >
+        <OrganizationPeople people={people} />
+      </RecordSection>
+
+      <RecordSection title="Projects">
+        {projectLinks.length === 0 ? (
+          <p className="text-sm text-ink-muted">No linked projects in the public record yet.</p>
+        ) : (
+          <ul className="divide-y divide-paper-border border border-paper-border">
+            {projectLinks.map(({ project, roles, fundingStatus, fundingPercent }) => (
+              <li key={project.id}>
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="plane-link block px-4 py-4 no-underline hover:bg-paper"
+                >
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
+                      {project.status.replace(/_/g, " ")}
+                    </span>
+                    <span
+                      className={`border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider ${FUNDING_TONE[fundingStatus]}`}
+                    >
+                      {FUNDING_STATUS_LABEL[fundingStatus]}
+                    </span>
+                  </div>
+                  <h3 className="mt-1 font-display text-xl text-ink sm:text-2xl">{project.name}</h3>
+                  <p className="mt-1 line-clamp-2 text-sm text-ink-muted">{project.description}</p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {roles.map((role) => (
+                      <span
+                        key={role}
+                        className="border border-paper-border px-2 py-0.5 text-[10px] uppercase tracking-wider text-ink-faint"
+                      >
+                        {ROLE_LABEL[role]}
+                      </span>
+                    ))}
+                    <span className="font-mono text-[11px] text-ink-faint">
+                      {fundingPercent}% funded
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </RecordSection>
+
+      {prosecutingMatters.length > 0 && mnbScheme ? (
+        <RecordSection title="Prosecuting under Make Nigeria Better">
+          <p className="mb-4 text-sm text-ink-muted">
+            Matters this organization holds under{" "}
+            <Link
+              href={`/schemes/${mnbScheme.slug}`}
+              className="text-civic-green hover:underline"
+            >
+              {mnbScheme.name}
+            </Link>
+            . Status describes process — not a guilt verdict.
+          </p>
+          <RelatedLinks
+            items={prosecutingMatters.map((m) => ({
+              href: `/schemes/${mnbScheme.slug}/${m.slug}`,
+              label: m.title,
+              hint: m.status.replace(/_/g, " "),
+            }))}
+          />
+        </RecordSection>
+      ) : null}
+
+      {problems.length > 0 ? (
+        <RecordSection title="Problems">
+          <RelatedLinks
+            items={problems.map((p) => ({
+              href: `/problems/${p.slug}`,
+              label: p.title,
+              hint: "Problem",
+            }))}
+          />
+        </RecordSection>
+      ) : null}
+
+      <RecordSection id="organisation-funding" title="Organisation funding">
+        <p className="text-sm text-ink-muted">
+          Programme-level money received and spent by this organisation — distinct from per-project
+          ledgers on each project dossier. Summary figures sit in About above; below are the
+          published lines.
+        </p>
       </RecordSection>
 
       <RecordSection
@@ -255,140 +400,6 @@ export default async function OrganizationPage({
           );
         })()}
       </RecordSection>
-
-      <RecordSection title="About">
-        <p className="prose-record">{org.description}</p>
-        {org.registrationNumber ? (
-          <p className="mt-3 text-sm text-ink-faint">Registration: {org.registrationNumber}</p>
-        ) : null}
-        {org.website ? (
-          <p className="mt-1 text-sm">
-            <a href={org.website} target="_blank" rel="noopener noreferrer" className="text-civic-green">
-              Website (external)
-            </a>
-          </p>
-        ) : null}
-        {location ? <p className="mt-1 text-sm text-ink-faint">Based in {location.name}</p> : null}
-        <p className="mt-3 text-sm">
-          Status:{" "}
-          <span className={vetted ? "font-medium text-civic-green" : "text-ink-muted"}>
-            {vetted ? "Platform vetted" : "Not yet vetted"}
-          </span>
-        </p>
-        {(org.ngoCategories ?? []).length > 0 || store.organizationTypeFor(org) ? (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {(() => {
-              const actor = store.organizationTypeFor(org);
-              return actor ? (
-                <Link
-                  href={`/organizations/types/${actor.id}`}
-                  className="border border-civic-blue/30 bg-civic-blueSoft/60 px-2.5 py-1 text-xs text-civic-blue no-underline transition hover:border-civic-blue/50"
-                >
-                  {actor.label}
-                </Link>
-              ) : null;
-            })()}
-            {(org.ngoCategories ?? []).map((id) => {
-              const cat = store.ngoCategoryMeta(id);
-              if (!cat) return null;
-              return (
-                <Link
-                  key={id}
-                  href={`/organizations/ngos/${id}`}
-                  className="border border-civic-green/30 bg-civic-greenSoft/60 px-2.5 py-1 text-xs text-civic-green no-underline transition hover:border-civic-green/50"
-                >
-                  {cat.label}
-                </Link>
-              );
-            })}
-          </div>
-        ) : null}
-      </RecordSection>
-
-      <RecordSection
-        title="People"
-        subtitle="Staff, directors and counsel linked to this organization on the public record."
-        meta={`${people.length} people`}
-      >
-        <OrganizationPeople people={people} />
-      </RecordSection>
-
-      <RecordSection title="Projects">
-        {projectLinks.length === 0 ? (
-          <p className="text-sm text-ink-muted">No linked projects in the public record yet.</p>
-        ) : (
-          <ul className="divide-y divide-paper-border border border-paper-border">
-            {projectLinks.map(({ project, roles, fundingStatus, fundingPercent }) => (
-              <li key={project.id}>
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="plane-link block px-4 py-4 no-underline hover:bg-paper"
-                >
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-ink-faint">
-                      {project.status.replace(/_/g, " ")}
-                    </span>
-                    <span
-                      className={`border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wider ${FUNDING_TONE[fundingStatus]}`}
-                    >
-                      {FUNDING_STATUS_LABEL[fundingStatus]}
-                    </span>
-                  </div>
-                  <h3 className="mt-1 font-display text-xl text-ink sm:text-2xl">{project.name}</h3>
-                  <p className="mt-1 line-clamp-2 text-sm text-ink-muted">{project.description}</p>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {roles.map((role) => (
-                      <span
-                        key={role}
-                        className="border border-paper-border px-2 py-0.5 text-[10px] uppercase tracking-wider text-ink-faint"
-                      >
-                        {ROLE_LABEL[role]}
-                      </span>
-                    ))}
-                    <span className="font-mono text-[11px] text-ink-faint">
-                      {fundingPercent}% funded
-                    </span>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </RecordSection>
-
-      {prosecutingMatters.length > 0 && mnbScheme ? (
-        <RecordSection title="Prosecuting under Make Nigeria Better">
-          <p className="mb-4 text-sm text-ink-muted">
-            Matters this organization holds under{" "}
-            <Link
-              href={`/schemes/${mnbScheme.slug}`}
-              className="text-civic-green hover:underline"
-            >
-              {mnbScheme.name}
-            </Link>
-            . Status describes process — not a guilt verdict.
-          </p>
-          <RelatedLinks
-            items={prosecutingMatters.map((m) => ({
-              href: `/schemes/${mnbScheme.slug}/${m.slug}`,
-              label: m.title,
-              hint: m.status.replace(/_/g, " "),
-            }))}
-          />
-        </RecordSection>
-      ) : null}
-
-      {problems.length > 0 ? (
-        <RecordSection title="Problems">
-          <RelatedLinks
-            items={problems.map((p) => ({
-              href: `/problems/${p.slug}`,
-              label: p.title,
-              hint: "Problem",
-            }))}
-          />
-        </RecordSection>
-      ) : null}
 
       <RecordSection title="Transparency">
         <p className="prose-record">{org.transparencyNotes}</p>
